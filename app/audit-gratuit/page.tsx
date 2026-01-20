@@ -34,9 +34,11 @@ const benefits = [
 ];
 
 const steps = [
-  { number: "1", title: "Réservez votre créneau", description: "Choisissez un moment qui vous convient" },
-  { number: "2", title: "Échange de 30 min", description: "Présentez-nous vos défis quotidiens" },
-  { number: "3", title: "Recevez votre audit", description: "Un plan d'action personnalisé par email" },
+  { number: "1", title: "Remplissez le formulaire", description: "Partagez vos informations de contact" },
+  { number: "2", title: "Choisissez votre créneau", description: "Sélectionnez un moment qui vous convient" },
+  { number: "3", title: "Remplissez le questionnaire", description: "Pour un audit au plus proche de votre activité" },
+  { number: "4", title: "Échange de 30 minutes", description: "Présentez-nous vos défis quotidiens" },
+  { number: "5", title: "Recevez votre audit", description: "Un plan d'action personnalisé par email" },
 ];
 
 export default function AuditGratuit() {
@@ -132,26 +134,21 @@ export default function AuditGratuit() {
             </h2>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {steps.map((step, index) => (
               <motion.div
                 key={step.number}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                className="flex-1 text-center"
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
               >
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-4 text-xl font-bold text-white">
                   {step.number}
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
+                <h3 className="text-base font-bold text-white mb-2">{step.title}</h3>
                 <p className="text-slate-400 text-sm">{step.description}</p>
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute">
-                    <ArrowRight className="w-6 h-6 text-slate-600" />
-                  </div>
-                )}
               </motion.div>
             ))}
           </div>
