@@ -99,12 +99,12 @@ export default function AgentsIA() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center">
             {/* Text Content */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="text-center lg:text-left"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center max-w-3xl"
             >
               <Badge className="mb-6 inline-flex">
                 <Bot className="w-4 h-4 mr-2" />
@@ -119,7 +119,7 @@ export default function AgentsIA() {
               </p>
 
               {/* Quick Stats */}
-              <div className="flex flex-wrap gap-6 mb-8 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-6 mb-8 justify-center">
                 <div className="flex items-center gap-2">
                   <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                     <Clock className="w-5 h-5 text-primary" />
@@ -149,7 +149,7 @@ export default function AgentsIA() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-4 justify-center">
                 <Link href="/audit-gratuit">
                   <Button size="lg" className="bg-orange-500 hover:bg-orange-600 border-orange-500">
                     Audit gratuit
@@ -158,9 +158,6 @@ export default function AgentsIA() {
                 </Link>
               </div>
             </motion.div>
-
-            {/* Empty space for image visibility on large screens */}
-            <div className="hidden lg:block" />
           </div>
         </div>
       </section>
