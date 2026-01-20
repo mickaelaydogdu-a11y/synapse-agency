@@ -49,11 +49,11 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-slate-400">
                 <Mail className="w-4 h-4" />
-                contact@synapse.agency
+                contact@synapse-agency.fr
               </li>
               <li className="flex items-center gap-2 text-slate-400">
                 <Phone className="w-4 h-4" />
-                +33 X XX XX XX XX
+                06 32 54 55 78
               </li>
               <li className="flex items-center gap-2 text-slate-400">
                 <MapPin className="w-4 h-4" />

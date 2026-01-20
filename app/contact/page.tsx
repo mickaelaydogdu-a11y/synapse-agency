@@ -65,7 +65,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-white font-semibold mb-1">Email</h3>
-                      <p className="text-slate-400">contact@synapse.agency</p>
+                      <p className="text-slate-400">contact@synapse-agency.fr</p>
                     </div>
                   </div>
                 </Card>
@@ -83,7 +83,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-white font-semibold mb-1">Téléphone</h3>
-                      <p className="text-slate-400">+33 X XX XX XX XX</p>
+                      <p className="text-slate-400">06 32 54 55 78</p>
                     </div>
                   </div>
                 </Card>
