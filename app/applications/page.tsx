@@ -97,7 +97,7 @@ export default function Applications() {
                   </div>
                   <div>
                     <p className="text-white font-bold">95+</p>
-                    <p className="text-slate-400 text-sm">Lighthouse</p>
+                    <p className="text-slate-400 text-sm">Score performance</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
@@ -190,7 +190,7 @@ export default function Applications() {
             <Card variant="gradient" hover={false} className="p-8">
               <div className="text-center">
                 <div className="text-5xl font-bold gradient-text mb-2">95+</div>
-                <p className="text-slate-400 mb-6">Score Lighthouse</p>
+                <p className="text-slate-400 mb-6">Score Score performance</p>
 
                 <div className="text-5xl font-bold gradient-text mb-2">&lt;2s</div>
                 <p className="text-slate-400 mb-6">Temps de chargement</p>
