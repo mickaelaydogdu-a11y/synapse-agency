@@ -56,7 +56,11 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+    color: #0ea5e9;
+    background: linear-gradient(to right, #6366f1, #0ea5e9, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .gradient-border {
