@@ -117,7 +117,7 @@ export default function Confidentialite() {
                   <li><strong className="text-white">Droit d&apos;opposition :</strong> vous opposer au traitement de vos données</li>
                 </ul>
                 <p className="text-slate-300 mt-4">
-                  Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@synapse.agency" className="text-primary hover:underline">contact@synapse.agency</a>
+                  Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@synapse-agency.fr" className="text-primary hover:underline">contact@synapse-agency.fr</a>
                 </p>
               </section>
 
@@ -163,8 +163,9 @@ export default function Confidentialite() {
                   vous pouvez nous contacter :
                 </p>
                 <div className="mt-4 text-slate-300">
-                  <p><strong className="text-white">Email :</strong> contact@synapse.agency</p>
-                  <p><strong className="text-white">Adresse :</strong> [Adresse à compléter], France</p>
+                  <p><strong className="text-white">Email :</strong> contact@synapse-agency.fr</p>
+                  <p><strong className="text-white">Téléphone :</strong> 06 32 54 55 78</p>
+                  <p><strong className="text-white">Adresse :</strong> 21 grande place, 77640 Jouarre, France</p>
                 </div>
                 <p className="text-slate-300 mt-4">
                   Vous pouvez également introduire une réclamation auprès de la CNIL (Commission Nationale de

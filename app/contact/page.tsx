@@ -100,8 +100,8 @@ export default function Contact() {
                       <MapPin className="w-6 h-6 text-accent" />
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold mb-1">Localisation</h3>
-                      <p className="text-slate-400">France</p>
+                      <h3 className="text-white font-semibold mb-1">Adresse</h3>
+                      <p className="text-slate-400">21 grande place<br />77640 Jouarre</p>
                     </div>
                   </div>
                 </Card>

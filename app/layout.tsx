@@ -9,12 +9,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Synapse Agency | Solutions IA & Applications",
-  description: "Architecte de solutions numériques. Agents IA, solutions sur mesure et applications web & mobile pour transformer votre business.",
+  description: "Architecte de solutions numériques. Agents IA, solutions sur mesure et applications web & mobile pour transformer votre entreprise.",
   keywords: ["IA", "intelligence artificielle", "agents IA", "chatbot", "applications web", "développement"],
   authors: [{ name: "Synapse Agency" }],
   openGraph: {
     title: "Synapse Agency | Solutions IA & Applications",
-    description: "Transformez votre business avec l'intelligence artificielle",
+    description: "Transformez votre entreprise avec l'intelligence artificielle",
     type: "website",
     locale: "fr_FR",
   },

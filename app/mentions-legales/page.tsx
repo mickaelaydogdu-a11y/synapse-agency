@@ -41,11 +41,11 @@ export default function MentionsLegales() {
                 <div className="text-slate-300 space-y-2">
                   <p><strong className="text-white">Raison sociale :</strong> Synapse Agency</p>
                   <p><strong className="text-white">Forme juridique :</strong> [À compléter]</p>
-                  <p><strong className="text-white">Siège social :</strong> [Adresse à compléter], France</p>
+                  <p><strong className="text-white">Siège social :</strong> 21 grande place, 77640 Jouarre, France</p>
                   <p><strong className="text-white">SIRET :</strong> [À compléter]</p>
                   <p><strong className="text-white">Numéro de TVA :</strong> [À compléter]</p>
-                  <p><strong className="text-white">Email :</strong> contact@synapse.agency</p>
-                  <p><strong className="text-white">Téléphone :</strong> +33 X XX XX XX XX</p>
+                  <p><strong className="text-white">Email :</strong> contact@synapse-agency.fr</p>
+                  <p><strong className="text-white">Téléphone :</strong> 06 32 54 55 78</p>
                   <p><strong className="text-white">Directeur de la publication :</strong> [Nom à compléter]</p>
                 </div>
               </section>
@@ -54,9 +54,9 @@ export default function MentionsLegales() {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-4">2. Hébergement</h2>
                 <div className="text-slate-300 space-y-2">
-                  <p><strong className="text-white">Hébergeur :</strong> Hostinger International Ltd</p>
-                  <p><strong className="text-white">Adresse :</strong> 61 Lordou Vironos Street, 6023 Larnaca, Chypre</p>
-                  <p><strong className="text-white">Site web :</strong> www.hostinger.fr</p>
+                  <p><strong className="text-white">Hébergeur :</strong> Vercel Inc.</p>
+                  <p><strong className="text-white">Adresse :</strong> 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</p>
+                  <p><strong className="text-white">Site web :</strong> www.vercel.com</p>
                 </div>
               </section>
 
@@ -115,7 +115,7 @@ export default function MentionsLegales() {
                 <h2 className="text-2xl font-bold text-white mb-4">7. Contact</h2>
                 <p className="text-slate-300">
                   Pour toute question relative aux présentes mentions légales, vous pouvez nous contacter à
-                  l&apos;adresse suivante : <a href="mailto:contact@synapse.agency" className="text-primary hover:underline">contact@synapse.agency</a>
+                  l&apos;adresse suivante : <a href="mailto:contact@synapse-agency.fr" className="text-primary hover:underline">contact@synapse-agency.fr</a>
                 </p>
               </section>
             </div>
