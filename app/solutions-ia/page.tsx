@@ -59,7 +59,7 @@ export default function SolutionsIA() {
             src="/images/Solution-ia-Synapse-agency.png"
             alt="Solution IA Synapse Agency"
             fill
-            className="object-cover"
+            className="object-cover object-right lg:object-center"
             priority
           />
           {/* Overlay gradient */}
@@ -73,8 +73,9 @@ export default function SolutionsIA() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
+              className="text-center lg:text-left"
             >
-              <Badge variant="secondary" className="mb-6">
+              <Badge variant="secondary" className="mb-6 inline-flex">
                 <Cpu className="w-4 h-4 mr-2" />
                 Solutions IA
               </Badge>
@@ -87,7 +88,7 @@ export default function SolutionsIA() {
               </p>
 
               {/* Quick Stats */}
-              <div className="flex flex-wrap gap-6 mb-8">
+              <div className="flex flex-wrap gap-6 mb-8 justify-center lg:justify-start">
                 <div className="flex items-center gap-2">
                   <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center">
                     <FileSearch className="w-5 h-5 text-secondary" />
@@ -117,7 +118,7 @@ export default function SolutionsIA() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Link href="/contact">
                   <Button size="lg">
                     Demander une démo

@@ -61,7 +61,7 @@ export default function Applications() {
             src="/images/Application-Synapse-agency.png"
             alt="Applications Synapse Agency"
             fill
-            className="object-cover"
+            className="object-cover object-right lg:object-center"
             priority
           />
           {/* Overlay gradient */}
@@ -75,8 +75,9 @@ export default function Applications() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
+              className="text-center lg:text-left"
             >
-              <Badge variant="primary" className="mb-6 bg-accent/20 text-accent border-accent/30">
+              <Badge variant="primary" className="mb-6 inline-flex bg-accent/20 text-accent border-accent/30">
                 <Smartphone className="w-4 h-4 mr-2" />
                 Applications Web & Mobile
               </Badge>
@@ -89,7 +90,7 @@ export default function Applications() {
               </p>
 
               {/* Quick Stats */}
-              <div className="flex flex-wrap gap-6 mb-8">
+              <div className="flex flex-wrap gap-6 mb-8 justify-center lg:justify-start">
                 <div className="flex items-center gap-2">
                   <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
                     <Zap className="w-5 h-5 text-accent" />
@@ -119,7 +120,7 @@ export default function Applications() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Link href="/contact">
                   <Button size="lg">
                     Démarrer le projet
