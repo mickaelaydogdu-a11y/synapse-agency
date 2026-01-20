@@ -6,23 +6,23 @@ import { TrendingUp, Clock, Target, Zap } from "lucide-react";
 const benefits = [
   {
     icon: Clock,
-    title: "Gagnez du temps",
-    description: "Automatisez les tâches répétitives et concentrez-vous sur ce qui compte vraiment.",
+    title: "Libérez votre temps",
+    description: "Déléguez les tâches répétitives à l'IA et consacrez-vous à ce qui vous passionne vraiment.",
   },
   {
     icon: TrendingUp,
-    title: "Restez compétitif",
-    description: "Vos concurrents adoptent l'IA. Ne prenez pas de retard sur votre marché.",
+    title: "Développez votre potentiel",
+    description: "L'IA amplifie vos capacités et vous permet d'accomplir davantage avec les mêmes ressources.",
   },
   {
     icon: Target,
-    title: "Réduisez les erreurs",
-    description: "L'IA travaille avec précision, 24h/24, sans fatigue ni distraction.",
+    title: "Gagnez en sérénité",
+    description: "Un assistant fiable qui travaille avec précision, 24h/24, pour vous épauler au quotidien.",
   },
   {
     icon: Zap,
-    title: "Agissez maintenant",
-    description: "Plus vous attendez, plus l'écart se creuse avec ceux qui ont déjà franchi le pas.",
+    title: "Simplifiez votre quotidien",
+    description: "Des solutions concrètes qui s'intègrent naturellement dans vos processus existants.",
   },
 ];
 
@@ -37,13 +37,14 @@ export function WhyAI() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Pourquoi intégrer l&apos;IA <span className="gradient-text">dès maintenant</span> ?
+            L&apos;IA, votre <span className="gradient-text">meilleur allié</span> au quotidien
           </h2>
           <p className="text-lg text-slate-400 max-w-3xl mx-auto">
-            L&apos;intelligence artificielle n&apos;est plus une option, c&apos;est une nécessité.
-            Les entreprises qui l&apos;adoptent aujourd&apos;hui gagnent en efficacité, réduisent leurs coûts
-            et prennent une longueur d&apos;avance sur leurs concurrents. Celles qui attendent risquent
-            de se retrouver dépassées.
+            Imaginez pouvoir vous concentrer sur ce que vous aimez vraiment dans votre métier.
+            L&apos;intelligence artificielle prend en charge les tâches chronophages et répétitives,
+            vous offrant un temps précieux pour développer votre entreprise, innover et créer de la valeur.
+            C&apos;est un véritable partenaire qui travaille à vos côtés, simplifie votre quotidien
+            et vous aide à atteindre vos objectifs plus sereinement.
           </p>
         </motion.div>
 
