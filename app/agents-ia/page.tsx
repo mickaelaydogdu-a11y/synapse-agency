@@ -150,15 +150,10 @@ export default function AgentsIA() {
               </div>
 
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <Link href="/contact">
-                  <Button size="lg">
-                    Demander une démo
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </Link>
                 <Link href="/audit-gratuit">
-                  <Button size="lg" variant="secondary">
+                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 border-orange-500">
                     Audit gratuit
+                    <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
               </div>
