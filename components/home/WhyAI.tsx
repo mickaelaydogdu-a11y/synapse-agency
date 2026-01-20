@@ -43,6 +43,7 @@ export function WhyAI() {
             Imaginez pouvoir vous concentrer sur ce que vous aimez vraiment dans votre métier.
             L&apos;intelligence artificielle prend en charge les tâches chronophages et répétitives,
             vous offrant un temps précieux pour développer votre entreprise, innover et créer de la valeur.
+            L&apos;IA ne remplace pas votre expertise, elle vous libère du temps pour l&apos;exercer.
             C&apos;est un véritable partenaire qui travaille à vos côtés, simplifie votre quotidien
             et vous aide à atteindre vos objectifs plus sereinement.
           </p>
