@@ -10,8 +10,7 @@ npm run dev          # Start dev server (http://localhost:3000)
 
 # Build & Production
 npm run build        # Build for production
-npm run start        # Production with custom server (server.js)
-npm run start:next   # Production with Next.js default server
+npm run start        # Production server (Next.js default)
 
 # Linting
 npm run lint         # Run ESLint
@@ -43,7 +42,6 @@ components/
 └── demos/           # Demos interactives (AgentDemo, SolutionDemo, AppDemo, ImmoDemo)
 
 lib/utils.ts         # Utilitaire cn() - combine clsx + tailwind-merge
-server.js            # Serveur Node.js custom pour production (écoute sur 0.0.0.0)
 ```
 
 ### Conventions
@@ -55,7 +53,7 @@ server.js            # Serveur Node.js custom pour production (écoute sur 0.0.0
 
 ### Système de design
 
-Couleurs définies dans `globals.css` et `tailwind.config.ts`:
+Couleurs définies dans `globals.css` avec `@theme` (Tailwind v4):
 - `primary` (#6366f1) - Indigo
 - `secondary` (#0ea5e9) - Cyan
 - `accent` (#8b5cf6) - Violet
