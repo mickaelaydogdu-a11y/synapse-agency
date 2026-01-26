@@ -38,14 +38,17 @@ if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
     exit();
 }
 
+// Charger la configuration SMTP
+require_once(__DIR__ . '/.env.php');
+
 // Configuration SMTP Hostinger
-$smtp_host = 'smtp.hostinger.com';
-$smtp_port = 587; // ou 465 pour SSL
-$smtp_username = 'contact@synapse-agency.fr';
-$smtp_password = 'VOTRE_MOT_DE_PASSE_ICI'; // À REMPLACER
-$from_email = 'contact@synapse-agency.fr';
-$from_name = 'Synapse Agency - Audit';
-$to_email = 'contact@synapse-agency.fr';
+$smtp_host = SMTP_HOST;
+$smtp_port = SMTP_PORT;
+$smtp_username = SMTP_USERNAME;
+$smtp_password = SMTP_PASSWORD;
+$from_email = SMTP_FROM_EMAIL;
+$from_name = SMTP_FROM_NAME . ' - Audit';
+$to_email = SMTP_TO_EMAIL;
 
 // Construire le contenu de l'email
 $subject = "Nouvelle demande d'audit - {$data['prenom']} {$data['nom']}";
@@ -127,7 +130,7 @@ try {
     $mail->SMTPAuth = true;
     $mail->Username = $smtp_username;
     $mail->Password = $smtp_password;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // ou PHPMailer::ENCRYPTION_SMTPS pour port 465
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL pour port 465
     $mail->Port = $smtp_port;
     $mail->CharSet = 'UTF-8';
 

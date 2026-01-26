@@ -17,11 +17,29 @@ php composer.phar require phpmailer/phpmailer
 
 ## Étape 2 : Configurer les credentials SMTP
 
-Édite le fichier `audit-booking.php` ligne 40 :
+Copie le fichier exemple et configure tes credentials :
+
+```bash
+cd /home/ton-username/public_html/api
+cp .env.php.example .env.php
+nano .env.php  # ou vim, ou éditeur de texte
+```
+
+Remplis tes vrais credentials dans `.env.php` :
 
 ```php
-$smtp_password = 'TON_MOT_DE_PASSE_HOSTINGER';
+<?php
+define('SMTP_HOST', 'smtp.hostinger.com');
+define('SMTP_PORT', 465); // 465 pour SSL ou 587 pour TLS
+define('SMTP_USERNAME', 'contact@synapse-agency.fr');
+define('SMTP_PASSWORD', 'ton_vrai_mot_de_passe');
+define('SMTP_FROM_EMAIL', 'contact@synapse-agency.fr');
+define('SMTP_FROM_NAME', 'Synapse Agency');
+define('SMTP_TO_EMAIL', 'contact@synapse-agency.fr');
+?>
 ```
+
+⚠️ **IMPORTANT** : Le fichier `.env.php` est ignoré par Git pour protéger tes credentials.
 
 ### Où trouver tes credentials SMTP Hostinger :
 1. Connecte-toi à hPanel Hostinger
@@ -29,7 +47,7 @@ $smtp_password = 'TON_MOT_DE_PASSE_HOSTINGER';
 3. Clique sur **Manage** pour `contact@synapse-agency.fr`
 4. Tu trouveras les infos SMTP :
    - Serveur SMTP : `smtp.hostinger.com`
-   - Port : `587` (TLS) ou `465` (SSL)
+   - Port : `465` (SSL) ou `587` (TLS)
    - Username : `contact@synapse-agency.fr`
    - Password : le mot de passe de ta boîte email
 
