@@ -112,6 +112,11 @@ export async function POST(request: NextRequest) {
       replyTo: data.email,
       subject: `Nouvelle demande d'audit - ${data.prenom} ${data.nom}`,
       html: htmlContent,
+      // Forcer l'enveloppe SMTP
+      envelope: {
+        from: process.env.SMTP_USERNAME || 'contact@synapse-agency.fr',
+        to: process.env.SMTP_TO_EMAIL || 'contact@synapse-agency.fr',
+      },
     });
 
     return NextResponse.json({
