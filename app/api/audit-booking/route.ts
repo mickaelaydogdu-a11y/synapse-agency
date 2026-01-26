@@ -99,8 +99,8 @@ export async function POST(request: NextRequest) {
 
     // Envoyer l'email avec Resend
     await resend.emails.send({
-      from: 'Synapse Agency - Audit <onboarding@resend.dev>',
-      to: process.env.SMTP_TO_EMAIL || 'contact@synapse-agency.fr',
+      from: 'Synapse Agency - Audit <contact@synapse-agency.fr>',
+      to: 'contact@synapse-agency.fr',
       replyTo: data.email,
       subject: `Nouvelle demande d'audit - ${data.prenom} ${data.nom}`,
       html: htmlContent,

@@ -88,8 +88,8 @@ export async function POST(request: NextRequest) {
 
     // Envoyer l'email avec Resend
     await resend.emails.send({
-      from: 'Synapse Agency - Contact <onboarding@resend.dev>',
-      to: process.env.SMTP_TO_EMAIL || 'contact@synapse-agency.fr',
+      from: 'Synapse Agency - Contact <contact@synapse-agency.fr>',
+      to: 'contact@synapse-agency.fr',
       replyTo: data.email,
       subject: `Nouveau message de contact - ${data.name}`,
       html: htmlContent,
