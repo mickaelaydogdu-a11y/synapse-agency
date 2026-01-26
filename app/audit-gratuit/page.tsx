@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { InlineWidget } from "react-calendly";
+import { CustomCalendar } from "@/components/audit";
 
 const benefits = [
   {
@@ -161,22 +161,7 @@ export default function AuditGratuit() {
               </p>
             </div>
 
-            <Card variant="glass" hover={false} className="p-4 md:p-8">
-              <InlineWidget
-                url="https://calendly.com/mickael-synapseagency/30min"
-                styles={{
-                  height: '700px',
-                  minWidth: '100%',
-                }}
-                pageSettings={{
-                  backgroundColor: 'transparent',
-                  hideEventTypeDetails: false,
-                  hideLandingPageDetails: false,
-                  primaryColor: 'f97316', // orange-500
-                  textColor: 'ffffff',
-                }}
-              />
-            </Card>
+            <CustomCalendar />
 
             {/* Bouton vers le questionnaire */}
             <motion.div
