@@ -1,14 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, CheckCircle, Lightbulb, Target, Calendar, ArrowRight, Gift } from "lucide-react";
+import { Clock, CheckCircle, Lightbulb, Target, Calendar, Gift, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
-import { Input } from "@/components/ui/Input";
-import { Textarea } from "@/components/ui/Textarea";
-import { useState } from "react";
+import { Button } from "@/components/ui/Button";
+import { InlineWidget } from "react-calendly";
 
 const benefits = [
   {
@@ -34,23 +32,14 @@ const benefits = [
 ];
 
 const steps = [
-  { number: "1", title: "Remplissez le formulaire", description: "Partagez vos informations de contact" },
-  { number: "2", title: "Choisissez votre créneau", description: "Sélectionnez un moment qui vous convient" },
-  { number: "3", title: "Remplissez le questionnaire", description: "Pour un audit au plus proche de votre activité" },
-  { number: "4", title: "Échange de 30 minutes", description: "Présentez-nous vos défis quotidiens" },
-  { number: "5", title: "Recevez votre audit", description: "Un plan d'action personnalisé par email" },
+  { number: "1", title: "Réservez votre créneau", description: "Choisissez votre moment sur le calendrier" },
+  { number: "2", title: "Remplissez le questionnaire", description: "7 questions pour personnaliser votre audit" },
+  { number: "3", title: "Recevez la confirmation", description: "Email avec le lien de visioconférence" },
+  { number: "4", title: "Échange de 30 minutes", description: "Discutez de vos besoins et opportunités IA" },
+  { number: "5", title: "Recevez votre audit", description: "Plan d'action personnalisé sous 24h" },
 ];
 
 export default function AuditGratuit() {
-  const [formState, setFormState] = useState<"idle" | "loading" | "success">("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormState("loading");
-    await new Promise(r => setTimeout(r, 1500));
-    setFormState("success");
-  };
-
   return (
     <main className="pt-24">
       {/* Hero */}
@@ -155,97 +144,62 @@ export default function AuditGratuit() {
         </div>
       </section>
 
-      {/* Form */}
+      {/* Calendly Widget */}
       <section className="py-20 bg-surface">
-        <div className="max-w-2xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Card variant="gradient" hover={false} className="p-8">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-white mb-2">
-                  Réservez votre audit gratuit
-                </h2>
-                <p className="text-slate-400">
-                  Remplissez le formulaire et nous vous recontactons sous 24h
-                </p>
-              </div>
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Réservez votre créneau
+              </h2>
+              <p className="text-slate-400 text-lg">
+                Choisissez le moment qui vous convient pour votre audit gratuit de 30 minutes
+              </p>
+            </div>
 
-              {formState === "success" ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-8"
-                >
-                  <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-green-500" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Demande envoyée !</h3>
-                  <p className="text-slate-400">
-                    Nous vous recontactons dans les 24h pour planifier votre audit.
-                  </p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <Input
-                      label="Prénom"
-                      placeholder="Jean"
-                      required
-                    />
-                    <Input
-                      label="Nom"
-                      placeholder="Dupont"
-                      required
-                    />
-                  </div>
-                  <Input
-                    label="Email professionnel"
-                    type="email"
-                    placeholder="jean@entreprise.fr"
-                    required
-                  />
-                  <Input
-                    label="Entreprise"
-                    placeholder="Nom de votre entreprise"
-                    required
-                  />
-                  <Input
-                    label="Téléphone"
-                    type="tel"
-                    placeholder="+33 6 12 34 56 78"
-                  />
-                  <Textarea
-                    label="Décrivez brièvement vos défis actuels"
-                    placeholder="Ex: Je passe trop de temps sur les tâches administratives, la gestion des emails, la création de devis..."
-                    rows={4}
-                  />
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700"
-                    disabled={formState === "loading"}
-                  >
-                    {formState === "loading" ? (
-                      "Envoi en cours..."
-                    ) : (
-                      <>
-                        Réserver mon audit gratuit
-                        <ArrowRight className="w-5 h-5 ml-2" />
-                      </>
-                    )}
-                  </Button>
-                  <p className="text-center text-xs text-slate-500">
-                    En soumettant ce formulaire, vous acceptez notre{" "}
-                    <Link href="/confidentialite" className="text-primary hover:underline">
-                      politique de confidentialité
-                    </Link>
-                  </p>
-                </form>
-              )}
+            <Card variant="glass" hover={false} className="p-4 md:p-8">
+              <InlineWidget
+                url="https://calendly.com/mickael-synapseagency/30min"
+                styles={{
+                  height: '700px',
+                  minWidth: '100%',
+                }}
+                pageSettings={{
+                  backgroundColor: 'transparent',
+                  hideEventTypeDetails: false,
+                  hideLandingPageDetails: false,
+                  primaryColor: 'f97316', // orange-500
+                  textColor: 'ffffff',
+                }}
+              />
             </Card>
+
+            {/* Bouton vers le questionnaire */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="mt-8 text-center"
+            >
+              <p className="text-slate-400 mb-4">
+                Une fois votre rendez-vous réservé, remplissez le questionnaire pré-audit
+              </p>
+              <Link href="/audit-gratuit/questionnaire">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-orange-500/30 text-orange-400 hover:bg-orange-500/10"
+                >
+                  Accéder au questionnaire
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
