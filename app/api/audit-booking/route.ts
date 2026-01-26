@@ -12,8 +12,7 @@ export async function POST(request: NextRequest) {
 
     // Validation des champs requis
     const requiredFields = [
-      'prenom', 'nom', 'email', 'entreprise', 'date_rdv', 'heure_rdv',
-      'secteur', 'taille_entreprise', 'temps_taches', 'urgence'
+      'prenom', 'nom', 'email', 'entreprise', 'date_rdv', 'heure_rdv', 'objectifs'
     ];
 
     for (const field of requiredFields) {
@@ -73,18 +72,8 @@ export async function POST(request: NextRequest) {
             </div>
 
             <div class='section'>
-                <h3>🏢 Situation de l'entreprise</h3>
-                <div class='field'><span class='label'>Secteur d'activité :</span> <span class='value'>${data.secteur}</span></div>
-                <div class='field'><span class='label'>Taille de l'entreprise :</span> <span class='value'>${data.taille_entreprise}</span></div>
-                <div class='field'><span class='label'>Tâches répétitives :</span> <span class='value'>${data.taches_repetitives}</span></div>
-                <div class='field'><span class='label'>Temps passé (h/semaine) :</span> <span class='value'>${data.temps_taches}h</span></div>
-                <div class='field'><span class='label'>Outils actuels :</span> <span class='value'>${data.outils_actuels || 'Non renseigné'}</span></div>
-            </div>
-
-            <div class='section'>
-                <h3>🎯 Objectifs et urgence</h3>
-                <div class='field'><span class='label'>Objectifs :</span> <span class='value'>${data.objectifs}</span></div>
-                <div class='field'><span class='label'>Urgence :</span> <span class='value'>${data.urgence}</span></div>
+                <h3>🎯 Objectifs</h3>
+                <div class='field'><span class='value'>${data.objectifs}</span></div>
             </div>
 
             <div class='section'>

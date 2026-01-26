@@ -73,23 +73,22 @@ const urgences = [
 ];
 
 export function CustomCalendar() {
-  const [currentWeek, setCurrentWeek] = useState(startOfWeek(new Date(), { weekStartsOn: 1 }));
+  const [currentStartDate, setCurrentStartDate] = useState(startOfDay(new Date()));
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [step, setStep] = useState<"date" | "time" | "form" | "success">("date");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [selectedTaches, setSelectedTaches] = useState<string[]>([]);
   const [selectedObjectifs, setSelectedObjectifs] = useState<string[]>([]);
 
-  // Générer les jours de la semaine
-  const weekDays = Array.from({ length: 7 }, (_, i) => addDays(currentWeek, i));
+  // Générer 15 jours à partir de la date de départ
+  const displayDays = Array.from({ length: 15 }, (_, i) => addDays(currentStartDate, i));
 
-  const nextWeek = () => setCurrentWeek(addWeeks(currentWeek, 1));
-  const prevWeek = () => {
-    const newWeek = addWeeks(currentWeek, -1);
-    if (isAfter(newWeek, startOfDay(new Date()))) {
-      setCurrentWeek(newWeek);
+  const nextPeriod = () => setCurrentStartDate(addDays(currentStartDate, 15));
+  const prevPeriod = () => {
+    const newStartDate = addDays(currentStartDate, -15);
+    if (isAfter(newStartDate, startOfDay(new Date())) || isSameDay(newStartDate, startOfDay(new Date()))) {
+      setCurrentStartDate(newStartDate);
     }
   };
 
@@ -120,13 +119,7 @@ export function CustomCalendar() {
     setIsLoading(true);
     setError("");
 
-    // Validation des sélections multiples
-    if (selectedTaches.length === 0) {
-      setError("Veuillez sélectionner au moins une tâche répétitive");
-      setIsLoading(false);
-      return;
-    }
-
+    // Validation des objectifs
     if (selectedObjectifs.length === 0) {
       setError("Veuillez sélectionner au moins un objectif");
       setIsLoading(false);
@@ -146,13 +139,7 @@ export function CustomCalendar() {
       email: formData.get("email"),
       entreprise: formData.get("entreprise"),
       telephone: formData.get("telephone") || "",
-      secteur: formData.get("secteur"),
-      taille_entreprise: formData.get("taille_entreprise"),
-      taches_repetitives: selectedTaches.join(", "),
-      temps_taches: formData.get("temps_taches"),
-      outils_actuels: formData.get("outils_actuels") || "",
       objectifs: selectedObjectifs.join(", "),
-      urgence: formData.get("urgence"),
       message: formData.get("message") || "",
     };
 
@@ -176,7 +163,6 @@ export function CustomCalendar() {
         if (response.ok || response.status === 200) {
           setStep("success");
           form.reset();
-          setSelectedTaches([]);
           setSelectedObjectifs([]);
           return;
         }
@@ -186,7 +172,6 @@ export function CustomCalendar() {
       if (response.ok && result.success) {
         setStep("success");
         form.reset();
-        setSelectedTaches([]);
         setSelectedObjectifs([]);
       } else {
         setError(result.error || "Une erreur est survenue. Contactez-nous à contact@synapse-agency.fr");
@@ -215,69 +200,74 @@ export function CustomCalendar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
           >
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-orange-400" />
-                Choisissez une date
-              </h3>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={prevWeek}
-                  className="p-2 hover:bg-white/5 rounded-lg transition-colors"
-                  type="button"
-                >
-                  <ChevronLeft className="w-5 h-5 text-slate-400" />
-                </button>
-                <span className="text-sm text-slate-400 min-w-[120px] text-center">
-                  {format(currentWeek, "MMMM yyyy", { locale: fr })}
-                </span>
-                <button
-                  onClick={nextWeek}
-                  className="p-2 hover:bg-white/5 rounded-lg transition-colors"
-                  type="button"
-                >
-                  <ChevronRight className="w-5 h-5 text-slate-400" />
-                </button>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-7 gap-2">
-              {["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"].map((day) => (
-                <div key={day} className="text-center text-xs text-slate-500 font-medium py-2">
-                  {day}
-                </div>
-              ))}
-              {weekDays.map((date, index) => {
-                const available = isAvailableDay(date);
-                const isToday = isSameDay(date, new Date());
-
-                return (
+            <div className="mb-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                  <Calendar className="w-5 h-5 text-orange-400" />
+                  <span className="hidden sm:inline">Choisissez une date</span>
+                  <span className="sm:hidden">Date</span>
+                </h3>
+                <div className="flex items-center gap-1 sm:gap-2">
                   <button
-                    key={index}
-                    onClick={() => selectDate(date)}
-                    disabled={!available}
+                    onClick={prevPeriod}
+                    className="p-2 hover:bg-white/5 rounded-lg transition-colors"
                     type="button"
-                    className={`
-                      aspect-square rounded-xl text-sm font-medium transition-all duration-200
-                      ${available
-                        ? "bg-surface hover:bg-orange-500/20 hover:border-orange-500 text-white border border-white/10 cursor-pointer"
-                        : "bg-surface/30 text-slate-600 cursor-not-allowed border border-transparent"
-                      }
-                      ${isToday && available ? "ring-2 ring-orange-500/50" : ""}
-                    `}
+                    aria-label="Période précédente"
                   >
-                    <div className="flex flex-col items-center justify-center h-full">
-                      <span>{format(date, "d")}</span>
-                      {isToday && <span className="text-[10px] text-orange-400">Auj.</span>}
-                    </div>
+                    <ChevronLeft className="w-5 h-5 text-slate-400" />
                   </button>
-                );
-              })}
-            </div>
+                  <span className="text-xs sm:text-sm text-slate-400 min-w-[100px] sm:min-w-[140px] text-center">
+                    {format(displayDays[0], "d MMM", { locale: fr })} - {format(displayDays[14], "d MMM", { locale: fr })}
+                  </span>
+                  <button
+                    onClick={nextPeriod}
+                    className="p-2 hover:bg-white/5 rounded-lg transition-colors"
+                    type="button"
+                    aria-label="Période suivante"
+                  >
+                    <ChevronRight className="w-5 h-5 text-slate-400" />
+                  </button>
+                </div>
+              </div>
 
-            <p className="text-xs text-slate-500 mt-4 text-center">
-              Disponible du lundi au vendredi
-            </p>
+              <div className="overflow-x-auto pb-2 -mx-2 px-2">
+                <div className="flex gap-2 min-w-max">
+                  {displayDays.map((date, index) => {
+                    const available = isAvailableDay(date);
+                    const isToday = isSameDay(date, new Date());
+
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => selectDate(date)}
+                        disabled={!available}
+                        type="button"
+                        className={`
+                          flex-shrink-0 w-16 sm:w-20 rounded-xl text-sm font-medium transition-all duration-200 py-3 px-2
+                          ${available
+                            ? "bg-surface hover:bg-orange-500/20 hover:border-orange-500 text-white border border-white/10 cursor-pointer"
+                            : "bg-surface/30 text-slate-600 cursor-not-allowed border border-transparent"
+                          }
+                          ${isToday && available ? "ring-2 ring-orange-500/50" : ""}
+                        `}
+                      >
+                        <div className="flex flex-col items-center justify-center gap-1">
+                          <span className="text-[10px] sm:text-xs text-slate-400">
+                            {format(date, "EEE", { locale: fr })}
+                          </span>
+                          <span className="text-lg sm:text-xl font-bold">{format(date, "d")}</span>
+                          {isToday && <span className="text-[9px] text-orange-400">Aujourd&apos;hui</span>}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <p className="text-xs text-slate-500 mt-4 text-center">
+                Disponible du lundi au vendredi
+              </p>
+            </div>
           </motion.div>
         )}
 
@@ -379,93 +369,14 @@ export function CustomCalendar() {
                 <Input label="Téléphone" name="telephone" type="tel" placeholder="+33 6 12 34 56 78" />
               </div>
 
-              {/* Questionnaire */}
+              {/* Objectifs */}
               <div className="space-y-4 pt-4 border-t border-white/10">
-                <h4 className="text-lg font-semibold text-white">Votre situation</h4>
-
-                {/* Secteur d'activité */}
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Secteur d&apos;activité *
-                  </label>
-                  <select
-                    name="secteur"
-                    required
-                    className="w-full px-4 py-3 bg-surface border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all duration-200"
-                  >
-                    <option value="">Sélectionnez votre secteur</option>
-                    {secteurs.map((secteur) => (
-                      <option key={secteur} value={secteur}>
-                        {secteur}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Taille entreprise */}
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Taille de votre entreprise *
-                  </label>
-                  <select
-                    name="taille_entreprise"
-                    required
-                    className="w-full px-4 py-3 bg-surface border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all duration-200"
-                  >
-                    <option value="">Sélectionnez la taille</option>
-                    {taillesEntreprise.map((taille) => (
-                      <option key={taille} value={taille}>
-                        {taille}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Tâches répétitives */}
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-3">
-                    Principales tâches répétitives * (plusieurs choix possibles)
-                  </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {tachesRepetitives.map((tache) => (
-                      <button
-                        key={tache}
-                        type="button"
-                        onClick={() => toggleSelection(tache, selectedTaches, setSelectedTaches)}
-                        className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 text-left ${
-                          selectedTaches.includes(tache)
-                            ? "bg-orange-500/20 border-2 border-orange-500 text-white"
-                            : "bg-surface border border-white/10 text-slate-400 hover:border-white/20 hover:text-white"
-                        }`}
-                      >
-                        {tache}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Temps passé */}
-                <Input
-                  label="Temps passé sur ces tâches (heures/semaine) *"
-                  name="temps_taches"
-                  type="number"
-                  min="0"
-                  placeholder="Ex: 10"
-                  required
-                />
-
-                {/* Outils actuels */}
-                <Textarea
-                  label="Outils actuellement utilisés"
-                  name="outils_actuels"
-                  placeholder="Ex: Excel, Google Sheets, CRM Pipedrive, Notion..."
-                  rows={3}
-                />
+                <h4 className="text-lg font-semibold text-white">Vos objectifs</h4>
 
                 {/* Objectifs principaux */}
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-3">
-                    Objectifs principaux * (plusieurs choix possibles)
+                    Que souhaitez-vous améliorer ? * (plusieurs choix possibles)
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {objectifs.map((objectif) => (
@@ -485,30 +396,11 @@ export function CustomCalendar() {
                   </div>
                 </div>
 
-                {/* Urgence */}
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Urgence du projet *
-                  </label>
-                  <select
-                    name="urgence"
-                    required
-                    className="w-full px-4 py-3 bg-surface border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all duration-200"
-                  >
-                    <option value="">Sélectionnez l&apos;urgence</option>
-                    {urgences.map((urgence) => (
-                      <option key={urgence} value={urgence}>
-                        {urgence}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Besoins supplémentaires */}
+                {/* Message optionnel */}
                 <Textarea
-                  label="Décrivez brièvement vos besoins"
+                  label="Message (optionnel)"
                   name="message"
-                  placeholder="Ex: J'aimerais automatiser la gestion de mes emails et la création de devis..."
+                  placeholder="Décrivez-nous brièvement votre situation ou vos besoins spécifiques..."
                   rows={4}
                 />
               </div>

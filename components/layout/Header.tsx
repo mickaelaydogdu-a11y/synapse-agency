@@ -29,7 +29,7 @@ export function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-8">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -43,7 +43,7 @@ export function Header() {
             </div>
 
             {/* CTA */}
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3">
               <Link href="/audit-gratuit">
                 <Button size="sm" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700">
                   <Gift className="w-4 h-4 mr-2" />
@@ -57,19 +57,19 @@ export function Header() {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile/Tablet Menu Button */}
             <button
-              className="md:hidden text-white"
+              className="lg:hidden text-white"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
-          {/* Mobile Navigation */}
+          {/* Mobile/Tablet Navigation */}
           <div
             className={cn(
-              "md:hidden overflow-hidden transition-all duration-300",
+              "lg:hidden overflow-hidden transition-all duration-300",
               isOpen ? "max-h-80 mt-4" : "max-h-0"
             )}
           >
