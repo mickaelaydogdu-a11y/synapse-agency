@@ -27,13 +27,7 @@ export default function Contact() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
-
-    if (!formspreeId || formspreeId === "VOTRE_FORM_ID") {
-      setError("Configuration Formspree manquante. Contactez-nous à contact@synapse-agency.fr");
-      setIsLoading(false);
-      return;
-    }
+    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || "xwvoowze";
 
     try {
       const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
@@ -48,9 +42,20 @@ export default function Contact() {
         setIsSubmitted(true);
         form.reset();
       } else {
-        setError("Une erreur est survenue. Réessayez ou contactez-nous directement.");
+        const data = await response.json();
+        console.error("Formspree error:", data);
+
+        // Vérifier si c'est un problème d'email non vérifié
+        if (data.error && data.error.includes("not confirmed")) {
+          setError("Veuillez vérifier votre email Formspree pour activer le formulaire.");
+        } else if (data.errors) {
+          setError(`Erreur : ${JSON.stringify(data.errors)}`);
+        } else {
+          setError("Une erreur est survenue. Contactez-nous à contact@synapse-agency.fr");
+        }
       }
     } catch (err) {
+      console.error("Fetch error:", err);
       setError("Erreur de connexion. Vérifiez votre connexion internet.");
     } finally {
       setIsLoading(false);
