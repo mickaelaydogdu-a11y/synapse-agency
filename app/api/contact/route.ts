@@ -1,18 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 export const runtime = 'nodejs';
 
-// Configuration SMTP Hostinger
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || 'smtp.hostinger.com',
-  port: parseInt(process.env.SMTP_PORT || '465'),
-  secure: true, // SSL
-  auth: {
-    user: process.env.SMTP_USERNAME || 'contact@synapse-agency.fr',
-    pass: process.env.SMTP_PASSWORD || '',
-  },
-});
+// Configuration Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const serviceLabels: { [key: string]: string } = {
   'agents-ia': 'Agents IA',
@@ -94,18 +86,13 @@ export async function POST(request: NextRequest) {
 </html>
     `;
 
-    // Envoyer l'email
-    await transporter.sendMail({
-      from: `"Synapse Agency - Contact" <${process.env.SMTP_USERNAME || 'contact@synapse-agency.fr'}>`,
+    // Envoyer l'email avec Resend
+    await resend.emails.send({
+      from: 'Synapse Agency - Contact <onboarding@resend.dev>',
       to: process.env.SMTP_TO_EMAIL || 'contact@synapse-agency.fr',
       replyTo: data.email,
       subject: `Nouveau message de contact - ${data.name}`,
       html: htmlContent,
-      // Forcer l'enveloppe SMTP
-      envelope: {
-        from: process.env.SMTP_USERNAME || 'contact@synapse-agency.fr',
-        to: process.env.SMTP_TO_EMAIL || 'contact@synapse-agency.fr',
-      },
     });
 
     return NextResponse.json({
