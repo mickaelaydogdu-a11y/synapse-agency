@@ -136,35 +136,51 @@ export function CustomCalendar() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // Ajouter date et heure au formData
-    formData.set("date_rdv", format(selectedDate!, "dd/MM/yyyy", { locale: fr }));
-    formData.set("heure_rdv", selectedTime!);
-    formData.set("datetime_full", `${format(selectedDate!, "EEEE dd MMMM yyyy", { locale: fr })} à ${selectedTime}`);
+    // Construire l'objet JSON avec toutes les données
+    const data = {
+      date_rdv: format(selectedDate!, "dd/MM/yyyy", { locale: fr }),
+      heure_rdv: selectedTime!,
+      datetime_full: `${format(selectedDate!, "EEEE dd MMMM yyyy", { locale: fr })} à ${selectedTime}`,
+      prenom: formData.get("prenom"),
+      nom: formData.get("nom"),
+      email: formData.get("email"),
+      entreprise: formData.get("entreprise"),
+      telephone: formData.get("telephone") || "",
+      secteur: formData.get("secteur"),
+      taille_entreprise: formData.get("taille_entreprise"),
+      taches_repetitives: selectedTaches.join(", "),
+      temps_taches: formData.get("temps_taches"),
+      outils_actuels: formData.get("outils_actuels") || "",
+      objectifs: selectedObjectifs.join(", "),
+      urgence: formData.get("urgence"),
+      message: formData.get("message") || "",
+    };
 
-    // Ajouter les sélections multiples du questionnaire
-    formData.set("taches_repetitives", selectedTaches.join(", "));
-    formData.set("objectifs", selectedObjectifs.join(", "));
-
-    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || "xwvoowze";
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "/api/audit-booking-simple.php";
 
     try {
-      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+      const response = await fetch(apiUrl, {
         method: "POST",
-        body: formData,
+        body: JSON.stringify(data),
         headers: {
-          Accept: "application/json",
+          "Content-Type": "application/json",
         },
       });
 
       if (response.ok) {
-        setStep("success");
-        form.reset();
-        setSelectedTaches([]);
-        setSelectedObjectifs([]);
+        const result = await response.json();
+        if (result.success) {
+          setStep("success");
+          form.reset();
+          setSelectedTaches([]);
+          setSelectedObjectifs([]);
+        } else {
+          setError(result.error || "Une erreur est survenue");
+        }
       } else {
-        const data = await response.json();
-        console.error("Formspree error:", data);
-        setError("Une erreur est survenue. Contactez-nous à contact@synapse-agency.fr");
+        const errorData = await response.json().catch(() => ({}));
+        console.error("API error:", errorData);
+        setError(errorData.error || "Une erreur est survenue. Contactez-nous à contact@synapse-agency.fr");
       }
     } catch (err) {
       console.error("Fetch error:", err);
