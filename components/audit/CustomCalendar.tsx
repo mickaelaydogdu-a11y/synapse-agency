@@ -19,6 +19,59 @@ const TIME_SLOTS = [
 // Jours de la semaine disponibles (1 = Lundi, 5 = Vendredi)
 const AVAILABLE_DAYS = [1, 2, 3, 4, 5]; // Lundi à Vendredi
 
+// Questions du questionnaire pré-audit
+const secteurs = [
+  "E-commerce",
+  "Services B2B",
+  "Services B2C",
+  "Industrie",
+  "Santé",
+  "Finance",
+  "Immobilier",
+  "Marketing/Communication",
+  "Formation/Éducation",
+  "Autre",
+];
+
+const taillesEntreprise = [
+  "1-5 employés",
+  "6-10 employés",
+  "11-50 employés",
+  "51-200 employés",
+  "200+ employés",
+];
+
+const tachesRepetitives = [
+  "Gestion des emails",
+  "Création de devis/factures",
+  "Saisie de données",
+  "Réponses aux clients",
+  "Rédaction de contenus",
+  "Planification/Organisation",
+  "Recherche d'informations",
+  "Reporting/Tableaux de bord",
+  "Gestion administrative",
+  "Autre",
+];
+
+const objectifs = [
+  "Gagner du temps",
+  "Réduire les coûts",
+  "Améliorer la qualité",
+  "Automatiser les processus",
+  "Améliorer l'expérience client",
+  "Augmenter la productivité",
+  "Se concentrer sur le cœur de métier",
+];
+
+const urgences = [
+  "Immédiat (< 1 mois)",
+  "Court terme (1-3 mois)",
+  "Moyen terme (3-6 mois)",
+  "Long terme (6-12 mois)",
+  "Exploration / Pas urgent",
+];
+
 export function CustomCalendar() {
   const [currentWeek, setCurrentWeek] = useState(startOfWeek(new Date(), { weekStartsOn: 1 }));
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -26,6 +79,8 @@ export function CustomCalendar() {
   const [step, setStep] = useState<"date" | "time" | "form" | "success">("date");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [selectedTaches, setSelectedTaches] = useState<string[]>([]);
+  const [selectedObjectifs, setSelectedObjectifs] = useState<string[]>([]);
 
   // Générer les jours de la semaine
   const weekDays = Array.from({ length: 7 }, (_, i) => addDays(currentWeek, i));
@@ -52,10 +107,31 @@ export function CustomCalendar() {
     setStep("form");
   };
 
+  const toggleSelection = (value: string, list: string[], setter: (list: string[]) => void) => {
+    if (list.includes(value)) {
+      setter(list.filter((item) => item !== value));
+    } else {
+      setter([...list, value]);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     setError("");
+
+    // Validation des sélections multiples
+    if (selectedTaches.length === 0) {
+      setError("Veuillez sélectionner au moins une tâche répétitive");
+      setIsLoading(false);
+      return;
+    }
+
+    if (selectedObjectifs.length === 0) {
+      setError("Veuillez sélectionner au moins un objectif");
+      setIsLoading(false);
+      return;
+    }
 
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -64,6 +140,10 @@ export function CustomCalendar() {
     formData.set("date_rdv", format(selectedDate!, "dd/MM/yyyy", { locale: fr }));
     formData.set("heure_rdv", selectedTime!);
     formData.set("datetime_full", `${format(selectedDate!, "EEEE dd MMMM yyyy", { locale: fr })} à ${selectedTime}`);
+
+    // Ajouter les sélections multiples du questionnaire
+    formData.set("taches_repetitives", selectedTaches.join(", "));
+    formData.set("objectifs", selectedObjectifs.join(", "));
 
     const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || "xwvoowze";
 
@@ -79,6 +159,8 @@ export function CustomCalendar() {
       if (response.ok) {
         setStep("success");
         form.reset();
+        setSelectedTaches([]);
+        setSelectedObjectifs([]);
       } else {
         const data = await response.json();
         console.error("Formspree error:", data);
@@ -253,26 +335,159 @@ export function CustomCalendar() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <Input label="Prénom *" name="prenom" placeholder="Jean" required />
-                <Input label="Nom *" name="nom" placeholder="Dupont" required />
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Informations de contact */}
+              <div className="space-y-4">
+                <h4 className="text-lg font-semibold text-white">Vos coordonnées</h4>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Input label="Prénom *" name="prenom" placeholder="Jean" required />
+                  <Input label="Nom *" name="nom" placeholder="Dupont" required />
+                </div>
+                <Input
+                  label="Email professionnel *"
+                  name="email"
+                  type="email"
+                  placeholder="jean@entreprise.fr"
+                  required
+                />
+                <Input label="Entreprise *" name="entreprise" placeholder="Nom de votre entreprise" required />
+                <Input label="Téléphone" name="telephone" type="tel" placeholder="+33 6 12 34 56 78" />
               </div>
-              <Input
-                label="Email professionnel *"
-                name="email"
-                type="email"
-                placeholder="jean@entreprise.fr"
-                required
-              />
-              <Input label="Entreprise *" name="entreprise" placeholder="Nom de votre entreprise" required />
-              <Input label="Téléphone" name="telephone" type="tel" placeholder="+33 6 12 34 56 78" />
-              <Textarea
-                label="Décrivez brièvement vos besoins"
-                name="message"
-                placeholder="Ex: J'aimerais automatiser la gestion de mes emails et la création de devis..."
-                rows={4}
-              />
+
+              {/* Questionnaire */}
+              <div className="space-y-4 pt-4 border-t border-white/10">
+                <h4 className="text-lg font-semibold text-white">Votre situation</h4>
+
+                {/* Secteur d'activité */}
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                    Secteur d&apos;activité *
+                  </label>
+                  <select
+                    name="secteur"
+                    required
+                    className="w-full px-4 py-3 bg-surface border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all duration-200"
+                  >
+                    <option value="">Sélectionnez votre secteur</option>
+                    {secteurs.map((secteur) => (
+                      <option key={secteur} value={secteur}>
+                        {secteur}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Taille entreprise */}
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                    Taille de votre entreprise *
+                  </label>
+                  <select
+                    name="taille_entreprise"
+                    required
+                    className="w-full px-4 py-3 bg-surface border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all duration-200"
+                  >
+                    <option value="">Sélectionnez la taille</option>
+                    {taillesEntreprise.map((taille) => (
+                      <option key={taille} value={taille}>
+                        {taille}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Tâches répétitives */}
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-3">
+                    Principales tâches répétitives * (plusieurs choix possibles)
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {tachesRepetitives.map((tache) => (
+                      <button
+                        key={tache}
+                        type="button"
+                        onClick={() => toggleSelection(tache, selectedTaches, setSelectedTaches)}
+                        className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 text-left ${
+                          selectedTaches.includes(tache)
+                            ? "bg-orange-500/20 border-2 border-orange-500 text-white"
+                            : "bg-surface border border-white/10 text-slate-400 hover:border-white/20 hover:text-white"
+                        }`}
+                      >
+                        {tache}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Temps passé */}
+                <Input
+                  label="Temps passé sur ces tâches (heures/semaine) *"
+                  name="temps_taches"
+                  type="number"
+                  min="0"
+                  placeholder="Ex: 10"
+                  required
+                />
+
+                {/* Outils actuels */}
+                <Textarea
+                  label="Outils actuellement utilisés"
+                  name="outils_actuels"
+                  placeholder="Ex: Excel, Google Sheets, CRM Pipedrive, Notion..."
+                  rows={3}
+                />
+
+                {/* Objectifs principaux */}
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-3">
+                    Objectifs principaux * (plusieurs choix possibles)
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {objectifs.map((objectif) => (
+                      <button
+                        key={objectif}
+                        type="button"
+                        onClick={() => toggleSelection(objectif, selectedObjectifs, setSelectedObjectifs)}
+                        className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 text-left ${
+                          selectedObjectifs.includes(objectif)
+                            ? "bg-orange-500/20 border-2 border-orange-500 text-white"
+                            : "bg-surface border border-white/10 text-slate-400 hover:border-white/20 hover:text-white"
+                        }`}
+                      >
+                        {objectif}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Urgence */}
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                    Urgence du projet *
+                  </label>
+                  <select
+                    name="urgence"
+                    required
+                    className="w-full px-4 py-3 bg-surface border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all duration-200"
+                  >
+                    <option value="">Sélectionnez l&apos;urgence</option>
+                    {urgences.map((urgence) => (
+                      <option key={urgence} value={urgence}>
+                        {urgence}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Besoins supplémentaires */}
+                <Textarea
+                  label="Décrivez brièvement vos besoins"
+                  name="message"
+                  placeholder="Ex: J'aimerais automatiser la gestion de mes emails et la création de devis..."
+                  rows={4}
+                />
+              </div>
+
               <Button
                 type="submit"
                 size="lg"

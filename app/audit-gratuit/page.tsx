@@ -33,10 +33,10 @@ const benefits = [
 
 const steps = [
   { number: "1", title: "Réservez votre créneau", description: "Choisissez votre moment sur le calendrier" },
-  { number: "2", title: "Remplissez le questionnaire", description: "7 questions pour personnaliser votre audit" },
+  { number: "2", title: "Complétez le formulaire", description: "Vos informations et votre situation" },
   { number: "3", title: "Recevez la confirmation", description: "Email avec le lien de visioconférence" },
   { number: "4", title: "Échange de 30 minutes", description: "Discutez de vos besoins et opportunités IA" },
-  { number: "5", title: "Recevez votre audit", description: "Plan d'action personnalisé sous 24h" },
+  { number: "5", title: "Recevez votre audit", description: "Plan d'action personnalisé sous 48h" },
 ];
 
 export default function AuditGratuit() {
@@ -162,29 +162,6 @@ export default function AuditGratuit() {
             </div>
 
             <CustomCalendar />
-
-            {/* Bouton vers le questionnaire */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="mt-8 text-center"
-            >
-              <p className="text-slate-400 mb-4">
-                Une fois votre rendez-vous réservé, remplissez le questionnaire pré-audit
-              </p>
-              <Link href="/audit-gratuit/questionnaire">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-orange-500/30 text-orange-400 hover:bg-orange-500/10"
-                >
-                  Accéder au questionnaire
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
-            </motion.div>
           </motion.div>
         </div>
       </section>
