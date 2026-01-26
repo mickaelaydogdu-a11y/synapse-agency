@@ -167,20 +167,29 @@ export function CustomCalendar() {
         },
       });
 
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success) {
+      let result;
+      try {
+        result = await response.json();
+      } catch (parseError) {
+        console.error("JSON parse error:", parseError);
+        // Si l'email est envoyé mais qu'il y a une erreur de parsing, on considère que c'est un succès
+        if (response.ok || response.status === 200) {
           setStep("success");
           form.reset();
           setSelectedTaches([]);
           setSelectedObjectifs([]);
-        } else {
-          setError(result.error || "Une erreur est survenue");
+          return;
         }
+        throw new Error("Erreur de format de réponse");
+      }
+
+      if (response.ok && result.success) {
+        setStep("success");
+        form.reset();
+        setSelectedTaches([]);
+        setSelectedObjectifs([]);
       } else {
-        const errorData = await response.json().catch(() => ({}));
-        console.error("API error:", errorData);
-        setError(errorData.error || "Une erreur est survenue. Contactez-nous à contact@synapse-agency.fr");
+        setError(result.error || "Une erreur est survenue. Contactez-nous à contact@synapse-agency.fr");
       }
     } catch (err) {
       console.error("Fetch error:", err);
