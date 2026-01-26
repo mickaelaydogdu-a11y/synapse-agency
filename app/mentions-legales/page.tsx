@@ -40,13 +40,12 @@ export default function MentionsLegales() {
                 <h2 className="text-2xl font-bold text-white mb-4">1. Éditeur du site</h2>
                 <div className="text-slate-300 space-y-2">
                   <p><strong className="text-white">Raison sociale :</strong> Synapse Agency</p>
-                  <p><strong className="text-white">Forme juridique :</strong> [À compléter]</p>
+                  <p><strong className="text-white">Forme juridique :</strong> Entreprise individuelle</p>
                   <p><strong className="text-white">Siège social :</strong> 21 grande place, 77640 Jouarre, France</p>
-                  <p><strong className="text-white">SIRET :</strong> [À compléter]</p>
-                  <p><strong className="text-white">Numéro de TVA :</strong> [À compléter]</p>
+                  <p><strong className="text-white">SIRET :</strong> En cours d&apos;attribution</p>
                   <p><strong className="text-white">Email :</strong> contact@synapse-agency.fr</p>
                   <p><strong className="text-white">Téléphone :</strong> 06 32 54 55 78</p>
-                  <p><strong className="text-white">Directeur de la publication :</strong> [Nom à compléter]</p>
+                  <p><strong className="text-white">Directeur de la publication :</strong> Mickael Aydogdu</p>
                 </div>
               </section>
 
@@ -54,9 +53,8 @@ export default function MentionsLegales() {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-4">2. Hébergement</h2>
                 <div className="text-slate-300 space-y-2">
-                  <p><strong className="text-white">Hébergeur :</strong> Vercel Inc.</p>
-                  <p><strong className="text-white">Adresse :</strong> 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</p>
-                  <p><strong className="text-white">Site web :</strong> www.vercel.com</p>
+                  <p><strong className="text-white">Hébergeur :</strong> Leviia</p>
+                  <p><strong className="text-white">Site web :</strong> www.leviia.com</p>
                 </div>
               </section>
 
