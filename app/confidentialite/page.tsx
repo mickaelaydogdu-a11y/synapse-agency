@@ -133,17 +133,57 @@ export default function Confidentialite() {
 
               {/* Cookies */}
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">8. Cookies</h2>
-                <p className="text-slate-300">
+                <h2 className="text-2xl font-bold text-white mb-4">8. Cookies et technologies similaires</h2>
+                <p className="text-slate-300 mb-4">
                   Notre site utilise des cookies pour améliorer votre expérience de navigation. Les cookies sont
-                  de petits fichiers texte stockés sur votre appareil. Vous pouvez configurer votre navigateur
-                  pour refuser les cookies, mais certaines fonctionnalités du site pourraient ne plus être disponibles.
+                  de petits fichiers texte stockés sur votre appareil lors de votre visite. Ils permettent au site
+                  de mémoriser vos actions et préférences.
                 </p>
-                <p className="text-slate-300 mt-4">Types de cookies utilisés :</p>
+
+                <h3 className="text-lg font-semibold text-white mb-3 mt-6">Types de cookies utilisés :</h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-white font-medium mb-2">🔒 Cookies essentiels (obligatoires)</h4>
+                    <p className="text-slate-300 text-sm">
+                      Ces cookies sont nécessaires au fonctionnement du site. Ils vous permettent de naviguer sur
+                      le site et d&apos;utiliser ses fonctionnalités. Ils incluent le cookie de consentement qui mémorise
+                      votre choix concernant les cookies.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-white font-medium mb-2">📊 Cookies de performance et analytiques</h4>
+                    <p className="text-slate-300 text-sm">
+                      Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site en
+                      collectant et analysant des informations de manière anonyme. Ils nous permettent d&apos;améliorer
+                      le fonctionnement du site.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-white font-medium mb-2">⚙️ Cookies fonctionnels</h4>
+                    <p className="text-slate-300 text-sm">
+                      Ces cookies permettent au site de mémoriser vos choix (comme votre langue ou votre région)
+                      pour vous offrir une expérience plus personnalisée.
+                    </p>
+                  </div>
+                </div>
+
+                <h3 className="text-lg font-semibold text-white mb-3 mt-6">Gestion de vos préférences :</h3>
+                <p className="text-slate-300">
+                  Lors de votre première visite, une bannière vous demande votre consentement pour l&apos;utilisation
+                  des cookies non essentiels. Vous pouvez à tout moment :
+                </p>
                 <ul className="list-disc list-inside text-slate-300 space-y-2 mt-2">
-                  <li><strong className="text-white">Cookies essentiels :</strong> nécessaires au fonctionnement du site</li>
-                  <li><strong className="text-white">Cookies analytiques :</strong> pour comprendre l&apos;utilisation du site</li>
+                  <li>Modifier vos préférences en supprimant les cookies de votre navigateur</li>
+                  <li>Configurer votre navigateur pour bloquer les cookies</li>
+                  <li>Retirer votre consentement en effaçant les données de navigation</li>
                 </ul>
+
+                <p className="text-slate-300 mt-4 text-sm italic">
+                  Note : Le blocage de certains cookies peut affecter votre expérience de navigation et limiter
+                  l&apos;accès à certaines fonctionnalités du site.
+                </p>
               </section>
 
               {/* Transferts */}

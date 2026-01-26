@@ -90,12 +90,23 @@ export default function MentionsLegales() {
 
               {/* Cookies */}
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">5. Cookies</h2>
-                <p className="text-slate-300">
-                  Le site peut collecter automatiquement des informations standards. Toutes les informations
-                  collectées indirectement ne seront utilisées que pour suivre le volume, le type et la configuration
-                  du trafic utilisant ce site, pour en développer la conception et l&apos;agencement et à d&apos;autres fins
-                  administratives et de planification et plus généralement pour améliorer le service que nous vous offrons.
+                <h2 className="text-2xl font-bold text-white mb-4">5. Cookies et données personnelles</h2>
+                <p className="text-slate-300 mb-4">
+                  Le site utilise des cookies pour améliorer votre expérience de navigation. Un cookie est un petit
+                  fichier texte stocké sur votre ordinateur lors de votre visite sur notre site.
+                </p>
+
+                <h3 className="text-lg font-semibold text-white mb-3 mt-4">Types de cookies utilisés :</h3>
+                <ul className="text-slate-300 space-y-2 list-disc list-inside">
+                  <li><strong className="text-white">Cookies essentiels :</strong> Nécessaires au fonctionnement du site (mémorisation de votre choix de cookies)</li>
+                  <li><strong className="text-white">Cookies de performance :</strong> Nous permettent d&apos;analyser l&apos;utilisation du site pour améliorer votre expérience</li>
+                  <li><strong className="text-white">Cookies fonctionnels :</strong> Permettent de mémoriser vos préférences et paramètres</li>
+                </ul>
+
+                <p className="text-slate-300 mt-4">
+                  Vous pouvez à tout moment modifier vos préférences de cookies en supprimant les données de votre
+                  navigateur. Pour plus d&apos;informations, consultez notre{" "}
+                  <a href="/confidentialite" className="text-primary hover:underline">politique de confidentialité</a>.
                 </p>
               </section>
 
