@@ -156,7 +156,7 @@ export function CustomCalendar() {
       message: formData.get("message") || "",
     };
 
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "/api/audit-booking-simple.php";
+    const apiUrl = "/api/audit-booking";
 
     try {
       const response = await fetch(apiUrl, {

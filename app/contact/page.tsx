@@ -37,7 +37,7 @@ export default function Contact() {
       message: formData.get("message"),
     };
 
-    const apiUrl = process.env.NEXT_PUBLIC_CONTACT_API_URL || "/api/contact.php";
+    const apiUrl = "/api/contact";
 
     try {
       const response = await fetch(apiUrl, {
