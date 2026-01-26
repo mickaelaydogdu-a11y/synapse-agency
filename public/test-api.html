@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API Synapse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #0f1419;
+            color: #fff;
+        }
+        button {
+            background: #f97316;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #ea580c;
+        }
+        .result {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .success { color: #22c55e; }
+        .error { color: #ef4444; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test des API Synapse Agency</h1>
+
+    <div>
+        <button onclick="testContact()">Tester Contact</button>
+        <button onclick="testAudit()">Tester Audit</button>
+    </div>
+
+    <div id="result" class="result"></div>
+
+    <script>
+        const resultDiv = document.getElementById('result');
+
+        async function testContact() {
+            resultDiv.innerHTML = '⏳ Test de l\'endpoint Contact en cours...';
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: 'Test User',
+                        email: 'test@test.com',
+                        company: 'Test Corp',
+                        service: 'agents-ia',
+                        message: 'Ceci est un message de test depuis le navigateur.'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    resultDiv.innerHTML = `<div class="success">✅ Contact endpoint: SUCCESS</div><pre>${JSON.stringify(data, null, 2)}</pre>`;
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ Contact endpoint: FAILED (${response.status})</div><pre>${JSON.stringify(data, null, 2)}</pre>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ Erreur: ${error.message}</div>`;
+            }
+        }
+
+        async function testAudit() {
+            resultDiv.innerHTML = '⏳ Test de l\'endpoint Audit en cours...';
+
+            try {
+                const response = await fetch('/api/audit-booking', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        prenom: 'Jean',
+                        nom: 'Dupont',
+                        email: 'jean@test.com',
+                        entreprise: 'Test SA',
+                        telephone: '0612345678',
+                        date_rdv: '26/01/2026',
+                        heure_rdv: '10:00',
+                        datetime_full: 'Lundi 26 janvier 2026 à 10:00',
+                        secteur: 'E-commerce',
+                        taille_entreprise: '1-5 employés',
+                        taches_repetitives: 'Gestion des emails, Création de devis',
+                        temps_taches: '10',
+                        outils_actuels: 'Excel, Gmail',
+                        objectifs: 'Gagner du temps, Automatiser les processus',
+                        urgence: 'Court terme (1-3 mois)',
+                        message: 'Ceci est un message de test depuis le navigateur.'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    resultDiv.innerHTML = `<div class="success">✅ Audit endpoint: SUCCESS</div><pre>${JSON.stringify(data, null, 2)}</pre>`;
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ Audit endpoint: FAILED (${response.status})</div><pre>${JSON.stringify(data, null, 2)}</pre>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ Erreur: ${error.message}</div>`;
+            }
+        }
+    </script>
+</body>
+</html>
