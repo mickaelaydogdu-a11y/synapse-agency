@@ -33,8 +33,8 @@ export function Hero() {
           transition={{ delay: 0.1 }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance"
         >
-          Transformez votre entreprise avec{" "}
-          <span className="gradient-text">l&apos;intelligence artificielle</span>
+          <span className="gradient-text">L&apos;IA, enfin simple et utile</span>{" "}
+          pour votre entreprise
         </motion.h1>
 
         {/* Subtitle */}
@@ -44,8 +44,7 @@ export function Hero() {
           transition={{ delay: 0.2 }}
           className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10"
         >
-          Agents IA, solutions sur mesure et applications modernes.
-          Nous créons les outils qui vous font gagner du temps et de l&apos;argent.
+          Automatisez les tâches répétitives et libérez du temps pour ce qui compte vraiment.
         </motion.p>
 
         {/* CTAs */}
