@@ -18,13 +18,43 @@ const services = [
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setIsLoading(false);
-    setIsSubmitted(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+
+    if (!formspreeId || formspreeId === "VOTRE_FORM_ID") {
+      setError("Configuration Formspree manquante. Contactez-nous à contact@synapse-agency.fr");
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        form.reset();
+      } else {
+        setError("Une erreur est survenue. Réessayez ou contactez-nous directement.");
+      }
+    } catch (err) {
+      setError("Erreur de connexion. Vérifiez votre connexion internet.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -124,6 +154,11 @@ export default function Contact() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {error && (
+                      <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm">
+                        {error}
+                      </div>
+                    )}
                     <div className="grid md:grid-cols-2 gap-6">
                       <Input
                         label="Nom *"
