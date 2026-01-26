@@ -98,17 +98,31 @@ export async function POST(request: NextRequest) {
     `;
 
     // Envoyer l'email avec Resend
-    await resend.emails.send({
-      from: 'Synapse Agency - Audit <contact@synapse-agency.fr>',
+    const { data: emailData, error: emailError } = await resend.emails.send({
+      from: 'Synapse Agency - Audit <contact@updates.synapse-agency.fr>',
       to: 'contact@synapse-agency.fr',
       replyTo: data.email,
       subject: `Nouvelle demande d'audit - ${data.prenom} ${data.nom}`,
       html: htmlContent,
     });
 
+    if (emailError) {
+      console.error('Erreur Resend:', emailError);
+      return NextResponse.json(
+        {
+          error: 'Erreur lors de l\'envoi de l\'email',
+          details: emailError.message,
+        },
+        { status: 500 }
+      );
+    }
+
+    console.log('Email envoyé avec succès:', emailData);
+
     return NextResponse.json({
       success: true,
       message: 'Email envoyé avec succès',
+      emailId: emailData?.id,
     });
 
   } catch (error) {
