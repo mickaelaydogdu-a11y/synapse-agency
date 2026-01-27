@@ -15,7 +15,7 @@ export function Hero() {
           src="/images/Home-Synapse-agency.png"
           alt="Synapse Agency - IA pour votre entreprise"
           fill
-          className="object-cover object-right lg:object-center"
+          className="object-cover object-center"
           priority
         />
         {/* Overlay gradient */}
