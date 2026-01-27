@@ -279,24 +279,6 @@ export default function AgentsIA() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-surface">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Prêt à automatiser votre support ?
-          </h2>
-          <p className="text-slate-400 mb-8">
-            Obtenez une démo personnalisée et un devis adapté à vos besoins.
-          </p>
-          <Link href="/contact">
-            <Button size="lg">
-              Demander une démo
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }
