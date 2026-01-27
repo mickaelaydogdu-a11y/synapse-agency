@@ -33,8 +33,8 @@ export function Hero() {
           transition={{ delay: 0.1 }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance"
         >
-          <span className="gradient-text">L&apos;IA, enfin simple et utile</span>{" "}
-          pour votre entreprise
+          <span className="gradient-text">Déléguez à l&apos;IA</span>{" "}
+          ce qui vous ralentit.
         </motion.h1>
 
         {/* Subtitle */}
@@ -44,7 +44,7 @@ export function Hero() {
           transition={{ delay: 0.2 }}
           className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10"
         >
-          Automatisez les tâches répétitives et libérez du temps pour ce qui compte vraiment.
+          Automatisez, simplifiez et gagnez du temps.
         </motion.p>
 
         {/* CTAs */}
