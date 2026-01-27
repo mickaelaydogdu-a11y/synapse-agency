@@ -25,7 +25,9 @@ export function Header() {
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                 <span className="text-white font-bold text-xl">S</span>
               </div>
-              <span className="text-xl font-bold text-white">Synapse</span>
+              <span className="text-xl font-bold text-white">
+                Synapse <span className="text-primary">Agency</span>
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
