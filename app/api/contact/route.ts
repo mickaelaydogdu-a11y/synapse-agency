@@ -61,23 +61,23 @@ export async function POST(request: NextRequest) {
 <body>
     <div class='container'>
         <div class='header'>
-            <h2>📧 Nouveau message de contact</h2>
+            <h2>Nouveau message de contact</h2>
         </div>
         <div class='content'>
             <div class='section'>
-                <h3>👤 Coordonnées</h3>
+                <h3>Coordonnées</h3>
                 <div class='field'><span class='label'>Nom :</span> <span class='value'>${data.name}</span></div>
                 <div class='field'><span class='label'>Email :</span> <span class='value'>${data.email}</span></div>
                 <div class='field'><span class='label'>Entreprise :</span> <span class='value'>${data.company || 'Non renseigné'}</span></div>
             </div>
 
             <div class='section'>
-                <h3>🎯 Service demandé</h3>
+                <h3>Service demandé</h3>
                 <div class='field'><span class='value'>${serviceLabel}</span></div>
             </div>
 
             <div class='section'>
-                <h3>💬 Message</h3>
+                <h3>Message</h3>
                 <div class='field'><span class='value'>${data.message.replace(/\n/g, '<br>')}</span></div>
             </div>
         </div>

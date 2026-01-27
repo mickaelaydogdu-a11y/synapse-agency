@@ -54,16 +54,16 @@ export async function POST(request: NextRequest) {
 <body>
     <div class='container'>
         <div class='header'>
-            <h2>📅 Nouvelle demande d'audit gratuit</h2>
+            <h2>Nouvelle demande d'audit gratuit</h2>
         </div>
         <div class='content'>
             <div class='section'>
-                <h3>📌 Rendez-vous</h3>
+                <h3>Rendez-vous</h3>
                 <div class='field'><span class='label'>Date et heure :</span> <span class='value'>${data.datetime_full}</span></div>
             </div>
 
             <div class='section'>
-                <h3>👤 Informations de contact</h3>
+                <h3>Informations de contact</h3>
                 <div class='field'><span class='label'>Prénom :</span> <span class='value'>${data.prenom}</span></div>
                 <div class='field'><span class='label'>Nom :</span> <span class='value'>${data.nom}</span></div>
                 <div class='field'><span class='label'>Email :</span> <span class='value'>${data.email}</span></div>
@@ -72,12 +72,12 @@ export async function POST(request: NextRequest) {
             </div>
 
             <div class='section'>
-                <h3>🎯 Objectifs</h3>
+                <h3>Objectifs</h3>
                 <div class='field'><span class='value'>${data.objectifs}</span></div>
             </div>
 
             <div class='section'>
-                <h3>💬 Message</h3>
+                <h3>Message</h3>
                 <div class='field'><span class='value'>${data.message ? data.message.replace(/\n/g, '<br>') : 'Aucun message supplémentaire'}</span></div>
             </div>
         </div>
