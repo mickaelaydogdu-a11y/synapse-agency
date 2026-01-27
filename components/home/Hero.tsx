@@ -3,17 +3,25 @@
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background" />
-
-      {/* Animated orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "1s" }} />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/Home-Synapse-agency.png"
+          alt="Synapse Agency - IA pour votre entreprise"
+          fill
+          className="object-cover object-right lg:object-center"
+          priority
+        />
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/40" />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-6 text-center">
         {/* Badge */}
