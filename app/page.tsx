@@ -1,4 +1,4 @@
-import { Hero, WhyAI, Services, AuditSection, CTA } from "@/components/home";
+import { Hero, WhyAI, Services, AuditSection } from "@/components/home";
 
 export default function Home() {
   return (
@@ -7,7 +7,6 @@ export default function Home() {
       <WhyAI />
       <Services />
       <AuditSection />
-      <CTA />
     </main>
   );
 }

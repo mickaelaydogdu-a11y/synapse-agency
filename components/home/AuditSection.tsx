@@ -21,7 +21,7 @@ export function AuditSection() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
               <Gift className="w-4 h-4 text-orange-400" />
-              <span className="text-sm text-orange-400">Offre exclusive</span>
+              <span className="text-sm text-orange-400">Offre 2026</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -84,7 +84,7 @@ export function AuditSection() {
                     <p className="text-xs text-slate-500">Engagement</p>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-orange-400">24h</div>
+                    <div className="text-2xl font-bold text-orange-400">48h</div>
                     <p className="text-xs text-slate-500">Réponse</p>
                   </div>
                 </div>
