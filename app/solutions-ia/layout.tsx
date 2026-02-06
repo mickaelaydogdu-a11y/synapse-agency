@@ -31,6 +31,15 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: "https://synapse-agency.fr" },
+    { "@type": "ListItem", position: 2, name: "Solutions IA", item: "https://synapse-agency.fr/solutions-ia" },
+  ],
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -64,6 +73,10 @@ export default function SolutionsIALayout({
 }) {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
