@@ -31,7 +31,7 @@ export function CookieBanner() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 animate-in slide-in-from-bottom duration-300">
       <div className="max-w-6xl mx-auto">
-        <div className="glass rounded-2xl p-6 border border-white/10 shadow-2xl">
+        <div className="bg-slate-900 rounded-2xl p-6 border border-slate-700 shadow-2xl">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
             {/* Icon */}
             <div className="flex-shrink-0">
