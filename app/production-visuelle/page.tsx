@@ -65,7 +65,7 @@ export default function ProductionVisuelle() {
   return (
     <main>
       {/* Hero with Background Image */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[auto] lg:min-h-screen flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -78,7 +78,7 @@ export default function ProductionVisuelle() {
           <div className="absolute inset-0 bg-black/30" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-32">
+        <div className="relative max-w-7xl mx-auto px-6 py-24 pt-28 lg:py-32">
           <div className="flex justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

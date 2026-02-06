@@ -5,6 +5,7 @@ import { Cpu, FileSearch, Wand2, FolderKanban, BarChart3, Layers, ArrowRight, Ch
 import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
 
 const solutionFeatures = [
   {
@@ -114,7 +115,7 @@ export default function SolutionsIA() {
   return (
     <main>
       {/* Hero with Background Image */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[auto] lg:min-h-screen flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -127,7 +128,7 @@ export default function SolutionsIA() {
           <div className="absolute inset-0 bg-black/30" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-32">
+        <div className="relative max-w-7xl mx-auto px-6 py-24 pt-28 lg:py-32">
           <div className="flex justify-center">
             {/* Text Content */}
             <motion.div
@@ -216,15 +217,10 @@ export default function SolutionsIA() {
 
       {/* Agent Types */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/bureau-telephone.jpg"
-            alt="Bureau téléphone"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30" />
-        </div>
+        <ParallaxImage
+          src="/images/bureau-telephone.jpg"
+          alt="Bureau téléphone"
+        />
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <Badge className="mb-4 inline-flex">
