@@ -1,28 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, CheckCircle, Lightbulb, Target, Calendar, Gift, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Clock, CheckCircle, Lightbulb, Target, Calendar, Gift, Cpu, Smartphone, Camera } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { CustomCalendar } from "@/components/audit";
 
 const benefits = [
   {
     icon: Target,
     title: "Analyse personnalisée",
-    description: "Nous analysons vos processus actuels et identifions les opportunités d'automatisation."
+    description: "Nous analysons vos besoins et identifions les solutions digitales adaptées à votre activité."
   },
   {
     icon: Lightbulb,
     title: "Recommandations concrètes",
-    description: "Vous repartez avec des solutions IA adaptées à votre métier et votre budget."
+    description: "Vous repartez avec des pistes de solutions adaptées à votre métier et votre budget."
   },
   {
     icon: Clock,
     title: "Gain de temps estimé",
-    description: "Nous calculons le temps que vous pourriez économiser chaque semaine."
+    description: "Nous évaluons l'impact potentiel sur votre productivité et votre image."
   },
   {
     icon: Gift,
@@ -31,12 +29,33 @@ const benefits = [
   },
 ];
 
+const services = [
+  {
+    icon: Cpu,
+    title: "Solutions IA",
+    description: "Automatisation, agents conversationnels, extraction de données",
+    color: "from-secondary to-cyan-400",
+  },
+  {
+    icon: Smartphone,
+    title: "Applications",
+    description: "Web, mobile, portails clients, outils métier sur mesure",
+    color: "from-accent to-purple-400",
+  },
+  {
+    icon: Camera,
+    title: "Production Visuelle",
+    description: "Photo, vidéo, drone pour valoriser votre image",
+    color: "from-violet-500 to-pink-400",
+  },
+];
+
 const steps = [
   { number: "1", title: "Réservez votre créneau", description: "Choisissez votre moment sur le calendrier" },
-  { number: "2", title: "Complétez le formulaire", description: "Vos informations et votre situation" },
+  { number: "2", title: "Complétez le formulaire", description: "Vos informations et votre projet" },
   { number: "3", title: "Recevez la confirmation", description: "Email avec le lien de visioconférence" },
-  { number: "4", title: "Échange de 30 minutes", description: "Discutez de vos besoins et opportunités IA" },
-  { number: "5", title: "Recevez votre audit", description: "Plan d'action personnalisé sous 48h" },
+  { number: "4", title: "Échange de 30 minutes", description: "Discutez de vos besoins et objectifs" },
+  { number: "5", title: "Recevez nos recommandations", description: "Propositions personnalisées sous 48h" },
 ];
 
 export default function AuditGratuit() {
@@ -44,9 +63,9 @@ export default function AuditGratuit() {
     <main className="pt-24">
       {/* Hero */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-orange-500/10 via-background to-background" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-6 relative">
           <motion.div
@@ -54,42 +73,78 @@ export default function AuditGratuit() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <Badge className="mb-6 bg-orange-500/20 text-orange-400 border-orange-500/30">
+            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
               <Gift className="w-4 h-4 mr-2" />
-              Audit gratuit - 30 minutes
+              Consultation gratuite - 30 minutes
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Découvrez en 30 minutes comment <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                l&apos;IA peut devenir votre meilleur allié
-              </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+              Échangeons sur votre <br />
+              <span className="gradient-text">projet digital</span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-              Un échange gratuit et sans engagement pour identifier les opportunités
-              d&apos;automatisation dans votre entreprise.
+            <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10">
+              30 minutes pour découvrir comment nous pouvons vous aider à développer
+              votre activité grâce au digital : IA, applications ou production visuelle.
             </p>
-            <div className="flex items-center justify-center gap-2 text-slate-300">
-              <Clock className="w-5 h-5 text-orange-400" />
-              <span>30 minutes</span>
-              <span className="mx-2">•</span>
-              <CheckCircle className="w-5 h-5 text-green-400" />
-              <span>100% gratuit</span>
-              <span className="mx-2">•</span>
-              <Calendar className="w-5 h-5 text-primary" />
-              <span>En visio</span>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-slate-600">
+              <div className="flex items-center gap-2">
+                <Clock className="w-5 h-5 text-primary" />
+                <span>30 minutes</span>
+              </div>
+              <span className="hidden sm:inline mx-2">•</span>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-green-400" />
+                <span>100% gratuit</span>
+              </div>
+              <span className="hidden sm:inline mx-2">•</span>
+              <div className="flex items-center gap-2">
+                <Calendar className="w-5 h-5 text-secondary" />
+                <span>En visio</span>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Services concernés */}
       <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Un échange pour tous vos projets
+            </h2>
+            <p className="text-slate-600">Quel que soit votre besoin, nous pouvons en discuter</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="h-full text-center">
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mx-auto mb-4`}>
+                    <service.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{service.title}</h3>
+                  <p className="text-slate-600 text-sm">{service.description}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Ce que vous obtenez
             </h2>
-            <p className="text-slate-400">Un audit complet et personnalisé de votre potentiel IA</p>
+            <p className="text-slate-600">Un échange de valeur, sans engagement</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -102,11 +157,11 @@ export default function AuditGratuit() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full text-center">
-                  <div className="w-14 h-14 rounded-xl bg-orange-500/20 flex items-center justify-center mx-auto mb-4">
-                    <benefit.icon className="w-7 h-7 text-orange-400" />
+                  <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
+                    <benefit.icon className="w-7 h-7 text-primary" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{benefit.title}</h3>
-                  <p className="text-slate-400 text-sm">{benefit.description}</p>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{benefit.title}</h3>
+                  <p className="text-slate-600 text-sm">{benefit.description}</p>
                 </Card>
               </motion.div>
             ))}
@@ -115,10 +170,10 @@ export default function AuditGratuit() {
       </section>
 
       {/* Steps */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Comment ça marche ?
             </h2>
           </div>
@@ -133,11 +188,11 @@ export default function AuditGratuit() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-4 text-xl font-bold text-white">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-4 text-xl font-bold text-white">
                   {step.number}
                 </div>
-                <h3 className="text-base font-bold text-white mb-2">{step.title}</h3>
-                <p className="text-slate-400 text-sm">{step.description}</p>
+                <h3 className="text-base font-bold text-slate-900 mb-2">{step.title}</h3>
+                <p className="text-slate-600 text-sm">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -145,7 +200,7 @@ export default function AuditGratuit() {
       </section>
 
       {/* Calendly Widget */}
-      <section className="py-20 bg-surface">
+      <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -153,11 +208,11 @@ export default function AuditGratuit() {
             viewport={{ once: true }}
           >
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">
                 Réservez votre créneau
               </h2>
-              <p className="text-slate-400 text-lg">
-                Choisissez le moment qui vous convient pour votre audit gratuit de 30 minutes
+              <p className="text-slate-600 text-lg">
+                Choisissez le moment qui vous convient pour échanger sur votre projet
               </p>
             </div>
 
@@ -167,10 +222,10 @@ export default function AuditGratuit() {
       </section>
 
       {/* FAQ mini */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-surface">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Questions fréquentes
             </h2>
           </div>
@@ -178,21 +233,25 @@ export default function AuditGratuit() {
           <div className="space-y-4">
             {[
               {
-                q: "Combien de temps dure l'audit ?",
-                a: "L'audit dure 30 minutes en visioconférence. C'est suffisant pour analyser vos besoins et vous proposer des premières pistes."
+                q: "Combien de temps dure l'échange ?",
+                a: "L'échange dure 30 minutes en visioconférence. C'est suffisant pour comprendre vos besoins et vous proposer des premières pistes."
               },
               {
                 q: "Est-ce vraiment gratuit ?",
-                a: "Oui, 100% gratuit et sans engagement. C'est notre façon de vous montrer notre expertise avant toute collaboration."
+                a: "Oui, 100% gratuit et sans engagement. C'est notre façon de faire connaissance et de vous montrer notre approche avant toute collaboration."
               },
               {
                 q: "Que dois-je préparer ?",
-                a: "Rien de spécial ! Venez simplement avec vos questions et une idée des tâches qui vous prennent le plus de temps."
+                a: "Rien de spécial ! Venez simplement avec vos questions et une idée de votre projet ou des problématiques que vous rencontrez."
+              },
+              {
+                q: "Je ne sais pas encore quel service me convient...",
+                a: "C'est justement le but de cet échange ! Nous vous aiderons à identifier la meilleure solution selon vos besoins et votre budget."
               },
             ].map((faq) => (
               <Card key={faq.q} variant="glass" hover={false}>
-                <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
-                <p className="text-slate-400 text-sm">{faq.a}</p>
+                <h3 className="text-slate-900 font-semibold mb-2">{faq.q}</h3>
+                <p className="text-slate-600 text-sm">{faq.a}</p>
               </Card>
             ))}
           </div>

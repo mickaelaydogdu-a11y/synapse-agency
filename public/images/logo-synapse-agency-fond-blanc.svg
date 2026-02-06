@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" width="320" height="60">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icône S avec dégradé -->
+  <rect x="0" y="5" width="50" height="50" rx="12" ry="12" fill="url(#iconGradient)"/>
+  <text x="25" y="40" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="28" fill="#ffffff">S</text>
+
+  <!-- Texte Synapse en primary -->
+  <text x="62" y="40" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="26" fill="#6366f1">Synapse</text>
+
+  <!-- Texte Agency en primary -->
+  <text x="196" y="40" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="26" fill="#6366f1">Agency</text>
+</svg>

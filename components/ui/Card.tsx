@@ -11,9 +11,9 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant = "default", hover = true, children, ...props }, ref) => {
     const variants = {
-      default: "bg-surface border border-white/5",
-      glass: "bg-surface/50 backdrop-blur-xl border border-white/10",
-      gradient: "bg-gradient-to-br from-surface to-surface-light border border-white/5",
+      default: "bg-white border border-slate-200 shadow-sm",
+      glass: "bg-white/80 backdrop-blur-xl border border-slate-200",
+      gradient: "bg-gradient-to-br from-white to-slate-50 border border-slate-200 shadow-sm",
     };
 
     return (

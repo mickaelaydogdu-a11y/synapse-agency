@@ -15,9 +15,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variants = {
       primary: "bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg hover:shadow-primary/25 hover:scale-105",
-      secondary: "bg-surface text-white border border-white/10 hover:bg-surface-light hover:border-primary/50",
+      secondary: "bg-slate-100 text-slate-900 border border-slate-200 hover:bg-slate-200 hover:border-primary/50",
       outline: "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white",
-      ghost: "bg-transparent text-slate-300 hover:text-white hover:bg-white/5",
+      ghost: "bg-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-100",
     };
 
     const sizes = {

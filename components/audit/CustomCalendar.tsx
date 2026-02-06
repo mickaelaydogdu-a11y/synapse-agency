@@ -202,30 +202,30 @@ export function CustomCalendar() {
           >
             <div className="mb-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-orange-400" />
+                <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                  <Calendar className="w-5 h-5 text-orange-500" />
                   <span className="hidden sm:inline">Choisissez une date</span>
                   <span className="sm:hidden">Date</span>
                 </h3>
                 <div className="flex items-center gap-1 sm:gap-2">
                   <button
                     onClick={prevPeriod}
-                    className="p-2 hover:bg-white/5 rounded-lg transition-colors"
+                    className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
                     type="button"
                     aria-label="Période précédente"
                   >
-                    <ChevronLeft className="w-5 h-5 text-slate-400" />
+                    <ChevronLeft className="w-5 h-5 text-slate-500" />
                   </button>
-                  <span className="text-xs sm:text-sm text-slate-400 min-w-[100px] sm:min-w-[140px] text-center">
+                  <span className="text-xs sm:text-sm text-slate-500 min-w-[100px] sm:min-w-[140px] text-center">
                     {format(displayDays[0], "d MMM", { locale: fr })} - {format(displayDays[14], "d MMM", { locale: fr })}
                   </span>
                   <button
                     onClick={nextPeriod}
-                    className="p-2 hover:bg-white/5 rounded-lg transition-colors"
+                    className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
                     type="button"
                     aria-label="Période suivante"
                   >
-                    <ChevronRight className="w-5 h-5 text-slate-400" />
+                    <ChevronRight className="w-5 h-5 text-slate-500" />
                   </button>
                 </div>
               </div>
@@ -245,8 +245,8 @@ export function CustomCalendar() {
                         className={`
                           flex-shrink-0 w-16 sm:w-20 rounded-xl text-sm font-medium transition-all duration-200 py-3 px-2
                           ${available
-                            ? "bg-surface hover:bg-orange-500/20 hover:border-orange-500 text-white border border-white/10 cursor-pointer"
-                            : "bg-surface/30 text-slate-600 cursor-not-allowed border border-transparent"
+                            ? "bg-white hover:bg-orange-50 hover:border-orange-500 text-slate-900 border border-slate-200 cursor-pointer"
+                            : "bg-slate-50 text-slate-400 cursor-not-allowed border border-transparent"
                           }
                           ${isToday && available ? "ring-2 ring-orange-500/50" : ""}
                         `}
@@ -285,16 +285,16 @@ export function CustomCalendar() {
                   setStep("date");
                   setSelectedTime(null);
                 }}
-                className="text-sm text-slate-400 hover:text-white mb-4 transition-colors"
+                className="text-sm text-slate-500 hover:text-slate-900 mb-4 transition-colors"
                 type="button"
               >
                 ← Changer la date
               </button>
-              <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                <Clock className="w-5 h-5 text-orange-400" />
+              <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                <Clock className="w-5 h-5 text-orange-500" />
                 Choisissez un créneau
               </h3>
-              <p className="text-slate-400 mt-2">
+              <p className="text-slate-600 mt-2">
                 {format(selectedDate, "EEEE dd MMMM yyyy", { locale: fr })}
               </p>
             </div>
@@ -305,7 +305,7 @@ export function CustomCalendar() {
                   key={time}
                   onClick={() => selectTime(time)}
                   type="button"
-                  className="px-4 py-3 bg-surface border border-white/10 rounded-xl text-white hover:bg-orange-500/20 hover:border-orange-500 transition-all duration-200 font-medium"
+                  className="px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 hover:bg-orange-50 hover:border-orange-500 transition-all duration-200 font-medium"
                 >
                   {time}
                 </button>
@@ -329,12 +329,12 @@ export function CustomCalendar() {
             <div className="mb-6">
               <button
                 onClick={() => setStep("time")}
-                className="text-sm text-slate-400 hover:text-white mb-4 transition-colors"
+                className="text-sm text-slate-500 hover:text-slate-900 mb-4 transition-colors"
                 type="button"
               >
                 ← Changer l'heure
               </button>
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-slate-900 mb-2">
                 Confirmez votre rendez-vous
               </h3>
               <div className="inline-block px-4 py-2 bg-orange-500/20 border border-orange-500/30 rounded-lg">
@@ -353,7 +353,7 @@ export function CustomCalendar() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Informations de contact */}
               <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-white">Vos coordonnées</h4>
+                <h4 className="text-lg font-semibold text-slate-900">Vos coordonnées</h4>
                 <div className="grid md:grid-cols-2 gap-4">
                   <Input label="Prénom *" name="prenom" placeholder="Jean" required />
                   <Input label="Nom *" name="nom" placeholder="Dupont" required />
@@ -370,12 +370,12 @@ export function CustomCalendar() {
               </div>
 
               {/* Objectifs */}
-              <div className="space-y-4 pt-4 border-t border-white/10">
-                <h4 className="text-lg font-semibold text-white">Vos objectifs</h4>
+              <div className="space-y-4 pt-4 border-t border-slate-200">
+                <h4 className="text-lg font-semibold text-slate-900">Vos objectifs</h4>
 
                 {/* Objectifs principaux */}
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-3">
+                  <label className="block text-sm font-medium text-slate-700 mb-3">
                     Que souhaitez-vous améliorer ? * (plusieurs choix possibles)
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -386,8 +386,8 @@ export function CustomCalendar() {
                         onClick={() => toggleSelection(objectif, selectedObjectifs, setSelectedObjectifs)}
                         className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 text-left ${
                           selectedObjectifs.includes(objectif)
-                            ? "bg-orange-500/20 border-2 border-orange-500 text-white"
-                            : "bg-surface border border-white/10 text-slate-400 hover:border-white/20 hover:text-white"
+                            ? "bg-orange-50 border-2 border-orange-500 text-slate-900"
+                            : "bg-white border border-slate-200 text-slate-600 hover:border-slate-300 hover:text-slate-900"
                         }`}
                       >
                         {objectif}
@@ -429,8 +429,8 @@ export function CustomCalendar() {
             <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-8 h-8 text-green-500" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Rendez-vous confirmé !</h3>
-            <p className="text-slate-400 mb-2">
+            <h3 className="text-2xl font-bold text-slate-900 mb-2">Rendez-vous confirmé !</h3>
+            <p className="text-slate-600 mb-2">
               Vous recevrez un email de confirmation avec le lien de visioconférence.
             </p>
             <p className="text-sm text-slate-500">

@@ -1,5 +1,4 @@
 export { Hero } from "./Hero";
-export { WhyAI } from "./WhyAI";
+export { WhyUs } from "./WhyUs";
 export { Services } from "./Services";
 export { AuditSection } from "./AuditSection";
-export { CTA } from "./CTA";

@@ -9,9 +9,9 @@ import { Textarea } from "@/components/ui/Textarea";
 import { Card } from "@/components/ui/Card";
 
 const services = [
-  { value: "agents-ia", label: "Agents IA" },
   { value: "solutions-ia", label: "Solutions IA" },
   { value: "applications", label: "Applications Web/Mobile" },
+  { value: "production-visuelle", label: "Production Visuelle" },
   { value: "autre", label: "Autre" },
 ];
 
@@ -85,7 +85,7 @@ export default function Contact() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold text-white mb-4"
+              className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
             >
               Parlons de votre <span className="gradient-text">projet</span>
             </motion.h1>
@@ -93,7 +93,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-slate-400 text-lg"
+              className="text-slate-600 text-lg"
             >
               Premier rendez-vous gratuit et sans engagement
             </motion.p>
@@ -113,8 +113,8 @@ export default function Contact() {
                       <Mail className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold mb-1">Email</h3>
-                      <p className="text-slate-400">contact@synapse-agency.fr</p>
+                      <h3 className="text-slate-900 font-semibold mb-1">Email</h3>
+                      <p className="text-slate-600">contact@synapse-agency.fr</p>
                     </div>
                   </div>
                 </Card>
@@ -131,8 +131,8 @@ export default function Contact() {
                       <Phone className="w-6 h-6 text-secondary" />
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold mb-1">Téléphone</h3>
-                      <p className="text-slate-400">06 32 54 55 78</p>
+                      <h3 className="text-slate-900 font-semibold mb-1">Téléphone</h3>
+                      <p className="text-slate-600">06 32 54 55 78</p>
                     </div>
                   </div>
                 </Card>
@@ -149,8 +149,8 @@ export default function Contact() {
                       <MapPin className="w-6 h-6 text-accent" />
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold mb-1">Adresse</h3>
-                      <p className="text-slate-400">21 grande place<br />77640 Jouarre</p>
+                      <h3 className="text-slate-900 font-semibold mb-1">Adresse</h3>
+                      <p className="text-slate-600">21 grande place<br />77640 Jouarre</p>
                     </div>
                   </div>
                 </Card>
@@ -168,8 +168,8 @@ export default function Contact() {
                 {isSubmitted ? (
                   <div className="text-center py-12">
                     <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-white mb-2">Message envoyé !</h3>
-                    <p className="text-slate-400">Nous vous répondrons dans les 24h.</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Message envoyé !</h3>
+                    <p className="text-slate-600">Nous vous répondrons dans les 24h.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -199,13 +199,13 @@ export default function Contact() {
                       placeholder="Nom de votre entreprise"
                     />
                     <div>
-                      <label className="block text-sm font-medium text-slate-300 mb-2">
+                      <label className="block text-sm font-medium text-slate-700 mb-2">
                         Service intéressé *
                       </label>
                       <select
                         name="service"
                         required
-                        className="w-full px-4 py-3 bg-surface border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
+                        className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
                       >
                         <option value="">Sélectionnez un service</option>
                         {services.map((s) => (

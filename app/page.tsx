@@ -1,11 +1,11 @@
-import { Hero, WhyAI, Services, AuditSection } from "@/components/home";
+import { Hero, WhyUs, Services, AuditSection } from "@/components/home";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <WhyAI />
       <Services />
+      <WhyUs />
       <AuditSection />
     </main>
   );

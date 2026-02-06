@@ -1,10 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
-import Link from "next/link";
+import { Sparkles, Cpu, Smartphone, Camera } from "lucide-react";
 import Image from "next/image";
-import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   return (
@@ -13,14 +11,12 @@ export function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/Home-Synapse-agency.png"
-          alt="Synapse Agency - IA pour votre entreprise"
+          alt="Synapse Agency - Agence digitale pour les professionnels"
           fill
           className="object-cover object-center"
           priority
         />
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/40" />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 text-center">
@@ -28,10 +24,10 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/40 border border-primary/50 backdrop-blur-sm mb-8"
         >
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm text-primary">Architecte de solutions numériques</span>
+          <Sparkles className="w-4 h-4 text-white" />
+          <span className="text-sm text-white">Agence digitale pour les professionnels</span>
         </motion.div>
 
         {/* Title */}
@@ -39,10 +35,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]"
         >
-          <span className="gradient-text">Déléguez à l&apos;IA</span>{" "}
-          ce qui vous ralentit.
+          Votre partenaire pour{" "}
+          <span className="text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">accélérer votre croissance</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -50,24 +46,33 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10"
+          className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-10 drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]"
         >
-          Automatisez, simplifiez et gagnez du temps.
+          Intelligence artificielle, applications sur mesure et production visuelle.
+          Trois expertises au service de votre transformation digitale.
         </motion.p>
 
-        {/* CTAs */}
+        {/* Service Pills */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="flex items-center justify-center"
+          transition={{ delay: 0.25 }}
+          className="flex flex-wrap justify-center gap-4 mb-10"
         >
-          <Link href="#services">
-            <Button size="lg">
-              Découvrir nos services
-            </Button>
-          </Link>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/40 border border-secondary/50 backdrop-blur-sm">
+            <Cpu className="w-4 h-4 text-secondary" />
+            <span className="text-sm text-white">Solutions IA</span>
+          </div>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/40 border border-accent/50 backdrop-blur-sm">
+            <Smartphone className="w-4 h-4 text-accent" />
+            <span className="text-sm text-white">Applications</span>
+          </div>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/40 border border-violet-500/50 backdrop-blur-sm">
+            <Camera className="w-4 h-4 text-violet-400" />
+            <span className="text-sm text-white">Production Visuelle</span>
+          </div>
         </motion.div>
+
       </div>
     </section>
   );

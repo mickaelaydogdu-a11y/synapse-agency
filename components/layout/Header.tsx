@@ -2,30 +2,29 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Bot, Cpu, Smartphone, Gift } from "lucide-react";
+import { Menu, X, Cpu, Smartphone, Camera, Gift } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "Agents IA", href: "/agents-ia", icon: Bot },
   { name: "Solutions IA", href: "/solutions-ia", icon: Cpu },
   { name: "Applications web et mobile", href: "/applications", icon: Smartphone },
+  { name: "Production Visuelle", href: "/production-visuelle", icon: Camera },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-4 mt-4">
-        <nav className="glass rounded-2xl px-6 py-4">
+    <header className="sticky top-0 left-0 right-0 z-50">
+        <nav className="glass px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                 <span className="text-white font-bold text-xl">S</span>
               </div>
-              <span className="text-xl font-bold text-white">
+              <span className="text-xl font-bold text-slate-900">
                 Synapse <span className="text-primary">Agency</span>
               </span>
             </Link>
@@ -36,7 +35,7 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors"
                 >
                   <item.icon className="w-4 h-4" />
                   {item.name}
@@ -61,7 +60,7 @@ export function Header() {
 
             {/* Mobile/Tablet Menu Button */}
             <button
-              className="lg:hidden text-white"
+              className="lg:hidden text-slate-900"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -75,12 +74,12 @@ export function Header() {
               isOpen ? "max-h-80 mt-4" : "max-h-0"
             )}
           >
-            <div className="flex flex-col gap-4 pt-4 border-t border-white/10">
+            <div className="flex flex-col gap-4 pt-4 border-t border-slate-200">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   <item.icon className="w-4 h-4" />
@@ -101,7 +100,6 @@ export function Header() {
             </div>
           </div>
         </nav>
-      </div>
     </header>
   );
 }
