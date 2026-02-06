@@ -10,7 +10,7 @@ export function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/Home-Synapse-agency.png"
+          src="/images/Home-Synapse-agency.jpg"
           alt="Synapse Agency - Agence digitale pour les professionnels"
           fill
           className="object-cover object-center"

@@ -69,7 +69,7 @@ export default function ProductionVisuelle() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/Production-visuelle-Synapse-agency.png"
+            src="/images/Production-visuelle-Synapse-agency.jpg"
             alt="Production Visuelle Synapse Agency"
             fill
             className="object-cover object-right lg:object-center"

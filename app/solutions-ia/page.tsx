@@ -118,7 +118,7 @@ export default function SolutionsIA() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/Solution-ia-Synapse-agency.png"
+            src="/images/Solution-ia-Synapse-agency.jpg"
             alt="Solution IA Synapse Agency"
             fill
             className="object-cover object-right lg:object-center"
@@ -218,7 +218,7 @@ export default function SolutionsIA() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/bureau-telephone.png"
+            src="/images/bureau-telephone.jpg"
             alt="Bureau téléphone"
             fill
             className="object-cover"

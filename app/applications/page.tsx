@@ -94,7 +94,7 @@ export default function Applications() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/Applications.png"
+            src="/images/Applications.jpg"
             alt="Applications Synapse Agency"
             fill
             className="object-cover object-right lg:object-center"
@@ -224,7 +224,7 @@ export default function Applications() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/Solutions-applications-fond.png"
+            src="/images/Solutions-applications-fond.jpg"
             alt="Solutions applicatives"
             fill
             className="object-cover"
