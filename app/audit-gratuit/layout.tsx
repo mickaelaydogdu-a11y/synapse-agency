@@ -10,6 +10,21 @@ export const metadata: Metadata = {
       "30 minutes pour analyser votre potentiel digital et identifier les opportunités d'automatisation IA.",
     type: "website",
     locale: "fr_FR",
+    images: [
+      {
+        url: "/images/Home-Synapse-agency.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Audit Digital Gratuit - Synapse Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Audit Digital Gratuit | Synapse Agency",
+    description:
+      "30 minutes pour analyser votre potentiel digital et identifier les opportunités d'automatisation IA.",
+    images: ["/images/Home-Synapse-agency.jpg"],
   },
 };
 

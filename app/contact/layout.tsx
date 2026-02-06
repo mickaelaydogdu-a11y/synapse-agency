@@ -10,6 +10,21 @@ export const metadata: Metadata = {
       "Discutons de votre projet digital. Solutions IA, applications et production visuelle sur mesure.",
     type: "website",
     locale: "fr_FR",
+    images: [
+      {
+        url: "/images/Home-Synapse-agency.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contactez Synapse Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contactez Synapse Agency",
+    description:
+      "Discutons de votre projet digital. Solutions IA, applications et production visuelle sur mesure.",
+    images: ["/images/Home-Synapse-agency.jpg"],
   },
 };
 
