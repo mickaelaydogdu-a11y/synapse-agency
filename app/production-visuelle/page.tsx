@@ -248,9 +248,22 @@ export default function ProductionVisuelle() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((n, i) => (
+            {[
+              { src: 1, alt: "Portrait noir et blanc d'un homme barbu avec lunettes, style corporate" },
+              { src: 2, alt: "Portrait studio d'une jeune femme en blazer sur fond sombre" },
+              { src: 3, alt: "Portrait professionnel d'un homme en costume bleu en extérieur" },
+              { src: 4, alt: "Deux professionnels de l'immobilier devant leur agence" },
+              { src: 5, alt: "Vue aérienne drone d'Aix-en-Provence avec la fontaine de la Rotonde" },
+              { src: 6, alt: "Femme portant une veste brodée artistique devant une porte bleue" },
+              { src: 7, alt: "Intérieur lumineux d'une maison contemporaine avec salon mezzanine" },
+              { src: 8, alt: "Palette de maquillage professionnelle avec fards multicolores en gros plan" },
+              { src: 9, alt: "Couple élégant trinquant au champagne lors d'un mariage champêtre" },
+              { src: 10, alt: "Portrait studio d'une jeune femme en sweat orange sur fond rouge" },
+              { src: 11, alt: "Gros plan noir et blanc d'une batterie Sonor avec toms et cymbales" },
+              { src: 12, alt: "Rangées de flûtes à champagne sur un comptoir lors d'une soirée" },
+            ].map((item, i) => (
               <motion.div
-                key={n}
+                key={item.src}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -258,8 +271,8 @@ export default function ProductionVisuelle() {
                 className="aspect-square rounded-xl overflow-hidden relative group cursor-pointer"
               >
                 <Image
-                  src={`/images/portfolio/${n}.jpg`}
-                  alt={`Réalisation ${n}`}
+                  src={`/images/portfolio/${item.src}.jpg`}
+                  alt={item.alt}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />

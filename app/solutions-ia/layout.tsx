@@ -26,6 +26,9 @@ export const metadata: Metadata = {
       "Agents IA, extraction de données, automatisation : des solutions d'intelligence artificielle adaptées à votre entreprise.",
     images: ["/images/Solution-ia-Synapse-agency.jpg"],
   },
+  alternates: {
+    canonical: "https://synapse-agency.fr/solutions-ia",
+  },
 };
 
 const jsonLd = {

@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
   },
+  alternates: {
+    canonical: "https://synapse-agency.fr/confidentialite",
+  },
 };
 
 export default function ConfidentialiteLayout({

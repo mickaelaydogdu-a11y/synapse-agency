@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
   },
+  alternates: {
+    canonical: "https://synapse-agency.fr/mentions-legales",
+  },
 };
 
 export default function MentionsLegalesLayout({

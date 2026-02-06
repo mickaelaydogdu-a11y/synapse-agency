@@ -26,6 +26,9 @@ export const metadata: Metadata = {
       "Discutons de votre projet digital. Solutions IA, applications et production visuelle sur mesure.",
     images: ["/images/Home-Synapse-agency.jpg"],
   },
+  alternates: {
+    canonical: "https://synapse-agency.fr/contact",
+  },
 };
 
 export default function ContactLayout({

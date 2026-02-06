@@ -26,6 +26,9 @@ export const metadata: Metadata = {
       "Photo, vidéo et drone professionnels pour sublimer votre communication d'entreprise.",
     images: ["/images/Production-visuelle-Synapse-agency.jpg"],
   },
+  alternates: {
+    canonical: "https://synapse-agency.fr/production-visuelle",
+  },
 };
 
 const jsonLd = {

@@ -26,6 +26,9 @@ export const metadata: Metadata = {
       "Applications web et mobiles sur mesure pour digitaliser vos processus et booster votre productivité.",
     images: ["/images/Applications.jpg"],
   },
+  alternates: {
+    canonical: "https://synapse-agency.fr/applications",
+  },
 };
 
 const jsonLd = {

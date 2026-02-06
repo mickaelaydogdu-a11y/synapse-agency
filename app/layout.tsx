@@ -38,6 +38,9 @@ export const metadata: Metadata = {
     description: "Transformez votre entreprise avec l'intelligence artificielle",
     images: ["/images/Home-Synapse-agency.jpg"],
   },
+  alternates: {
+    canonical: baseUrl,
+  },
 };
 
 const jsonLd = {
