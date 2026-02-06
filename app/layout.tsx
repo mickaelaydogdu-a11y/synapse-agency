@@ -13,7 +13,10 @@ const baseUrl = "https://synapse-agency.fr";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   verification: {
-    google: "h8il5Sz9FtFiDmYzH2_MDul5E7qphOKUAS5v_lcB_uw",
+    google: [
+      "h8il5Sz9FtFiDmYzH2_MDul5E7qphOKUAS5v_lcB_uw",
+      "S1b65yBEHM1Lf5Y470it7ROMIsmdwZrBhlv4y25PjtU",
+    ],
   },
   title: "Synapse Agency | Solutions IA & Applications",
   description: "Architecte de solutions numériques. Agents IA, solutions sur mesure et applications web & mobile pour transformer votre entreprise.",
