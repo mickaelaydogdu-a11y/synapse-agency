@@ -122,8 +122,7 @@ export default function SolutionsIA() {
             src="/images/Solution-ia-Synapse-agency.jpg"
             alt="Solution IA Synapse Agency"
             fill
-            sizes="100vw"
-            quality={90}
+            sizes="(max-width: 768px) 200vw, 100vw"
             className="object-cover object-right lg:object-center"
             priority
           />
