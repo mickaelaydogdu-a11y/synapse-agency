@@ -13,6 +13,7 @@ export function Hero() {
           src="/images/Home-Synapse-agency.jpg"
           alt="Synapse Agency - Agence digitale pour les professionnels"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
         />

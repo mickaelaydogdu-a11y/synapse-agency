@@ -122,6 +122,7 @@ export default function ProductionVisuelle() {
             src="/images/Production-visuelle-Synapse-agency.jpg"
             alt="Production Visuelle Synapse Agency"
             fill
+            sizes="100vw"
             className="object-cover object-right lg:object-center"
             priority
           />
