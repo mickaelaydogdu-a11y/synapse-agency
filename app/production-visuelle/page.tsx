@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Camera, Video, Plane, User, Package, FileImage, Film, Presentation, PartyPopper, Check, Navigation } from "lucide-react";
+import { useState, useCallback, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Camera, Video, Plane, User, Package, FileImage, Film, Presentation, PartyPopper, Check, Navigation, X, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -61,7 +62,56 @@ const videoServices = [
   },
 ];
 
+const portfolioItems = [
+  { src: 1, alt: "Portrait noir et blanc d'un homme barbu avec lunettes, style corporate" },
+  { src: 2, alt: "Portrait studio d'une jeune femme en blazer sur fond sombre" },
+  { src: 3, alt: "Portrait professionnel d'un homme en costume bleu en extérieur" },
+  { src: 4, alt: "Deux professionnels de l'immobilier devant leur agence" },
+  { src: 5, alt: "Vue aérienne drone d'Aix-en-Provence avec la fontaine de la Rotonde" },
+  { src: 6, alt: "Femme portant une veste brodée artistique devant une porte bleue" },
+  { src: 7, alt: "Intérieur lumineux d'une maison contemporaine avec salon mezzanine" },
+  { src: 8, alt: "Palette de maquillage professionnelle avec fards multicolores en gros plan" },
+  { src: 9, alt: "Couple élégant trinquant au champagne lors d'un mariage champêtre" },
+  { src: 10, alt: "Portrait studio d'une jeune femme en sweat orange sur fond rouge" },
+  { src: 11, alt: "Gros plan noir et blanc d'une batterie Sonor avec toms et cymbales" },
+  { src: 12, alt: "Rangées de flûtes à champagne sur un comptoir lors d'une soirée" },
+];
+
 export default function ProductionVisuelle() {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const openLightbox = (index: number) => setLightboxIndex(index);
+  const closeLightbox = () => setLightboxIndex(null);
+
+  const goToPrevious = useCallback(() => {
+    setLightboxIndex((prev) =>
+      prev !== null ? (prev - 1 + portfolioItems.length) % portfolioItems.length : null
+    );
+  }, []);
+
+  const goToNext = useCallback(() => {
+    setLightboxIndex((prev) =>
+      prev !== null ? (prev + 1) % portfolioItems.length : null
+    );
+  }, []);
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") goToPrevious();
+      if (e.key === "ArrowRight") goToNext();
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [lightboxIndex, goToPrevious, goToNext]);
+
   return (
     <main>
       {/* Hero with Background Image */}
@@ -243,25 +293,12 @@ export default function ProductionVisuelle() {
               Portfolio
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              Découvrez une sélection de nos réalisations photo et vidéo
+              Découvrez une sélection de nos réalisations photo
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {[
-              { src: 1, alt: "Portrait noir et blanc d'un homme barbu avec lunettes, style corporate" },
-              { src: 2, alt: "Portrait studio d'une jeune femme en blazer sur fond sombre" },
-              { src: 3, alt: "Portrait professionnel d'un homme en costume bleu en extérieur" },
-              { src: 4, alt: "Deux professionnels de l'immobilier devant leur agence" },
-              { src: 5, alt: "Vue aérienne drone d'Aix-en-Provence avec la fontaine de la Rotonde" },
-              { src: 6, alt: "Femme portant une veste brodée artistique devant une porte bleue" },
-              { src: 7, alt: "Intérieur lumineux d'une maison contemporaine avec salon mezzanine" },
-              { src: 8, alt: "Palette de maquillage professionnelle avec fards multicolores en gros plan" },
-              { src: 9, alt: "Couple élégant trinquant au champagne lors d'un mariage champêtre" },
-              { src: 10, alt: "Portrait studio d'une jeune femme en sweat orange sur fond rouge" },
-              { src: 11, alt: "Gros plan noir et blanc d'une batterie Sonor avec toms et cymbales" },
-              { src: 12, alt: "Rangées de flûtes à champagne sur un comptoir lors d'une soirée" },
-            ].map((item, i) => (
+            {portfolioItems.map((item, i) => (
               <motion.div
                 key={item.src}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -269,6 +306,7 @@ export default function ProductionVisuelle() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
                 className="aspect-square rounded-xl overflow-hidden relative group cursor-pointer"
+                onClick={() => openLightbox(i)}
               >
                 <Image
                   src={`/images/portfolio/${item.src}.jpg`}
@@ -276,11 +314,87 @@ export default function ProductionVisuelle() {
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                  <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
+                    Agrandir
+                  </span>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+            onClick={closeLightbox}
+          >
+            {/* Bouton fermer */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              aria-label="Fermer"
+            >
+              <X className="w-6 h-6 text-white" />
+            </button>
+
+            {/* Bouton précédent */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevious();
+              }}
+              className="absolute left-4 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              aria-label="Photo précédente"
+            >
+              <ChevronLeft className="w-8 h-8 text-white" />
+            </button>
+
+            {/* Image */}
+            <motion.div
+              key={lightboxIndex}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.2 }}
+              className="relative w-[90vw] h-[85vh] max-w-6xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={`/images/portfolio/${portfolioItems[lightboxIndex].src}.jpg`}
+                alt={portfolioItems[lightboxIndex].alt}
+                fill
+                className="object-contain"
+                sizes="90vw"
+                priority
+              />
+            </motion.div>
+
+            {/* Bouton suivant */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              className="absolute right-4 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              aria-label="Photo suivante"
+            >
+              <ChevronRight className="w-8 h-8 text-white" />
+            </button>
+
+            {/* Compteur */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm">
+              {lightboxIndex + 1} / {portfolioItems.length}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </main>
   );
