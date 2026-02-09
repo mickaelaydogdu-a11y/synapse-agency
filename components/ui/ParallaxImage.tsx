@@ -38,6 +38,7 @@ export function ParallaxImage({
           alt={alt}
           fill
           sizes="100vw"
+          quality={90}
           className={className}
           priority={priority}
         />

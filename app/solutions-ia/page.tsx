@@ -115,7 +115,7 @@ export default function SolutionsIA() {
   return (
     <main>
       {/* Hero with Background Image */}
-      <section className="relative min-h-[auto] lg:min-h-screen flex items-center overflow-hidden">
+      <section className="relative max-h-[75vh] lg:max-h-none min-h-[auto] lg:min-h-screen flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -123,13 +123,14 @@ export default function SolutionsIA() {
             alt="Solution IA Synapse Agency"
             fill
             sizes="100vw"
+            quality={90}
             className="object-cover object-right lg:object-center"
             priority
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-24 pt-28 lg:py-32">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 pt-24 lg:py-24 lg:pt-28">
           <div className="flex justify-center">
             {/* Text Content */}
             <motion.div
@@ -217,7 +218,7 @@ export default function SolutionsIA() {
       </section>
 
       {/* Agent Types */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 lg:py-20 relative overflow-hidden">
         <ParallaxImage
           src="/images/bureau-telephone.jpg"
           alt="Bureau téléphone"

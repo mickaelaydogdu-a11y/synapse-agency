@@ -14,6 +14,7 @@ export function Hero() {
           alt="Synapse Agency - Agence digitale pour les professionnels"
           fill
           sizes="100vw"
+          quality={90}
           className="object-cover object-center"
           priority
         />
