@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, Cpu, Smartphone, Camera, Gift } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -20,13 +21,15 @@ export function Header() {
         <nav className="glass px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-white font-bold text-xl">S</span>
-              </div>
-              <span className="text-xl font-bold text-slate-900">
-                Synapse <span className="text-primary">Agency</span>
-              </span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/Synapse-Agency.png"
+                alt="Synapse Agency"
+                width={300}
+                height={300}
+                className="h-24 w-auto"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}

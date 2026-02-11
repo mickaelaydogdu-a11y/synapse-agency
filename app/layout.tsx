@@ -55,7 +55,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "Synapse Agency",
   url: baseUrl,
-  logo: `${baseUrl}/images/Home-Synapse-agency.jpg`,
+  logo: `${baseUrl}/images/Synapse-Agency.png`,
   description:
     "Agence digitale spécialisée en intelligence artificielle, développement d'applications web & mobile et production visuelle.",
   telephone: "+33632545578",

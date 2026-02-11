@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Cpu, Smartphone, Camera, Mail, Phone, MapPin } from "lucide-react";
 
 const services = [
@@ -14,13 +15,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center justify-center md:justify-start gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-white font-bold text-xl">S</span>
-              </div>
-              <span className="text-xl font-bold text-slate-900">
-                Synapse <span className="text-primary">Agency</span>
-              </span>
+            <Link href="/" className="flex items-center justify-center md:justify-start mb-4">
+              <Image
+                src="/images/Synapse-Agency.png"
+                alt="Synapse Agency"
+                width={300}
+                height={300}
+                className="h-24 w-auto"
+              />
             </Link>
             <p className="text-slate-600 max-w-md">
               Le monde change vite, les technologies redéfinissent les règles du jeu. Nous vous accompagnons pour transformer vos idées en solutions digitales performantes et garder une longueur d&apos;avance.
