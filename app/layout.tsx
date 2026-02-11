@@ -19,6 +19,11 @@ export const metadata: Metadata = {
       "S1b65yBEHM1Lf5Y470it7ROMIsmdwZrBhlv4y25PjtU",
     ],
   },
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   title: "Synapse Agency | Experts IA, Apps & Production Visuelle",
   description: "Agents IA, apps web/mobile et production visuelle. Automatisez vos processus et boostez votre croissance.",
   keywords: ["IA", "intelligence artificielle", "agents IA", "chatbot", "applications web", "développement", "agence digitale", "automatisation", "production visuelle", "photo", "vidéo"],
