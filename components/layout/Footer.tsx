@@ -21,7 +21,7 @@ export function Footer() {
                 alt="Synapse Agency"
                 width={300}
                 height={300}
-                className="h-24 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
             <p className="text-slate-600 max-w-md">
