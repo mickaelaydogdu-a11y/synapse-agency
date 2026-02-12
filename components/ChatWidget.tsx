@@ -39,21 +39,26 @@ export default function ChatWidget() {
                 box-shadow: 0 15px 30px rgba(153, 102, 255, 0.5) !important;
             }
 
-            /* Texte dans le champ de saisie en noir */
+            /* TOUT le texte en noir par défaut */
+            #n8n-chat,
+            #n8n-chat *,
             #n8n-chat input,
-            #n8n-chat textarea {
+            #n8n-chat textarea,
+            #n8n-chat button,
+            #n8n-chat div,
+            #n8n-chat p,
+            #n8n-chat span {
                 color: #0f172a !important;
             }
 
-            /* Messages de l'utilisateur - texte blanc sur fond violet */
-            #n8n-chat [class*="user"],
-            #n8n-chat [class*="User"],
-            #n8n-chat [data-role="user"],
-            #n8n-chat div[class*="message"]:not([class*="bot"]):not([class*="Bot"]) {
+            /* EXCEPTION : Messages utilisateur uniquement - texte blanc sur fond violet */
+            #n8n-chat [class*="user"] *,
+            #n8n-chat [class*="User"] *,
+            #n8n-chat [data-role="user"] * {
                 color: #ffffff !important;
             }
 
-            /* S'assurer que le fond violet est bien appliqué */
+            /* Fond violet pour les messages utilisateur */
             #n8n-chat [class*="user"],
             #n8n-chat [class*="User"],
             #n8n-chat [data-role="user"] {
