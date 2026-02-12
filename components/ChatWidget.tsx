@@ -45,6 +45,21 @@ export default function ChatWidget() {
                 color: #0f172a !important;
             }
 
+            /* Messages de l'utilisateur - texte blanc sur fond violet */
+            #n8n-chat [class*="user"],
+            #n8n-chat [class*="User"],
+            #n8n-chat [data-role="user"],
+            #n8n-chat div[class*="message"]:not([class*="bot"]):not([class*="Bot"]) {
+                color: #ffffff !important;
+            }
+
+            /* S'assurer que le fond violet est bien appliqué */
+            #n8n-chat [class*="user"],
+            #n8n-chat [class*="User"],
+            #n8n-chat [data-role="user"] {
+                background: linear-gradient(135deg, #9966ff 0%, #8b5cf6 100%) !important;
+            }
+
             /* Titres dans les messages du bot - même taille que le texte mais en gras */
             #n8n-chat h1,
             #n8n-chat h2,
