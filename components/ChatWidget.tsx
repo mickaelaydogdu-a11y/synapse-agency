@@ -34,7 +34,7 @@ export default function ChatWidget() {
                     },
                 },
                 loadPreviousSession: true,
-                enableStreaming: false,
+                enableStreaming: true,
             });
         `;
         document.body.appendChild(script);
