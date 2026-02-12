@@ -12,7 +12,7 @@ export default function ChatWidget() {
 
         // Injecter le CSS personnalisé Synapse Agency
         const style = document.createElement('style');
-        style.textContent = \`
+        style.textContent = `
             :root {
                 --chat--color--primary: #9966ff !important;
                 --chat--color--primary-shade-50: #8855ee !important;
@@ -37,7 +37,7 @@ export default function ChatWidget() {
                 transform: scale(1.05) !important;
                 box-shadow: 0 15px 30px rgba(153, 102, 255, 0.5) !important;
             }
-        \`;
+        `;
         document.head.appendChild(style);
 
         // Injecter le script module
