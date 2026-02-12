@@ -23,7 +23,7 @@ export function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
-                src="/images/Synapse-Agency.png"
+                src="/images/Logo-SynapseAgency.png"
                 alt="Synapse Agency"
                 width={300}
                 height={300}

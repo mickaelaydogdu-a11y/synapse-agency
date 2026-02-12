@@ -17,7 +17,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center justify-center md:justify-start mb-4">
               <Image
-                src="/images/Synapse-Agency.png"
+                src="/images/Logo-SynapseAgency.png"
                 alt="Synapse Agency"
                 width={300}
                 height={300}
