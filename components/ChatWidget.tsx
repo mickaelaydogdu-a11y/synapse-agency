@@ -28,6 +28,7 @@ export default function ChatWidget() {
                 --chat--button--background--primary: linear-gradient(135deg, #9966ff 0%, #8b5cf6 100%) !important;
             }
 
+            /* Bouton toggle */
             #n8n-chat button[class*="toggle"] {
                 box-shadow: 0 10px 25px rgba(153, 102, 255, 0.4) !important;
                 transition: all 0.2s ease !important;
@@ -36,6 +37,26 @@ export default function ChatWidget() {
             #n8n-chat button[class*="toggle"]:hover {
                 transform: scale(1.05) !important;
                 box-shadow: 0 15px 30px rgba(153, 102, 255, 0.5) !important;
+            }
+
+            /* Texte dans le champ de saisie en noir */
+            #n8n-chat input,
+            #n8n-chat textarea {
+                color: #0f172a !important;
+            }
+
+            /* Titres dans les messages du bot - même taille que le texte mais en gras */
+            #n8n-chat h1,
+            #n8n-chat h2,
+            #n8n-chat h3,
+            #n8n-chat h4,
+            #n8n-chat h5,
+            #n8n-chat h6 {
+                font-size: 0.95rem !important;
+                font-weight: 700 !important;
+                margin-top: 0.5rem !important;
+                margin-bottom: 0.5rem !important;
+                line-height: 1.6 !important;
             }
         `;
         document.head.appendChild(style);
