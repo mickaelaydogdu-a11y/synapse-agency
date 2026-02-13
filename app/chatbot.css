@@ -158,6 +158,17 @@
     transition: all var(--chat--transition-duration) ease;
 }
 
+/* Forcer l'icône SVG du toggle en blanc */
+#n8n-chat button[class*="toggle"] svg {
+    filter: brightness(0) invert(1) !important;
+    color: #ffffff !important;
+}
+
+#n8n-chat button[class*="toggle"] svg * {
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
 #n8n-chat button[class*="toggle"]:hover {
     transform: scale(1.05);
     box-shadow: 0 15px 30px rgba(153, 102, 255, 0.5);

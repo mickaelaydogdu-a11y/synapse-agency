@@ -24,6 +24,7 @@ export default function ChatWidget() {
                 --chat--header--background: linear-gradient(135deg, #9966ff 0%, #0ea5e9 100%) !important;
                 --chat--toggle--background: linear-gradient(135deg, #9966ff 0%, #8b5cf6 100%) !important;
                 --chat--toggle--hover--background: linear-gradient(135deg, #8855ee 0%, #7c3aed 100%) !important;
+                --chat--toggle--color: #ffffff !important;
                 --chat--message--user--background: linear-gradient(135deg, #9966ff 0%, #8b5cf6 100%) !important;
                 --chat--button--background--primary: linear-gradient(135deg, #9966ff 0%, #8b5cf6 100%) !important;
                 --chat--header--padding: 1rem !important;
@@ -34,6 +35,11 @@ export default function ChatWidget() {
             #n8n-chat button[class*="toggle"] {
                 box-shadow: 0 10px 25px rgba(153, 102, 255, 0.4) !important;
                 transition: all 0.2s ease !important;
+            }
+
+            /* Forcer l'icône SVG en blanc avec filter */
+            #n8n-chat button[class*="toggle"] svg {
+                filter: brightness(0) invert(1) !important;
             }
 
             #n8n-chat button[class*="toggle"]:hover {
