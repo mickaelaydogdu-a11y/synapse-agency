@@ -23,7 +23,7 @@ export default function Confidentialite() {
               Politique de confidentialité
             </h1>
             <p className="text-slate-600">
-              Dernière mise à jour : Janvier 2025
+              Dernière mise à jour : Février 2026
             </p>
           </motion.div>
 

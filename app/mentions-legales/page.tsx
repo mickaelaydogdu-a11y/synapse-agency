@@ -23,7 +23,7 @@ export default function MentionsLegales() {
               Mentions légales
             </h1>
             <p className="text-slate-600">
-              Dernière mise à jour : Janvier 2025
+              Dernière mise à jour : Février 2026
             </p>
           </motion.div>
 
@@ -43,6 +43,7 @@ export default function MentionsLegales() {
                   <p><strong className="text-slate-900">Forme juridique :</strong> Entreprise individuelle</p>
                   <p><strong className="text-slate-900">Siège social :</strong> 21 grande place, 77640 Jouarre, France</p>
                   <p><strong className="text-slate-900">SIRET :</strong> En cours d&apos;attribution</p>
+                  <p><strong className="text-slate-900">Immatriculation au RCS :</strong> 502 299 142 R.C.S. Meaux</p>
                   <p><strong className="text-slate-900">Email :</strong> contact@synapse-agency.fr</p>
                   <p><strong className="text-slate-900">Téléphone :</strong> 06 32 54 55 78</p>
                   <p><strong className="text-slate-900">Directeur de la publication :</strong> Mickael Aydogdu</p>
