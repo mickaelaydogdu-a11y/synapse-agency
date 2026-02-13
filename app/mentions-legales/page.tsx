@@ -42,8 +42,8 @@ export default function MentionsLegales() {
                   <p><strong className="text-slate-900">Raison sociale :</strong> Synapse Agency</p>
                   <p><strong className="text-slate-900">Forme juridique :</strong> Entreprise individuelle</p>
                   <p><strong className="text-slate-900">Siège social :</strong> 21 grande place, 77640 Jouarre, France</p>
-                  <p><strong className="text-slate-900">SIRET :</strong> En cours d&apos;attribution</p>
-                  <p><strong className="text-slate-900">Immatriculation au RCS :</strong> 502 299 142 R.C.S. Meaux</p>
+                  <p><strong className="text-slate-900">SIREN :</strong> 502299142</p>
+                  <p><strong className="text-slate-900">Immatriculation au RCS :</strong> R.C.S. Meaux</p>
                   <p><strong className="text-slate-900">Email :</strong> contact@synapse-agency.fr</p>
                   <p><strong className="text-slate-900">Téléphone :</strong> 06 32 54 55 78</p>
                   <p><strong className="text-slate-900">Directeur de la publication :</strong> Mickael Aydogdu</p>
