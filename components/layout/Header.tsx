@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, Cpu, Smartphone, Camera, Gift } from "lucide-react";
+import { Menu, X, Cpu, Smartphone, Camera } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -48,12 +48,6 @@ export function Header() {
 
             {/* CTA */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link href="/audit-gratuit">
-                <Button size="sm" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700">
-                  <Gift className="w-4 h-4 mr-2" />
-                  Audit gratuit
-                </Button>
-              </Link>
               <Link href="/contact">
                 <Button size="sm" variant="secondary">
                   Contactez-nous
@@ -89,12 +83,6 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Link href="/audit-gratuit" onClick={() => setIsOpen(false)}>
-                <Button size="sm" className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700">
-                  <Gift className="w-4 h-4 mr-2" />
-                  Audit gratuit
-                </Button>
-              </Link>
               <Link href="/contact" onClick={() => setIsOpen(false)}>
                 <Button size="sm" variant="secondary" className="w-full">
                   Contactez-nous
