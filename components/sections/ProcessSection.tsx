@@ -34,7 +34,7 @@ export function ProcessSection() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
             >
-              <div className="text-3xl font-bold text-primary/40 font-mono mb-3">{step.number}</div>
+              <div className="text-3xl font-bold text-primary-light/40 font-mono mb-3">{step.number}</div>
               <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
               <p className="text-slate-300 text-sm">{step.description}</p>
             </motion.div>

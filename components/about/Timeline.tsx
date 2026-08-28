@@ -85,13 +85,13 @@ export function Timeline() {
               className="relative"
             >
               <div className="absolute -left-[3.25rem] md:-left-[4.25rem] top-0 w-9 h-9 rounded-full bg-surface border-2 border-primary flex items-center justify-center">
-                <item.icon className="w-4 h-4 text-primary" />
+                <item.icon className="w-4 h-4 text-primary-light" />
               </div>
-              <span className="inline-block text-xs font-mono font-semibold tracking-wide text-primary bg-primary/10 rounded-full px-3 py-1 mb-2">
+              <span className="inline-block text-xs font-mono font-semibold tracking-wide text-primary-light bg-primary/10 rounded-full px-3 py-1 mb-2">
                 {item.year}
               </span>
               <h3 className="text-lg font-bold text-white">{item.title}</h3>
-              <p className="text-sm text-slate-500 mb-2">{item.org}</p>
+              <p className="text-sm text-slate-400 mb-2">{item.org}</p>
               <p className="text-slate-300">{item.description}</p>
             </motion.div>
           ))}

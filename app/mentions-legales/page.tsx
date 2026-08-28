@@ -107,7 +107,7 @@ export default function MentionsLegales() {
                 <p className="text-slate-300 mt-4">
                   Vous pouvez à tout moment modifier vos préférences de cookies en supprimant les données de votre
                   navigateur. Pour plus d&apos;informations, consultez notre{" "}
-                  <a href="/confidentialite" className="text-primary hover:underline">politique de confidentialité</a>.
+                  <a href="/confidentialite" className="text-primary-light hover:underline">politique de confidentialité</a>.
                 </p>
               </section>
 
@@ -125,7 +125,7 @@ export default function MentionsLegales() {
                 <h2 className="text-2xl font-bold text-white mb-4">7. Contact</h2>
                 <p className="text-slate-300">
                   Pour toute question relative aux présentes mentions légales, vous pouvez nous contacter à
-                  l&apos;adresse suivante : <a href="mailto:contact@synapse-agency.fr" className="text-primary hover:underline">contact@synapse-agency.fr</a>
+                  l&apos;adresse suivante : <a href="mailto:contact@synapse-agency.fr" className="text-primary-light hover:underline">contact@synapse-agency.fr</a>
                 </p>
               </section>
             </div>

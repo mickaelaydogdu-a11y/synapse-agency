@@ -138,7 +138,7 @@ export default function SolutionsIA() {
                 className="p-6 rounded-xl bg-background border border-white/10"
               >
                 <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
-                  <point.icon className="w-6 h-6 text-secondary" />
+                  <point.icon className="w-6 h-6 text-secondary-light" />
                 </div>
                 <h3 className="text-white font-bold mb-2">{point.title}</h3>
                 <p className="text-slate-300 text-sm">{point.description}</p>
@@ -173,7 +173,7 @@ export default function SolutionsIA() {
               >
                 <Card className="h-full">
                   <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
-                    <capability.icon className="w-6 h-6 text-accent" />
+                    <capability.icon className="w-6 h-6 text-accent-light" />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{capability.title}</h3>
                   <p className="text-slate-300 text-sm mb-4">{capability.description}</p>
@@ -181,7 +181,7 @@ export default function SolutionsIA() {
                   {capability.examples && (
                     <div className="space-y-2 pt-4 border-t border-white/10">
                       {capability.examples.map((example) => (
-                        <p key={example} className="text-xs font-mono text-primary/80 italic">
+                        <p key={example} className="text-xs font-mono text-primary-light/80 italic">
                           &ldquo;{example}&rdquo;
                         </p>
                       ))}

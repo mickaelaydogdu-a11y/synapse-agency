@@ -70,12 +70,12 @@ export function AISection() {
             >
               <Card>
                 <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
-                  <capability.icon className="w-6 h-6 text-accent" />
+                  <capability.icon className="w-6 h-6 text-accent-light" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">{capability.title}</h3>
                 <p className="text-slate-300 text-sm mb-3">{capability.description}</p>
                 {capability.example && (
-                  <p className="text-xs font-mono text-primary/80 border-t border-white/10 pt-3">
+                  <p className="text-xs font-mono text-primary-light/80 border-t border-white/10 pt-3">
                     {capability.example}
                   </p>
                 )}

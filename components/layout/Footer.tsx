@@ -36,13 +36,13 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Navigation</h4>
+            <h3 className="text-white font-semibold mb-4">Navigation</h3>
             <ul className="space-y-3">
               {mainNav.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="flex items-center justify-center md:justify-start gap-2 text-slate-300 hover:text-primary transition-colors"
+                    className="flex items-center justify-center md:justify-start gap-2 text-slate-300 hover:text-primary-light transition-colors"
                   >
                     <item.icon className="w-4 h-4" />
                     {item.name}
@@ -52,7 +52,7 @@ export function Footer() {
               <li>
                 <Link
                   href={ctaHref}
-                  className="text-slate-300 hover:text-primary transition-colors"
+                  className="text-slate-300 hover:text-primary-light transition-colors"
                 >
                   {ctaLabel}
                 </Link>
@@ -62,7 +62,7 @@ export function Footer() {
 
           {/* Expertises */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Expertises</h4>
+            <h3 className="text-white font-semibold mb-4">Expertises</h3>
             <ul className="space-y-3">
               {expertises.map((item) => (
                 <li key={item} className="text-slate-300">
@@ -75,7 +75,7 @@ export function Footer() {
 
         {/* Contact */}
         <div className="mt-12 pt-12 border-t border-white/10 text-center md:text-left">
-          <h4 className="text-white font-semibold mb-4">Contact</h4>
+          <h3 className="text-white font-semibold mb-4">Contact</h3>
           <ul className="flex flex-col md:flex-row flex-wrap gap-4 md:gap-10">
             <li className="flex items-center justify-center md:justify-start gap-2 text-slate-300">
               <Mail className="w-4 h-4" />
@@ -94,14 +94,14 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col-reverse md:flex-row justify-between items-center gap-4 text-center">
-          <p className="text-slate-500 text-sm">
+          <p className="text-slate-400 text-sm">
             © {new Date().getFullYear()} Synapse Agency. Tous droits réservés.
           </p>
           <div className="flex gap-6">
-            <Link href="/confidentialite" className="text-slate-500 hover:text-primary text-sm transition-colors">
+            <Link href="/confidentialite" className="text-slate-400 hover:text-primary-light text-sm transition-colors">
               Confidentialité
             </Link>
-            <Link href="/mentions-legales" className="text-slate-500 hover:text-primary text-sm transition-colors">
+            <Link href="/mentions-legales" className="text-slate-400 hover:text-primary-light text-sm transition-colors">
               Mentions légales
             </Link>
           </div>

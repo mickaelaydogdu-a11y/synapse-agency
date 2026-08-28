@@ -33,7 +33,7 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-2 text-slate-300 hover:text-primary transition-colors"
+                  className="flex items-center gap-2 text-slate-300 hover:text-primary-light transition-colors"
                 >
                   <item.icon className="w-4 h-4" />
                   {item.name}
@@ -75,7 +75,7 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-2 text-slate-300 hover:text-primary transition-colors"
+                  className="flex items-center gap-2 text-slate-300 hover:text-primary-light transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   <item.icon className="w-4 h-4" />

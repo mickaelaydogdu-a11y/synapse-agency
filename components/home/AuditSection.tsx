@@ -20,8 +20,8 @@ export function AuditSection() {
             viewport={{ once: true }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <MessageCircle className="w-4 h-4 text-primary" />
-              <span className="text-sm text-primary">Premier contact</span>
+              <MessageCircle className="w-4 h-4 text-primary-light" />
+              <span className="text-sm text-primary-light">Premier contact</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -42,7 +42,7 @@ export function AuditSection() {
                 "Estimation budgétaire indicative"
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-slate-300">
-                  <CheckCircle className="w-5 h-5 text-primary shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-primary-light shrink-0" />
                   {item}
                 </li>
               ))}
@@ -73,16 +73,16 @@ export function AuditSection() {
 
                 <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
                   <div>
-                    <div className="text-2xl font-bold text-primary">100%</div>
-                    <p className="text-xs text-slate-500">Gratuit</p>
+                    <div className="text-2xl font-bold text-primary-light">100%</div>
+                    <p className="text-xs text-slate-400">Gratuit</p>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-primary">0</div>
-                    <p className="text-xs text-slate-500">Engagement</p>
+                    <div className="text-2xl font-bold text-primary-light">0</div>
+                    <p className="text-xs text-slate-400">Engagement</p>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-primary">24h</div>
-                    <p className="text-xs text-slate-500">Réponse</p>
+                    <div className="text-2xl font-bold text-primary-light">24h</div>
+                    <p className="text-xs text-slate-400">Réponse</p>
                   </div>
                 </div>
               </div>

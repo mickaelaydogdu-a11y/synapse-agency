@@ -58,7 +58,7 @@ export function SecuritySection() {
               className="p-6 rounded-2xl bg-surface border border-white/10"
             >
               <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
-                <point.icon className="w-6 h-6 text-primary" />
+                <point.icon className="w-6 h-6 text-primary-light" />
               </div>
               <h3 className="text-base font-bold text-white mb-2">{point.title}</h3>
               <p className="text-slate-300 text-sm">{point.description}</p>

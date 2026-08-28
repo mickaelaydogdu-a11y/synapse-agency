@@ -24,8 +24,8 @@ export function Workflow({ steps, className }: WorkflowProps) {
           </motion.div>
           {index < steps.length - 1 && (
             <>
-              <ArrowDown className="w-4 h-4 text-primary md:hidden" />
-              <ArrowRight className="w-4 h-4 text-primary hidden md:block" />
+              <ArrowDown className="w-4 h-4 text-primary-light md:hidden" />
+              <ArrowRight className="w-4 h-4 text-primary-light hidden md:block" />
             </>
           )}
         </div>

@@ -105,7 +105,7 @@ export default function Contact() {
                 <Card>
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-primary" />
+                      <Mail className="w-6 h-6 text-primary-light" />
                     </div>
                     <div>
                       <h3 className="text-white font-semibold mb-1">Email</h3>
@@ -123,7 +123,7 @@ export default function Contact() {
                 <Card>
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-secondary" />
+                      <Phone className="w-6 h-6 text-secondary-light" />
                     </div>
                     <div>
                       <h3 className="text-white font-semibold mb-1">Téléphone</h3>
@@ -141,7 +141,7 @@ export default function Contact() {
                 <Card>
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-accent" />
+                      <MapPin className="w-6 h-6 text-accent-light" />
                     </div>
                     <div>
                       <h3 className="text-white font-semibold mb-1">Adresse</h3>
@@ -255,7 +255,7 @@ export default function Contact() {
                       />
                       <span>
                         J&apos;accepte que mes données soient utilisées pour traiter ma demande, conformément à la{" "}
-                        <a href="/confidentialite" className="text-primary hover:underline">
+                        <a href="/confidentialite" className="text-primary-light hover:underline">
                           politique de confidentialité
                         </a>. *
                       </span>

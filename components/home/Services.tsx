@@ -54,7 +54,7 @@ export function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-primary font-medium mb-4"
+            className="text-primary-light font-medium mb-4"
           >
             Nos expertises
           </motion.p>
@@ -107,7 +107,7 @@ export function Services() {
                     ))}
                   </ul>
 
-                  <div className="flex items-center gap-2 text-primary mt-auto">
+                  <div className="flex items-center gap-2 text-primary-light mt-auto">
                     <span>En savoir plus</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>

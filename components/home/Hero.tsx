@@ -61,11 +61,11 @@ export function Hero() {
           className="flex flex-wrap justify-center gap-4 mb-10"
         >
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/40 border border-secondary/50 backdrop-blur-sm">
-            <Cpu className="w-4 h-4 text-secondary" />
+            <Cpu className="w-4 h-4 text-secondary-light" />
             <span className="text-sm text-white">Solutions IA</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/40 border border-accent/50 backdrop-blur-sm">
-            <Smartphone className="w-4 h-4 text-accent" />
+            <Smartphone className="w-4 h-4 text-accent-light" />
             <span className="text-sm text-white">Applications</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/40 border border-violet-500/50 backdrop-blur-sm">

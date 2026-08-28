@@ -73,14 +73,14 @@ export default async function RealisationDetail({
         <div className="max-w-4xl mx-auto px-6">
           <Link
             href="/realisations"
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-primary text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-slate-400 hover:text-primary-light text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Toutes les réalisations
           </Link>
 
           <Badge variant="secondary" className="mb-4">Exemple de projet type</Badge>
-          <p className="text-xs font-mono uppercase text-slate-500 mb-2">{realisation.category}</p>
+          <p className="text-xs font-mono uppercase text-slate-400 mb-2">{realisation.category}</p>
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">{realisation.title}</h1>
           <p className="text-lg text-slate-300">{realisation.summary}</p>
         </div>
@@ -90,19 +90,19 @@ export default async function RealisationDetail({
         <div className="max-w-4xl mx-auto px-6 space-y-14">
           <div className="grid md:grid-cols-2 gap-10">
             <div>
-              <h2 className="text-xs font-mono uppercase tracking-wide text-primary mb-3">Le contexte</h2>
+              <h2 className="text-xs font-mono uppercase tracking-wide text-primary-light mb-3">Le contexte</h2>
               <p className="text-slate-300">{realisation.context}</p>
             </div>
             <div>
-              <h2 className="text-xs font-mono uppercase tracking-wide text-primary mb-3">Le problème</h2>
+              <h2 className="text-xs font-mono uppercase tracking-wide text-primary-light mb-3">Le problème</h2>
               <p className="text-slate-300">{realisation.problem}</p>
             </div>
             <div>
-              <h2 className="text-xs font-mono uppercase tracking-wide text-primary mb-3">Les utilisateurs</h2>
+              <h2 className="text-xs font-mono uppercase tracking-wide text-primary-light mb-3">Les utilisateurs</h2>
               <p className="text-slate-300">{realisation.users}</p>
             </div>
             <div>
-              <h2 className="text-xs font-mono uppercase tracking-wide text-primary mb-3">La solution</h2>
+              <h2 className="text-xs font-mono uppercase tracking-wide text-primary-light mb-3">La solution</h2>
               <p className="text-slate-300">{realisation.solution}</p>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default async function RealisationDetail({
             <ul className="grid sm:grid-cols-2 gap-3">
               {realisation.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-3 text-slate-300 text-sm">
-                  <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-primary-light shrink-0 mt-0.5" />
                   {feature}
                 </li>
               ))}
@@ -121,13 +121,13 @@ export default async function RealisationDetail({
 
           <div>
             <h2 className="text-xl font-bold text-white mb-5 flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-accent" />
+              <Sparkles className="w-5 h-5 text-accent-light" />
               L&apos;intelligence artificielle
             </h2>
             <ul className="grid sm:grid-cols-2 gap-3">
               {realisation.ai.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-slate-300 text-sm">
-                  <Check className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-accent-light shrink-0 mt-0.5" />
                   {item}
                 </li>
               ))}
@@ -140,12 +140,12 @@ export default async function RealisationDetail({
           </div>
 
           <div className="p-6 rounded-2xl bg-surface border border-white/10">
-            <h2 className="text-xs font-mono uppercase tracking-wide text-primary mb-3">Résultats attendus</h2>
+            <h2 className="text-xs font-mono uppercase tracking-wide text-primary-light mb-3">Résultats attendus</h2>
             <p className="text-slate-300">{realisation.results}</p>
           </div>
 
           <div>
-            <h2 className="text-xs font-mono uppercase tracking-wide text-slate-500 mb-3">Technologies utilisées</h2>
+            <h2 className="text-xs font-mono uppercase tracking-wide text-slate-400 mb-3">Technologies utilisées</h2>
             <div className="flex flex-wrap gap-2">
               {realisation.technologies.map((tech) => (
                 <span key={tech} className="text-xs px-3 py-1.5 rounded-full bg-white/10 text-slate-300">

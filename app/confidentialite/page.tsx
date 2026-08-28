@@ -117,7 +117,7 @@ export default function Confidentialite() {
                   <li><strong className="text-white">Droit d&apos;opposition :</strong> vous opposer au traitement de vos données</li>
                 </ul>
                 <p className="text-slate-300 mt-4">
-                  Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@synapse-agency.fr" className="text-primary hover:underline">contact@synapse-agency.fr</a>
+                  Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@synapse-agency.fr" className="text-primary-light hover:underline">contact@synapse-agency.fr</a>
                 </p>
               </section>
 
@@ -209,7 +209,7 @@ export default function Confidentialite() {
                 </div>
                 <p className="text-slate-300 mt-4">
                   Vous pouvez également introduire une réclamation auprès de la CNIL (Commission Nationale de
-                  l&apos;Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.cnil.fr</a>
+                  l&apos;Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-primary-light hover:underline">www.cnil.fr</a>
                 </p>
               </section>
             </div>

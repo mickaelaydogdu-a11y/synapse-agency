@@ -40,7 +40,7 @@ export function CaseStudiesSection() {
                   <Badge variant="secondary" className="mb-4 self-start">Exemple de projet type</Badge>
                   <h3 className="text-lg font-bold text-white mb-3">{study.title}</h3>
                   <p className="text-slate-300 text-sm flex-1">{study.summary}</p>
-                  <p className="flex items-center gap-2 text-primary text-sm font-medium mt-4">
+                  <p className="flex items-center gap-2 text-primary-light text-sm font-medium mt-4">
                     Voir le projet
                     <ArrowRight className="w-4 h-4" />
                   </p>

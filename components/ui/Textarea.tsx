@@ -28,7 +28,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           aria-describedby={error ? `${inputId}-error` : undefined}
           className={cn(
             "w-full px-4 py-3 bg-surface border border-white/10 rounded-xl",
-            "text-white placeholder:text-slate-500",
+            "text-white placeholder:text-slate-400",
             "focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary",
             "transition-all duration-200 resize-none",
             error && "border-red-500 focus:ring-red-500/50",

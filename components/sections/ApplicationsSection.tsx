@@ -69,7 +69,7 @@ export function ApplicationsSection() {
             >
               <Card>
                 <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
-                  <category.icon className="w-6 h-6 text-primary" />
+                  <category.icon className="w-6 h-6 text-primary-light" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-3">{category.title}</h3>
                 <ul className="space-y-1.5">

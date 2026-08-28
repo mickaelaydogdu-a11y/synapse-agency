@@ -45,10 +45,10 @@ export default function Realisations() {
                 <Link href={`/realisations/${realisation.slug}`}>
                   <Card className="h-full flex flex-col">
                     <Badge variant="secondary" className="mb-4 self-start">Exemple de projet type</Badge>
-                    <p className="text-xs font-mono uppercase text-slate-500 mb-2">{realisation.category}</p>
+                    <p className="text-xs font-mono uppercase text-slate-400 mb-2">{realisation.category}</p>
                     <h2 className="text-lg font-bold text-white mb-3">{realisation.title}</h2>
                     <p className="text-slate-300 text-sm flex-1">{realisation.summary}</p>
-                    <p className="flex items-center gap-2 text-primary text-sm font-medium mt-4">
+                    <p className="flex items-center gap-2 text-primary-light text-sm font-medium mt-4">
                       Voir le projet
                       <ArrowRight className="w-4 h-4" />
                     </p>

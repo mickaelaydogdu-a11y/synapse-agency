@@ -120,7 +120,7 @@ export default function Applications() {
                 className="p-6 rounded-xl bg-background border border-white/10"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
-                  <limit.icon className="w-6 h-6 text-accent" />
+                  <limit.icon className="w-6 h-6 text-accent-light" />
                 </div>
                 <h3 className="text-white font-bold mb-2">{limit.title}</h3>
                 <p className="text-slate-300 text-sm">{limit.description}</p>
@@ -158,7 +158,7 @@ export default function Applications() {
               >
                 <Card>
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
-                    <category.icon className="w-6 h-6 text-primary" />
+                    <category.icon className="w-6 h-6 text-primary-light" />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{category.title}</h3>
                   <p className="text-slate-300 text-sm">{category.description}</p>
@@ -193,7 +193,7 @@ export default function Applications() {
               >
                 <Card className="h-full">
                   <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
-                    <feature.icon className="w-6 h-6 text-accent" />
+                    <feature.icon className="w-6 h-6 text-accent-light" />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
                   <p className="text-slate-300">{feature.description}</p>

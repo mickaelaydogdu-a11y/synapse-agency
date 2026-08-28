@@ -48,7 +48,7 @@ export function CookieBanner() {
               <p className="text-sm text-slate-300">
                 Nous utilisons des cookies pour améliorer votre expérience de navigation, analyser le trafic du site et personnaliser le contenu.
                 En cliquant sur "Accepter", vous consentez à l'utilisation de tous les cookies.{" "}
-                <Link href="/confidentialite" className="text-primary hover:underline">
+                <Link href="/confidentialite" className="text-primary-light hover:underline">
                   En savoir plus
                 </Link>
               </p>

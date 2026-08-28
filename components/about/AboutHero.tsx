@@ -40,8 +40,8 @@ export function AboutHero() {
             className="text-center lg:text-left"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
-              <MapPin className="w-4 h-4 text-primary" />
-              <span className="text-sm text-primary">Jouarre (77)</span>
+              <MapPin className="w-4 h-4 text-primary-light" />
+              <span className="text-sm text-primary-light">Jouarre (77)</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Mickael Aydogdu
@@ -66,7 +66,7 @@ export function AboutHero() {
               className="text-center p-4 rounded-2xl bg-surface border border-white/10"
             >
               <div className="text-2xl md:text-3xl font-bold gradient-text mb-1">{stat.value}</div>
-              <p className="text-slate-500 text-sm">{stat.label}</p>
+              <p className="text-slate-400 text-sm">{stat.label}</p>
             </motion.div>
           ))}
         </div>
