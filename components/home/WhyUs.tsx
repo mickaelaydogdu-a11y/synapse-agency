@@ -36,10 +36,10 @@ export function WhyUs() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Pourquoi choisir <span className="gradient-text">Synapse Agency</span> ?
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-300 max-w-3xl mx-auto">
             Une agence digitale à taille humaine qui combine technologie de pointe et approche personnalisée.
             Nous transformons vos idées en solutions concrètes qui font la différence.
           </p>
@@ -58,8 +58,8 @@ export function WhyUs() {
               <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
                 <benefit.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{benefit.title}</h3>
-              <p className="text-slate-600 text-sm">{benefit.description}</p>
+              <h3 className="text-lg font-bold text-white mb-2">{benefit.title}</h3>
+              <p className="text-slate-300 text-sm">{benefit.description}</p>
             </motion.div>
           ))}
         </div>

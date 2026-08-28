@@ -13,13 +13,13 @@
   --color-accent-dark: #6d28d9;
   --color-accent-light: #8b5cf6;
 
-  --color-background: #ffffff;
-  --color-surface: #f8fafc;
-  --color-surface-light: #f1f5f9;
+  --color-background: #0a0a0d;
+  --color-surface: #141119;
+  --color-surface-light: #1c1824;
 
-  --color-text-primary: #0f172a;
-  --color-text-secondary: #475569;
-  --color-text-muted: #64748b;
+  --color-text-primary: #f7f7f8;
+  --color-text-secondary: #b4b4bf;
+  --color-text-muted: #83838f;
 
   --font-family-sans: "Inter", system-ui, sans-serif;
 
@@ -72,7 +72,8 @@
   }
 
   .glass {
-    @apply bg-white/80 backdrop-blur-xl border border-slate-200;
+    background: linear-gradient(to right, rgba(76, 29, 149, 0.55), rgba(49, 21, 107, 0.6), rgba(76, 29, 149, 0.55));
+    @apply backdrop-blur-xl border-b border-accent/30;
   }
 
   .card-hover {

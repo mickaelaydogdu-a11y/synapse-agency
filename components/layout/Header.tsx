@@ -28,7 +28,7 @@ export function Header() {
                 alt="Synapse Agency"
                 width={300}
                 height={300}
-                className="h-16 w-auto"
+                className="h-16 w-auto brightness-0 invert"
                 priority
               />
             </Link>
@@ -39,7 +39,7 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors"
+                  className="flex items-center gap-2 text-slate-300 hover:text-primary transition-colors"
                 >
                   <item.icon className="w-4 h-4" />
                   {item.name}
@@ -58,7 +58,7 @@ export function Header() {
 
             {/* Mobile/Tablet Menu Button */}
             <button
-              className="lg:hidden text-slate-900"
+              className="lg:hidden text-white"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -72,12 +72,12 @@ export function Header() {
               isOpen ? "max-h-80 mt-4" : "max-h-0"
             )}
           >
-            <div className="flex flex-col gap-4 pt-4 border-t border-slate-200">
+            <div className="flex flex-col gap-4 pt-4 border-t border-white/10">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors"
+                  className="flex items-center gap-2 text-slate-300 hover:text-primary transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   <item.icon className="w-4 h-4" />

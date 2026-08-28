@@ -66,15 +66,15 @@ export function Timeline() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Un parcours de <span className="gradient-text">terrain</span>
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             Vingt ans à toucher au numérique sous toutes ses formes, avant d&apos;en faire une agence.
           </p>
         </motion.div>
 
-        <div className="relative pl-10 md:pl-14 border-l-2 border-slate-200 space-y-10">
+        <div className="relative pl-10 md:pl-14 border-l-2 border-white/10 space-y-10">
           {timeline.map((item, index) => (
             <motion.div
               key={item.year}
@@ -84,15 +84,15 @@ export function Timeline() {
               transition={{ delay: index * 0.08 }}
               className="relative"
             >
-              <div className="absolute -left-[3.25rem] md:-left-[4.25rem] top-0 w-9 h-9 rounded-full bg-white border-2 border-primary flex items-center justify-center">
+              <div className="absolute -left-[3.25rem] md:-left-[4.25rem] top-0 w-9 h-9 rounded-full bg-surface border-2 border-primary flex items-center justify-center">
                 <item.icon className="w-4 h-4 text-primary" />
               </div>
               <span className="inline-block text-xs font-mono font-semibold tracking-wide text-primary bg-primary/10 rounded-full px-3 py-1 mb-2">
                 {item.year}
               </span>
-              <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+              <h3 className="text-lg font-bold text-white">{item.title}</h3>
               <p className="text-sm text-slate-500 mb-2">{item.org}</p>
-              <p className="text-slate-600">{item.description}</p>
+              <p className="text-slate-300">{item.description}</p>
             </motion.div>
           ))}
         </div>

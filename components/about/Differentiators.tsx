@@ -36,7 +36,7 @@ export function Differentiators() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ce qui change <span className="gradient-text">avec moi</span>
           </h2>
         </motion.div>
@@ -54,8 +54,8 @@ export function Differentiators() {
               <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
                 <point.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{point.title}</h3>
-              <p className="text-slate-600 text-sm">{point.description}</p>
+              <h3 className="text-lg font-bold text-white mb-2">{point.title}</h3>
+              <p className="text-slate-300 text-sm">{point.description}</p>
             </motion.div>
           ))}
         </div>

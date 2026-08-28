@@ -63,7 +63,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
+            className="text-3xl md:text-4xl font-bold text-white mb-4"
           >
             Trois pôles d&apos;expertise pour votre réussite
           </motion.h2>
@@ -72,7 +72,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="text-slate-600 max-w-2xl mx-auto"
+            className="text-slate-300 max-w-2xl mx-auto"
           >
             Du conseil à la réalisation, nous vous accompagnons dans tous vos projets digitaux
           </motion.p>
@@ -93,14 +93,14 @@ export function Services() {
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6`}>
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  <h3 className="text-xl font-bold text-white mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-slate-600 mb-6">{service.description}</p>
+                  <p className="text-slate-300 mb-6">{service.description}</p>
 
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2 text-sm text-slate-600">
+                      <li key={feature} className="flex items-start gap-2 text-sm text-slate-300">
                         <Check className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
                         {feature}
                       </li>

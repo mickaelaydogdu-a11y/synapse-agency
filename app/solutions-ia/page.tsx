@@ -189,7 +189,7 @@ export default function SolutionsIA() {
       <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4">
               Fonctionnalités clés
             </h2>
           </div>
@@ -207,8 +207,8 @@ export default function SolutionsIA() {
                   <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
                     <feature.icon className="w-6 h-6 text-secondary" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
-                  <p className="text-slate-600">{feature.description}</p>
+                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                  <p className="text-slate-300">{feature.description}</p>
                 </Card>
               </motion.div>
             ))}
@@ -249,19 +249,19 @@ export default function SolutionsIA() {
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${agent.color} flex items-center justify-center mb-4`}>
                     <agent.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{agent.title}</h3>
-                  <p className="text-slate-600 mb-4">{agent.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-3">{agent.title}</h3>
+                  <p className="text-slate-300 mb-4">{agent.description}</p>
 
                   <ul className="space-y-2 mb-4">
                     {agent.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-slate-600">
+                      <li key={feature} className="flex items-center gap-2 text-sm text-slate-300">
                         <Check className="w-4 h-4 text-green-500 shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="pt-4 border-t border-slate-200">
+                  <div className="pt-4 border-t border-white/10">
                     <p className="text-xs text-slate-500">Idéal pour :</p>
                     <p className="text-sm text-primary">{agent.ideal}</p>
                   </div>
@@ -276,7 +276,7 @@ export default function SolutionsIA() {
       <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4">
               Fonctionnalités des agents
             </h2>
           </div>
@@ -294,8 +294,8 @@ export default function SolutionsIA() {
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
-                  <p className="text-slate-600">{feature.description}</p>
+                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                  <p className="text-slate-300">{feature.description}</p>
                 </Card>
               </motion.div>
             ))}
@@ -308,10 +308,10 @@ export default function SolutionsIA() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl font-bold text-white mb-6">
                 Cas d&apos;usage
               </h2>
-              <p className="text-slate-600 mb-8">
+              <p className="text-slate-300 mb-8">
                 Nos agents IA s&apos;adaptent à de nombreux contextes métier pour automatiser vos interactions.
               </p>
               <div className="grid grid-cols-2 gap-4">
@@ -320,7 +320,7 @@ export default function SolutionsIA() {
                     <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
                       <Check className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="text-slate-900 text-sm">{useCase}</span>
+                    <span className="text-white text-sm">{useCase}</span>
                   </div>
                 ))}
               </div>
@@ -329,13 +329,13 @@ export default function SolutionsIA() {
             <Card variant="gradient" hover={false} className="p-8">
               <div className="text-center">
                 <div className="text-5xl font-bold gradient-text mb-2">-70%</div>
-                <p className="text-slate-600 mb-6">de temps de réponse client</p>
+                <p className="text-slate-300 mb-6">de temps de réponse client</p>
 
                 <div className="text-5xl font-bold gradient-text mb-2">24/7</div>
-                <p className="text-slate-600 mb-6">disponibilité sans surcoût</p>
+                <p className="text-slate-300 mb-6">disponibilité sans surcoût</p>
 
                 <div className="text-5xl font-bold gradient-text mb-2">2h/jour</div>
-                <p className="text-slate-600">gagnées en moyenne</p>
+                <p className="text-slate-300">gagnées en moyenne</p>
               </div>
             </Card>
           </div>

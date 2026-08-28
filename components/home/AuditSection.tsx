@@ -24,11 +24,11 @@ export function AuditSection() {
               <span className="text-sm text-primary">Premier contact</span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Échangeons sur votre projet
             </h2>
 
-            <p className="text-lg text-slate-600 mb-6">
+            <p className="text-lg text-slate-300 mb-6">
               Vous avez un projet digital en tête ? Une idée d&apos;automatisation ?
               Besoin de valoriser votre image ? Prenez 30 minutes pour en discuter
               avec nous et découvrir comment nous pouvons vous aider.
@@ -41,7 +41,7 @@ export function AuditSection() {
                 "Premières pistes de solutions adaptées",
                 "Estimation budgétaire indicative"
               ].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-slate-600">
+                <li key={item} className="flex items-center gap-3 text-slate-300">
                   <CheckCircle className="w-5 h-5 text-primary shrink-0" />
                   {item}
                 </li>
@@ -63,15 +63,15 @@ export function AuditSection() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 border border-slate-200">
+            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 border border-white/10">
               <div className="text-center">
                 <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-6">
                   <Clock className="w-10 h-10 text-white" />
                 </div>
-                <div className="text-5xl font-bold text-slate-900 mb-2">30 min</div>
-                <p className="text-slate-600 mb-6">pour parler de votre projet</p>
+                <div className="text-5xl font-bold text-white mb-2">30 min</div>
+                <p className="text-slate-300 mb-6">pour parler de votre projet</p>
 
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200">
+                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
                   <div>
                     <div className="text-2xl font-bold text-primary">100%</div>
                     <p className="text-xs text-slate-500">Gratuit</p>

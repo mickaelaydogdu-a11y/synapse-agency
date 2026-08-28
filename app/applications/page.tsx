@@ -175,23 +175,23 @@ export default function Applications() {
                 <Cog className="w-4 h-4 mr-2" />
                 Vos outils, votre force
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Des outils adaptés pour une entreprise <span className="gradient-text">performante</span>
               </h2>
-              <div className="space-y-4 text-slate-600">
+              <div className="space-y-4 text-slate-300">
                 <p>
                   Dans un monde où tout s&apos;accélère, vos outils de travail font la différence.
                   Une entreprise équipée des bons outils digitaux gagne en réactivité, en efficacité
                   et en qualité de service.
                 </p>
                 <p>
-                  <strong className="text-slate-900">La communication interne et externe</strong> est le nerf
+                  <strong className="text-white">La communication interne et externe</strong> est le nerf
                   de la guerre. Clients, équipes, partenaires : chacun doit pouvoir accéder à la bonne
                   information au bon moment. Fini les emails perdus, les fichiers Excel éparpillés
                   et les informations qui n&apos;arrivent jamais à destination.
                 </p>
                 <p>
-                  <strong className="text-slate-900">Vos processus métier méritent des outils sur mesure</strong>.
+                  <strong className="text-white">Vos processus métier méritent des outils sur mesure</strong>.
                   Plutôt que de vous adapter à des logiciels génériques, nous créons des applications
                   qui épousent parfaitement votre façon de travailler.
                 </p>
@@ -207,13 +207,13 @@ export default function Applications() {
               {benefits.map((benefit, index) => (
                 <div
                   key={benefit.title}
-                  className="p-6 rounded-xl bg-background border border-slate-200"
+                  className="p-6 rounded-xl bg-background border border-white/10"
                 >
                   <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
                     <benefit.icon className="w-6 h-6 text-accent" />
                   </div>
-                  <h3 className="text-slate-900 font-bold mb-2">{benefit.title}</h3>
-                  <p className="text-slate-600 text-sm">{benefit.description}</p>
+                  <h3 className="text-white font-bold mb-2">{benefit.title}</h3>
+                  <p className="text-slate-300 text-sm">{benefit.description}</p>
                 </div>
               ))}
             </motion.div>
@@ -253,16 +253,16 @@ export default function Applications() {
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${app.color} flex items-center justify-center mb-4`}>
                     <app.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{app.title}</h3>
-                  <p className="text-slate-600 mb-4">{app.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-3">{app.title}</h3>
+                  <p className="text-slate-300 mb-4">{app.description}</p>
 
-                  <div className="pt-4 border-t border-slate-200">
+                  <div className="pt-4 border-t border-white/10">
                     <p className="text-xs text-slate-500 mb-2">Exemples :</p>
                     <div className="flex flex-wrap gap-2">
                       {app.examples.map((example) => (
                         <span
                           key={example}
-                          className="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-600"
+                          className="text-xs px-2 py-1 rounded-full bg-white/10 text-slate-300"
                         >
                           {example}
                         </span>
@@ -280,10 +280,10 @@ export default function Applications() {
       <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4">
               Ce qui fait la différence
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
+            <p className="text-slate-300 max-w-2xl mx-auto">
               Chaque application que nous développons intègre les meilleures pratiques
               du web moderne pour garantir qualité et pérennité
             </p>
@@ -302,8 +302,8 @@ export default function Applications() {
                   <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
                     <feature.icon className="w-6 h-6 text-accent" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
-                  <p className="text-slate-600">{feature.description}</p>
+                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                  <p className="text-slate-300">{feature.description}</p>
                 </Card>
               </motion.div>
             ))}

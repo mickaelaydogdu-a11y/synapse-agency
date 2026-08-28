@@ -21,9 +21,9 @@ export function AboutHero() {
             animate={{ opacity: 1, scale: 1 }}
             className="mx-auto lg:mx-0"
           >
-            <div className="relative w-64 h-80 md:w-72 md:h-96 rounded-3xl overflow-hidden shrink-0 shadow-xl shadow-primary/10 border border-slate-200">
+            <div className="relative w-64 h-80 md:w-72 md:h-96 rounded-3xl overflow-hidden shrink-0 shadow-xl shadow-primary/10 border border-white/10">
               <Image
-                src="/images/team/mickael-aydogdu.jpg"
+                src="/images/team/mickael-aydogdu-bw.jpg"
                 alt="Mickael Aydogdu, fondateur de Synapse Agency"
                 fill
                 sizes="(min-width: 768px) 288px, 256px"
@@ -43,11 +43,11 @@ export function AboutHero() {
               <MapPin className="w-4 h-4 text-primary" />
               <span className="text-sm text-primary">Jouarre (77)</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Mickael Aydogdu
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl">
-              Avant de fonder <span className="text-slate-900 font-medium">Synapse Agency</span>, j&apos;ai réparé des automates industriels,
+            <p className="text-lg text-slate-300 max-w-2xl">
+              Avant de fonder <span className="text-white font-medium">Synapse Agency</span>, j&apos;ai réparé des automates industriels,
               enseigné l&apos;informatique, géré les services techniques d&apos;une mairie et été élu pendant six ans à Jouarre.
               Ce n&apos;est pas un parcours de startup — c&apos;est un parcours de terrain, et c&apos;est ce qui infuse ma façon
               d&apos;aborder l&apos;IA : pas de jargon, des solutions qui doivent marcher, pas juste impressionner.
@@ -63,7 +63,7 @@ export function AboutHero() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="text-center p-4 rounded-2xl bg-surface border border-slate-200"
+              className="text-center p-4 rounded-2xl bg-surface border border-white/10"
             >
               <div className="text-2xl md:text-3xl font-bold gradient-text mb-1">{stat.value}</div>
               <p className="text-slate-500 text-sm">{stat.label}</p>

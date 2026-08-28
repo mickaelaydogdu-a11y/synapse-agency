@@ -13,8 +13,8 @@ export function Badge({ children, variant = "primary", className }: BadgeProps) 
     primary: "bg-primary/10 text-primary border-primary/20",
     secondary: "bg-secondary/10 text-secondary border-secondary/20",
     accent: "bg-accent/10 text-accent border-accent/20",
-    success: "bg-green-500/10 text-green-600 border-green-500/20",
-    warning: "bg-amber-500/10 text-amber-600 border-amber-500/20",
+    success: "bg-green-500/10 text-green-400 border-green-500/20",
+    warning: "bg-amber-500/10 text-amber-400 border-amber-500/20",
   };
 
   return (
