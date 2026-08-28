@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Landmark, Wrench, GraduationCap, Layers } from "lucide-react";
+import { ShieldCheck, Wrench, GraduationCap, Layers } from "lucide-react";
 
 const points = [
   {
-    icon: Landmark,
-    title: "Ancrage local, pas une agence à distance",
-    description: "Basé à Jouarre, je travaille en direct avec mes clients — pas une agence qui répond depuis Paris ou l'étranger.",
+    icon: ShieldCheck,
+    title: "Entreprise française, données sécurisées",
+    description: "Mes solutions sont 100 % RGPD, pensées dès leur conception pour la sécurité et la propriété de vos données — conformes aux obligations françaises, sans transfert vers l'étranger.",
   },
   {
     icon: Wrench,

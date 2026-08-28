@@ -53,7 +53,7 @@ export function AboutHero() {
               entreprise dans ce domaine — douze ans à accompagner de grands comptes. Aujourd&apos;hui, je reviens à la tech, ma formation
               d&apos;origine, avec plus de compétences, de maturité et une expérience résolument transversale. Ce n&apos;est pas un parcours
               de startup — c&apos;est un parcours de terrain, et c&apos;est ce qui infuse ma façon d&apos;aborder la tech : pas de jargon,
-              des solutions qui doivent marcher, pas juste impressionner.
+              des solutions qui doivent marcher.
             </p>
           </motion.div>
         </div>
