@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { KeyRound, Lock, ScrollText, ShieldAlert, UserCheck } from "lucide-react";
-import { Workflow } from "./Workflow";
 
 const points = [
   {
@@ -47,7 +46,7 @@ export function SecuritySection() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
           {points.map((point, index) => (
             <motion.div
               key={point.title}
@@ -65,24 +64,6 @@ export function SecuritySection() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <Workflow
-            steps={[
-              "Utilisateur",
-              "Authentification",
-              "Application Synapse",
-              "Contrôle des permissions",
-              "Couche IA",
-              "Base de connaissances",
-              "Outils / API",
-            ]}
-          />
-        </motion.div>
       </div>
     </section>
   );

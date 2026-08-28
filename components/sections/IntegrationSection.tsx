@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const integrations = [
-  "API", "REST", "Webhooks", "PostgreSQL", "Supabase", "Microsoft 365",
+  "API", "PostgreSQL", "Supabase", "Microsoft 365",
   "Google Workspace", "Gmail", "Outlook", "CRM", "ERP", "Slack",
   "WhatsApp", "Stripe", "Dropbox", "Google Drive",
 ];

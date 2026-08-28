@@ -35,29 +35,6 @@ export function ApplicationAISection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-xl font-bold text-white text-center mb-8">
-            Exemple : gestion commerciale intelligente
-          </h3>
-          <Workflow
-            steps={[
-              "Nouveau prospect",
-              "Analyse de la demande",
-              "Qualification automatique",
-              "Création de l'opportunité",
-              "Préparation du devis",
-              "Validation commerciale",
-              "Relance automatique",
-              "Suivi du pipeline",
-            ]}
-          />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
         >
           <h3 className="text-xl font-bold text-white text-center mb-8">
             Exemple : votre assistant métier

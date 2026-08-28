@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, MessageSquare, FileSearch, Database, PenLine, Network, Bot } from "lucide-react";
+import { ArrowRight, MessageSquare, FileSearch, Database, PenLine, Bot } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 
@@ -28,11 +28,6 @@ const capabilities = [
     icon: PenLine,
     title: "Génération assistée",
     description: "Génère comptes rendus, devis, emails, synthèses et propositions commerciales.",
-  },
-  {
-    icon: Network,
-    title: "RAG",
-    description: "Une IA capable de travailler avec la base documentaire propre à votre entreprise (PDF, Word, bases de données, procédures).",
   },
   {
     icon: Bot,

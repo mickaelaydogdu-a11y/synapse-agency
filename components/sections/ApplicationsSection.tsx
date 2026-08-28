@@ -10,32 +10,32 @@ const categories = [
   {
     icon: Users,
     title: "CRM sur mesure",
-    features: ["Prospects", "Opportunités", "Pipeline", "Relances", "Devis", "Reporting"],
+    features: ["Prospects", "Pipeline", "Devis"],
   },
   {
     icon: Receipt,
     title: "Gestion commerciale",
-    features: ["Demandes entrantes", "Qualification", "Devis", "Commandes", "Statistiques"],
+    features: ["Demandes entrantes", "Devis", "Commandes"],
   },
   {
     icon: HardHat,
     title: "Applications terrain",
-    features: ["Interventions", "Rapports", "Photos", "Géolocalisation", "Signatures"],
+    features: ["Interventions", "Rapports", "Photos"],
   },
   {
     icon: Construction,
     title: "Suivi de chantier",
-    features: ["Affaires", "Chantiers", "Équipes", "Planning", "Réserves"],
+    features: ["Chantiers", "Équipes", "Planning"],
   },
   {
     icon: ShieldCheck,
     title: "Portail client",
-    features: ["Connexion sécurisée", "Documents", "Contrats", "Factures", "Suivi de dossiers"],
+    features: ["Documents", "Factures", "Suivi de dossiers"],
   },
   {
     icon: FolderKanban,
     title: "Gestion documentaire",
-    features: ["Stockage", "Classement", "Recherche", "Permissions", "Extraction IA"],
+    features: ["Classement", "Recherche", "Extraction IA"],
   },
 ];
 
