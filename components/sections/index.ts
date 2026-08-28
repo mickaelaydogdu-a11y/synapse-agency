@@ -1,7 +1,6 @@
 export { HeroSection } from "./HeroSection";
 export { ApplicationsSection } from "./ApplicationsSection";
 export { AISection } from "./AISection";
-export { ApplicationAISection } from "./ApplicationAISection";
 export { AutomationSection } from "./AutomationSection";
 export { IntegrationSection } from "./IntegrationSection";
 export { CaseStudiesSection } from "./CaseStudiesSection";

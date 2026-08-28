@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { AuditSection } from "@/components/home";
-import { AutomationSection, SecuritySection, ApplicationAISection, Workflow } from "@/components/sections";
+import { AutomationSection, SecuritySection, Workflow } from "@/components/sections";
 
 const why = [
   { icon: Layers, title: "Réduire les tâches répétitives", description: "Sans ajouter un outil de plus à gérer : l'IA s'intègre dans vos applications existantes." },
@@ -212,7 +212,6 @@ export default function SolutionsIA() {
 
       <AutomationSection />
       <SecuritySection />
-      <ApplicationAISection />
       <AuditSection />
     </main>
   );
