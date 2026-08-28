@@ -6,7 +6,7 @@ import { MapPin } from "lucide-react";
 
 const stats = [
   { value: "20+", label: "ans dans le numérique" },
-  { value: "2018", label: "indépendant" },
+  { value: "2010", label: "indépendant" },
   { value: "4 ans", label: "en agence digitale" },
   { value: "7", label: "domaines IA maîtrisés" },
 ];
