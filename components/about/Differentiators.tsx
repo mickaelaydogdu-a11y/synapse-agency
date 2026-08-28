@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Wrench, GraduationCap, Layers } from "lucide-react";
+import { ShieldCheck, Wrench, CodeXml, Layers } from "lucide-react";
 
 const points = [
   {
     icon: ShieldCheck,
     title: "Entreprise française, données sécurisées",
-    description: "Mes solutions sont 100 % RGPD, pensées dès leur conception pour la sécurité et la propriété de vos données — conformes aux obligations françaises, sans transfert vers l'étranger.",
+    description: "Mes solutions sont 100 % RGPD, pensées dès leur conception pour la sécurité et la propriété de vos données.",
   },
   {
     icon: Wrench,
@@ -15,9 +15,9 @@ const points = [
     description: "Avant l'IA, j'ai dirigé ma propre entreprise pendant douze ans, pour de grands comptes exigeants. Je sais ce que \"ça doit marcher tous les jours\" veut dire.",
   },
   {
-    icon: GraduationCap,
-    title: "Je vulgarise, je n'impressionne pas",
-    description: "Ancien professeur d'informatique : mon rôle est de rendre l'IA compréhensible et actionnable pour vous, pas de vous noyer dans le jargon.",
+    icon: CodeXml,
+    title: "Un développeur, pas un intermédiaire",
+    description: "HTML, CSS, PHP, SQL, API, JavaScript, React, Next.js : conception fullstack frontend et backend.",
   },
   {
     icon: Layers,
