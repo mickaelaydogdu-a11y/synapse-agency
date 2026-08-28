@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Landmark, Wrench, GraduationCap, PlaneTakeoff } from "lucide-react";
+import { Landmark, Wrench, GraduationCap, Layers } from "lucide-react";
 
 const points = [
   {
     icon: Landmark,
     title: "Ancrage local, pas une agence à distance",
-    description: "Élu pendant six ans à Jouarre, je connais le tissu économique local — pas une agence qui répond depuis Paris ou l'étranger.",
+    description: "Élu maire adjoint pendant six ans, je connais le tissu économique local — pas une agence qui répond depuis Paris ou l'étranger.",
   },
   {
     icon: Wrench,
@@ -20,9 +20,9 @@ const points = [
     description: "Ancien professeur d'informatique : mon rôle est de rendre l'IA compréhensible et actionnable pour vous, pas de vous noyer dans le jargon.",
   },
   {
-    icon: PlaneTakeoff,
+    icon: Layers,
     title: "Un seul interlocuteur, toutes les compétences",
-    description: "Développement web, agents IA et prises de vue aériennes (télépilote certifié DGAC) : pas besoin de jongler entre plusieurs prestataires.",
+    description: "Développement web, agents IA et automatisation : pas besoin de jongler entre plusieurs prestataires.",
   },
 ];
 
@@ -39,6 +39,9 @@ export function Differentiators() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ce qui change <span className="gradient-text">avec moi</span>
           </h2>
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+            Vingt ans de terrain à toucher au numérique sous toutes ses formes, avant d&apos;en faire une agence.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
