@@ -124,7 +124,7 @@ export async function POST(request: NextRequest) {
     `;
 
     const { error: emailError } = await resend.emails.send({
-      from: 'Synapse Agency - Contact <contact@updates.synapse-agency.fr>',
+      from: 'Synapse Agency - Contact <notification@synapse-agency.fr>',
       to: 'contact@synapse-agency.fr',
       replyTo: data.email,
       subject: `Nouvelle demande de contact - ${data.name}`,
