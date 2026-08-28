@@ -23,7 +23,7 @@ export default function MentionsLegales() {
               Mentions légales
             </h1>
             <p className="text-slate-300">
-              Dernière mise à jour : Février 2026
+              Dernière mise à jour : Août 2026
             </p>
           </motion.div>
 
@@ -93,20 +93,15 @@ export default function MentionsLegales() {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-4">5. Cookies et données personnelles</h2>
                 <p className="text-slate-300 mb-4">
-                  Le site utilise des cookies pour améliorer votre expérience de navigation. Un cookie est un petit
-                  fichier texte stocké sur votre ordinateur lors de votre visite sur notre site.
+                  Le site dépose un seul traceur non essentiel : Google Analytics, utilisé pour mesurer
+                  l&apos;audience du site. Il n&apos;est chargé qu&apos;après votre consentement explicite via la
+                  bannière de cookies ; votre choix est mémorisé localement dans votre navigateur (stockage
+                  technique, pas un cookie tiers).
                 </p>
 
-                <h3 className="text-lg font-semibold text-white mb-3 mt-4">Types de cookies utilisés :</h3>
-                <ul className="text-slate-300 space-y-2 list-disc list-inside">
-                  <li><strong className="text-white">Cookies essentiels :</strong> Nécessaires au fonctionnement du site (mémorisation de votre choix de cookies)</li>
-                  <li><strong className="text-white">Cookies de performance :</strong> Nous permettent d&apos;analyser l&apos;utilisation du site pour améliorer votre expérience</li>
-                  <li><strong className="text-white">Cookies fonctionnels :</strong> Permettent de mémoriser vos préférences et paramètres</li>
-                </ul>
-
                 <p className="text-slate-300 mt-4">
-                  Vous pouvez à tout moment modifier vos préférences de cookies en supprimant les données de votre
-                  navigateur. Pour plus d&apos;informations, consultez notre{" "}
+                  Vous pouvez modifier votre choix à tout moment via le lien « Gérer les cookies » en pied de page,
+                  ou en supprimant les données de votre navigateur. Pour plus d&apos;informations, consultez notre{" "}
                   <a href="/confidentialite" className="text-primary-light hover:underline">politique de confidentialité</a>.
                 </p>
               </section>

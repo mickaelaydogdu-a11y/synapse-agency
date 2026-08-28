@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { mainNav, ctaLabel, ctaHref } from "@/lib/navigation";
+import { CookiePreferencesButton } from "@/components/layout/CookieBanner";
 
 const expertises = [
   "CRM sur mesure",
@@ -104,6 +105,7 @@ export function Footer() {
             <Link href="/mentions-legales" className="text-slate-400 hover:text-primary-light text-sm transition-colors">
               Mentions légales
             </Link>
+            <CookiePreferencesButton />
           </div>
         </div>
       </div>

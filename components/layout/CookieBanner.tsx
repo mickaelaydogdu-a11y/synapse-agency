@@ -1,28 +1,66 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Cookie, X } from "lucide-react";
+import { Cookie } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
+
+const GTM_ID = "GTM-TVFBBRCV";
+const CONSENT_KEY = "cookie-consent";
+const REOPEN_EVENT = "cookie-preferences:open";
+
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[];
+  }
+}
+
+function loadGTM() {
+  if (document.getElementById("gtm-script")) return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+  const script = document.createElement("script");
+  script.id = "gtm-script";
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
+  document.head.appendChild(script);
+}
+
+function clearAnalyticsCookies() {
+  document.cookie.split(";").forEach((c) => {
+    const name = c.split("=")[0].trim();
+    if (name.startsWith("_ga") || name === "_gid" || name.startsWith("_gat")) {
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+    }
+  });
+}
 
 export function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    // Vérifier si l'utilisateur a déjà donné son consentement
-    const consent = localStorage.getItem("cookie-consent");
-    if (!consent) {
+    const consent = localStorage.getItem(CONSENT_KEY);
+    if (consent === "accepted") {
+      loadGTM();
+    } else if (!consent) {
       setShowBanner(true);
     }
+
+    const reopen = () => setShowBanner(true);
+    window.addEventListener(REOPEN_EVENT, reopen);
+    return () => window.removeEventListener(REOPEN_EVENT, reopen);
   }, []);
 
   const acceptCookies = () => {
-    localStorage.setItem("cookie-consent", "accepted");
+    localStorage.setItem(CONSENT_KEY, "accepted");
+    loadGTM();
     setShowBanner(false);
   };
 
   const rejectCookies = () => {
-    localStorage.setItem("cookie-consent", "rejected");
+    localStorage.setItem(CONSENT_KEY, "rejected");
+    clearAnalyticsCookies();
     setShowBanner(false);
   };
 
@@ -46,8 +84,8 @@ export function CookieBanner() {
                 🍪 Gestion des cookies
               </h3>
               <p className="text-sm text-slate-300">
-                Nous utilisons des cookies pour améliorer votre expérience de navigation, analyser le trafic du site et personnaliser le contenu.
-                En cliquant sur "Accepter", vous consentez à l'utilisation de tous les cookies.{" "}
+                Nous utilisons Google Analytics pour mesurer l&apos;audience du site. Ce traceur n&apos;est déposé
+                que si vous cliquez sur « Accepter ».{" "}
                 <Link href="/confidentialite" className="text-primary-light hover:underline">
                   En savoir plus
                 </Link>
@@ -76,5 +114,20 @@ export function CookieBanner() {
         </div>
       </div>
     </div>
+  );
+}
+
+export function CookiePreferencesButton({ className }: { className?: string }) {
+  return (
+    <button
+      type="button"
+      onClick={() => window.dispatchEvent(new Event(REOPEN_EVENT))}
+      className={cn(
+        "text-slate-400 hover:text-primary-light text-sm transition-colors",
+        className
+      )}
+    >
+      Gérer les cookies
+    </button>
   );
 }

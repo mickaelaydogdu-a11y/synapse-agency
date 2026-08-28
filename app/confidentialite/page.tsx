@@ -23,7 +23,7 @@ export default function Confidentialite() {
               Politique de confidentialité
             </h1>
             <p className="text-slate-300">
-              Dernière mise à jour : Février 2026
+              Dernière mise à jour : Août 2026
             </p>
           </motion.div>
 
@@ -135,54 +135,39 @@ export default function Confidentialite() {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-4">8. Cookies et technologies similaires</h2>
                 <p className="text-slate-300 mb-4">
-                  Notre site utilise des cookies pour améliorer votre expérience de navigation. Les cookies sont
-                  de petits fichiers texte stockés sur votre appareil lors de votre visite. Ils permettent au site
-                  de mémoriser vos actions et préférences.
+                  Notre site n&apos;utilise qu&apos;un nombre volontairement limité de traceurs. Voici précisément
+                  ce qui est déposé sur votre appareil :
                 </p>
 
-                <h3 className="text-lg font-semibold text-white mb-3 mt-6">Types de cookies utilisés :</h3>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-white font-medium mb-2">🔒 Cookies essentiels (obligatoires)</h4>
+                    <h4 className="text-white font-medium mb-2">🔒 Stockage technique essentiel</h4>
                     <p className="text-slate-300 text-sm">
-                      Ces cookies sont nécessaires au fonctionnement du site. Ils vous permettent de naviguer sur
-                      le site et d&apos;utiliser ses fonctionnalités. Ils incluent le cookie de consentement qui mémorise
-                      votre choix concernant les cookies.
+                      Un stockage local (non transmis à un tiers) mémorise votre choix concernant les cookies, afin
+                      de ne pas vous redemander votre consentement à chaque visite. Il ne nécessite pas de
+                      consentement car il est strictement nécessaire au fonctionnement du bandeau lui-même.
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="text-white font-medium mb-2">📊 Cookies de performance et analytiques</h4>
+                    <h4 className="text-white font-medium mb-2">📊 Google Analytics (mesure d&apos;audience)</h4>
                     <p className="text-slate-300 text-sm">
-                      Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site en
-                      collectant et analysant des informations de manière anonyme. Ils nous permettent d&apos;améliorer
-                      le fonctionnement du site.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="text-white font-medium mb-2">⚙️ Cookies fonctionnels</h4>
-                    <p className="text-slate-300 text-sm">
-                      Ces cookies permettent au site de mémoriser vos choix (comme votre langue ou votre région)
-                      pour vous offrir une expérience plus personnalisée.
+                      Ce traceur nous permet de mesurer la fréquentation du site (pages visitées, provenance du
+                      trafic) de façon agrégée. Il n&apos;est chargé qu&apos;après avoir cliqué sur « Accepter » dans
+                      la bannière de cookies ; si vous cliquez sur « Refuser », il n&apos;est jamais déposé.
                     </p>
                   </div>
                 </div>
 
+                <p className="text-slate-300 mt-4">
+                  Le site ne dépose aucun cookie fonctionnel, publicitaire ou de remarketing.
+                </p>
+
                 <h3 className="text-lg font-semibold text-white mb-3 mt-6">Gestion de vos préférences :</h3>
                 <p className="text-slate-300">
-                  Lors de votre première visite, une bannière vous demande votre consentement pour l&apos;utilisation
-                  des cookies non essentiels. Vous pouvez à tout moment :
-                </p>
-                <ul className="list-disc list-inside text-slate-300 space-y-2 mt-2">
-                  <li>Modifier vos préférences en supprimant les cookies de votre navigateur</li>
-                  <li>Configurer votre navigateur pour bloquer les cookies</li>
-                  <li>Retirer votre consentement en effaçant les données de navigation</li>
-                </ul>
-
-                <p className="text-slate-300 mt-4 text-sm italic">
-                  Note : Le blocage de certains cookies peut affecter votre expérience de navigation et limiter
-                  l&apos;accès à certaines fonctionnalités du site.
+                  Vous pouvez à tout moment revenir sur votre choix via le lien « Gérer les cookies » en pied de
+                  page, qui rouvre la bannière de consentement. Refuser ou retirer votre consentement supprime
+                  également les cookies Google Analytics déjà déposés sur votre appareil.
                 </p>
               </section>
 
