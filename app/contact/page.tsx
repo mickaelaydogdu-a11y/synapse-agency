@@ -7,13 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Card } from "@/components/ui/Card";
-
-const services = [
-  { value: "solutions-ia", label: "Solutions IA" },
-  { value: "applications", label: "Applications Web/Mobile" },
-  { value: "production-visuelle", label: "Production Visuelle" },
-  { value: "autre", label: "Autre" },
-];
+import { PROJECT_TYPES, BUDGET_RANGES } from "@/lib/validations/contact";
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -28,24 +22,26 @@ export default function Contact() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // Construire l'objet JSON avec toutes les données
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
       company: formData.get("company") || "",
-      service: formData.get("service"),
+      phone: formData.get("phone") || "",
+      role: formData.get("role") || "",
+      projectType: formData.getAll("projectType"),
       message: formData.get("message"),
+      usersEstimate: formData.get("usersEstimate") || "",
+      budget: formData.get("budget") || "",
+      deadline: formData.get("deadline") || "",
+      consent: formData.get("consent") === "on",
+      website: formData.get("website") || "",
     };
 
-    const apiUrl = "/api/contact";
-
     try {
-      const response = await fetch(apiUrl, {
+      const response = await fetch("/api/contact", {
         method: "POST",
         body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
       });
 
       let result;
@@ -53,7 +49,6 @@ export default function Contact() {
         result = await response.json();
       } catch (parseError) {
         console.error("JSON parse error:", parseError);
-        // Si l'email est envoyé mais qu'il y a une erreur de parsing, on considère que c'est un succès
         if (response.ok || response.status === 200) {
           setIsSubmitted(true);
           form.reset();
@@ -178,47 +173,93 @@ export default function Contact() {
                         {error}
                       </div>
                     )}
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <Input
-                        label="Nom *"
-                        name="name"
-                        required
-                        placeholder="Votre nom"
-                      />
-                      <Input
-                        label="Email *"
-                        name="email"
-                        type="email"
-                        required
-                        placeholder="votre@email.com"
-                      />
-                    </div>
-                    <Input
-                      label="Entreprise"
-                      name="company"
-                      placeholder="Nom de votre entreprise"
+
+                    {/* Honeypot anti-spam : invisible pour un visiteur humain */}
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      className="absolute -left-[9999px] w-px h-px opacity-0"
+                      aria-hidden="true"
                     />
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <Input label="Nom *" name="name" required placeholder="Votre nom" />
+                      <Input label="Email *" name="email" type="email" required placeholder="votre@email.com" />
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-6">
+                      <Input label="Entreprise" name="company" placeholder="Nom de votre entreprise" />
+                      <Input label="Téléphone" name="phone" type="tel" placeholder="06 12 34 56 78" />
+                      <Input label="Fonction" name="role" placeholder="Ex : Directeur commercial" />
+                    </div>
+
                     <div>
                       <label className="block text-sm font-medium text-slate-200 mb-2">
-                        Service intéressé *
+                        Type de projet
+                      </label>
+                      <div className="grid sm:grid-cols-2 gap-2">
+                        {PROJECT_TYPES.map((type) => (
+                          <label key={type} className="flex items-center gap-2 text-sm text-slate-300">
+                            <input
+                              type="checkbox"
+                              name="projectType"
+                              value={type}
+                              className="w-4 h-4 rounded border-white/20 bg-surface accent-primary"
+                            />
+                            {type}
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+
+                    <Textarea
+                      label="Décrivez votre problématique *"
+                      name="message"
+                      required
+                      placeholder="Quel processus souhaitez-vous simplifier, centraliser ou automatiser ?"
+                    />
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <Input
+                        label="Nombre d'utilisateurs estimé"
+                        name="usersEstimate"
+                        placeholder="Ex : 5 à 10 collaborateurs"
+                      />
+                      <Input label="Délai souhaité" name="deadline" placeholder="Ex : sous 3 mois" />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-slate-200 mb-2">
+                        Budget estimatif
                       </label>
                       <select
-                        name="service"
-                        required
+                        name="budget"
+                        defaultValue=""
                         className="w-full px-4 py-3 bg-surface border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
                       >
-                        <option value="">Sélectionnez un service</option>
-                        {services.map((s) => (
-                          <option key={s.value} value={s.value}>{s.label}</option>
+                        <option value="">À définir</option>
+                        {BUDGET_RANGES.map((range) => (
+                          <option key={range} value={range}>{range}</option>
                         ))}
                       </select>
                     </div>
-                    <Textarea
-                      label="Message *"
-                      name="message"
-                      required
-                      placeholder="Décrivez votre projet..."
-                    />
+
+                    <label className="flex items-start gap-3 text-sm text-slate-300">
+                      <input
+                        type="checkbox"
+                        name="consent"
+                        required
+                        className="w-4 h-4 mt-0.5 rounded border-white/20 bg-surface accent-primary shrink-0"
+                      />
+                      <span>
+                        J&apos;accepte que mes données soient utilisées pour traiter ma demande, conformément à la{" "}
+                        <a href="/confidentialite" className="text-primary hover:underline">
+                          politique de confidentialité
+                        </a>. *
+                      </span>
+                    </label>
+
                     <Button type="submit" size="lg" className="w-full" isLoading={isLoading}>
                       Envoyer le message
                       <Send className="w-5 h-5 ml-2" />

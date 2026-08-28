@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Camera } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { mainNav, ctaLabel, ctaHref } from "@/lib/navigation";
 
 const expertises = [
@@ -30,7 +30,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-slate-300 max-w-md">
-              Le monde change vite, les technologies redéfinissent les règles du jeu. Nous vous accompagnons pour transformer vos idées en solutions digitales performantes et garder une longueur d&apos;avance.
+              Applications métier sur mesure, intelligence artificielle et automatisation : nous concevons des outils qui s&apos;adaptent à votre entreprise, pas l&apos;inverse.
             </p>
           </div>
 
@@ -73,35 +73,23 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Contact + autres activités */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left mt-12 pt-12 border-t border-white/10">
-          <div className="md:col-span-2">
-            <h4 className="text-white font-semibold mb-4">Contact</h4>
-            <ul className="space-y-3">
-              <li className="flex items-center justify-center md:justify-start gap-2 text-slate-300">
-                <Mail className="w-4 h-4" />
-                contact@synapse-agency.fr
-              </li>
-              <li className="flex items-center justify-center md:justify-start gap-2 text-slate-300">
-                <Phone className="w-4 h-4" />
-                06 32 54 55 78
-              </li>
-              <li className="flex items-center justify-center md:justify-start gap-2 text-slate-300">
-                <MapPin className="w-4 h-4" />
-                21 grande place, 77640 Jouarre
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-semibold mb-4">Autres activités</h4>
-            <Link
-              href="/production-visuelle"
-              className="flex items-center justify-center md:justify-start gap-2 text-slate-300 hover:text-primary transition-colors"
-            >
-              <Camera className="w-4 h-4" />
-              Production photo / vidéo / drone
-            </Link>
-          </div>
+        {/* Contact */}
+        <div className="mt-12 pt-12 border-t border-white/10 text-center md:text-left">
+          <h4 className="text-white font-semibold mb-4">Contact</h4>
+          <ul className="flex flex-col md:flex-row flex-wrap gap-4 md:gap-10">
+            <li className="flex items-center justify-center md:justify-start gap-2 text-slate-300">
+              <Mail className="w-4 h-4" />
+              contact@synapse-agency.fr
+            </li>
+            <li className="flex items-center justify-center md:justify-start gap-2 text-slate-300">
+              <Phone className="w-4 h-4" />
+              06 32 54 55 78
+            </li>
+            <li className="flex items-center justify-center md:justify-start gap-2 text-slate-300">
+              <MapPin className="w-4 h-4" />
+              Jouarre - Seine-et-Marne
+            </li>
+          </ul>
         </div>
 
         {/* Bottom */}
