@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Solutions IA sur mesure | Agents IA & Automatisation | Synapse Agency",
+  title: "Intelligence artificielle & automatisation | Synapse Agency",
   description:
-    "Automatisez vos processus métier avec nos solutions d'intelligence artificielle : agents téléphoniques, extraction de données, génération de contenu et chatbots sur mesure.",
+    "Synapse Agency intègre l'intelligence artificielle directement dans vos applications métier : assistant interne, RAG, analyse documentaire, extraction, génération et agents IA.",
   openGraph: {
-    title: "Solutions IA sur mesure | Synapse Agency",
+    title: "Intelligence artificielle & automatisation | Synapse Agency",
     description:
-      "Agents IA, extraction de données, automatisation : des solutions d'intelligence artificielle adaptées à votre entreprise.",
+      "L'IA intégrée à vos applications métier pour automatiser ce qui peut l'être, sans complexifier votre quotidien.",
     type: "website",
     locale: "fr_FR",
     images: [
@@ -15,15 +15,15 @@ export const metadata: Metadata = {
         url: "/images/Solution-ia-Synapse-agency.jpg",
         width: 1200,
         height: 630,
-        alt: "Solutions IA sur mesure - Synapse Agency",
+        alt: "Intelligence artificielle & automatisation - Synapse Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Solutions IA sur mesure | Synapse Agency",
+    title: "Intelligence artificielle & automatisation | Synapse Agency",
     description:
-      "Agents IA, extraction de données, automatisation : des solutions d'intelligence artificielle adaptées à votre entreprise.",
+      "L'IA intégrée à vos applications métier pour automatiser ce qui peut l'être, sans complexifier votre quotidien.",
     images: ["/images/Solution-ia-Synapse-agency.jpg"],
   },
   alternates: {
@@ -36,32 +36,32 @@ const breadcrumbJsonLd = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Accueil", item: "https://synapse-agency.fr" },
-    { "@type": "ListItem", position: 2, name: "Solutions IA", item: "https://synapse-agency.fr/solutions-ia" },
+    { "@type": "ListItem", position: 2, name: "IA & Automatisation", item: "https://synapse-agency.fr/solutions-ia" },
   ],
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Solutions IA sur mesure",
+  name: "Intelligence artificielle & automatisation",
   provider: {
     "@type": "ProfessionalService",
     name: "Synapse Agency",
     url: "https://synapse-agency.fr",
   },
   description:
-    "Automatisez vos processus métier avec nos solutions d'intelligence artificielle : agents téléphoniques, extraction de données, génération de contenu et chatbots sur mesure.",
+    "Intelligence artificielle intégrée aux applications métier : assistant interne, RAG, analyse documentaire, extraction de données, génération assistée et agents IA.",
   serviceType: "Intelligence Artificielle",
   areaServed: { "@type": "Country", name: "France" },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Solutions IA",
+    name: "IA & Automatisation",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Agent Téléphonique IA" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Agent Création de Devis" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Agent Réseaux Sociaux" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Assistant métier IA" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "RAG" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Analyse documentaire" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Extraction de données" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Génération de contenu IA" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Agents IA" } },
     ],
   },
 };

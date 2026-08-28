@@ -1,137 +1,87 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, FileSearch, Wand2, FolderKanban, BarChart3, Layers, ArrowRight, Check, Bot, MessageSquare, Clock, Brain, Zap, Users, Phone, FileText, Share2 } from "lucide-react";
+import {
+  Cpu, MessageSquare, Network, FileSearch, Database, PenLine, Bot,
+  ArrowRight, Layers, ShieldCheck, PlugZap,
+} from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
-import { ParallaxImage } from "@/components/ui/ParallaxImage";
+import { Button } from "@/components/ui/Button";
+import { AuditSection } from "@/components/home";
+import { AutomationSection, SecuritySection, ApplicationAISection, Workflow } from "@/components/sections";
 
-const solutionFeatures = [
-  {
-    icon: FileSearch,
-    title: "Extraction de données",
-    description: "Extrayez automatiquement les informations clés de vos documents (factures, contrats, CV)."
-  },
-  {
-    icon: Wand2,
-    title: "Génération de contenu",
-    description: "Créez du contenu de qualité : rapports, résumés, traductions, emails personnalisés."
-  },
-  {
-    icon: FolderKanban,
-    title: "Classification automatique",
-    description: "Triez et catégorisez vos documents et données automatiquement."
-  },
-  {
-    icon: Layers,
-    title: "Intégration API",
-    description: "Connectez nos solutions à vos outils existants via une API REST simple."
-  },
-  {
-    icon: BarChart3,
-    title: "Tableau de bord analytique",
-    description: "Suivez les performances et les insights en temps réel."
-  },
-  {
-    icon: Cpu,
-    title: "Traitement par lots",
-    description: "Traitez des milliers de documents en quelques minutes."
-  },
+const why = [
+  { icon: Layers, title: "Réduire les tâches répétitives", description: "Sans ajouter un outil de plus à gérer : l'IA s'intègre dans vos applications existantes." },
+  { icon: Database, title: "Exploiter vos données", description: "Vos documents et informations restent chez vous — l'IA travaille avec ce qui existe déjà." },
+  { icon: ShieldCheck, title: "Garder le contrôle", description: "Les décisions importantes restent validées par vos équipes, pas automatisées à l'aveugle." },
+  { icon: PlugZap, title: "S'intégrer, pas remplacer", description: "L'IA vient compléter vos outils et vos process, pas les bouleverser." },
 ];
 
-const agentTypes = [
-  {
-    icon: Phone,
-    title: "Agent Téléphonique",
-    description: "Gère vos appels 24h/24 : accueil, qualification, prise de RDV et réponses aux questions fréquentes.",
-    features: ["Accueil téléphonique intelligent", "Prise de RDV automatique", "Transfert vers un humain si besoin"],
-    ideal: "Cabinets médicaux, agences immobilières, services clients",
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    icon: FileText,
-    title: "Agent Création de Devis",
-    description: "Automatise la création de devis : collecte des besoins, calcul, génération PDF et envoi au client.",
-    features: ["Collecte intelligente des besoins", "Calcul automatique selon vos tarifs", "Génération et envoi PDF"],
-    ideal: "Artisans, agences, prestataires de services",
-    color: "from-green-500 to-emerald-500",
-  },
-  {
-    icon: Share2,
-    title: "Agent Réseaux Sociaux",
-    description: "Votre community manager virtuel : création de posts, planification et analyse des performances.",
-    features: ["Création de contenu adapté", "Calendrier éditorial automatique", "Analyse des performances"],
-    ideal: "TPE/PME, indépendants, e-commerce",
-    color: "from-pink-500 to-rose-500",
-  },
-];
-
-const agentFeatures = [
+const capabilities = [
   {
     icon: MessageSquare,
-    title: "Compréhension naturelle",
-    description: "Notre IA comprend le langage naturel et répond de manière contextuelle et pertinente."
+    title: "Assistant métier",
+    description: "Vos collaborateurs interrogent directement les informations internes de l'entreprise, sans chercher dans plusieurs outils.",
+    examples: [
+      "Quels dossiers sont en retard ?",
+      "Résume-moi les échanges avec le client Dupont.",
+      "Quels devis supérieurs à 50 000 € sont toujours en attente ?",
+    ],
   },
   {
-    icon: Clock,
-    title: "Disponibilité 24/7",
-    description: "Vos clients obtiennent des réponses instantanées, à toute heure du jour et de la nuit."
+    icon: Network,
+    title: "RAG",
+    description: "Une intelligence artificielle capable de travailler avec la base documentaire propre à votre entreprise.",
+    tags: ["PDF", "Word", "Bases de données", "Documentation", "Procédures", "Contrats", "Emails"],
   },
   {
-    icon: Brain,
-    title: "Auto-apprentissage",
-    description: "L'agent s'améliore continuellement grâce aux interactions avec vos clients."
+    icon: FileSearch,
+    title: "Analyse documentaire",
+    description: "Analyse automatiquement devis, factures, contrats, rapports, cahiers des charges, emails et fichiers PDF.",
+    tags: ["Devis", "Factures", "Contrats", "Rapports", "Cahiers des charges"],
   },
   {
-    icon: Zap,
-    title: "Réponse instantanée",
-    description: "Temps de réponse inférieur à 2 secondes pour une expérience utilisateur optimale."
+    icon: Database,
+    title: "Extraction de données",
+    description: "Transforme automatiquement vos documents en données structurées et exploitables.",
+    workflow: ["PDF", "Analyse", "Extraction", "Base de données"],
   },
   {
-    icon: Users,
-    title: "Multi-canal",
-    description: "Déployez sur votre site web, WhatsApp, Messenger et bien d'autres plateformes."
+    icon: PenLine,
+    title: "Génération assistée",
+    description: "Génère comptes rendus, devis, emails, synthèses, propositions commerciales et documents internes.",
+    tags: ["Comptes rendus", "Devis", "Emails", "Synthèses", "Propositions commerciales"],
   },
   {
-    icon: ArrowRight,
-    title: "Escalade intelligente",
-    description: "Transfert automatique vers un humain lorsque la situation l'exige."
+    icon: Bot,
+    title: "Agents IA",
+    description: "Des agents spécialisés capables d'effectuer certaines tâches dans un cadre défini, sous contrôle.",
+    tags: ["Qualification commerciale", "Analyse documentaire", "Préparation de devis", "Support interne", "Reporting"],
   },
-];
-
-const useCases = [
-  "Support client automatisé",
-  "Qualification de leads",
-  "Prise de rendez-vous",
-  "FAQ interactive",
-  "Accueil téléphonique",
-  "Génération de devis",
-  "Gestion réseaux sociaux",
-  "Relance clients",
 ];
 
 export default function SolutionsIA() {
   return (
     <main>
-      {/* Hero with Background Image */}
+      {/* Hero */}
       <section className="relative max-h-[75vh] lg:max-h-none min-h-[auto] lg:min-h-screen flex items-center overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/Solution-ia-Synapse-agency.jpg"
-            alt="Solution IA Synapse Agency"
+            alt="Intelligence artificielle et automatisation Synapse Agency"
             fill
             sizes="(max-width: 768px) 200vw, 100vw"
             className="object-cover object-right lg:object-center"
             priority
           />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 py-14 pt-24 lg:py-24 lg:pt-28">
           <div className="flex justify-center">
-            {/* Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -139,208 +89,131 @@ export default function SolutionsIA() {
             >
               <Badge variant="secondary" className="mb-6 inline-flex bg-secondary/40 text-white border-secondary/50 backdrop-blur-sm">
                 <Cpu className="w-4 h-4 mr-2" />
-                Solutions IA
+                IA & Automatisation
               </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-                Transformez vos données en <br />
-                <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">décisions intelligentes</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                L&apos;intelligence artificielle au service de vos processus métier
               </h1>
-              <p className="text-lg md:text-xl text-white mb-8 drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
-                Automatisez vos processus métier avec des solutions d&apos;IA sur mesure : extraction, génération, analyse et agents intelligents.
+              <p className="text-lg md:text-xl text-slate-200 mb-8">
+                Nous intégrons l&apos;IA directement dans vos applications métier pour automatiser ce qui peut l&apos;être,
+                sans complexifier votre quotidien.
               </p>
-
-              {/* Quick Stats */}
-              <div className="flex flex-wrap gap-6 mb-8 justify-center">
-                <div className="flex items-center gap-2 backdrop-blur-sm bg-black/30 rounded-lg px-3 py-2">
-                  <div className="w-10 h-10 rounded-lg bg-secondary/40 flex items-center justify-center">
-                    <FileSearch className="w-5 h-5 text-secondary" />
-                  </div>
-                  <div>
-                    <p className="text-white font-bold">95%</p>
-                    <p className="text-white/80 text-sm">Précision</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 backdrop-blur-sm bg-black/30 rounded-lg px-3 py-2">
-                  <div className="w-10 h-10 rounded-lg bg-primary/40 flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-white font-bold">24/7</p>
-                    <p className="text-white/80 text-sm">Disponible</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 backdrop-blur-sm bg-black/30 rounded-lg px-3 py-2">
-                  <div className="w-10 h-10 rounded-lg bg-green-500/40 flex items-center justify-center">
-                    <BarChart3 className="w-5 h-5 text-green-400" />
-                  </div>
-                  <div>
-                    <p className="text-white font-bold">15h</p>
-                    <p className="text-white/80 text-sm">Économisées/sem</p>
-                  </div>
-                </div>
-              </div>
-
+              <Link href="/contact">
+                <Button size="lg">
+                  Parler de mon projet
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Solution Features */}
+      {/* Pourquoi intégrer l'IA */}
       <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Fonctionnalités clés
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Pourquoi intégrer l&apos;<span className="gradient-text">IA</span> ?
             </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {solutionFeatures.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="h-full">
-                  <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
-                    <feature.icon className="w-6 h-6 text-secondary" />
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-slate-300">{feature.description}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Agent Types */}
-      <section className="py-12 lg:py-20 relative overflow-hidden">
-        <ParallaxImage
-          src="/images/bureau-telephone.jpg"
-          alt="Bureau téléphone"
-        />
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 inline-flex">
-              <Bot className="w-4 h-4 mr-2" />
-              Agents IA
-            </Badge>
-            <h2 className="text-3xl font-bold text-white mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-              Nos agents spécialisés
-            </h2>
-            <p className="text-white/90 max-w-2xl mx-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-              Des agents IA conçus pour répondre à vos besoins métier spécifiques
+            <p className="text-slate-300 max-w-2xl mx-auto">
+              Synapse ne vend pas de l&apos;IA pour vendre de l&apos;IA. Nous l&apos;intégrons lorsqu&apos;elle permet
+              réellement de simplifier, accélérer ou automatiser le travail.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {agentTypes.map((agent, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {why.map((point, index) => (
               <motion.div
-                key={agent.title}
+                key={point.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.08 }}
+                className="p-6 rounded-xl bg-background border border-white/10"
               >
-                <Card className="h-full">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${agent.color} flex items-center justify-center mb-4`}>
-                    <agent.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{agent.title}</h3>
-                  <p className="text-slate-300 mb-4">{agent.description}</p>
-
-                  <ul className="space-y-2 mb-4">
-                    {agent.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-slate-300">
-                        <Check className="w-4 h-4 text-green-500 shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="pt-4 border-t border-white/10">
-                    <p className="text-xs text-slate-500">Idéal pour :</p>
-                    <p className="text-sm text-primary">{agent.ideal}</p>
-                  </div>
-                </Card>
+                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                  <point.icon className="w-6 h-6 text-secondary" />
+                </div>
+                <h3 className="text-white font-bold mb-2">{point.title}</h3>
+                <p className="text-slate-300 text-sm">{point.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Agent Features */}
-      <section className="py-20 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Fonctionnalités des agents
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {agentFeatures.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="h-full">
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
-                    <feature.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-slate-300">{feature.description}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases */}
+      {/* Capacités */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Cas d&apos;usage
-              </h2>
-              <p className="text-slate-300 mb-8">
-                Nos agents IA s&apos;adaptent à de nombreux contextes métier pour automatiser vos interactions.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                {useCases.map((useCase) => (
-                  <div key={useCase} className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
-                      <Check className="w-4 h-4 text-primary" />
-                    </div>
-                    <span className="text-white text-sm">{useCase}</span>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Comment l&apos;IA travaille dans votre entreprise
+            </h2>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-6">
+            {capabilities.map((capability, index) => (
+              <motion.div
+                key={capability.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.06 }}
+              >
+                <Card className="h-full">
+                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                    <capability.icon className="w-6 h-6 text-accent" />
                   </div>
-                ))}
-              </div>
-            </div>
+                  <h3 className="text-lg font-bold text-white mb-2">{capability.title}</h3>
+                  <p className="text-slate-300 text-sm mb-4">{capability.description}</p>
 
-            <Card variant="gradient" hover={false} className="p-8">
-              <div className="text-center">
-                <div className="text-5xl font-bold gradient-text mb-2">-70%</div>
-                <p className="text-slate-300 mb-6">de temps de réponse client</p>
+                  {capability.examples && (
+                    <div className="space-y-2 pt-4 border-t border-white/10">
+                      {capability.examples.map((example) => (
+                        <p key={example} className="text-xs font-mono text-primary/80 italic">
+                          &ldquo;{example}&rdquo;
+                        </p>
+                      ))}
+                    </div>
+                  )}
 
-                <div className="text-5xl font-bold gradient-text mb-2">24/7</div>
-                <p className="text-slate-300 mb-6">disponibilité sans surcoût</p>
+                  {capability.tags && (
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                      {capability.tags.map((tag) => (
+                        <span key={tag} className="text-xs px-2 py-1 rounded-full bg-white/10 text-slate-300">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
-                <div className="text-5xl font-bold gradient-text mb-2">2h/jour</div>
-                <p className="text-slate-300">gagnées en moyenne</p>
-              </div>
-            </Card>
+                  {capability.workflow && (
+                    <div className="pt-4 border-t border-white/10">
+                      <Workflow steps={capability.workflow} />
+                    </div>
+                  )}
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
+
+      <AutomationSection />
+      <SecuritySection />
+      <ApplicationAISection />
+      <AuditSection />
     </main>
   );
 }
