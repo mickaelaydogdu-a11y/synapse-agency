@@ -62,7 +62,7 @@ const jsonLd = {
   url: baseUrl,
   logo: `${baseUrl}/images/Synapse-Agency.png`,
   description:
-    "Agence digitale spécialisée en intelligence artificielle, développement d'applications web & mobile et production visuelle.",
+    "Synapse Agency conçoit des applications métier sur mesure intégrant l'intelligence artificielle et l'automatisation pour centraliser vos données et simplifier vos processus.",
   telephone: "+33632545578",
   email: "contact@synapse-agency.fr",
   address: {
@@ -82,8 +82,8 @@ const jsonLd = {
     name: "France",
   },
   serviceType: [
-    "Solutions d'intelligence artificielle",
-    "Développement d'applications web et mobile",
+    "Développement d'applications métier sur mesure",
+    "Intelligence artificielle et automatisation",
     "Production visuelle professionnelle",
   ],
   priceRange: "€€",

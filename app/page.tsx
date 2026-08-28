@@ -1,12 +1,31 @@
-import { Hero, WhyUs, Services, AuditSection } from "@/components/home";
+import {
+  HeroSection,
+  ProblemSection,
+  ApplicationsSection,
+  AISection,
+  ApplicationAISection,
+  AutomationSection,
+  IntegrationSection,
+  CaseStudiesSection,
+  ProcessSection,
+  SecuritySection,
+  FinalCTASection,
+} from "@/components/sections";
 
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <Services />
-      <WhyUs />
-      <AuditSection />
+      <HeroSection />
+      <ProblemSection />
+      <ApplicationsSection />
+      <AISection />
+      <ApplicationAISection />
+      <AutomationSection />
+      <IntegrationSection />
+      <CaseStudiesSection />
+      <ProcessSection />
+      <SecuritySection />
+      <FinalCTASection />
     </main>
   );
 }

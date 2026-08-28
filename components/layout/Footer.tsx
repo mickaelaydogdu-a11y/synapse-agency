@@ -1,11 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Cpu, Smartphone, Camera, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Camera } from "lucide-react";
+import { mainNav, ctaLabel, ctaHref } from "@/lib/navigation";
 
-const services = [
-  { name: "Solutions IA", href: "/solutions-ia", icon: Cpu },
-  { name: "Applications", href: "/applications", icon: Smartphone },
-  { name: "Production Visuelle", href: "/production-visuelle", icon: Camera },
+const expertises = [
+  "CRM sur mesure",
+  "Applications terrain",
+  "Automatisation",
+  "Intelligence artificielle",
+  "RAG",
+  "Agents IA",
+  "Intégrations API",
 ];
 
 export function Footer() {
@@ -29,26 +34,48 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Services */}
+          {/* Navigation */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
+            <h4 className="text-white font-semibold mb-4">Navigation</h4>
             <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.name}>
+              {mainNav.map((item) => (
+                <li key={item.name}>
                   <Link
-                    href={service.href}
+                    href={item.href}
                     className="flex items-center justify-center md:justify-start gap-2 text-slate-300 hover:text-primary transition-colors"
                   >
-                    <service.icon className="w-4 h-4" />
-                    {service.name}
+                    <item.icon className="w-4 h-4" />
+                    {item.name}
                   </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href={ctaHref}
+                  className="text-slate-300 hover:text-primary transition-colors"
+                >
+                  {ctaLabel}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Expertises */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Expertises</h4>
+            <ul className="space-y-3">
+              {expertises.map((item) => (
+                <li key={item} className="text-slate-300">
+                  {item}
                 </li>
               ))}
             </ul>
           </div>
+        </div>
 
-          {/* Contact */}
-          <div>
+        {/* Contact + autres activités */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left mt-12 pt-12 border-t border-white/10">
+          <div className="md:col-span-2">
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-3">
               <li className="flex items-center justify-center md:justify-start gap-2 text-slate-300">
@@ -65,6 +92,16 @@ export function Footer() {
               </li>
             </ul>
           </div>
+          <div>
+            <h4 className="text-white font-semibold mb-4">Autres activités</h4>
+            <Link
+              href="/production-visuelle"
+              className="flex items-center justify-center md:justify-start gap-2 text-slate-300 hover:text-primary transition-colors"
+            >
+              <Camera className="w-4 h-4" />
+              Production photo / vidéo / drone
+            </Link>
+          </div>
         </div>
 
         {/* Bottom */}
@@ -73,9 +110,6 @@ export function Footer() {
             © {new Date().getFullYear()} Synapse Agency. Tous droits réservés.
           </p>
           <div className="flex gap-6">
-            <Link href="/qui-suis-je" className="text-slate-500 hover:text-primary text-sm transition-colors">
-              Qui suis-je
-            </Link>
             <Link href="/confidentialite" className="text-slate-500 hover:text-primary text-sm transition-colors">
               Confidentialité
             </Link>

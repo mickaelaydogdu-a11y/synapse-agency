@@ -3,16 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, Cpu, Smartphone, Camera, User } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-
-const navigation = [
-  { name: "Solutions IA", href: "/solutions-ia", icon: Cpu },
-  { name: "Applications web et mobile", href: "/applications", icon: Smartphone },
-  { name: "Production Visuelle", href: "/production-visuelle", icon: Camera },
-  { name: "Qui suis-je", href: "/qui-suis-je", icon: User },
-];
+import { mainNav, ctaLabel, ctaHref } from "@/lib/navigation";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +29,7 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
-              {navigation.map((item) => (
+              {mainNav.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
@@ -49,9 +43,9 @@ export function Header() {
 
             {/* CTA */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link href="/contact">
+              <Link href={ctaHref}>
                 <Button size="sm" variant="secondary">
-                  Contactez-nous
+                  {ctaLabel}
                 </Button>
               </Link>
             </div>
@@ -73,7 +67,7 @@ export function Header() {
             )}
           >
             <div className="flex flex-col gap-4 pt-4 border-t border-white/10">
-              {navigation.map((item) => (
+              {mainNav.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
@@ -84,9 +78,9 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Link href="/contact" onClick={() => setIsOpen(false)}>
+              <Link href={ctaHref} onClick={() => setIsOpen(false)}>
                 <Button size="sm" variant="secondary" className="w-full">
-                  Contactez-nous
+                  {ctaLabel}
                 </Button>
               </Link>
             </div>
