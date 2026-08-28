@@ -46,12 +46,12 @@ export function AboutHero() {
               Mickael Aydogdu
             </h1>
             <p className="text-lg text-slate-300 max-w-2xl">
-              Avant de fonder <span className="text-white font-medium">Synapse Agency</span>, j&apos;ai décroché un BTS en communication
-              visuelle et intégration de données, rejoint le service web d&apos;une chaîne de télévision comme webmaster, puis enseigné
-              l&apos;informatique. Direction ensuite la photo et la vidéo : quatre ans en agence, puis douze ans à la tête de ma propre
-              entreprise, pour de grands comptes. Aujourd&apos;hui, je reviens à la tech, ma formation d&apos;origine, avec plus de
-              compétences et une vraie expérience transversale. Pas un parcours de startup, un parcours de terrain. C&apos;est ce qui
-              infuse ma façon d&apos;aborder la tech : pas de jargon, des solutions qui marchent.
+              Avant de fonder <span className="text-white font-medium">Synapse Agency</span>, j&apos;ai débuté ma carrière comme
+              webmaster au département web d&apos;une chaîne de télévision, puis enseigné l&apos;informatique avant de rejoindre
+              le monde de la photo et de la vidéo : quatre ans en agence, puis douze ans à la tête de ma propre entreprise, pour
+              de grands comptes. Aujourd&apos;hui, je reviens à la tech, ma formation d&apos;origine, avec plus de compétences et
+              une vraie expérience transversale. Pas un parcours de startup, un parcours de terrain. C&apos;est ce qui infuse ma
+              façon d&apos;aborder la tech : pas de jargon, des solutions qui marchent.
             </p>
           </motion.div>
         </div>
