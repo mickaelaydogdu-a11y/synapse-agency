@@ -33,6 +33,20 @@ export function Footer() {
             <p className="text-slate-300 max-w-md">
               Applications métier sur mesure, intelligence artificielle et automatisation : nous concevons des outils qui s&apos;adaptent à votre entreprise, pas l&apos;inverse.
             </p>
+            <ul className="hidden md:flex flex-col gap-3 mt-6">
+              <li className="flex items-center gap-2 text-slate-300">
+                <Mail className="w-4 h-4" />
+                contact@synapse-agency.fr
+              </li>
+              <li className="flex items-center gap-2 text-slate-300">
+                <Phone className="w-4 h-4" />
+                06 32 54 55 78
+              </li>
+              <li className="flex items-center gap-2 text-slate-300">
+                <MapPin className="w-4 h-4" />
+                Jouarre - Seine-et-Marne
+              </li>
+            </ul>
           </div>
 
           {/* Navigation */}
@@ -74,8 +88,8 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Contact */}
-        <div className="mt-12 pt-12 border-t border-white/10 text-center md:text-left">
+        {/* Contact (mobile only, intégré au bloc Brand sur desktop) */}
+        <div className="mt-12 pt-12 border-t border-white/10 text-center md:hidden">
           <h3 className="text-white font-semibold mb-4">Contact</h3>
           <ul className="flex flex-col md:flex-row flex-wrap gap-4 md:gap-10">
             <li className="flex items-center justify-center md:justify-start gap-2 text-slate-300">
