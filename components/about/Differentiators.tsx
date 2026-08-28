@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Wrench, CodeXml, Layers } from "lucide-react";
+import { ShieldCheck, CodeXml, Layers } from "lucide-react";
 
 const points = [
   {
@@ -10,14 +10,9 @@ const points = [
     description: "Mes solutions sont 100 % RGPD, pensées dès leur conception pour la sécurité et la propriété de vos données.",
   },
   {
-    icon: Wrench,
-    title: "Le terrain avant la théorie",
-    description: "Avant l'IA, j'ai dirigé ma propre entreprise pendant douze ans, pour de grands comptes exigeants. Je sais ce que \"ça doit marcher tous les jours\" veut dire.",
-  },
-  {
     icon: CodeXml,
     title: "Un développeur, pas un intermédiaire",
-    description: "HTML, CSS, PHP, SQL, API, JavaScript, React, Next.js : conception fullstack frontend et backend.",
+    description: "HTML, CSS, PHP, SQL, API, JavaScript, React, Next.js : conception full-stack frontend et backend.",
   },
   {
     icon: Layers,
@@ -44,7 +39,7 @@ export function Differentiators() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {points.map((point, index) => (
             <motion.div
               key={point.title}
