@@ -73,6 +73,9 @@ export function Footer() {
             © {new Date().getFullYear()} Synapse Agency. Tous droits réservés.
           </p>
           <div className="flex gap-6">
+            <Link href="/qui-suis-je" className="text-slate-500 hover:text-primary text-sm transition-colors">
+              Qui suis-je
+            </Link>
             <Link href="/confidentialite" className="text-slate-500 hover:text-primary text-sm transition-colors">
               Confidentialité
             </Link>

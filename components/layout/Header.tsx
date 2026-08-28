@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, Cpu, Smartphone, Camera } from "lucide-react";
+import { Menu, X, Cpu, Smartphone, Camera, User } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -11,6 +11,7 @@ const navigation = [
   { name: "Solutions IA", href: "/solutions-ia", icon: Cpu },
   { name: "Applications web et mobile", href: "/applications", icon: Smartphone },
   { name: "Production Visuelle", href: "/production-visuelle", icon: Camera },
+  { name: "Qui suis-je", href: "/qui-suis-je", icon: User },
 ];
 
 export function Header() {
