@@ -1,5 +1,4 @@
 export { HeroSection } from "./HeroSection";
-export { ProblemSection } from "./ProblemSection";
 export { ApplicationsSection } from "./ApplicationsSection";
 export { AISection } from "./AISection";
 export { ApplicationAISection } from "./ApplicationAISection";

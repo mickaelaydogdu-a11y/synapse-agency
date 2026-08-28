@@ -7,7 +7,6 @@ import { MapPin } from "lucide-react";
 const stats = [
   { value: "20+", label: "ans dans le numérique" },
   { value: "2010", label: "indépendant" },
-  { value: "4 ans", label: "en agence digitale" },
   { value: "7", label: "domaines IA maîtrisés" },
 ];
 
@@ -57,7 +56,7 @@ export function AboutHero() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-3 gap-6">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}

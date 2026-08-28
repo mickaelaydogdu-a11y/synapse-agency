@@ -1,10 +1,7 @@
 import {
   HeroSection,
-  ProblemSection,
   ApplicationsSection,
   AISection,
-  ApplicationAISection,
-  AutomationSection,
   IntegrationSection,
   CaseStudiesSection,
   ProcessSection,
@@ -16,11 +13,8 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <ProblemSection />
       <ApplicationsSection />
       <AISection />
-      <ApplicationAISection />
-      <AutomationSection />
       <IntegrationSection />
       <CaseStudiesSection />
       <ProcessSection />
