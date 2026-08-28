@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
-  title: "Synapse Agency | Experts IA, Apps & Production Visuelle",
-  description: "Agents IA, apps web/mobile et production visuelle. Automatisez vos processus et boostez votre croissance.",
-  keywords: ["IA", "intelligence artificielle", "agents IA", "chatbot", "applications web", "développement", "agence digitale", "automatisation", "production visuelle", "photo", "vidéo"],
+  title: "Synapse Agency | Applications métier & Intelligence Artificielle",
+  description: "Nous développons des applications web et mobiles sur mesure qui centralisent vos données, automatisent vos processus et intègrent l'intelligence artificielle là où elle crée réellement de la valeur.",
+  keywords: ["application métier sur mesure", "développement application métier", "logiciel métier sur mesure", "intelligence artificielle entreprise", "automatisation entreprise", "agent IA entreprise", "RAG entreprise", "CRM sur mesure"],
   authors: [{ name: "Synapse Agency" }],
   openGraph: {
-    title: "Synapse Agency | Experts IA, Apps & Production Visuelle",
-    description: "Agents IA, apps web/mobile et production visuelle. Automatisez vos processus et boostez votre croissance.",
+    title: "Synapse Agency | Applications métier & Intelligence Artificielle",
+    description: "Nous développons des applications web et mobiles sur mesure qui centralisent vos données, automatisent vos processus et intègrent l'intelligence artificielle là où elle crée réellement de la valeur.",
     type: "website",
     locale: "fr_FR",
     siteName: "Synapse Agency",
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
         url: "/images/Home-Synapse-agency.jpg",
         width: 1200,
         height: 630,
-        alt: "Synapse Agency - Experts IA, Apps & Production Visuelle",
+        alt: "Synapse Agency - Applications métier & Intelligence Artificielle",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Synapse Agency | Experts IA, Apps & Production Visuelle",
-    description: "Agents IA, apps web/mobile et production visuelle. Automatisez vos processus et boostez votre croissance.",
+    title: "Synapse Agency | Applications métier & Intelligence Artificielle",
+    description: "Nous développons des applications web et mobiles sur mesure qui centralisent vos données, automatisent vos processus et intègrent l'intelligence artificielle là où elle crée réellement de la valeur.",
     images: ["/images/Home-Synapse-agency.jpg"],
   },
   alternates: {
@@ -84,10 +84,21 @@ const jsonLd = {
   serviceType: [
     "Développement d'applications métier sur mesure",
     "Intelligence artificielle et automatisation",
-    "Production visuelle professionnelle",
   ],
   priceRange: "€€",
   sameAs: [],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Synapse Agency",
+  url: baseUrl,
+  inLanguage: "fr-FR",
+  publisher: {
+    "@type": "ProfessionalService",
+    name: "Synapse Agency",
+  },
 };
 
 export default function RootLayout({
@@ -118,6 +129,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <ScrollToTop />
         <Header />

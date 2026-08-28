@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contactez-nous | Synapse Agency",
   description:
-    "Contactez Synapse Agency pour discuter de votre projet digital : solutions IA, applications web & mobile ou production visuelle. Réponse sous 24h.",
+    "Parlons de votre projet d'application métier, d'intelligence artificielle ou d'automatisation. Premier échange gratuit et sans engagement, réponse sous 24h.",
   openGraph: {
     title: "Contactez Synapse Agency",
     description:
-      "Discutons de votre projet digital. Solutions IA, applications et production visuelle sur mesure.",
+      "Parlons de votre projet d'application métier, d'intelligence artificielle ou d'automatisation.",
     type: "website",
     locale: "fr_FR",
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contactez Synapse Agency",
     description:
-      "Discutons de votre projet digital. Solutions IA, applications et production visuelle sur mesure.",
+      "Parlons de votre projet d'application métier, d'intelligence artificielle ou d'automatisation.",
     images: ["/images/Home-Synapse-agency.jpg"],
   },
   alternates: {

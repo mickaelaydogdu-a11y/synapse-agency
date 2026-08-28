@@ -2,13 +2,13 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Synapse Agency - Solutions IA & Applications",
+    name: "Synapse Agency - Applications métier & Intelligence Artificielle",
     short_name: "Synapse Agency",
     description:
-      "Agence digitale spécialisée en intelligence artificielle, applications web & mobile et production visuelle.",
+      "Applications métier sur mesure intégrant intelligence artificielle et automatisation.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0f172a",
+    background_color: "#0a0a0d",
     theme_color: "#6366f1",
     icons: [
       {

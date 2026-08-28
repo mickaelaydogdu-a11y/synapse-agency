@@ -4,6 +4,33 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      // Canonicalisation : une seule version du domaine (sans www)
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.synapse-agency.fr" }],
+        destination: "https://synapse-agency.fr/:path*",
+        permanent: true,
+      },
+      // Anciennes pages supprimées, pour ne pas casser les URLs déjà indexées
+      {
+        source: "/audit-gratuit",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/audit-gratuit/questionnaire",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/agents-ia",
+        destination: "/solutions-ia",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

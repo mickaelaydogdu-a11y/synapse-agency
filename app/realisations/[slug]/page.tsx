@@ -21,11 +21,26 @@ export async function generateMetadata({
   const realisation = getRealisationBySlug(slug);
   if (!realisation) return {};
 
+  const title = `${realisation.title} | Réalisations | Synapse Agency`;
+  const canonical = `https://synapse-agency.fr/realisations/${realisation.slug}`;
+
   return {
-    title: `${realisation.title} | Réalisations | Synapse Agency`,
+    title,
     description: realisation.summary,
+    openGraph: {
+      title,
+      description: realisation.summary,
+      type: "article",
+      locale: "fr_FR",
+      url: canonical,
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description: realisation.summary,
+    },
     alternates: {
-      canonical: `https://synapse-agency.fr/realisations/${realisation.slug}`,
+      canonical,
     },
   };
 }
