@@ -7,12 +7,12 @@ const points = [
   {
     icon: Landmark,
     title: "Ancrage local, pas une agence à distance",
-    description: "Élu maire adjoint pendant six ans, je connais le tissu économique local — pas une agence qui répond depuis Paris ou l'étranger.",
+    description: "Basé à Jouarre, je travaille en direct avec mes clients — pas une agence qui répond depuis Paris ou l'étranger.",
   },
   {
     icon: Wrench,
     title: "Le terrain avant la théorie",
-    description: "Avant de concevoir des agents IA, j'ai réparé des automates industriels et des systèmes AS400. Je sais ce que \"ça doit marcher tous les jours\" veut dire.",
+    description: "Avant l'IA, j'ai dirigé ma propre entreprise pendant douze ans, pour de grands comptes exigeants. Je sais ce que \"ça doit marcher tous les jours\" veut dire.",
   },
   {
     icon: GraduationCap,

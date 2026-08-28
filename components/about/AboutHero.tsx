@@ -7,7 +7,7 @@ import { MapPin } from "lucide-react";
 const stats = [
   { value: "20+", label: "ans dans le numérique" },
   { value: "2018", label: "indépendant" },
-  { value: "6 ans", label: "d'investissement local" },
+  { value: "4 ans", label: "en agence digitale" },
   { value: "7", label: "domaines IA maîtrisés" },
 ];
 
@@ -47,10 +47,13 @@ export function AboutHero() {
               Mickael Aydogdu
             </h1>
             <p className="text-lg text-slate-300 max-w-2xl">
-              Avant de fonder <span className="text-white font-medium">Synapse Agency</span>, j&apos;ai réparé des automates industriels,
-              enseigné l&apos;informatique, géré les services techniques d&apos;une mairie avant d&apos;être élu maire adjoint
-              pendant six ans. Ce n&apos;est pas un parcours de startup — c&apos;est un parcours de terrain, et c&apos;est ce qui infuse ma façon
-              d&apos;aborder la tech : pas de jargon, des solutions qui doivent marcher, pas juste impressionner.
+              Avant de fonder <span className="text-white font-medium">Synapse Agency</span>, j&apos;ai décroché un BTS en communication
+              visuelle et intégration de données, rejoint le service web d&apos;une chaîne de télévision comme webmaster, puis enseigné
+              l&apos;informatique. J&apos;ai ensuite intégré une agence de photo et vidéo pendant quatre ans, avant de créer ma propre
+              entreprise dans ce domaine — douze ans à accompagner de grands comptes. Aujourd&apos;hui, je reviens à la tech, ma formation
+              d&apos;origine, avec plus de compétences, de maturité et une expérience résolument transversale. Ce n&apos;est pas un parcours
+              de startup — c&apos;est un parcours de terrain, et c&apos;est ce qui infuse ma façon d&apos;aborder la tech : pas de jargon,
+              des solutions qui doivent marcher, pas juste impressionner.
             </p>
           </motion.div>
         </div>

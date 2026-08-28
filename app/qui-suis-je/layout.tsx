@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Qui suis-je | Mickael Aydogdu — Synapse Agency",
   description:
-    "Mickael Aydogdu, fondateur de Synapse Agency à Jouarre (77) : 20 ans dans le numérique, technicien de maintenance industrielle, professeur d'informatique, élu maire adjoint et consultant IA.",
+    "Mickael Aydogdu, fondateur de Synapse Agency à Jouarre (77) : 20 ans dans le numérique, webmaster, professeur d'informatique, entrepreneur en photo et vidéo pour de grands comptes, aujourd'hui consultant IA.",
   openGraph: {
     title: "Qui suis-je | Mickael Aydogdu — Synapse Agency",
     description:
-      "Un parcours de terrain avant la tech : maintenance industrielle, enseignement, services techniques municipaux et six ans de mandat de maire adjoint.",
+      "Un parcours de terrain avant la tech : webmastering, enseignement, puis douze ans à la tête de sa propre entreprise pour de grands comptes.",
     type: "profile",
     locale: "fr_FR",
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Qui suis-je | Mickael Aydogdu — Synapse Agency",
     description:
-      "Un parcours de terrain avant la tech : maintenance industrielle, enseignement, services techniques municipaux et six ans de mandat de maire adjoint.",
+      "Un parcours de terrain avant la tech : webmastering, enseignement, puis douze ans à la tête de sa propre entreprise pour de grands comptes.",
   },
   alternates: {
     canonical: "https://synapse-agency.fr/qui-suis-je",
