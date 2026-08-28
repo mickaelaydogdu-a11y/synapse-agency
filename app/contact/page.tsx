@@ -194,10 +194,10 @@ export default function Contact() {
                       <Input label="Fonction" name="role" placeholder="Ex : Directeur commercial" />
                     </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-slate-200 mb-2">
+                    <fieldset>
+                      <legend className="block text-sm font-medium text-slate-200 mb-2">
                         Type de projet
-                      </label>
+                      </legend>
                       <div className="grid sm:grid-cols-2 gap-2">
                         {PROJECT_TYPES.map((type) => (
                           <label key={type} className="flex items-center gap-2 text-sm text-slate-300">
@@ -211,7 +211,7 @@ export default function Contact() {
                           </label>
                         ))}
                       </div>
-                    </div>
+                    </fieldset>
 
                     <Textarea
                       label="Décrivez votre problématique *"
@@ -230,10 +230,11 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-slate-200 mb-2">
+                      <label htmlFor="budget" className="block text-sm font-medium text-slate-200 mb-2">
                         Budget estimatif
                       </label>
                       <select
+                        id="budget"
                         name="budget"
                         defaultValue=""
                         className="w-full px-4 py-3 bg-surface border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"

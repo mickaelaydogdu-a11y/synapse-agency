@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { TextareaHTMLAttributes, forwardRef } from "react";
+import { TextareaHTMLAttributes, forwardRef, useId } from "react";
 
 interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
@@ -9,16 +9,23 @@ interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 }
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, label, error, ...props }, ref) => {
+  ({ className, label, error, id, name, ...props }, ref) => {
+    const generatedId = useId();
+    const inputId = id ?? name ?? generatedId;
+
     return (
       <div className="space-y-2">
         {label && (
-          <label className="block text-sm font-medium text-slate-200">
+          <label htmlFor={inputId} className="block text-sm font-medium text-slate-200">
             {label}
           </label>
         )}
         <textarea
           ref={ref}
+          id={inputId}
+          name={name}
+          aria-invalid={!!error}
+          aria-describedby={error ? `${inputId}-error` : undefined}
           className={cn(
             "w-full px-4 py-3 bg-surface border border-white/10 rounded-xl",
             "text-white placeholder:text-slate-500",
@@ -31,7 +38,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           {...props}
         />
         {error && (
-          <p className="text-sm text-red-400">{error}</p>
+          <p id={`${inputId}-error`} className="text-sm text-red-400">{error}</p>
         )}
       </div>
     );

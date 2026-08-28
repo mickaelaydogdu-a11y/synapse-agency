@@ -54,6 +54,9 @@ export function Header() {
             <button
               className="lg:hidden text-white"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -61,6 +64,7 @@ export function Header() {
 
           {/* Mobile/Tablet Navigation */}
           <div
+            id="mobile-menu"
             className={cn(
               "lg:hidden overflow-hidden transition-all duration-300",
               isOpen ? "max-h-80 mt-4" : "max-h-0"

@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { CookieBanner } from "@/components/layout/CookieBanner";
+import { MotionProvider } from "@/components/layout/MotionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -134,11 +135,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        <ScrollToTop />
-        <Header />
-        {children}
-        <Footer />
-        <CookieBanner />
+        <MotionProvider>
+          <ScrollToTop />
+          <Header />
+          {children}
+          <Footer />
+          <CookieBanner />
+        </MotionProvider>
       </body>
     </html>
   );
