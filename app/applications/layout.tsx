@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Applications Web & Mobile sur mesure | Synapse Agency",
+  title: "Applications métier sur mesure | Synapse Agency",
   description:
-    "Développement d'applications web et mobiles sur mesure : CRM, portails clients, outils métier et plateformes collaboratives pour digitaliser votre entreprise.",
+    "Synapse Agency développe des applications métier web et mobiles sur mesure pour centraliser vos données, automatiser vos processus et améliorer la productivité de vos équipes.",
   openGraph: {
-    title: "Applications Web & Mobile sur mesure | Synapse Agency",
+    title: "Applications métier sur mesure | Synapse Agency",
     description:
-      "Applications web et mobiles sur mesure pour digitaliser vos processus et booster votre productivité.",
+      "Des applications web et mobiles sur mesure pour centraliser vos données et automatiser vos processus métier.",
     type: "website",
     locale: "fr_FR",
     images: [
@@ -15,15 +15,15 @@ export const metadata: Metadata = {
         url: "/images/Applications.jpg",
         width: 1200,
         height: 630,
-        alt: "Applications Web & Mobile - Synapse Agency",
+        alt: "Applications métier sur mesure - Synapse Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Applications Web & Mobile sur mesure | Synapse Agency",
+    title: "Applications métier sur mesure | Synapse Agency",
     description:
-      "Applications web et mobiles sur mesure pour digitaliser vos processus et booster votre productivité.",
+      "Des applications web et mobiles sur mesure pour centraliser vos données et automatiser vos processus métier.",
     images: ["/images/Applications.jpg"],
   },
   alternates: {
@@ -43,23 +43,25 @@ const breadcrumbJsonLd = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Développement d'Applications Web & Mobile",
+  name: "Développement d'applications métier sur mesure",
   provider: {
     "@type": "ProfessionalService",
     name: "Synapse Agency",
     url: "https://synapse-agency.fr",
   },
   description:
-    "Développement d'applications web et mobiles sur mesure : CRM, portails clients, outils métier et plateformes collaboratives.",
+    "Développement d'applications métier web et mobiles sur mesure : CRM, gestion commerciale, applications terrain, portails clients et gestion documentaire.",
   serviceType: "Développement logiciel",
   areaServed: { "@type": "Country", name: "France" },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Applications",
+    name: "Applications métier",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Applications web métier" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Applications mobiles iOS & Android" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Portails & plateformes clients" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "CRM sur mesure" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Gestion commerciale" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Applications terrain" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Portail client" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Gestion documentaire" } },
     ],
   },
 };
