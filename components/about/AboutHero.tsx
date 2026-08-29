@@ -7,7 +7,7 @@ import { MapPin } from "lucide-react";
 const stats = [
   { value: "20+", label: "ans dans le numérique" },
   { value: "2010", label: "indépendant" },
-  { value: "7", label: "domaines IA maîtrisés" },
+  { value: "1", label: "interlocuteur unique" },
 ];
 
 export function AboutHero() {

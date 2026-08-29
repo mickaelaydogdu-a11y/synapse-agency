@@ -1,23 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, CodeXml, Layers } from "lucide-react";
+import { ShieldCheck, CodeXml, Smile } from "lucide-react";
 
 const points = [
   {
     icon: ShieldCheck,
-    title: "Entreprise française, données sécurisées",
+    title: "Entreprise française",
     description: "Mes solutions sont 100 % RGPD, pensées dès leur conception pour la sécurité et la propriété de vos données.",
   },
   {
     icon: CodeXml,
     title: "Un développeur, pas un intermédiaire",
-    description: "HTML, CSS, PHP, SQL, API, JavaScript, React, Next.js : conception full-stack frontend et backend.",
+    description: "HTML, CSS, PHP, SQL, API, Supabase, JavaScript, React, Next.js : conception full-stack du frontend au backend.",
   },
   {
-    icon: Layers,
-    title: "Un seul interlocuteur, toutes les compétences",
-    description: "Développement web, agents IA et automatisation : pas besoin de jongler entre plusieurs prestataires.",
+    icon: Smile,
+    title: "Un humain, pas un ticket de support",
+    description: "Toujours disponible, de bonne humeur et à l'écoute — même un lundi matin.",
   },
 ];
 
