@@ -12,7 +12,6 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { ParallaxImage } from "@/components/ui/ParallaxImage";
 import { AuditSection } from "@/components/home";
 
 const limits = [
@@ -131,18 +130,13 @@ export default function Applications() {
       </section>
 
       {/* Types d'applications */}
-      <section className="py-12 lg:py-20 relative overflow-hidden">
-        <ParallaxImage
-          src="/images/Solutions-applications-fond.jpg"
-          alt="Types d'applications métier"
-        />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+      <section className="py-12 lg:py-20">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            <h2 className="text-3xl font-bold text-white mb-4">
               Types d&apos;applications
             </h2>
-            <p className="text-white/90 max-w-2xl mx-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+            <p className="text-slate-300 max-w-2xl mx-auto">
               Du CRM au workflow interne, nous développons l&apos;application qui correspond à vos besoins.
             </p>
           </div>
