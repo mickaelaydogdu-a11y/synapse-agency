@@ -26,7 +26,7 @@ export default function Realisations() {
             transition={{ delay: 0.1 }}
             className="text-slate-400 text-sm max-w-2xl mx-auto"
           >
-            Exemples de projets types — nos premières études de cas client seront publiées ici dès qu&apos;elles seront disponibles.
+            Un projet client réel, et des exemples de projets types pour illustrer d&apos;autres cas d&apos;usage possibles.
           </motion.p>
         </div>
       </section>
@@ -44,7 +44,9 @@ export default function Realisations() {
               >
                 <Link href={`/realisations/${realisation.slug}`}>
                   <Card className="h-full flex flex-col">
-                    <Badge variant="secondary" className="mb-4 self-start">Exemple de projet type</Badge>
+                    <Badge variant="secondary" className="mb-4 self-start">
+                      {realisation.isPlaceholder ? "Exemple de projet type" : "Projet client réel"}
+                    </Badge>
                     <p className="text-xs font-mono uppercase text-slate-400 mb-2">{realisation.category}</p>
                     <h2 className="text-lg font-bold text-white mb-3">{realisation.title}</h2>
                     <p className="text-slate-300 text-sm flex-1">{realisation.summary}</p>

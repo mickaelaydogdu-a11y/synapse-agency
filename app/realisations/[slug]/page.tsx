@@ -79,7 +79,9 @@ export default async function RealisationDetail({
             Toutes les réalisations
           </Link>
 
-          <Badge variant="secondary" className="mb-4">Exemple de projet type</Badge>
+          <Badge variant="secondary" className="mb-4">
+            {realisation.isPlaceholder ? "Exemple de projet type" : "Projet client réel"}
+          </Badge>
           <p className="text-xs font-mono uppercase text-slate-400 mb-2">{realisation.category}</p>
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">{realisation.title}</h1>
           <p className="text-lg text-slate-300">{realisation.summary}</p>
@@ -119,28 +121,38 @@ export default async function RealisationDetail({
             </ul>
           </div>
 
-          <div>
-            <h2 className="text-xl font-bold text-white mb-5 flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-accent-light" />
-              L&apos;intelligence artificielle
-            </h2>
-            <ul className="grid sm:grid-cols-2 gap-3">
-              {realisation.ai.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-slate-300 text-sm">
-                  <Check className="w-4 h-4 text-accent-light shrink-0 mt-0.5" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {realisation.ai && realisation.ai.length > 0 && (
+            <div>
+              <h2 className="text-xl font-bold text-white mb-5 flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-accent-light" />
+                L&apos;intelligence artificielle
+              </h2>
+              <ul className="grid sm:grid-cols-2 gap-3">
+                {realisation.ai.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-slate-300 text-sm">
+                    <Check className="w-4 h-4 text-accent-light shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <div>
             <h2 className="text-xl font-bold text-white mb-6 text-center">L&apos;architecture</h2>
-            <Workflow steps={["Données entreprise", "Application Synapse", "Intelligence artificielle", "Automatisation", "Action / décision"]} />
+            <Workflow
+              steps={
+                realisation.ai && realisation.ai.length > 0
+                  ? ["Données entreprise", "Application Synapse", "Intelligence artificielle", "Automatisation", "Action / décision"]
+                  : ["Données entreprise", "Application Synapse", "Automatisation", "Action / décision"]
+              }
+            />
           </div>
 
           <div className="p-6 rounded-2xl bg-surface border border-white/10">
-            <h2 className="text-xs font-mono uppercase tracking-wide text-primary-light mb-3">Résultats attendus</h2>
+            <h2 className="text-xs font-mono uppercase tracking-wide text-primary-light mb-3">
+              {realisation.isPlaceholder ? "Résultats attendus" : "Résultats"}
+            </h2>
             <p className="text-slate-300">{realisation.results}</p>
           </div>
 

@@ -22,7 +22,7 @@ export function CaseStudiesSection() {
             Des applications conçues pour répondre à de vrais problèmes métier.
           </h2>
           <p className="text-slate-400 text-sm max-w-2xl mx-auto">
-            Exemples de projets types — nos premières études de cas client seront publiées ici dès qu&apos;elles seront disponibles.
+            Un projet client réel, et des exemples de projets types pour illustrer d&apos;autres cas d&apos;usage possibles.
           </p>
         </motion.div>
 
@@ -37,7 +37,9 @@ export function CaseStudiesSection() {
             >
               <Link href={`/realisations/${study.slug}`}>
                 <Card className="h-full flex flex-col">
-                  <Badge variant="secondary" className="mb-4 self-start">Exemple de projet type</Badge>
+                  <Badge variant="secondary" className="mb-4 self-start">
+                    {study.isPlaceholder ? "Exemple de projet type" : "Projet client réel"}
+                  </Badge>
                   <h3 className="text-lg font-bold text-white mb-3">{study.title}</h3>
                   <p className="text-slate-300 text-sm flex-1">{study.summary}</p>
                   <p className="flex items-center gap-2 text-primary-light text-sm font-medium mt-4">
