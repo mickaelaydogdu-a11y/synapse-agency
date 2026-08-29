@@ -25,6 +25,26 @@ export async function POST(request: NextRequest) {
     }
     const data = parsed.data;
 
+    const escapeHtml = (value: string) =>
+      value.replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+      }[char]!));
+
+    const name = escapeHtml(data.name);
+    const email = escapeHtml(data.email);
+    const company = escapeHtml(data.company || 'Non renseigné');
+    const phone = escapeHtml(data.phone || 'Non renseigné');
+    const role = escapeHtml(data.role || 'Non renseigné');
+    const projectType = escapeHtml(data.projectType.length > 0 ? data.projectType.join(', ') : 'Non précisé');
+    const usersEstimate = escapeHtml(data.usersEstimate || 'Non renseigné');
+    const budget = escapeHtml(data.budget || 'Non renseigné');
+    const deadline = escapeHtml(data.deadline || 'Non renseigné');
+    const message = escapeHtml(data.message).replace(/\n/g, '<br>');
+
     const htmlContent = `
 <!DOCTYPE html>
 <html>
@@ -50,24 +70,24 @@ export async function POST(request: NextRequest) {
         <div class='content'>
             <div class='section'>
                 <h3>Coordonnées</h3>
-                <div class='field'><span class='label'>Nom :</span> <span class='value'>${data.name}</span></div>
-                <div class='field'><span class='label'>Email :</span> <span class='value'>${data.email}</span></div>
-                <div class='field'><span class='label'>Entreprise :</span> <span class='value'>${data.company || 'Non renseigné'}</span></div>
-                <div class='field'><span class='label'>Téléphone :</span> <span class='value'>${data.phone || 'Non renseigné'}</span></div>
-                <div class='field'><span class='label'>Fonction :</span> <span class='value'>${data.role || 'Non renseigné'}</span></div>
+                <div class='field'><span class='label'>Nom :</span> <span class='value'>${name}</span></div>
+                <div class='field'><span class='label'>Email :</span> <span class='value'>${email}</span></div>
+                <div class='field'><span class='label'>Entreprise :</span> <span class='value'>${company}</span></div>
+                <div class='field'><span class='label'>Téléphone :</span> <span class='value'>${phone}</span></div>
+                <div class='field'><span class='label'>Fonction :</span> <span class='value'>${role}</span></div>
             </div>
 
             <div class='section'>
                 <h3>Projet</h3>
-                <div class='field'><span class='label'>Type de projet :</span> <span class='value'>${data.projectType.length > 0 ? data.projectType.join(', ') : 'Non précisé'}</span></div>
-                <div class='field'><span class='label'>Utilisateurs estimés :</span> <span class='value'>${data.usersEstimate || 'Non renseigné'}</span></div>
-                <div class='field'><span class='label'>Budget :</span> <span class='value'>${data.budget || 'Non renseigné'}</span></div>
-                <div class='field'><span class='label'>Délai souhaité :</span> <span class='value'>${data.deadline || 'Non renseigné'}</span></div>
+                <div class='field'><span class='label'>Type de projet :</span> <span class='value'>${projectType}</span></div>
+                <div class='field'><span class='label'>Utilisateurs estimés :</span> <span class='value'>${usersEstimate}</span></div>
+                <div class='field'><span class='label'>Budget :</span> <span class='value'>${budget}</span></div>
+                <div class='field'><span class='label'>Délai souhaité :</span> <span class='value'>${deadline}</span></div>
             </div>
 
             <div class='section'>
                 <h3>Message</h3>
-                <div class='field'><span class='value'>${data.message.replace(/\n/g, '<br>')}</span></div>
+                <div class='field'><span class='value'>${message}</span></div>
             </div>
         </div>
     </div>
