@@ -61,10 +61,11 @@ lib/
 └── validations/contact.ts    # Schéma Zod du formulaire de contact + constantes PROJECT_TYPES/BUDGET_RANGES
 
 data/
-└── realisations.ts    # Contenu des réalisations (isPlaceholder: true — exemples de projets
-                        # types, pas de vrais clients ni de métriques inventées, voir section
-                        # 56 et 71 de PLAN DE REFONTE.md). Source unique consommée par la
-                        # homepage (CaseStudiesSection), /realisations et /realisations/[slug].
+└── realisations.ts    # Contenu des réalisations : vraies études de cas client (isPlaceholder: false),
+                        # aucune métrique inventée, voir section 56 et 71 de PLAN DE REFONTE.md.
+                        # Le champ isPlaceholder (true) reste disponible pour d'éventuels exemples
+                        # génériques mais aucun n'est publié actuellement. Source unique consommée
+                        # par la homepage (CaseStudiesSection), /realisations et /realisations/[slug].
 ```
 
 ### Conventions
@@ -126,10 +127,10 @@ Variables d'environnement nécessaires (voir `.env.local.example`) : `RESEND_API
 
 `next.config.ts` gère :
 - La canonicalisation `www.synapse-agency.fr` → `synapse-agency.fr`
-- Les redirections 301 des anciennes URLs supprimées (`/audit-gratuit`, `/audit-gratuit/questionnaire`, `/agents-ia`) vers leurs pages de remplacement
+- Les redirections 301 des anciennes URLs supprimées (`/audit-gratuit`, `/audit-gratuit/questionnaire`, `/agents-ia`, les 3 exemples de réalisations retirés) vers leurs pages de remplacement
 
 Avant de supprimer ou renommer une route déjà déployée, ajouter une redirection ici plutôt que de la laisser 404.
 
 ## Ce qui reste hors scope de la refonte actuelle
 
-Ces points sont identifiés dans `PLAN DE REFONTE.md` mais pas encore traités : refonte du contenu de `/production-visuelle` et des pages légales (mentions-légales/confidentialité), route `/ia` dédiée (actuellement `/solutions-ia` fait office de page IA, avec redirect à prévoir le jour où `/ia` sera créée), vraies études de cas pour remplacer les exemples de `data/realisations.ts`.
+Ces points sont identifiés dans `PLAN DE REFONTE.md` mais pas encore traités : refonte du contenu de `/production-visuelle` et des pages légales (mentions-légales/confidentialité), route `/ia` dédiée (actuellement `/solutions-ia` fait office de page IA, avec redirect à prévoir le jour où `/ia` sera créée). `data/realisations.ts` ne contient pour l'instant qu'une seule vraie étude de cas (Musée Granet) ; deux autres projets réels doivent encore y être ajoutés.
