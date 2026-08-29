@@ -30,8 +30,8 @@ export function AuditSection() {
 
             <p className="text-lg text-slate-300 mb-6">
               Vous avez un projet digital en tête ? Une idée d&apos;automatisation ?
-              Besoin de valoriser votre image ? Prenez 30 minutes pour en discuter
-              avec nous et découvrir comment nous pouvons vous aider.
+              Prenez 30 minutes pour en discuter avec nous et découvrir comment
+              nous pouvons vous aider.
             </p>
 
             <ul className="space-y-3 mb-8">
