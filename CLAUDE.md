@@ -35,11 +35,12 @@ app/                      # Pages (App Router)
 ├── realisations/          # Liste des réalisations
 │   └── [slug]/            # Détail d'une réalisation (généré depuis data/realisations.ts)
 ├── qui-suis-je/            # Page "À propos" (bio du fondateur, libellé nav "À propos")
-├── contact/                # Formulaire de contact qualifiant
+├── contact/                # Actuellement 3 cartes coordonnées seulement (formulaire masqué,
+                            # voir components/contact/ContactForm.tsx et section dédiée plus bas)
 ├── production-visuelle/    # Activité secondaire, liée uniquement depuis le footer
 ├── mentions-legales/
 ├── confidentialite/
-├── api/contact/route.ts    # Validation Zod + honeypot + email Resend
+├── api/contact/route.ts    # Turnstile + validation Zod + honeypot + email Resend
 ├── layout.tsx              # Root layout (Header + Footer + ScrollToTop + MotionProvider + CookieBanner)
 ├── sitemap.ts               # Inclut les routes statiques + une entrée par réalisation
 ├── globals.css              # Tailwind v4 avec @theme pour les couleurs custom (thème sombre)
@@ -50,6 +51,8 @@ components/
 ├── layout/          # Header, Footer, ScrollToTop, CookieBanner, MotionProvider
 ├── home/            # AuditSection uniquement — bloc CTA réutilisé en fin de plusieurs pages
 ├── about/            # Sections de /qui-suis-je (AboutHero, Timeline, Differentiators)
+├── contact/          # ContactForm : formulaire complet + Turnstile, préparé mais pas
+                       # rendu par app/contact/page.tsx pour l'instant (voir section dédiée)
 └── sections/          # Sections de la homepage (Hero, Applications, AI, Integration,
                         # Process, Security, FinalCTA) + Workflow (diagramme en chaîne réutilisable)
 
@@ -112,12 +115,18 @@ Framer Motion pour les animations (`framer-motion`). Animations Tailwind custom 
 
 ### Formulaire de contact
 
-Le formulaire (`app/contact/page.tsx`) envoie vers `app/api/contact/route.ts`, qui :
-1. Rejette silencieusement les soumissions avec le champ honeypot (`website`) rempli (faux succès renvoyé, aucun traitement)
-2. Valide avec le schéma Zod de `lib/validations/contact.ts`
-3. Envoie une notification par email via Resend — c'est le seul canal d'enregistrement de la demande (plus d'archivage en base depuis le retrait de Supabase), donc un échec d'envoi fait échouer la requête et remonte une erreur au formulaire.
+`app/contact/page.tsx` n'affiche actuellement que 3 cartes de coordonnées (email cliquable en `mailto:`, téléphone, localisation) — le formulaire complet est masqué depuis le souci de fiabilité de la notification email (Resend classé en spam par intermittence, voir historique de commits).
 
-Variable d'environnement nécessaire (voir `.env.local.example`) : `RESEND_API_KEY`. Elle doit aussi être configurée sur Vercel (Production/Preview/Development) pour que le formulaire fonctionne en ligne.
+Le formulaire complet existe et est prêt dans `components/contact/ContactForm.tsx` (avec protection Cloudflare Turnstile) mais n'est importé nulle part pour l'instant — décision volontaire, pas du code mort oublié. Pour le remettre en ligne : importer `<ContactForm />` dans `app/contact/page.tsx` à la place des 3 cartes actuelles, une fois `NEXT_PUBLIC_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` configurées (compte Cloudflare + widget Turnstile à créer, aucune clé de test n'est fournie).
+
+`app/api/contact/route.ts` (actif dès maintenant, indépendamment de l'affichage du formulaire) :
+1. Rejette silencieusement les soumissions avec le champ honeypot (`website`) rempli (faux succès renvoyé, aucun traitement)
+2. Vérifie le token Turnstile auprès de l'API `siteverify` de Cloudflare — échoue fermé (rejette la requête) si `TURNSTILE_SECRET_KEY` n'est pas configurée
+3. Valide avec le schéma Zod de `lib/validations/contact.ts`
+4. Échappe les champs utilisateur avant de les insérer dans le HTML de l'email (évite l'injection HTML dans la notification)
+5. Envoie une notification par email via Resend — c'est le seul canal d'enregistrement de la demande (plus d'archivage en base depuis le retrait de Supabase), donc un échec d'envoi fait échouer la requête et remonte une erreur au formulaire.
+
+Variables d'environnement nécessaires (voir `.env.local.example`) : `RESEND_API_KEY`, `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`. Elles doivent aussi être configurées sur Vercel (Production/Preview/Development).
 
 ### Redirections
 

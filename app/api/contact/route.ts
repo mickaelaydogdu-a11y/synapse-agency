@@ -6,6 +6,28 @@ export const runtime = 'nodejs';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+async function verifyTurnstile(token: string, remoteip: string | null): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) {
+    console.error('TURNSTILE_SECRET_KEY manquante : formulaire de contact non protégé, requête rejetée.');
+    return false;
+  }
+  if (!token) return false;
+
+  try {
+    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret, response: token, remoteip: remoteip ?? undefined }),
+    });
+    const result = await response.json();
+    return result.success === true;
+  } catch (error) {
+    console.error('Erreur de vérification Turnstile:', error);
+    return false;
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     const raw = await request.json();
@@ -14,6 +36,15 @@ export async function POST(request: NextRequest) {
     // On répond succès sans rien traiter, pour ne pas leur indiquer qu'ils sont détectés.
     if (raw.website) {
       return NextResponse.json({ success: true, message: 'Message envoyé avec succès' });
+    }
+
+    const remoteip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? null;
+    const turnstileValid = await verifyTurnstile(raw.turnstileToken, remoteip);
+    if (!turnstileValid) {
+      return NextResponse.json(
+        { error: 'Vérification anti-robot échouée. Merci de réessayer.' },
+        { status: 400 }
+      );
     }
 
     const parsed = contactSchema.safeParse(raw);
