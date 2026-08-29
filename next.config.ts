@@ -49,6 +49,11 @@ const nextConfig: NextConfig = {
         destination: "/realisations/mediatheque-numerique-musee",
         permanent: true,
       },
+      {
+        source: "/realisations/secure-interventions-techniques",
+        destination: "/realisations/secure-securite-maintenance",
+        permanent: true,
+      },
     ];
   },
   async headers() {
