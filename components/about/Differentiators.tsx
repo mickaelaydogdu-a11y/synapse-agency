@@ -6,7 +6,7 @@ import { ShieldCheck, CodeXml, Smile } from "lucide-react";
 const points = [
   {
     icon: ShieldCheck,
-    title: "Entreprise française",
+    title: "Entreprise française, cocorico",
     description: "Mes solutions sont 100 % RGPD, pensées dès leur conception pour la sécurité et la propriété de vos données.",
   },
   {
