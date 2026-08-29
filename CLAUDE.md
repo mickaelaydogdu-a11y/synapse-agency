@@ -133,4 +133,4 @@ Avant de supprimer ou renommer une route déjà déployée, ajouter une redirect
 
 ## Ce qui reste hors scope de la refonte actuelle
 
-Ces points sont identifiés dans `PLAN DE REFONTE.md` mais pas encore traités : refonte du contenu de `/production-visuelle` et des pages légales (mentions-légales/confidentialité), route `/ia` dédiée (actuellement `/solutions-ia` fait office de page IA, avec redirect à prévoir le jour où `/ia` sera créée). `data/realisations.ts` ne contient pour l'instant qu'une seule vraie étude de cas (Musée Granet) ; deux autres projets réels doivent encore y être ajoutés.
+Ces points sont identifiés dans `PLAN DE REFONTE.md` mais pas encore traités : refonte du contenu de `/production-visuelle` et des pages légales (mentions-légales/confidentialité), route `/ia` dédiée (actuellement `/solutions-ia` fait office de page IA, avec redirect à prévoir le jour où `/ia` sera créée). `data/realisations.ts` contient deux vraies études de cas, toutes deux anonymisées (client non nommé, ville non nommée le cas échéant) : Média (médiathèque numérique pour un musée) et Parc (gestion de matériel et de flotte de véhicules).

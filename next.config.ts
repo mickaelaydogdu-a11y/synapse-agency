@@ -44,6 +44,11 @@ const nextConfig: NextConfig = {
         destination: "/realisations",
         permanent: true,
       },
+      {
+        source: "/realisations/mediatheque-musee-granet",
+        destination: "/realisations/mediatheque-numerique-musee",
+        permanent: true,
+      },
     ];
   },
   async headers() {

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Check, Sparkles } from "lucide-react";
@@ -80,28 +79,12 @@ export default async function RealisationDetail({
             Toutes les réalisations
           </Link>
 
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
-            <div>
-              <Badge variant="secondary" className="mb-4">
-                {realisation.isPlaceholder ? "Exemple de projet type" : "Projet client"}
-              </Badge>
-              <p className="text-xs font-mono uppercase text-slate-400 mb-2">{realisation.category}</p>
-              <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">{realisation.title}</h1>
-              <p className="text-lg text-slate-300">{realisation.summary}</p>
-            </div>
-
-            {realisation.clientLogo && (
-              <div className="shrink-0 bg-white rounded-2xl p-4 self-start">
-                <Image
-                  src={realisation.clientLogo.src}
-                  alt={realisation.clientLogo.alt}
-                  width={realisation.clientLogo.width}
-                  height={realisation.clientLogo.height}
-                  className="h-24 w-auto object-contain"
-                />
-              </div>
-            )}
-          </div>
+          <Badge variant="secondary" className="mb-4">
+            {realisation.isPlaceholder ? "Exemple de projet type" : "Projet client"}
+          </Badge>
+          <p className="text-xs font-mono uppercase text-slate-400 mb-2">{realisation.category}</p>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">{realisation.title}</h1>
+          <p className="text-lg text-slate-300">{realisation.summary}</p>
         </div>
       </section>
 
