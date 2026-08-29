@@ -47,8 +47,8 @@ export const realisations: Realisation[] = [
     title: "Parc — la gestion du matériel et de la flotte de véhicules",
     category: "Gestion de flotte & matériel",
     summary: "Centraliser l'inventaire, la maintenance et les réservations du matériel et des véhicules dans un outil conforme RGPD.",
-    context: "Le parc de matériel et la flotte de véhicules de l'entreprise étaient jusque-là suivis sur un fichier Excel stocké en local sur le poste du gestionnaire du parc, sans conformité RGPD, avec les factures et justificatifs de garantie conservés au service comptabilité plutôt que chez le gestionnaire, et les demandes de réservation gérées par email.",
-    problem: "Le gestionnaire du matériel n'avait aucune visibilité centralisée : dates d'achat et de garantie dispersées, aucun rappel de maintenance, et les demandes d'utilisation du matériel gérées sans coordination entre les employés et les services techniques. Le fichier étant local et les demandes traitées par email, toute absence du gestionnaire mettait le workflow à l'arrêt.",
+    context: "Le parc de matériel et la flotte de véhicules de l'entreprise étaient jusque-là suivis sur un fichier Excel hébergé sur Google Drive, sans conformité RGPD, avec les factures et justificatifs de garantie conservés au service comptabilité plutôt que chez le gestionnaire, et les demandes de réservation gérées par email.",
+    problem: "Le gestionnaire du matériel n'avait aucune visibilité centralisée : dates d'achat et de garantie dispersées, aucun rappel de maintenance, et les demandes d'utilisation du matériel gérées sans coordination entre les employés et les services techniques. Les demandes étant traitées par email et centralisées sur une seule personne, toute absence du gestionnaire mettait le workflow à l'arrêt.",
     users: "Le responsable du matériel, les services techniques et de maintenance, ainsi que l'ensemble des employés pour les demandes de réservation.",
     solution: "Une application centralisant l'inventaire du matériel et de la flotte de véhicules : suivi des dates d'achat, statut de garantie, dates de maintenance, localisation (en stock ou déployé sur site) et état des stocks en temps réel. Un planning commun permet aux employés de faire une demande de réservation de matériel ; une IA priorise et replanifie automatiquement ces demandes, anticipe les besoins en croisant les événements planifiés de l'entreprise (séminaire, besoin d'un vidéoprojecteur, de mobilier...) tout en tenant compte des dates d'entretien, et coordonne les interventions des services techniques (réparation, installation, enlèvement).",
     features: [
@@ -56,7 +56,7 @@ export const realisations: Realisation[] = [
       "Suivi des dates d'achat et du statut de garantie",
       "Localisation de chaque équipement (en stock ou déployé sur site)",
       "Planning commun de demandes de réservation de matériel par les employés",
-      "Conformité RGPD, en remplacement du fichier Excel local et des factures dispersées en comptabilité",
+      "Conformité RGPD, en remplacement du fichier Excel hébergé sur Google Drive et des factures dispersées en comptabilité",
     ],
     ai: [
       "Rappels automatiques des dates de maintenance et de garantie",
@@ -64,7 +64,7 @@ export const realisations: Realisation[] = [
       "Anticipation des besoins en croisant les événements planifiés de l'entreprise (séminaire, réunion, matériel spécifique...)",
       "Coordination avec les services techniques pour la réparation, l'installation et l'enlèvement du matériel",
     ],
-    results: "Un outil centralisé qui remplace le fichier Excel local et les demandes par email, disponible 365 jours par an et 24h/24 : l'activité ne dépend plus de la présence du gestionnaire du parc. L'inventaire est mis à jour en temps réel, avec une planification des besoins en amont grâce à l'anticipation par l'IA des événements de l'entreprise.",
+    results: "Un outil centralisé qui remplace le fichier Excel hébergé sur Google Drive et les demandes par email, disponible 365 jours par an et 24h/24 : l'activité ne dépend plus de la présence du gestionnaire du parc. L'inventaire est mis à jour en temps réel, avec une planification des besoins en amont grâce à l'anticipation par l'IA des événements de l'entreprise.",
     technologies: [],
     isPlaceholder: false,
   },
