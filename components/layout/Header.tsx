@@ -14,12 +14,12 @@ export function Header() {
   return (
     <header className="sticky top-0 left-0 right-0 z-50">
         <nav className="glass px-6 py-4">
-          <div className="grid grid-cols-3 items-center lg:flex lg:justify-between">
-            {/* Mobile spacer to balance the menu button so the logo centers */}
-            <div className="lg:hidden" aria-hidden="true" />
-
-            {/* Logo */}
-            <Link href="/" className="flex items-center justify-center lg:justify-start">
+          <div className="relative flex min-h-16 items-center justify-end lg:justify-between">
+            {/* Logo: absolutely centered on mobile so its natural width can't be squeezed by sibling elements, back in normal flow on desktop */}
+            <Link
+              href="/"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:left-auto lg:top-auto lg:translate-x-0 lg:translate-y-0 flex items-center"
+            >
               <Image
                 src="/images/Logo-SynapseAgency.png"
                 alt="Synapse Agency"
@@ -55,7 +55,7 @@ export function Header() {
 
             {/* Mobile/Tablet Menu Button */}
             <button
-              className="lg:hidden text-white justify-self-end"
+              className="lg:hidden text-white"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
               aria-expanded={isOpen}
