@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import {
-  Smartphone, Palette, Layout, Zap, Shield, Puzzle, Bot, ArrowRight,
+  Smartphone, ArrowRight,
   Lock, Unplug, TrendingDown,
   Users, Receipt, Construction, HardHat, ShieldCheck, FolderKanban,
   CalendarDays, Wrench, Building2, LayoutDashboard, GitBranch,
@@ -32,15 +32,6 @@ const appCategories = [
   { icon: Building2, title: "ERP métier", description: "Un outil central pour piloter les données de votre entreprise." },
   { icon: LayoutDashboard, title: "Dashboard", description: "Visualisez vos indicateurs clés en un coup d'œil, sans tableur." },
   { icon: GitBranch, title: "Workflow interne", description: "Automatisez les validations et les étapes répétitives entre équipes." },
-];
-
-const features = [
-  { icon: Palette, title: "Design UI/UX moderne", description: "Interfaces élégantes et intuitives, conçues pour une expérience utilisateur optimale." },
-  { icon: Layout, title: "Responsive design", description: "Votre application s'adapte parfaitement à tous les écrans : mobile, tablette, desktop." },
-  { icon: Zap, title: "Performance optimisée", description: "Temps de chargement minimal et fluidité pour une expérience sans accroc." },
-  { icon: Shield, title: "Sécurité par conception", description: "Bonnes pratiques de sécurité et respect du RGPD pris en compte dès la conception." },
-  { icon: Puzzle, title: "Intégrations tierces", description: "Connectez votre application à vos outils existants : paiement, CRM, analytics." },
-  { icon: Bot, title: "IA intégrée", description: "Intégrez un agent IA directement dans votre application pour automatiser les tâches répétitives." },
 ];
 
 export default function Applications() {
@@ -153,41 +144,6 @@ export default function Applications() {
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{category.title}</h3>
                   <p className="text-slate-300 text-sm">{category.description}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-20 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Ce qui fait la différence
-            </h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">
-              Chaque application que nous développons intègre les meilleures pratiques
-              du web moderne pour garantir qualité et pérennité.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="h-full">
-                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
-                    <feature.icon className="w-6 h-6 text-accent-light" />
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-slate-300">{feature.description}</p>
                 </Card>
               </motion.div>
             ))}
