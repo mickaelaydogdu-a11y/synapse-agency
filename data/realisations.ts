@@ -68,6 +68,28 @@ export const realisations: Realisation[] = [
     technologies: [],
     isPlaceholder: false,
   },
+  {
+    slug: "secure-interventions-techniques",
+    title: "Secure — le signalement d'interventions techniques par QR code",
+    category: "Maintenance & signalement d'interventions",
+    summary: "Signaler, suivre et clôturer les interventions de maintenance d'un bâtiment en un scan de QR code, avec suivi des délais et notifications en temps réel.",
+    context: "L'entreprise gérait jusque-là le signalement des pannes et problèmes techniques (électricité, plomberie, équipements...) par appel téléphonique, email ou formulaire papier, sans centralisation ni suivi structuré des interventions.",
+    problem: "Les responsables n'avaient aucune visibilité en temps réel sur les signalements, aucune traçabilité de l'historique des interventions (photos, commentaires, délais), et aucun moyen de vérifier si les délais de traitement étaient respectés selon la criticité du problème.",
+    users: "Les occupants des bâtiments pour le signalement, les techniciens de maintenance, les responsables d'équipe et l'administrateur du site, avec un accès organisé selon plusieurs niveaux de permissions.",
+    solution: "Une application PWA installable sur smartphone : chaque espace d'un bâtiment (salle, bureau, équipement) est associé à un QR code unique. Un occupant scanne le code, remplit un formulaire en quelques secondes (catégorie, description, niveau d'urgence, photo), et la demande est transmise en temps réel aux responsables qui assignent un technicien. Chaque intervention suit un cycle de statuts (nouveau, planifié, en cours, résolu, clos) avec photos avant/après, commentaires et notifications email et push à chaque étape. Un délai maximum de traitement configurable par catégorie de problème déclenche une alerte automatique en cas de dépassement.",
+    features: [
+      "QR code unique par espace (salle, bureau, équipement) pour un signalement en quelques secondes",
+      "Application PWA installable sur smartphone, sans passage par un store",
+      "Suivi du cycle de vie de chaque intervention (nouveau, planifié, en cours, résolu, clos)",
+      "Photos avant/après travaux et historique des commentaires",
+      "Notifications email et push en temps réel à chaque étape",
+      "Délai de traitement configurable par catégorie, avec alerte automatique en cas de dépassement",
+      "Tableaux de bord et statistiques pour les responsables (interventions urgentes, non assignées, résolues du mois)",
+    ],
+    results: "Un signalement en un scan de QR code à la place des appels et emails dispersés, un suivi en temps réel du statut de chaque intervention, et une alerte automatique dès qu'un délai de traitement est dépassé.",
+    technologies: [],
+    isPlaceholder: false,
+  },
 ];
 
 export function getRealisationBySlug(slug: string): Realisation | undefined {
