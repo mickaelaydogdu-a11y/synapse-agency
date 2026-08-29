@@ -26,14 +26,14 @@ export default function Realisations() {
             transition={{ delay: 0.1 }}
             className="text-slate-400 text-sm max-w-2xl mx-auto"
           >
-            Un projet client réel, et des exemples de projets types pour illustrer d&apos;autres cas d&apos;usage possibles.
+            Notre première étude de cas client — d&apos;autres suivront prochainement.
           </motion.p>
         </div>
       </section>
 
       <section className="pb-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid justify-center gap-6 [grid-template-columns:repeat(auto-fit,minmax(280px,340px))]">
             {realisations.map((realisation, index) => (
               <motion.div
                 key={realisation.slug}
@@ -45,7 +45,7 @@ export default function Realisations() {
                 <Link href={`/realisations/${realisation.slug}`}>
                   <Card className="h-full flex flex-col">
                     <Badge variant="secondary" className="mb-4 self-start">
-                      {realisation.isPlaceholder ? "Exemple de projet type" : "Projet client réel"}
+                      {realisation.isPlaceholder ? "Exemple de projet type" : "Projet client"}
                     </Badge>
                     <p className="text-xs font-mono uppercase text-slate-400 mb-2">{realisation.category}</p>
                     <h2 className="text-lg font-bold text-white mb-3">{realisation.title}</h2>

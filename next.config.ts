@@ -29,6 +29,21 @@ const nextConfig: NextConfig = {
         destination: "/solutions-ia",
         permanent: true,
       },
+      {
+        source: "/realisations/application-gestion-commerciale",
+        destination: "/realisations",
+        permanent: true,
+      },
+      {
+        source: "/realisations/suivi-de-chantier",
+        destination: "/realisations",
+        permanent: true,
+      },
+      {
+        source: "/realisations/portail-client-documentaire",
+        destination: "/realisations",
+        permanent: true,
+      },
     ];
   },
   async headers() {

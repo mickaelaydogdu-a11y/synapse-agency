@@ -83,7 +83,7 @@ export default async function RealisationDetail({
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
             <div>
               <Badge variant="secondary" className="mb-4">
-                {realisation.isPlaceholder ? "Exemple de projet type" : "Projet client réel"}
+                {realisation.isPlaceholder ? "Exemple de projet type" : "Projet client"}
               </Badge>
               <p className="text-xs font-mono uppercase text-slate-400 mb-2">{realisation.category}</p>
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">{realisation.title}</h1>

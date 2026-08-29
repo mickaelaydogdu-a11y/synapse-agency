@@ -22,11 +22,11 @@ export function CaseStudiesSection() {
             Des applications conçues pour répondre à de vrais problèmes métier.
           </h2>
           <p className="text-slate-400 text-sm max-w-2xl mx-auto">
-            Un projet client réel, et des exemples de projets types pour illustrer d&apos;autres cas d&apos;usage possibles.
+            Notre première étude de cas client — d&apos;autres suivront prochainement.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid justify-center gap-6 mb-12 [grid-template-columns:repeat(auto-fit,minmax(280px,340px))]">
           {realisations.map((study, index) => (
             <motion.div
               key={study.slug}
@@ -38,7 +38,7 @@ export function CaseStudiesSection() {
               <Link href={`/realisations/${study.slug}`}>
                 <Card className="h-full flex flex-col">
                   <Badge variant="secondary" className="mb-4 self-start">
-                    {study.isPlaceholder ? "Exemple de projet type" : "Projet client réel"}
+                    {study.isPlaceholder ? "Exemple de projet type" : "Projet client"}
                   </Badge>
                   <h3 className="text-lg font-bold text-white mb-3">{study.title}</h3>
                   <p className="text-slate-300 text-sm flex-1">{study.summary}</p>
