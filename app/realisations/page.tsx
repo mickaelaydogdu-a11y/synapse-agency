@@ -12,7 +12,7 @@ import { realisations } from "@/data/realisations";
 export default function Realisations() {
   return (
     <main>
-      <section className="relative max-h-[75vh] lg:max-h-none min-h-[auto] lg:min-h-screen flex items-center overflow-hidden">
+      <section className="relative max-h-[calc(75vh-100px)] lg:max-h-none min-h-[auto] lg:min-h-[calc(100vh-100px)] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/Realisations-hero.jpg"
@@ -33,7 +33,7 @@ export default function Realisations() {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
               >
-                Des applications conçues pour répondre à de <span className="gradient-text">vrais problèmes métier</span>.
+                Des applications conçues pour répondre à de vrais problèmes métier.
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
