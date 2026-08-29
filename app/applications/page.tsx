@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import {
   Smartphone, Palette, Layout, Zap, Shield, Puzzle, Bot, ArrowRight,
-  PackageX, Lock, CreditCard, Unplug, Repeat, TrendingDown,
+  Lock, Unplug, TrendingDown,
   Users, Receipt, Construction, HardHat, ShieldCheck, FolderKanban,
   CalendarDays, Wrench, Building2, LayoutDashboard, GitBranch,
 } from "lucide-react";
@@ -15,11 +15,8 @@ import { Button } from "@/components/ui/Button";
 import { AuditSection } from "@/components/home";
 
 const limits = [
-  { icon: PackageX, title: "Fonctionnalités inutiles", description: "Vous payez pour des options que vous n'utiliserez jamais." },
   { icon: Lock, title: "Processus imposés", description: "Le logiciel dicte votre façon de travailler, pas l'inverse." },
-  { icon: CreditCard, title: "Multiplication des abonnements", description: "Un outil par besoin, et une facture qui grimpe chaque mois." },
   { icon: Unplug, title: "Logiciels non connectés", description: "Vos données restent cloisonnées, sans communication entre elles." },
-  { icon: Repeat, title: "Manque d'automatisation", description: "Les tâches répétitives restent à la charge de vos équipes." },
   { icon: TrendingDown, title: "Difficulté d'évolution", description: "Impossible d'adapter l'outil quand votre activité change." },
 ];
 
