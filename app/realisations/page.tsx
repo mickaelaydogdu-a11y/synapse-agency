@@ -12,35 +12,39 @@ import { realisations } from "@/data/realisations";
 export default function Realisations() {
   return (
     <main>
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
+      <section className="relative max-h-[75vh] lg:max-h-none min-h-[auto] lg:min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/Realisations-hero.jpg"
             alt=""
             fill
-            sizes="100vw"
-            className="object-cover"
+            sizes="(max-width: 768px) 200vw, 100vw"
+            className="object-cover object-right lg:object-center"
             priority
           />
-          <div className="absolute inset-0 bg-background/80" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
 
-        <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
-          >
-            Des applications conçues pour répondre à de <span className="gradient-text">vrais problèmes métier</span>.
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-slate-300 text-sm max-w-2xl mx-auto"
-          >
-            Les projets les plus récents que nous avons développés et livrés.
-          </motion.p>
+        <div className="relative max-w-7xl mx-auto px-6 py-14 pt-24 lg:py-24 lg:pt-28">
+          <div className="flex justify-center">
+            <div className="text-center max-w-3xl">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+              >
+                Des applications conçues pour répondre à de <span className="gradient-text">vrais problèmes métier</span>.
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-lg md:text-xl text-slate-200"
+              >
+                Les projets les plus récents que nous avons développés et livrés.
+              </motion.p>
+            </div>
+          </div>
         </div>
       </section>
 
