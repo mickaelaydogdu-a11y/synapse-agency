@@ -19,6 +19,7 @@ async function verifyTurnstile(token: string, remoteip: string | null): Promise<
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ secret, response: token, remoteip: remoteip ?? undefined }),
+      signal: AbortSignal.timeout(5000),
     });
     const result = await response.json();
     return result.success === true;
@@ -64,6 +65,10 @@ export async function POST(request: NextRequest) {
         '"': '&quot;',
         "'": '&#39;',
       }[char]!));
+
+    // On retire les retours à la ligne du nom avant de l'utiliser dans le sujet de
+    // l'email (contrairement au corps HTML, un sujet ne passe pas par escapeHtml).
+    const subjectSafeName = data.name.replace(/[\r\n]+/g, ' ').trim();
 
     const name = escapeHtml(data.name);
     const email = escapeHtml(data.email);
@@ -130,7 +135,7 @@ export async function POST(request: NextRequest) {
       from: 'Synapse Agency - Contact <notification@synapse-agency.fr>',
       to: 'contact@synapse-agency.fr',
       replyTo: data.email,
-      subject: `Nouvelle demande de contact - ${data.name}`,
+      subject: `Nouvelle demande de contact - ${subjectSafeName}`,
       html: htmlContent,
     });
 
