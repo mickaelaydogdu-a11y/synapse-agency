@@ -38,6 +38,7 @@ export const realisations: Realisation[] = [
       "Gestion des droits et licences par fichier",
       "Thésaurus de mots-clés associés à chaque fichier (métadonnées)",
       "QR code généré pour la diffusion publique sécurisée des fichiers autorisés en lecture",
+      "Statistiques par fichier (lectures, téléchargements) et par utilisateur (nombre d'uploads)",
     ],
     results: "Une bibliothèque unique remplaçant plus de 4 To de fichiers dispersés sur postes, disques durs et clés USB, avec des droits d'usage tracés pour chaque fichier. Le partage par QR code alimente directement les services tourisme, communication et culture de la Ville d'Aix-en-Provence ainsi que la presse locale, régionale et spécialisée.",
     technologies: ["Supabase", "Stockage S3 (France, 8 To)", "HTML / CSS (Tailwind)", "JavaScript"],
