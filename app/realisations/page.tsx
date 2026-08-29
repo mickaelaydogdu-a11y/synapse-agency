@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/Card";
@@ -11,8 +12,20 @@ import { realisations } from "@/data/realisations";
 export default function Realisations() {
   return (
     <main>
-      <section className="pt-32 pb-20 md:pt-40 md:pb-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/Realisations-hero.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-background/80" />
+        </div>
+
+        <div className="relative max-w-4xl mx-auto px-6 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -24,7 +37,7 @@ export default function Realisations() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-slate-400 text-sm max-w-2xl mx-auto"
+            className="text-slate-300 text-sm max-w-2xl mx-auto"
           >
             Les projets les plus récents que nous avons développés et livrés.
           </motion.p>
