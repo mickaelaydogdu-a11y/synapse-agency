@@ -39,7 +39,7 @@ app/                      # Pages (App Router)
 ├── production-visuelle/    # Activité secondaire, liée uniquement depuis le footer
 ├── mentions-legales/
 ├── confidentialite/
-├── api/contact/route.ts    # Validation Zod + honeypot + rate limit + insert Supabase + email Resend
+├── api/contact/route.ts    # Validation Zod + honeypot + email Resend
 ├── layout.tsx              # Root layout (Header + Footer + ScrollToTop + MotionProvider + CookieBanner)
 ├── sitemap.ts               # Inclut les routes statiques + une entrée par réalisation
 ├── globals.css              # Tailwind v4 avec @theme pour les couleurs custom (thème sombre)
@@ -56,7 +56,6 @@ components/
 lib/
 ├── utils.ts                # cn() - combine clsx + tailwind-merge
 ├── navigation.ts            # Source unique de la nav (mainNav, ctaLabel, ctaHref) - Header et Footer la consomment, ne pas dupliquer
-├── supabase.ts               # Client Supabase (clé anon/publishable)
 └── validations/contact.ts    # Schéma Zod du formulaire de contact + constantes PROJECT_TYPES/BUDGET_RANGES
 
 data/
@@ -111,16 +110,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 Framer Motion pour les animations (`framer-motion`). Animations Tailwind custom : `fade-in`, `slide-up`, `pulse-slow`, `float`.
 
-### Formulaire de contact & Supabase
+### Formulaire de contact
 
 Le formulaire (`app/contact/page.tsx`) envoie vers `app/api/contact/route.ts`, qui :
 1. Rejette silencieusement les soumissions avec le champ honeypot (`website`) rempli (faux succès renvoyé, aucun traitement)
 2. Valide avec le schéma Zod de `lib/validations/contact.ts`
-3. Vérifie la fréquence des soumissions par email (2 max / 5 min) via une requête Supabase
-4. Insère dans la table Supabase `leads` (RLS activé, insertion publique uniquement — voir le projet Supabase du compte)
-5. Envoie une notification par email via Resend (best-effort : un échec d'email n'empêche pas l'enregistrement du lead)
+3. Envoie une notification par email via Resend — c'est le seul canal d'enregistrement de la demande (plus d'archivage en base depuis le retrait de Supabase), donc un échec d'envoi fait échouer la requête et remonte une erreur au formulaire.
 
-Variables d'environnement nécessaires (voir `.env.local.example`) : `RESEND_API_KEY`, `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Ces deux dernières doivent aussi être configurées sur Vercel (Production/Preview/Development) pour que le formulaire fonctionne en ligne.
+Variable d'environnement nécessaire (voir `.env.local.example`) : `RESEND_API_KEY`. Elle doit aussi être configurée sur Vercel (Production/Preview/Development) pour que le formulaire fonctionne en ligne.
 
 ### Redirections
 

@@ -1,20 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { createClient } from '@supabase/supabase-js';
 import { contactSchema } from '@/lib/validations/contact';
 
 export const runtime = 'nodejs';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-  { auth: { persistSession: false } }
-);
-
-const RATE_LIMIT_WINDOW_MINUTES = 5;
-const RATE_LIMIT_MAX_SUBMISSIONS = 2;
 
 export async function POST(request: NextRequest) {
   try {
@@ -34,44 +24,6 @@ export async function POST(request: NextRequest) {
       );
     }
     const data = parsed.data;
-
-    // Anti-spam : limite le nombre de soumissions récentes pour un même email
-    const since = new Date(Date.now() - RATE_LIMIT_WINDOW_MINUTES * 60 * 1000).toISOString();
-    const { count } = await supabaseAdmin
-      .from('leads')
-      .select('id', { count: 'exact', head: true })
-      .eq('email', data.email)
-      .gte('created_at', since);
-
-    if ((count ?? 0) >= RATE_LIMIT_MAX_SUBMISSIONS) {
-      return NextResponse.json(
-        { error: 'Trop de tentatives récentes. Merci de réessayer dans quelques minutes.' },
-        { status: 429 }
-      );
-    }
-
-    const { error: insertError } = await supabaseAdmin.from('leads').insert({
-      name: data.name,
-      company: data.company || null,
-      email: data.email,
-      phone: data.phone || null,
-      role: data.role || null,
-      project_type: data.projectType.length > 0 ? data.projectType : null,
-      message: data.message,
-      users_estimate: data.usersEstimate || null,
-      budget: data.budget || null,
-      deadline: data.deadline || null,
-      status: 'new',
-      source: 'site-contact-form',
-    });
-
-    if (insertError) {
-      console.error('Erreur Supabase (leads):', insertError);
-      return NextResponse.json(
-        { error: 'Erreur lors de l\'enregistrement de votre demande' },
-        { status: 500 }
-      );
-    }
 
     const htmlContent = `
 <!DOCTYPE html>
@@ -132,8 +84,11 @@ export async function POST(request: NextRequest) {
     });
 
     if (emailError) {
-      // Le lead est déjà enregistré en base, l'échec de l'email n'est pas bloquant
       console.error('Erreur Resend:', emailError);
+      return NextResponse.json(
+        { error: 'Erreur lors de l\'envoi du message. Merci de réessayer ou de nous écrire directement à contact@synapse-agency.fr' },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({ success: true, message: 'Message envoyé avec succès' });

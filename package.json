@@ -21,7 +21,6 @@
   "author": "Synapse Agency",
   "license": "ISC",
   "dependencies": {
-    "@supabase/supabase-js": "^2.112.4",
     "clsx": "^2.1.1",
     "framer-motion": "^12.27.0",
     "lucide-react": "^0.562.0",
