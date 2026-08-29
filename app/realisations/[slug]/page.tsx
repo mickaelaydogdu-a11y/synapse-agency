@@ -173,17 +173,6 @@ export default async function RealisationDetail({
             <p className="text-slate-300">{realisation.results}</p>
           </div>
 
-          <div>
-            <h2 className="text-xs font-mono uppercase tracking-wide text-slate-400 mb-3">Technologies utilisées</h2>
-            <div className="flex flex-wrap gap-2">
-              {realisation.technologies.map((tech) => (
-                <span key={tech} className="text-xs px-3 py-1.5 rounded-full bg-white/10 text-slate-300">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-
           <div className="text-center pt-4">
             <Link href="/contact">
               <Button size="lg">
