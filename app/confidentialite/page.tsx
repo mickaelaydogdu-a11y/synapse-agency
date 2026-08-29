@@ -190,7 +190,7 @@ export default function Confidentialite() {
                 <div className="mt-4 text-slate-300">
                   <p><strong className="text-white">Email :</strong> contact@synapse-agency.fr</p>
                   <p><strong className="text-white">Téléphone :</strong> 06 32 54 55 78</p>
-                  <p><strong className="text-white">Adresse :</strong> 21 grande place, 77640 Jouarre, France</p>
+                  <p><strong className="text-white">Adresse :</strong> 7 Cour du Haut Vanry, 77640 Jouarre, France</p>
                 </div>
                 <p className="text-slate-300 mt-4">
                   Vous pouvez également introduire une réclamation auprès de la CNIL (Commission Nationale de

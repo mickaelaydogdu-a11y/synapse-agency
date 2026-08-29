@@ -67,7 +67,7 @@ const jsonLd = {
   email: "contact@synapse-agency.fr",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "21 grande place",
+    streetAddress: "7 Cour du Haut Vanry",
     addressLocality: "Jouarre",
     postalCode: "77640",
     addressCountry: "FR",

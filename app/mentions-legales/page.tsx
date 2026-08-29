@@ -41,7 +41,7 @@ export default function MentionsLegales() {
                 <div className="text-slate-300 space-y-2">
                   <p><strong className="text-white">Raison sociale :</strong> Synapse Agency</p>
                   <p><strong className="text-white">Forme juridique :</strong> Entreprise individuelle</p>
-                  <p><strong className="text-white">Siège social :</strong> 21 grande place, 77640 Jouarre, France</p>
+                  <p><strong className="text-white">Siège social :</strong> 7 Cour du Haut Vanry, 77640 Jouarre, France</p>
                   <p><strong className="text-white">SIREN :</strong> 502299142</p>
                   <p><strong className="text-white">Immatriculation au RCS :</strong> R.C.S. Meaux</p>
                   <p><strong className="text-white">Email :</strong> contact@synapse-agency.fr</p>
