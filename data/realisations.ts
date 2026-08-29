@@ -16,6 +16,7 @@ export interface Realisation {
   results: string;
   technologies: string[];
   isPlaceholder: boolean;
+  clientLogo?: { src: string; alt: string; width: number; height: number };
 }
 
 export const realisations: Realisation[] = [
@@ -30,6 +31,8 @@ export const realisations: Realisation[] = [
     solution: "Une médiathèque numérique sur mesure centralisant documents, photos, illustrations, audio, vidéos, plans et PDF, avec gestion fine des droits d'accès, des catégories et des licences, et un thésaurus de mots-clés associé à chaque fichier sous forme de métadonnées. La sécurité a fait l'objet d'une attention particulière pour empêcher toute fuite de fichiers sous droits.",
     features: [
       "Stockage et partage centralisés (documents, photos, illustrations, audio, vidéo, plans, PDF)",
+      "Numéro d'œuvre unique pour retrouver instantanément tous les fichiers liés à une même œuvre",
+      "Upload groupé en un seul lot (ex. 20 photos d'une même œuvre sous tous les angles), avec métadonnées communes et référencement unique par fichier",
       "Trois niveaux de droits d'accès : administrateur, contributeur, lecteur",
       "Gestion des catégories de classement",
       "Gestion des droits et licences par fichier",
@@ -39,6 +42,7 @@ export const realisations: Realisation[] = [
     results: "Une bibliothèque unique remplaçant plus de 4 To de fichiers dispersés sur postes, disques durs et clés USB, avec des droits d'usage tracés pour chaque fichier. Le partage par QR code alimente directement les services tourisme, communication et culture de la Ville d'Aix-en-Provence ainsi que la presse locale, régionale et spécialisée.",
     technologies: ["Supabase", "Stockage S3 (France, 8 To)", "HTML / CSS (Tailwind)", "JavaScript"],
     isPlaceholder: false,
+    clientLogo: { src: "/images/clients/musee-granet.webp", alt: "Musée Granet, Aix-en-Provence", width: 462, height: 540 },
   },
   {
     slug: "application-gestion-commerciale",
