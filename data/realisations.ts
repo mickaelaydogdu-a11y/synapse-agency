@@ -70,7 +70,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "secure-securite-maintenance",
-    title: "Secure — la sécurité et la maintenance pilotées par QR code",
+    title: "Secure — la sécurité et la maintenance pilotées",
     category: "Sécurité & maintenance",
     summary: "Digitaliser les rondes de sécurité et le signalement d'incidents d'un site, avec preuve horodatée de passage même hors connexion et un pilotage centralisé.",
     context: "Le service de sécurité effectuait jusque-là ses rondes et consignait les incidents sur papier, sans preuve de passage horodatée ni vue consolidée en temps réel. Prévenir un prestataire externe pour une intervention nécessitait un appel téléphonique ou un email.",
