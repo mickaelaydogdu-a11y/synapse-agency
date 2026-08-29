@@ -50,7 +50,7 @@ export function AuditSection() {
 
             <Link href="/contact">
               <Button size="lg">
-                Prendre rendez-vous
+                Contactez-nous
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
