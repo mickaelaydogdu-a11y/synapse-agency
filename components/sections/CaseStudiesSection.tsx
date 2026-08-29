@@ -22,7 +22,7 @@ export function CaseStudiesSection() {
             Des applications conçues pour répondre à de vrais problèmes métier.
           </h2>
           <p className="text-slate-400 text-sm max-w-2xl mx-auto">
-            Notre première étude de cas client — d&apos;autres suivront prochainement.
+            Les projets les plus récents que nous avons développés et livrés.
           </p>
         </motion.div>
 

@@ -26,7 +26,7 @@ export default function Realisations() {
             transition={{ delay: 0.1 }}
             className="text-slate-400 text-sm max-w-2xl mx-auto"
           >
-            Notre première étude de cas client — d&apos;autres suivront prochainement.
+            Les projets les plus récents que nous avons développés et livrés.
           </motion.p>
         </div>
       </section>
