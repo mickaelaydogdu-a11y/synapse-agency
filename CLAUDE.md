@@ -50,9 +50,8 @@ components/
 ├── layout/          # Header, Footer, ScrollToTop, CookieBanner, MotionProvider
 ├── home/            # AuditSection uniquement — bloc CTA réutilisé en fin de plusieurs pages
 ├── about/            # Sections de /qui-suis-je (AboutHero, Timeline, Differentiators)
-└── sections/          # Sections de la homepage (Hero, Problem, Applications, AI,
-                        # ApplicationAI, Automation, Integration, CaseStudies, Process,
-                        # Security, FinalCTA) + Workflow (diagramme en chaîne réutilisable)
+└── sections/          # Sections de la homepage (Hero, Applications, AI, Integration,
+                        # Process, Security, FinalCTA) + Workflow (diagramme en chaîne réutilisable)
 
 lib/
 ├── utils.ts                # cn() - combine clsx + tailwind-merge
@@ -65,7 +64,7 @@ data/
                         # aucune métrique inventée, voir section 56 et 71 de PLAN DE REFONTE.md.
                         # Le champ isPlaceholder (true) reste disponible pour d'éventuels exemples
                         # génériques mais aucun n'est publié actuellement. Source unique consommée
-                        # par la homepage (CaseStudiesSection), /realisations et /realisations/[slug].
+                        # par /realisations et /realisations/[slug].
 ```
 
 ### Conventions

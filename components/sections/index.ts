@@ -3,7 +3,6 @@ export { ApplicationsSection } from "./ApplicationsSection";
 export { AISection } from "./AISection";
 export { AutomationSection } from "./AutomationSection";
 export { IntegrationSection } from "./IntegrationSection";
-export { CaseStudiesSection } from "./CaseStudiesSection";
 export { ProcessSection } from "./ProcessSection";
 export { SecuritySection } from "./SecuritySection";
 export { FinalCTASection } from "./FinalCTASection";

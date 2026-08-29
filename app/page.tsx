@@ -3,7 +3,6 @@ import {
   ApplicationsSection,
   AISection,
   IntegrationSection,
-  CaseStudiesSection,
   ProcessSection,
   SecuritySection,
   FinalCTASection,
@@ -16,7 +15,6 @@ export default function Home() {
       <ApplicationsSection />
       <AISection />
       <IntegrationSection />
-      <CaseStudiesSection />
       <ProcessSection />
       <SecuritySection />
       <FinalCTASection />
