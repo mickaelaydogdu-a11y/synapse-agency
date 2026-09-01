@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Intelligence artificielle & automatisation | Synapse Agency",
   description:
-    "Synapse Agency intègre l'intelligence artificielle directement dans vos applications métier : assistant interne, RAG, analyse documentaire, extraction, génération et agents IA.",
+    "Synapse Agency intègre l'IA dans vos applications métier : assistant interne, RAG, analyse documentaire, extraction et agents IA.",
   openGraph: {
     title: "Intelligence artificielle & automatisation | Synapse Agency",
     description:

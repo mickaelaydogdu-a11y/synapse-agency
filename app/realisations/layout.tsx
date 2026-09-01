@@ -4,7 +4,7 @@ import { realisations } from "@/data/realisations";
 export const metadata: Metadata = {
   title: "Réalisations | Synapse Agency",
   description:
-    "Exemples d'applications métier intégrant l'intelligence artificielle : CRM, suivi de chantier, portail client et gestion documentaire.",
+    "Trois applications métier sur mesure livrées à nos clients : médiathèque numérique, gestion de parc et sécurité digitalisée par rondes connectées.",
   openGraph: {
     title: "Réalisations | Synapse Agency",
     description:

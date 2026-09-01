@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Audit de flux de travail, cybersécurité et conformité | Synapse Agency",
+  title: "Audit flux de travail, cybersécurité & conformité | Synapse",
   description:
-    "Synapse Agency réalise des audits de flux de travail, de cybersécurité (tests d'intrusion, continuité d'activité PCA/PRA) et de conformité réglementaire (RGPD, RGS), pour évaluer et renforcer le fonctionnement, la sécurité et la conformité de vos outils.",
+    "Synapse Agency réalise des audits de flux de travail, de cybersécurité (tests d'intrusion, PCA/PRA) et de conformité réglementaire (RGPD, RGS).",
   openGraph: {
-    title: "Audit de flux de travail, cybersécurité et conformité | Synapse Agency",
+    title: "Audit flux de travail, cybersécurité & conformité | Synapse",
     description:
       "Audit de flux de travail, de cybersécurité (test d'intrusion, PCA/PRA) et de conformité réglementaire (RGPD, RGS).",
     type: "website",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Audit de flux de travail, cybersécurité et conformité | Synapse Agency",
+    title: "Audit flux de travail, cybersécurité & conformité | Synapse",
     description:
       "Audit de flux de travail, de cybersécurité (test d'intrusion, PCA/PRA) et de conformité réglementaire (RGPD, RGS).",
     images: ["/images/Audit-Synapse-agency.jpg"],

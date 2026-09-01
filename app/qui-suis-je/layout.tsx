@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Qui suis-je | Mickael Aydogdu, Synapse Agency",
   description:
-    "Mickael Aydogdu, fondateur de Synapse Agency à Jouarre (77) : 20 ans dans le numérique, webmaster, professeur d'informatique, entrepreneur en photo et vidéo pour de grands comptes, aujourd'hui consultant IA.",
+    "Mickael Aydogdu, fondateur de Synapse Agency à Jouarre (77) : 20 ans de terrain, au service des institutions publiques et des PME.",
   openGraph: {
     title: "Qui suis-je | Mickael Aydogdu, Synapse Agency",
     description:
-      "Un parcours de terrain avant la tech : webmastering, enseignement, puis douze ans à la tête de sa propre entreprise pour de grands comptes.",
+      "Un parcours de terrain avant la tech : webmaster, enseignant, puis agence, au service des institutions publiques et des PME.",
     type: "profile",
     locale: "fr_FR",
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Qui suis-je | Mickael Aydogdu, Synapse Agency",
     description:
-      "Un parcours de terrain avant la tech : webmastering, enseignement, puis douze ans à la tête de sa propre entreprise pour de grands comptes.",
+      "Un parcours de terrain avant la tech : webmaster, enseignant, puis agence, au service des institutions publiques et des PME.",
   },
   alternates: {
     canonical: "https://synapse-agency.fr/qui-suis-je",
@@ -53,7 +53,7 @@ const personJsonLd = {
     "Agents IA",
     "Automatisation de processus",
     "Développement web",
-    "Production audiovisuelle",
+    "Applications métier sur mesure",
   ],
 };
 
