@@ -21,7 +21,7 @@ npx tsc --noEmit
 
 ## Architecture
 
-Site vitrine Next.js 16 (App Router) pour Synapse Agency — agence positionnée sur les **applications métier sur mesure intégrant intelligence artificielle et automatisation** (pas une agence généraliste à plusieurs pôles égaux). La production visuelle (photo/vidéo/drone) est une activité secondaire, présente uniquement en page dédiée et dans le footer.
+Site vitrine Next.js 16 (App Router) pour Synapse Agency — agence positionnée sur les **applications métier sur mesure intégrant intelligence artificielle et automatisation**, complétées par une offre d'audit (cybersécurité, conformité réglementaire, continuité d'activité). La production visuelle (photo/vidéo/drone) est une activité secondaire, présente uniquement en page dédiée et dans le footer.
 
 La refonte en cours est pilotée par `PLAN DE REFONTE.md` (racine du repo, cahier des charges détaillé — objectifs, contenu, ton, règles) et `docs/audit.md` (état technique de référence au démarrage de la refonte). Consulter ces deux fichiers avant toute modification de fond sur le positionnement, le contenu ou la structure du site.
 
@@ -32,6 +32,7 @@ app/                      # Pages (App Router)
 ├── page.tsx              # Home - compose 11 sections de components/sections/
 ├── applications/          # Applications métier
 ├── solutions-ia/          # IA & Automatisation (route conservée, contenu repositionné)
+├── audit/                 # Audit (cybersécurité, conformité réglementaire, continuité d'activité)
 ├── realisations/          # Liste des réalisations
 │   └── [slug]/            # Détail d'une réalisation (généré depuis data/realisations.ts)
 ├── qui-suis-je/            # Page "À propos" (bio du fondateur, libellé nav "À propos")
@@ -138,4 +139,14 @@ Avant de supprimer ou renommer une route déjà déployée, ajouter une redirect
 
 ## Ce qui reste hors scope de la refonte actuelle
 
-Ces points sont identifiés dans `PLAN DE REFONTE.md` mais pas encore traités : refonte du contenu de `/production-visuelle` et des pages légales (mentions-légales/confidentialité), route `/ia` dédiée (actuellement `/solutions-ia` fait office de page IA, avec redirect à prévoir le jour où `/ia` sera créée). `data/realisations.ts` contient trois vraies études de cas, toutes anonymisées (client non nommé) : Média (médiathèque numérique pour un musée), Parc (gestion de matériel et de flotte de véhicules) et Secure (rondes de sécurité et signalement d'incidents par QR code).
+Ces points sont identifiés dans `PLAN DE REFONTE.md` mais pas encore traités : refonte du contenu de `/production-visuelle` et des pages légales (mentions-légales/confidentialité), route `/ia` dédiée (actuellement `/solutions-ia` fait office de page IA, avec redirect à prévoir le jour où `/ia` sera créée). `data/realisations.ts` contient trois vraies études de cas, toutes anonymisées (client non nommé) : Média (médiathèque numérique pour un musée), Parc (gestion de matériel et de parc informatique, coordination avec les services techniques, maintenance, informatique et comptabilité) et Secure (rondes de sécurité et signalement d'incidents, priorisation et escalade par IA).
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
