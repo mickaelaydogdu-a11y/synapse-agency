@@ -37,7 +37,7 @@ export default function Audit() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative max-h-[75vh] lg:max-h-none min-h-[auto] lg:min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[auto] lg:min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/Audit-Synapse-agency.jpg"
