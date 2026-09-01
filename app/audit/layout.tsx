@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Audit de sécurité, conformité et continuité d'activité | Synapse Agency",
+  title: "Audit de cybersécurité, conformité et workflow | Synapse Agency",
   description:
-    "Synapse Agency réalise des audits de cybersécurité (tests d'intrusion), de conformité réglementaire (RGPD, RGS) et de continuité d'activité (PCA/PRA) pour évaluer et renforcer la résilience de votre organisation.",
+    "Synapse Agency réalise des audits de cybersécurité (tests d'intrusion, continuité d'activité PCA/PRA), de conformité réglementaire (RGPD, RGS) et de workflow, pour évaluer et renforcer la sécurité, la conformité et la performance de vos outils.",
   openGraph: {
-    title: "Audit de sécurité, conformité et continuité d'activité | Synapse Agency",
+    title: "Audit de cybersécurité, conformité et workflow | Synapse Agency",
     description:
-      "Audit de cybersécurité, de conformité réglementaire (RGPD, RGS) et de continuité d'activité (PCA/PRA).",
+      "Audit de cybersécurité (test d'intrusion, PCA/PRA), de conformité réglementaire (RGPD, RGS) et de workflow.",
     type: "website",
     locale: "fr_FR",
     images: [
@@ -15,15 +15,15 @@ export const metadata: Metadata = {
         url: "/images/Audit-Synapse-agency.jpg",
         width: 1200,
         height: 630,
-        alt: "Audit de sécurité, conformité et continuité d'activité - Synapse Agency",
+        alt: "Audit de cybersécurité, conformité et workflow - Synapse Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Audit de sécurité, conformité et continuité d'activité | Synapse Agency",
+    title: "Audit de cybersécurité, conformité et workflow | Synapse Agency",
     description:
-      "Audit de cybersécurité, de conformité réglementaire (RGPD, RGS) et de continuité d'activité (PCA/PRA).",
+      "Audit de cybersécurité (test d'intrusion, PCA/PRA), de conformité réglementaire (RGPD, RGS) et de workflow.",
     images: ["/images/Audit-Synapse-agency.jpg"],
   },
   alternates: {
@@ -43,23 +43,23 @@ const breadcrumbJsonLd = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Audit de sécurité, conformité et continuité d'activité",
+  name: "Audit de cybersécurité, conformité et workflow",
   provider: {
     "@type": "ProfessionalService",
     name: "Synapse Agency",
     url: "https://synapse-agency.fr",
   },
   description:
-    "Audit de cybersécurité (tests d'intrusion), audit de conformité réglementaire (RGPD, RGS) et audit de continuité d'activité (PCA/PRA).",
-  serviceType: "Audit de sécurité informatique",
+    "Audit de cybersécurité (tests d'intrusion, continuité d'activité PCA/PRA), audit de conformité réglementaire (RGPD, RGS) et audit de workflow.",
+  serviceType: "Audit d'entreprise (sécurité, conformité, workflow)",
   areaServed: { "@type": "Country", name: "France" },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Audits",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Audit de cybersécurité (test d'intrusion)" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Audit de cybersécurité (test d'intrusion, PCA/PRA)" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Audit de conformité réglementaire (RGPD, RGS)" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Audit de continuité d'activité (PCA/PRA)" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Audit de workflow" } },
     ],
   },
 };

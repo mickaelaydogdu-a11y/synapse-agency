@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, ArrowRight, ShieldAlert, ScrollText, RotateCcw } from "lucide-react";
+import { ShieldCheck, ArrowRight, ShieldAlert, ScrollText, Workflow } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
@@ -13,9 +13,9 @@ const audits = [
   {
     icon: ShieldAlert,
     title: "Audit de cybersécurité",
-    subtitle: "ou test d'intrusion",
+    subtitle: "test d'intrusion & continuité d'activité (PCA/PRA)",
     description:
-      "Évaluation des vulnérabilités face aux cyberattaques. Il comprend des tests d'intrusion (internes et externes) et l'analyse de la robustesse des configurations.",
+      "Évaluation des vulnérabilités face aux cyberattaques : tests d'intrusion (internes et externes) et analyse de la robustesse des configurations. Il inclut l'évaluation de la capacité de l'organisation à surmonter un sinistre (panne majeure, cyberattaque) et à relancer son activité rapidement.",
   },
   {
     icon: ScrollText,
@@ -24,11 +24,10 @@ const audits = [
       "Vérification du respect des lois et normes en vigueur. Pour les institutions publiques et les entreprises, cela concerne principalement le RGPD (protection des données) et le RGS (Référentiel Général de Sécurité).",
   },
   {
-    icon: RotateCcw,
-    title: "Audit de continuité d'activité",
-    subtitle: "PCA/PRA",
+    icon: Workflow,
+    title: "Audit de workflow",
     description:
-      "Analyse de la capacité de l'organisation à surmonter un sinistre (panne majeure, cyberattaque) et à relancer son activité rapidement.",
+      "Analyse du fonctionnement et des processus de l'entreprise pour créer des outils performants, réellement adaptés à son activité et à ses besoins : identification de solutions existantes ou développement d'outils sur mesure.",
   },
 ];
 
@@ -61,10 +60,10 @@ export default function Audit() {
                 Audit
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Évaluer la sécurité, la conformité et la résilience de votre organisation
+                Évaluer la sécurité, la conformité et le fonctionnement de votre organisation
               </h1>
               <p className="text-lg md:text-xl text-slate-200 mb-8">
-                Avant de sécuriser ou de faire évoluer un système d&apos;information, encore faut-il savoir où il en est réellement.
+                Avant de sécuriser, mettre en conformité ou faire évoluer vos outils, encore faut-il savoir où vous en êtes réellement.
                 Nos audits dressent un état des lieux clair et objectif, avec des recommandations concrètes.
               </p>
               <Link href="/contact">
