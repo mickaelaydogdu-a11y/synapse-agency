@@ -48,7 +48,7 @@ export function HeroSection() {
         >
           <Link href="/contact">
             <Button size="lg">
-              Parler de mon projet
+              Parler de mon besoin
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

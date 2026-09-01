@@ -14,5 +14,5 @@ export const mainNav: NavItem[] = [
   { name: "À propos", href: "/qui-suis-je", icon: User },
 ];
 
-export const ctaLabel = "Parler de mon projet";
+export const ctaLabel = "Parler de mon besoin";
 export const ctaHref = "/contact";

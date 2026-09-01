@@ -25,7 +25,7 @@ export function AuditSection() {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Échangeons sur votre projet
+              Échangeons sur votre besoin
             </h2>
 
             <p className="text-lg text-slate-300 mb-6">
