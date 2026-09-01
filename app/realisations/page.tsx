@@ -49,29 +49,34 @@ export default function Realisations() {
       </section>
 
       <section className="pb-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid justify-center gap-6 [grid-template-columns:repeat(auto-fit,minmax(280px,340px))]">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="space-y-16">
             {realisations.map((realisation, index) => (
               <motion.div
                 key={realisation.slug}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.08 }}
               >
                 <Link href={`/realisations/${realisation.slug}`}>
-                  <Card className="h-full flex flex-col">
-                    <Badge variant="secondary" className="mb-4 self-start">
+                  <Card className="mb-6">
+                    <Badge variant="secondary" className="mb-4">
                       {realisation.isPlaceholder ? "Exemple de projet type" : "Projet client"}
                     </Badge>
                     <p className="text-xs font-mono uppercase text-slate-400 mb-2">{realisation.category}</p>
-                    <h2 className="text-lg font-bold text-white mb-3">{realisation.title}</h2>
-                    <p className="text-slate-300 text-sm flex-1">{realisation.summary}</p>
-                    <p className="flex items-center gap-2 text-primary-light text-sm font-medium mt-4">
-                      Voir le projet
-                      <ArrowRight className="w-4 h-4" />
-                    </p>
+                    <h2 className="text-lg font-bold text-white">{realisation.title}</h2>
                   </Card>
+                </Link>
+
+                <p className="text-slate-300 mb-4">{realisation.summary}</p>
+
+                <Link
+                  href={`/realisations/${realisation.slug}`}
+                  className="inline-flex items-center gap-2 text-primary-light text-sm font-medium hover:text-primary transition-colors"
+                >
+                  Voir le projet
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
             ))}
