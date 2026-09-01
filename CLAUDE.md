@@ -21,7 +21,7 @@ npx tsc --noEmit
 
 ## Architecture
 
-Site vitrine Next.js 16 (App Router) pour Synapse Agency — agence positionnée sur les **applications métier sur mesure intégrant intelligence artificielle et automatisation**, complétées par une offre d'audit (cybersécurité incluant la continuité d'activité PCA/PRA, conformité réglementaire, workflow). La production visuelle (photo/vidéo/drone) est une activité secondaire, présente uniquement en page dédiée et dans le footer.
+Site vitrine Next.js 16 (App Router) pour Synapse Agency — agence positionnée sur les **applications métier sur mesure intégrant intelligence artificielle et automatisation**, complétées par une offre d'audit (flux de travail, cybersécurité incluant la continuité d'activité PCA/PRA, conformité réglementaire). La production visuelle (photo/vidéo/drone) est une activité secondaire, présente uniquement en page dédiée et dans le footer.
 
 La refonte en cours est pilotée par `PLAN DE REFONTE.md` (racine du repo, cahier des charges détaillé — objectifs, contenu, ton, règles) et `docs/audit.md` (état technique de référence au démarrage de la refonte). Consulter ces deux fichiers avant toute modification de fond sur le positionnement, le contenu ou la structure du site.
 
@@ -32,7 +32,7 @@ app/                      # Pages (App Router)
 ├── page.tsx              # Home - compose 11 sections de components/sections/
 ├── applications/          # Applications métier
 ├── solutions-ia/          # IA & Automatisation (route conservée, contenu repositionné)
-├── audit/                 # Audit (cybersécurité incl. PCA/PRA, conformité réglementaire, workflow)
+├── audit/                 # Audit (flux de travail, cybersécurité incl. PCA/PRA, conformité réglementaire)
 ├── realisations/          # Liste des réalisations
 │   └── [slug]/            # Détail d'une réalisation (généré depuis data/realisations.ts)
 ├── qui-suis-je/            # Page "À propos" (bio du fondateur, libellé nav "À propos")
