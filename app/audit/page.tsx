@@ -80,7 +80,7 @@ export default function Audit() {
       </section>
 
       {/* Les 3 types d'audit */}
-      <section className="py-20 bg-surface">
+      <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
