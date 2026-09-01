@@ -20,12 +20,12 @@ export interface Realisation {
 export const realisations: Realisation[] = [
   {
     slug: "mediatheque-numerique-musee",
-    title: "Média — la médiathèque numérique d'un musée",
+    title: "Média, la médiathèque numérique d'un musée",
     category: "Gestion de contenus & médiathèque numérique",
     summary: "Centraliser, indexer et diffuser en toute sécurité plus de 4 To de photos, vidéos, documents et audio dispersés sur postes, disques durs et clés USB.",
     context: "Le chargé du numérique du musée nous a sollicités pour un problème concret : plus de 4 To de ressources numériques dispersées entre les ordinateurs des employés, les boîtes mail, des dossiers sur le réseau local, des disques durs externes et des clés USB, sans centralisation ni suivi des droits d'usage.",
-    problem: "Une partie du fonds — documents, photos, vidéos — est protégée par des droits d'auteur ou de licence et nécessite un niveau de protection important, aux côtés de contenus librement utilisables pour la communication (vernissages, expositions). Sans outil commun, impossible de distinguer les deux, de retrouver un fichier ou de le partager en toute sécurité. Le référencement interne devait en outre s'appuyer sur des mots-clés et métadonnées conformes aux recommandations du ministère de la Culture.",
-    users: "L'équipe du musée — archivistes, service conservation, service communication — organisée en trois niveaux d'accès (administrateur, contributeur, lecteur), ainsi que les services tourisme, communication et culture de la ville et la presse locale, régionale et spécialisée pour la diffusion publique des contenus autorisés.",
+    problem: "Une partie du fonds, documents, photos, vidéos, est protégée par des droits d'auteur ou de licence et nécessite un niveau de protection important, aux côtés de contenus librement utilisables pour la communication (vernissages, expositions). Sans outil commun, impossible de distinguer les deux, de retrouver un fichier ou de le partager en toute sécurité. Le référencement interne devait en outre s'appuyer sur des mots-clés et métadonnées conformes aux recommandations du ministère de la Culture.",
+    users: "L'équipe du musée, archivistes, service conservation, service communication, organisée en trois niveaux d'accès (administrateur, contributeur, lecteur), ainsi que les services tourisme, communication et culture de la ville et la presse locale, régionale et spécialisée pour la diffusion publique des contenus autorisés.",
     solution: "Une médiathèque numérique sur mesure centralisant documents, photos, illustrations, audio, vidéos, plans et PDF, avec gestion fine des droits d'accès, des catégories et des licences, et un thésaurus de mots-clés associé à chaque fichier sous forme de métadonnées. La sécurité a fait l'objet d'une attention particulière pour empêcher toute fuite de fichiers sous droits.",
     features: [
       "Stockage et partage centralisés (documents, photos, illustrations, audio, vidéo, plans, PDF)",
@@ -44,7 +44,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "gestion-parc-materiel",
-    title: "Parc — la gestion du matériel et du parc informatique",
+    title: "Parc, la gestion du matériel et du parc informatique",
     category: "Gestion de matériel & parc informatique",
     summary: "Centraliser l'inventaire, la maintenance et les réservations du matériel et du parc informatique dans un outil collaboratif et intelligent, conforme RGPD.",
     context: "Le parc de matériel et le parc informatique de l'entreprise étaient jusque-là suivis sur un fichier Excel enregistré dans le réseau local, difficilement consultable et administrable à distance par les équipes, sans conformité RGPD, avec les devis, factures et justificatifs de garantie conservés au service comptabilité plutôt que chez le gestionnaire, et les demandes de réservation gérées par email.",
@@ -66,19 +66,19 @@ export const realisations: Realisation[] = [
       "Anticipation des besoins en croisant les événements planifiés de l'entreprise (séminaire, réunion, matériel spécifique...)",
       "Coordination entre les services techniques, de maintenance et informatiques pour la réparation, l'installation et l'enlèvement du matériel",
     ],
-    results: "Un outil collaboratif et intelligent qui remplace le fichier Excel enregistré dans le réseau local, jusque-là difficilement consultable et administrable à distance par les équipes, et les demandes par email, disponible 365 jours par an et 24h/24 : l'activité ne dépend plus de la présence du gestionnaire du parc. L'inventaire est mis à jour en temps réel, la coordination documentaire avec la comptabilité est centralisée, et les besoins sont planifiés en amont grâce à l'anticipation par l'IA des événements de l'entreprise. Chaque demande est tracée de bout en bout, ce qui fluidifie les échanges entre les services techniques, de maintenance, informatiques et comptabilité — fini les appels et les emails pour se coordonner.",
+    results: "Un outil collaboratif et intelligent qui remplace le fichier Excel enregistré dans le réseau local, jusque-là difficilement consultable et administrable à distance par les équipes, et les demandes par email, disponible 365 jours par an et 24h/24 : l'activité ne dépend plus de la présence du gestionnaire du parc. L'inventaire est mis à jour en temps réel, la coordination documentaire avec la comptabilité est centralisée, et les besoins sont planifiés en amont grâce à l'anticipation par l'IA des événements de l'entreprise. Chaque demande est tracée de bout en bout, ce qui fluidifie les échanges entre les services techniques, de maintenance, informatiques et comptabilité, fini les appels et les emails pour se coordonner.",
     technologies: [],
     isPlaceholder: false,
   },
   {
     slug: "secure-securite-maintenance",
-    title: "Secure — piloter la sécurité et la maintenance",
+    title: "Secure, piloter la sécurité et la maintenance",
     category: "Sécurité & maintenance",
     summary: "Digitaliser les rondes de sécurité et le signalement d'incidents d'un site, avec preuve horodatée de passage même hors connexion, priorisation et escalade intelligente des incidents par IA.",
     context: "Le service de sécurité effectuait jusque-là ses rondes et consignait les incidents sur papier, sans preuve de passage horodatée ni vue consolidée en temps réel. Prévenir un prestataire externe pour une intervention nécessitait un appel téléphonique ou un email.",
     problem: "Sans horodatage vérifiable, impossible de prouver qu'une ronde avait bien été effectuée dans son intégralité, ni de disposer d'un historique consultable en cas d'incident. Le signalement d'un problème de sûreté (vitre brisée, intrusion, matériel endommagé...) reposait sur une transmission orale ou écrite, sans suivi structuré, sans priorisation selon la gravité, ni notification immédiate des responsables.",
     users: "Les agents de sécurité pour les rondes et la déclaration d'incidents, les techniciens pour la prise en charge des interventions, les responsables pour le pilotage (tableau de bord, historique, planning), l'administrateur pour la configuration des bâtiments, zones, espaces et catégories, ainsi que les prestataires externes notifiés selon le protocole de communication adapté.",
-    solution: "Une application digitalisant la sécurité et la maintenance du site, avec preuve horodatée de passage à chaque point de contrôle même hors connexion — la synchronisation se fait au retour du réseau. Un incident se déclare en quelques secondes, avec type et constat prédéfinis pour les agents, formulaire libre pour les autres profils et photo à l'appui. Une IA priorise chaque incident selon sa gravité, déclenche une escalade intelligente des remontées d'information en l'absence de prise en charge, et notifie les services ou prestataires concernés via plusieurs protocoles de communication. Les responsables pilotent l'ensemble depuis un tableau de bord centralisé.",
+    solution: "Une application digitalisant la sécurité et la maintenance du site, avec preuve horodatée de passage à chaque point de contrôle même hors connexion, la synchronisation se fait au retour du réseau. Un incident se déclare en quelques secondes, avec type et constat prédéfinis pour les agents, formulaire libre pour les autres profils et photo à l'appui. Une IA priorise chaque incident selon sa gravité, déclenche une escalade intelligente des remontées d'information en l'absence de prise en charge, et notifie les services ou prestataires concernés via plusieurs protocoles de communication. Les responsables pilotent l'ensemble depuis un tableau de bord centralisé.",
     features: [
       "Identifiant unique par espace, généré automatiquement pour les points de contrôle",
       "Rondes de sécurité horodatées, avec preuve de passage à chaque point de contrôle même hors connexion",

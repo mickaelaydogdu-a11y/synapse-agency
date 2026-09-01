@@ -48,7 +48,7 @@ export function AboutHero() {
             <p className="text-lg text-slate-300 max-w-2xl">
               Avant de fonder <span className="text-white font-medium">Synapse Agency</span>, j&apos;ai été webmaster
               dans une chaîne de télévision, enseigné l&apos;informatique, puis travaillé en agence avant de passer
-              indépendant en 2010. Vingt ans de terrain, pas un parcours de startup — au service des institutions
+              indépendant en 2010. Vingt ans de terrain, pas un parcours de startup, au service des institutions
               publiques comme des PME. C&apos;est ce qui infuse ma façon d&apos;aborder la tech : pas de jargon, des
               solutions qui marchent.
             </p>

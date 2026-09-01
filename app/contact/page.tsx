@@ -24,7 +24,7 @@ export default function Contact() {
               transition={{ delay: 0.1 }}
               className="text-slate-300 text-lg"
             >
-              Premier rendez-vous gratuit et sans engagement — écrivez-moi ou appelez-moi directement.
+              Premier rendez-vous gratuit et sans engagement, écrivez-moi ou appelez-moi directement.
             </motion.p>
           </div>
 

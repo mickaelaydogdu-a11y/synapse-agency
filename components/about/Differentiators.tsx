@@ -17,7 +17,7 @@ const points = [
   {
     icon: Smile,
     title: "Un humain, pas un ticket de support",
-    description: "Toujours disponible, de bonne humeur et à l'écoute — même un lundi matin.",
+    description: "Toujours disponible, de bonne humeur et à l'écoute, même un lundi matin.",
   },
 ];
 

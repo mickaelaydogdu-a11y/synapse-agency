@@ -21,7 +21,7 @@ const audits = [
     icon: ShieldAlert,
     title: "Audit de cybersécurité",
     paragraph:
-      "Les cyberattaques ne visent pas que les grandes entreprises : TPE, PME et institutions publiques sont tout autant exposées. Notre audit de cybersécurité évalue vos vulnérabilités réelles à travers des tests d'intrusion internes et externes et l'analyse de la robustesse de vos configurations. Il intègre également l'évaluation de votre capacité à surmonter un sinistre — panne majeure, cyberattaque — et à relancer rapidement votre activité, dans une logique de plan de continuité et de reprise d'activité (PCA/PRA).",
+      "Les cyberattaques ne visent pas que les grandes entreprises : TPE, PME et institutions publiques sont tout autant exposées. Notre audit de cybersécurité évalue vos vulnérabilités réelles à travers des tests d'intrusion internes et externes et l'analyse de la robustesse de vos configurations. Il intègre également l'évaluation de votre capacité à surmonter un sinistre, panne majeure, cyberattaque, et à relancer rapidement votre activité, dans une logique de plan de continuité et de reprise d'activité (PCA/PRA).",
     tags: ["Tests d'intrusion", "Robustesse des configurations", "Continuité d'activité (PCA/PRA)"],
   },
   {

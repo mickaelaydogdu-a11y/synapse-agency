@@ -15,7 +15,7 @@ import { AutomationSection, SecuritySection, Workflow } from "@/components/secti
 
 const why = [
   { icon: Layers, title: "Réduire les tâches répétitives", description: "Sans ajouter un outil de plus à gérer : l'IA s'intègre dans vos applications existantes." },
-  { icon: Database, title: "Exploiter vos données", description: "Vos documents et informations restent chez vous — l'IA travaille avec ce qui existe déjà." },
+  { icon: Database, title: "Exploiter vos données", description: "Vos documents et informations restent chez vous, l'IA travaille avec ce qui existe déjà." },
   { icon: ShieldCheck, title: "Garder le contrôle", description: "Les décisions importantes restent validées par vos équipes, pas automatisées à l'aveugle." },
   { icon: PlugZap, title: "S'intégrer, pas remplacer", description: "L'IA vient compléter vos outils et vos process, pas les bouleverser." },
 ];
