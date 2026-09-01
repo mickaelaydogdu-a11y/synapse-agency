@@ -38,7 +38,7 @@ export default function Contact() {
                 <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
                   <Mail className="w-6 h-6 text-primary-light" />
                 </div>
-                <h3 className="text-white font-semibold mb-1">Email</h3>
+                <h2 className="text-white font-semibold mb-1">Email</h2>
                 <a href="mailto:contact@synapse-agency.fr" className="text-slate-300 hover:text-primary-light transition-colors">
                   contact@synapse-agency.fr
                 </a>
@@ -54,7 +54,7 @@ export default function Contact() {
                 <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mx-auto mb-4">
                   <Phone className="w-6 h-6 text-secondary-light" />
                 </div>
-                <h3 className="text-white font-semibold mb-1">Téléphone</h3>
+                <h2 className="text-white font-semibold mb-1">Téléphone</h2>
                 <p className="text-slate-300">06 32 54 55 78</p>
               </Card>
             </motion.div>
@@ -68,7 +68,7 @@ export default function Contact() {
                 <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-6 h-6 text-accent-light" />
                 </div>
-                <h3 className="text-white font-semibold mb-1">Localisation</h3>
+                <h2 className="text-white font-semibold mb-1">Localisation</h2>
                 <p className="text-slate-300">Jouarre - Seine-et-Marne</p>
               </Card>
             </motion.div>

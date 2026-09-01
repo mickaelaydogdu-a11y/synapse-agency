@@ -269,7 +269,7 @@ export function ContactForm() {
                   />
                   <span>
                     J&apos;accepte que mes données soient utilisées pour traiter ma demande, conformément à la{" "}
-                    <a href="/confidentialite" className="text-primary-light hover:underline">
+                    <a href="/confidentialite" className="text-primary-light underline underline-offset-2">
                       politique de confidentialité
                     </a>. *
                   </span>

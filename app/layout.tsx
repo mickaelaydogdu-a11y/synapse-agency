@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { MotionProvider } from "@/components/layout/MotionProvider";
+import { SkipLink } from "@/components/layout/SkipLink";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -117,6 +118,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        <SkipLink />
         <MotionProvider>
           <ScrollToTop />
           <Header />

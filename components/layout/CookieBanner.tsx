@@ -67,7 +67,11 @@ export function CookieBanner() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 animate-in slide-in-from-bottom duration-300">
+    <div
+      role="region"
+      aria-label="Gestion des cookies"
+      className="fixed bottom-0 left-0 right-0 z-50 p-4 animate-in slide-in-from-bottom duration-300"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="bg-slate-900 rounded-2xl p-6 border border-slate-700 shadow-2xl">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
@@ -86,7 +90,7 @@ export function CookieBanner() {
               <p className="text-sm text-slate-300">
                 Nous utilisons Google Analytics pour mesurer l&apos;audience du site. Ce traceur n&apos;est déposé
                 que si vous cliquez sur « Accepter ».{" "}
-                <Link href="/confidentialite" className="text-primary-light hover:underline">
+                <Link href="/confidentialite" className="text-primary-light underline underline-offset-2">
                   En savoir plus
                 </Link>
               </p>

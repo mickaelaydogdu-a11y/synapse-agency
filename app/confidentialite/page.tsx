@@ -117,7 +117,7 @@ export default function Confidentialite() {
                   <li><strong className="text-white">Droit d&apos;opposition :</strong> vous opposer au traitement de vos données</li>
                 </ul>
                 <p className="text-slate-300 mt-4">
-                  Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@synapse-agency.fr" className="text-primary-light hover:underline">contact@synapse-agency.fr</a>
+                  Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@synapse-agency.fr" className="text-primary-light underline underline-offset-2">contact@synapse-agency.fr</a>
                 </p>
               </section>
 
@@ -141,7 +141,7 @@ export default function Confidentialite() {
 
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-white font-medium mb-2">🔒 Stockage technique essentiel</h4>
+                    <h3 className="text-white font-medium mb-2">🔒 Stockage technique essentiel</h3>
                     <p className="text-slate-300 text-sm">
                       Un stockage local (non transmis à un tiers) mémorise votre choix concernant les cookies, afin
                       de ne pas vous redemander votre consentement à chaque visite. Il ne nécessite pas de
@@ -150,7 +150,7 @@ export default function Confidentialite() {
                   </div>
 
                   <div>
-                    <h4 className="text-white font-medium mb-2">📊 Google Analytics (mesure d&apos;audience)</h4>
+                    <h3 className="text-white font-medium mb-2">📊 Google Analytics (mesure d&apos;audience)</h3>
                     <p className="text-slate-300 text-sm">
                       Ce traceur nous permet de mesurer la fréquentation du site (pages visitées, provenance du
                       trafic) de façon agrégée. Il n&apos;est chargé qu&apos;après avoir cliqué sur « Accepter » dans
@@ -194,7 +194,7 @@ export default function Confidentialite() {
                 </div>
                 <p className="text-slate-300 mt-4">
                   Vous pouvez également introduire une réclamation auprès de la CNIL (Commission Nationale de
-                  l&apos;Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-primary-light hover:underline">www.cnil.fr</a>
+                  l&apos;Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-primary-light underline underline-offset-2">www.cnil.fr</a>
                 </p>
               </section>
             </div>
