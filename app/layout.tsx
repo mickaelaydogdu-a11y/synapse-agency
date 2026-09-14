@@ -68,15 +68,15 @@ const jsonLd = {
   email: "contact@synapse-agency.fr",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "7 Cour du Haut Vanry",
-    addressLocality: "Jouarre",
-    postalCode: "77640",
+    streetAddress: "7 rue Vivienne",
+    addressLocality: "Paris",
+    postalCode: "75002",
     addressCountry: "FR",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 48.9267,
-    longitude: 3.1306,
+    latitude: 48.8687,
+    longitude: 2.3401,
   },
   areaServed: {
     "@type": "Country",
