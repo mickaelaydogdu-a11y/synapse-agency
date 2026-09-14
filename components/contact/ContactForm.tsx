@@ -138,8 +138,8 @@ export function ContactForm() {
                 <Mail className="w-6 h-6 text-primary-light" />
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-1">Email</h3>
-                <a href="mailto:contact@synapse-agency.fr" className="text-slate-300 hover:text-primary-light transition-colors">
+                <h3 className="text-slate-900 font-semibold mb-1">Email</h3>
+                <a href="mailto:contact@synapse-agency.fr" className="text-slate-600 hover:text-primary-light transition-colors">
                   contact@synapse-agency.fr
                 </a>
               </div>
@@ -152,8 +152,8 @@ export function ContactForm() {
                 <Phone className="w-6 h-6 text-secondary-light" />
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-1">Téléphone</h3>
-                <p className="text-slate-300">06 32 54 55 78</p>
+                <h3 className="text-slate-900 font-semibold mb-1">Téléphone</h3>
+                <p className="text-slate-600">06 32 54 55 78</p>
               </div>
             </div>
           </Card>
@@ -164,8 +164,8 @@ export function ContactForm() {
                 <MapPin className="w-6 h-6 text-accent-light" />
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-1">Localisation</h3>
-                <p className="text-slate-300">Jouarre - Seine-et-Marne</p>
+                <h3 className="text-slate-900 font-semibold mb-1">Localisation</h3>
+                <p className="text-slate-600">Paris</p>
               </div>
             </div>
           </Card>
@@ -177,13 +177,13 @@ export function ContactForm() {
             {isSubmitted ? (
               <div className="text-center py-12">
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-white mb-2">Message envoyé !</h3>
-                <p className="text-slate-300">Nous vous répondrons dans les 24h.</p>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">Message envoyé !</h3>
+                <p className="text-slate-600">Nous vous répondrons dans les 24h.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 {error && (
-                  <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm">
+                  <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-600 text-sm">
                     {error}
                   </div>
                 )}
@@ -209,17 +209,17 @@ export function ContactForm() {
                 </div>
 
                 <fieldset>
-                  <legend className="block text-sm font-medium text-slate-200 mb-2">
+                  <legend className="block text-sm font-medium text-slate-700 mb-2">
                     Type de projet
                   </legend>
                   <div className="grid sm:grid-cols-2 gap-2">
                     {PROJECT_TYPES.map((type) => (
-                      <label key={type} className="flex items-center gap-2 text-sm text-slate-300">
+                      <label key={type} className="flex items-center gap-2 text-sm text-slate-600">
                         <input
                           type="checkbox"
                           name="projectType"
                           value={type}
-                          className="w-4 h-4 rounded border-white/20 bg-surface accent-primary"
+                          className="w-4 h-4 rounded border-slate-300 bg-surface accent-primary"
                         />
                         {type}
                       </label>
@@ -244,14 +244,14 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="budget" className="block text-sm font-medium text-slate-200 mb-2">
+                  <label htmlFor="budget" className="block text-sm font-medium text-slate-700 mb-2">
                     Budget estimatif
                   </label>
                   <select
                     id="budget"
                     name="budget"
                     defaultValue=""
-                    className="w-full px-4 py-3 bg-surface border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
+                    className="w-full px-4 py-3 bg-surface border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
                   >
                     <option value="">À définir</option>
                     {BUDGET_RANGES.map((range) => (
@@ -260,12 +260,12 @@ export function ContactForm() {
                   </select>
                 </div>
 
-                <label className="flex items-start gap-3 text-sm text-slate-300">
+                <label className="flex items-start gap-3 text-sm text-slate-600">
                   <input
                     type="checkbox"
                     name="consent"
                     required
-                    className="w-4 h-4 mt-0.5 rounded border-white/20 bg-surface accent-primary shrink-0"
+                    className="w-4 h-4 mt-0.5 rounded border-slate-300 bg-surface accent-primary shrink-0"
                   />
                   <span>
                     J&apos;accepte que mes données soient utilisées pour traiter ma demande, conformément à la{" "}

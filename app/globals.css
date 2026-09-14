@@ -3,23 +3,23 @@
 @theme {
   --color-primary: #0a55e6;
   --color-primary-dark: #073ca1;
-  --color-primary-light: #6fa1ff;
+  --color-primary-light: #0a55e6;
 
   --color-secondary: #1fb78e;
   --color-secondary-dark: #157a5f;
-  --color-secondary-light: #39ddb1;
+  --color-secondary-light: #157a5f;
 
   --color-accent: #11aed4;
   --color-accent-dark: #0b748e;
-  --color-accent-light: #71daf4;
+  --color-accent-light: #0b748e;
 
-  --color-background: #0a0f1c;
-  --color-surface: #10182a;
-  --color-surface-light: #1a2338;
+  --color-background: #ffffff;
+  --color-surface: #f5f7fa;
+  --color-surface-light: #eef1f6;
 
-  --color-text-primary: #f7f7f8;
-  --color-text-secondary: #b4b4bf;
-  --color-text-muted: #83838f;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
 
   --font-family-sans: "Inter", system-ui, sans-serif;
 
@@ -61,19 +61,11 @@
 @layer components {
   .gradient-text {
     color: var(--color-primary);
-    background: linear-gradient(to right, var(--color-primary), var(--color-accent), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .gradient-border {
-    @apply relative before:absolute before:inset-0 before:rounded-xl before:p-[1px] before:bg-gradient-to-r before:from-primary before:via-secondary before:to-accent before:-z-10;
   }
 
   .glass {
-    background: linear-gradient(to right, rgba(10, 21, 41, 0.65), rgba(6, 14, 28, 0.7), rgba(10, 21, 41, 0.65));
-    @apply backdrop-blur-xl border-b border-accent/30;
+    background: rgba(255, 255, 255, 0.75);
+    @apply backdrop-blur-xl border-b border-slate-200;
   }
 
   .card-hover {

@@ -200,10 +200,10 @@ export default function ProductionVisuelle() {
               <Camera className="w-4 h-4 mr-2" />
               Photographie
             </Badge>
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Services photo professionnels
             </h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto">
               Des photos qui valorisent votre image de marque et renforcent votre communication
             </p>
           </div>
@@ -218,15 +218,15 @@ export default function ProductionVisuelle() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center mb-4">
+                  <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-4">
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-slate-300 mb-4">{service.description}</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+                  <p className="text-slate-600 mb-4">{service.description}</p>
 
                   <ul className="space-y-2">
                     {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-slate-300">
+                      <li key={feature} className="flex items-center gap-2 text-sm text-slate-600">
                         <Check className="w-4 h-4 text-primary shrink-0" />
                         {feature}
                       </li>
@@ -247,10 +247,10 @@ export default function ProductionVisuelle() {
               <Video className="w-4 h-4 mr-2" />
               Vidéo
             </Badge>
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Services vidéo professionnels
             </h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto">
               Des vidéos percutantes pour raconter votre histoire et engager votre audience
             </p>
           </div>
@@ -265,15 +265,15 @@ export default function ProductionVisuelle() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center mb-4">
+                  <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-4">
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-slate-300 mb-4">{service.description}</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+                  <p className="text-slate-600 mb-4">{service.description}</p>
 
                   <ul className="space-y-2">
                     {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-slate-300">
+                      <li key={feature} className="flex items-center gap-2 text-sm text-slate-600">
                         <Check className="w-4 h-4 text-accent shrink-0" />
                         {feature}
                       </li>
@@ -290,10 +290,10 @@ export default function ProductionVisuelle() {
       <section id="portfolio" className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Portfolio
             </h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto">
               Découvrez une sélection de nos réalisations photo
             </p>
           </div>

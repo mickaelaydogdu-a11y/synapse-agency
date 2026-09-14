@@ -20,7 +20,7 @@ export function ProcessSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
             Du processus métier à l&apos;application.
           </h2>
         </motion.div>
@@ -35,8 +35,8 @@ export function ProcessSection() {
               transition={{ delay: index * 0.08 }}
             >
               <div className="text-3xl font-bold text-primary-light/40 font-mono mb-3">{step.number}</div>
-              <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
-              <p className="text-slate-300 text-sm">{step.description}</p>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h3>
+              <p className="text-slate-600 text-sm">{step.description}</p>
             </motion.div>
           ))}
         </div>

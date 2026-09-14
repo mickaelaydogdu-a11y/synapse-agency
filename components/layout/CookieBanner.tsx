@@ -73,21 +73,21 @@ export function CookieBanner() {
       className="fixed bottom-0 left-0 right-0 z-50 p-4 animate-in slide-in-from-bottom duration-300"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="bg-slate-900 rounded-2xl p-6 border border-slate-700 shadow-2xl">
+        <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-2xl">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
             {/* Icon */}
             <div className="flex-shrink-0">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
                 <Cookie className="w-6 h-6 text-white" />
               </div>
             </div>
 
             {/* Content */}
             <div className="flex-1">
-              <h3 className="text-lg font-bold text-white mb-2">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
                 🍪 Gestion des cookies
               </h3>
-              <p className="text-sm text-slate-300">
+              <p className="text-sm text-slate-600">
                 Nous utilisons Google Analytics pour mesurer l&apos;audience du site. Ce traceur n&apos;est déposé
                 que si vous cliquez sur « Accepter ».{" "}
                 <Link href="/confidentialite" className="text-primary-light underline underline-offset-2">
@@ -109,7 +109,7 @@ export function CookieBanner() {
               <Button
                 size="sm"
                 onClick={acceptCookies}
-                className="w-full sm:w-auto bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90"
+                className="w-full sm:w-auto"
               >
                 Accepter
               </Button>
@@ -127,7 +127,7 @@ export function CookiePreferencesButton({ className }: { className?: string }) {
       type="button"
       onClick={() => window.dispatchEvent(new Event(REOPEN_EVENT))}
       className={cn(
-        "text-slate-400 hover:text-primary-light text-sm transition-colors",
+        "text-slate-500 hover:text-primary-light text-sm transition-colors",
         className
       )}
     >

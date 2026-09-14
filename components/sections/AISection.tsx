@@ -51,10 +51,10 @@ export function AISection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Ajoutez de l&apos;<span className="gradient-text">intelligence</span> à vos outils.
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Nous intégrons l&apos;intelligence artificielle directement dans vos applications et vos processus métier.
           </p>
         </motion.div>
@@ -72,10 +72,10 @@ export function AISection() {
                 <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
                   <capability.icon className="w-6 h-6 text-accent-light" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{capability.title}</h3>
-                <p className="text-slate-300 text-sm mb-3">{capability.description}</p>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{capability.title}</h3>
+                <p className="text-slate-600 text-sm mb-3">{capability.description}</p>
                 {capability.example && (
-                  <p className="text-xs font-mono text-primary-light/80 border-t border-white/10 pt-3">
+                  <p className="text-xs font-mono text-primary-light/80 border-t border-slate-200 pt-3">
                     {capability.example}
                   </p>
                 )}

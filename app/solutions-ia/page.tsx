@@ -118,10 +118,10 @@ export default function SolutionsIA() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Pourquoi intégrer l&apos;<span className="gradient-text">IA</span> ?
             </h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto">
               Neylio ne vend pas de l&apos;IA pour vendre de l&apos;IA. Nous l&apos;intégrons lorsqu&apos;elle permet
               réellement de simplifier, accélérer ou automatiser le travail.
             </p>
@@ -135,13 +135,13 @@ export default function SolutionsIA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="p-6 rounded-xl bg-background border border-white/10"
+                className="p-6 rounded-xl bg-background border border-slate-200"
               >
                 <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
                   <point.icon className="w-6 h-6 text-secondary-light" />
                 </div>
-                <h3 className="text-white font-bold mb-2">{point.title}</h3>
-                <p className="text-slate-300 text-sm">{point.description}</p>
+                <h3 className="text-slate-900 font-bold mb-2">{point.title}</h3>
+                <p className="text-slate-600 text-sm">{point.description}</p>
               </motion.div>
             ))}
           </div>
@@ -157,7 +157,7 @@ export default function SolutionsIA() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
               Comment l&apos;IA travaille dans votre entreprise
             </h2>
           </motion.div>
@@ -175,11 +175,11 @@ export default function SolutionsIA() {
                   <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
                     <capability.icon className="w-6 h-6 text-accent-light" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{capability.title}</h3>
-                  <p className="text-slate-300 text-sm mb-4">{capability.description}</p>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{capability.title}</h3>
+                  <p className="text-slate-600 text-sm mb-4">{capability.description}</p>
 
                   {capability.examples && (
-                    <div className="space-y-2 pt-4 border-t border-white/10">
+                    <div className="space-y-2 pt-4 border-t border-slate-200">
                       {capability.examples.map((example) => (
                         <p key={example} className="text-xs font-mono text-primary-light/80 italic">
                           &ldquo;{example}&rdquo;
@@ -189,9 +189,9 @@ export default function SolutionsIA() {
                   )}
 
                   {capability.tags && (
-                    <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-200">
                       {capability.tags.map((tag) => (
-                        <span key={tag} className="text-xs px-2 py-1 rounded-full bg-white/10 text-slate-300">
+                        <span key={tag} className="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-600">
                           {tag}
                         </span>
                       ))}
@@ -199,7 +199,7 @@ export default function SolutionsIA() {
                   )}
 
                   {capability.workflow && (
-                    <div className="pt-4 border-t border-white/10">
+                    <div className="pt-4 border-t border-slate-200">
                       <Workflow steps={capability.workflow} />
                     </div>
                   )}

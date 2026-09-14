@@ -24,10 +24,10 @@ export function ApplicationsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Un logiciel qui s&apos;adapte à votre entreprise. <span className="gradient-text">Pas l&apos;inverse.</span>
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Nous concevons des applications métier sur mesure pour remplacer les fichiers dispersés,
             connecter vos équipes et automatiser les tâches chronophages.
           </p>
@@ -42,7 +42,7 @@ export function ApplicationsSection() {
           {categories.map((category) => (
             <span
               key={category.title}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background border border-white/10 text-sm text-slate-300"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background border border-slate-200 text-sm text-slate-600"
             >
               <category.icon className="w-4 h-4 text-primary-light" />
               {category.title}

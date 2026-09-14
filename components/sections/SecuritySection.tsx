@@ -41,7 +41,7 @@ export function SecuritySection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
             Vos données restent vos données.
           </h2>
         </motion.div>
@@ -54,13 +54,13 @@ export function SecuritySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
-              className="p-6 rounded-2xl bg-surface border border-white/10"
+              className="p-6 rounded-2xl bg-surface border border-slate-200"
             >
               <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
                 <point.icon className="w-6 h-6 text-primary-light" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">{point.title}</h3>
-              <p className="text-slate-300 text-sm">{point.description}</p>
+              <h3 className="text-base font-bold text-slate-900 mb-2">{point.title}</h3>
+              <p className="text-slate-600 text-sm">{point.description}</p>
             </motion.div>
           ))}
         </div>

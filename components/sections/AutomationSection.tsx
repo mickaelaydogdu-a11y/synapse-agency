@@ -18,7 +18,7 @@ export function AutomationSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
             Automatisez ce qui ne nécessite pas votre expertise.
           </h2>
         </motion.div>
@@ -28,7 +28,7 @@ export function AutomationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-lg font-semibold text-slate-300 text-center mb-6">{workflow.title}</h3>
+          <h3 className="text-lg font-semibold text-slate-600 text-center mb-6">{workflow.title}</h3>
           <Workflow steps={workflow.steps} />
         </motion.div>
       </div>

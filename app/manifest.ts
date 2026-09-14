@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
       "Applications métier sur mesure intégrant intelligence artificielle et automatisation.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0a0f1c",
+    background_color: "#ffffff",
     theme_color: "#0a55e6",
     icons: [
       {

@@ -21,11 +21,11 @@ export function Header() {
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:left-auto lg:top-auto lg:translate-x-0 lg:translate-y-0 flex items-center"
             >
               <Image
-                src="/images/Logo-Neylio.png"
+                src="/images/Logo-Neylio-dark-text.png"
                 alt="Neylio"
                 width={643}
                 height={178}
-                className="h-16 w-auto"
+                className="h-16 w-auto object-contain"
                 priority
               />
             </Link>
@@ -36,7 +36,7 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-2 text-slate-300 hover:text-primary-light transition-colors"
+                  className="flex items-center gap-2 text-slate-600 hover:text-primary-light transition-colors"
                 >
                   <item.icon className="w-4 h-4" />
                   {item.name}
@@ -55,7 +55,7 @@ export function Header() {
 
             {/* Mobile/Tablet Menu Button */}
             <button
-              className="lg:hidden text-white"
+              className="lg:hidden text-slate-900"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
               aria-expanded={isOpen}
@@ -73,12 +73,12 @@ export function Header() {
               isOpen ? "max-h-80 mt-4" : "max-h-0"
             )}
           >
-            <div className="flex flex-col gap-4 pt-4 border-t border-white/10">
+            <div className="flex flex-col gap-4 pt-4 border-t border-slate-200">
               {mainNav.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-2 text-slate-300 hover:text-primary-light transition-colors"
+                  className="flex items-center gap-2 text-slate-600 hover:text-primary-light transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   <item.icon className="w-4 h-4" />

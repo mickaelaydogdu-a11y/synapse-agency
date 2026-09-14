@@ -18,7 +18,7 @@ export function Workflow({ steps, className }: WorkflowProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.08 }}
-            className="px-4 py-2.5 rounded-xl bg-surface-light border border-white/10 text-sm font-medium text-white text-center"
+            className="px-4 py-2.5 rounded-xl bg-surface-light border border-slate-200 text-sm font-medium text-slate-900 text-center"
           >
             {step}
           </motion.div>

@@ -88,10 +88,10 @@ export default function Audit() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Trois <span className="gradient-text">types d&apos;audit</span>
             </h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto">
               Chaque audit peut être mené indépendamment ou combiné selon les enjeux de votre organisation.
             </p>
           </motion.div>
@@ -109,17 +109,17 @@ export default function Audit() {
                   <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
                     <audit.icon className="w-6 h-6 text-secondary-light" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-3">{audit.title}</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-3">{audit.title}</h3>
                   <div className="flex flex-wrap gap-2">
                     {audit.tags.map((tag) => (
-                      <span key={tag} className="text-xs px-2 py-1 rounded-full bg-white/10 text-slate-300">
+                      <span key={tag} className="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-600">
                         {tag}
                       </span>
                     ))}
                   </div>
                 </Card>
 
-                <p className="text-slate-300">{audit.paragraph}</p>
+                <p className="text-slate-600">{audit.paragraph}</p>
               </motion.div>
             ))}
           </div>

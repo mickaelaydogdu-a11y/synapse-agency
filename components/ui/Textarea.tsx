@@ -16,7 +16,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <div className="space-y-2">
         {label && (
-          <label htmlFor={inputId} className="block text-sm font-medium text-slate-200">
+          <label htmlFor={inputId} className="block text-sm font-medium text-slate-700">
             {label}
           </label>
         )}
@@ -27,8 +27,8 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           aria-invalid={!!error}
           aria-describedby={error ? `${inputId}-error` : undefined}
           className={cn(
-            "w-full px-4 py-3 bg-surface border border-white/10 rounded-xl",
-            "text-white placeholder:text-slate-400",
+            "w-full px-4 py-3 bg-surface border border-slate-300 rounded-xl",
+            "text-slate-900 placeholder:text-slate-400",
             "focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary",
             "transition-all duration-200 resize-none",
             error && "border-red-500 focus:ring-red-500/50",
@@ -38,7 +38,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           {...props}
         />
         {error && (
-          <p id={`${inputId}-error`} className="text-sm text-red-400">{error}</p>
+          <p id={`${inputId}-error`} className="text-sm text-red-600">{error}</p>
         )}
       </div>
     );

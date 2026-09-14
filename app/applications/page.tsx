@@ -88,10 +88,10 @@ export default function Applications() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Pourquoi une application <span className="gradient-text">sur mesure</span> ?
             </h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto">
               Les logiciels standards imposent leurs propres limites. Une application sur mesure s&apos;adapte à vous, pas l&apos;inverse.
             </p>
           </motion.div>
@@ -104,13 +104,13 @@ export default function Applications() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="p-6 rounded-xl bg-background border border-white/10"
+                className="p-6 rounded-xl bg-background border border-slate-200"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
                   <limit.icon className="w-6 h-6 text-accent-light" />
                 </div>
-                <h3 className="text-white font-bold mb-2">{limit.title}</h3>
-                <p className="text-slate-300 text-sm">{limit.description}</p>
+                <h3 className="text-slate-900 font-bold mb-2">{limit.title}</h3>
+                <p className="text-slate-600 text-sm">{limit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -121,10 +121,10 @@ export default function Applications() {
       <section className="py-12 lg:py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Types d&apos;applications
             </h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto">
               Du CRM au workflow interne, nous développons l&apos;application qui correspond à vos besoins.
             </p>
           </div>
@@ -142,8 +142,8 @@ export default function Applications() {
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
                     <category.icon className="w-6 h-6 text-primary-light" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{category.title}</h3>
-                  <p className="text-slate-300 text-sm">{category.description}</p>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{category.title}</h3>
+                  <p className="text-slate-600 text-sm">{category.description}</p>
                 </Card>
               </motion.div>
             ))}
