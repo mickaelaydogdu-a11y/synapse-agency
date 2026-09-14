@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Site vitrine Neylio - Solutions IA & Applications",
   "engines": {
-    "node": "22.x"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "next dev",
