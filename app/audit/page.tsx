@@ -41,7 +41,7 @@ export default function Audit() {
         <div className="absolute inset-0">
           <Image
             src="/images/Audit-Synapse-agency.jpg"
-            alt="Audit de sécurité, conformité et continuité d'activité Synapse Agency"
+            alt="Audit de sécurité, conformité et continuité d'activité Neylio"
             fill
             sizes="(max-width: 768px) 200vw, 100vw"
             className="object-cover object-right lg:object-center"

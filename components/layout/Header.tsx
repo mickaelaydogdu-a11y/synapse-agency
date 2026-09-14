@@ -21,11 +21,11 @@ export function Header() {
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:left-auto lg:top-auto lg:translate-x-0 lg:translate-y-0 flex items-center"
             >
               <Image
-                src="/images/Logo-SynapseAgency.png"
-                alt="Synapse Agency"
-                width={300}
-                height={300}
-                className="h-16 w-auto brightness-0 invert"
+                src="/images/Logo-Neylio.png"
+                alt="Neylio"
+                width={643}
+                height={178}
+                className="h-16 w-auto"
                 priority
               />
             </Link>

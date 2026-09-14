@@ -23,11 +23,11 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center justify-center md:justify-start mb-4">
               <Image
-                src="/images/Logo-SynapseAgency.png"
-                alt="Synapse Agency"
-                width={300}
-                height={300}
-                className="h-16 w-auto brightness-0 invert"
+                src="/images/Logo-Neylio.png"
+                alt="Neylio"
+                width={643}
+                height={178}
+                className="h-16 w-auto"
               />
             </Link>
             <p className="text-slate-300 max-w-md">
@@ -110,7 +110,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col-reverse md:flex-row justify-between items-center gap-4 text-center">
           <p className="text-slate-400 text-sm">
-            © {new Date().getFullYear()} Synapse Agency. Tous droits réservés.
+            © {new Date().getFullYear()} Neylio. Tous droits réservés.
           </p>
           <div className="flex gap-6">
             <Link href="/confidentialite" className="text-slate-400 hover:text-primary-light text-sm transition-colors">

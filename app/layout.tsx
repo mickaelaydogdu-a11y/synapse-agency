@@ -25,29 +25,29 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
-  title: "Synapse Agency | Applications métier sur mesure & IA",
+  title: "Neylio | Applications métier sur mesure & IA",
   description: "Nous développons des applications métier sur mesure qui centralisent vos données, automatisent vos processus et intègrent l'IA là où elle crée de la valeur.",
   keywords: ["application métier sur mesure", "développement application métier", "logiciel métier sur mesure", "intelligence artificielle entreprise", "automatisation entreprise", "agent IA entreprise", "RAG entreprise", "CRM sur mesure"],
-  authors: [{ name: "Synapse Agency" }],
+  authors: [{ name: "Neylio" }],
   openGraph: {
-    title: "Synapse Agency | Applications métier sur mesure & IA",
+    title: "Neylio | Applications métier sur mesure & IA",
     description: "Nous développons des applications métier sur mesure qui centralisent vos données, automatisent vos processus et intègrent l'IA là où elle crée de la valeur.",
     type: "website",
     locale: "fr_FR",
-    siteName: "Synapse Agency",
+    siteName: "Neylio",
     url: baseUrl,
     images: [
       {
         url: "/images/Home-Synapse-agency.jpg",
         width: 1200,
         height: 630,
-        alt: "Synapse Agency - Applications métier & Intelligence Artificielle",
+        alt: "Neylio - Applications métier & Intelligence Artificielle",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Synapse Agency | Applications métier sur mesure & IA",
+    title: "Neylio | Applications métier sur mesure & IA",
     description: "Nous développons des applications métier sur mesure qui centralisent vos données, automatisent vos processus et intègrent l'IA là où elle crée de la valeur.",
     images: ["/images/Home-Synapse-agency.jpg"],
   },
@@ -59,11 +59,11 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Synapse Agency",
+  name: "Neylio",
   url: baseUrl,
-  logo: `${baseUrl}/images/Synapse-Agency.png`,
+  logo: `${baseUrl}/images/Neylio-icon.png`,
   description:
-    "Synapse Agency conçoit des applications métier sur mesure intégrant l'intelligence artificielle et l'automatisation pour centraliser vos données et simplifier vos processus.",
+    "Neylio conçoit des applications métier sur mesure intégrant l'intelligence artificielle et l'automatisation pour centraliser vos données et simplifier vos processus.",
   telephone: "+33632545578",
   email: "contact@synapse-agency.fr",
   address: {
@@ -93,12 +93,12 @@ const jsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Synapse Agency",
+  name: "Neylio",
   url: baseUrl,
   inLanguage: "fr-FR",
   publisher: {
     "@type": "ProfessionalService",
-    name: "Synapse Agency",
+    name: "Neylio",
   },
 };
 

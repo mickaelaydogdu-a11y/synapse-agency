@@ -89,10 +89,10 @@ export async function POST(request: NextRequest) {
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #6366f1, #4338ca); color: white; padding: 20px; border-radius: 8px 8px 0 0; }
+        .header { background: linear-gradient(135deg, #0a55e6, #073ca1); color: white; padding: 20px; border-radius: 8px 8px 0 0; }
         .content { background: #f8f9fa; padding: 20px; border-radius: 0 0 8px 8px; }
-        .section { background: white; padding: 15px; margin-bottom: 15px; border-radius: 6px; border-left: 4px solid #6366f1; }
-        .section h3 { margin-top: 0; color: #6366f1; }
+        .section { background: white; padding: 15px; margin-bottom: 15px; border-radius: 6px; border-left: 4px solid #0a55e6; }
+        .section h3 { margin-top: 0; color: #0a55e6; }
         .field { margin-bottom: 10px; }
         .label { font-weight: bold; color: #666; }
         .value { color: #333; }
@@ -132,7 +132,7 @@ export async function POST(request: NextRequest) {
     `;
 
     const { error: emailError } = await resend.emails.send({
-      from: 'Synapse Agency - Contact <notification@synapse-agency.fr>',
+      from: 'Neylio - Contact <notification@synapse-agency.fr>',
       to: 'contact@synapse-agency.fr',
       replyTo: data.email,
       subject: `Nouvelle demande de contact - ${subjectSafeName}`,

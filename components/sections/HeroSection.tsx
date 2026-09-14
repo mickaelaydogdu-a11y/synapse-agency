@@ -12,7 +12,7 @@ export function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/Home-Synapse-agency.jpg"
-          alt="Synapse Agency - Applications métier et intelligence artificielle"
+          alt="Neylio - Applications métier et intelligence artificielle"
           fill
           sizes="(max-width: 768px) 200vw, 100vw"
           className="object-cover object-center"

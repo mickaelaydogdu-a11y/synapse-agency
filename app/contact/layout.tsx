@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contactez-nous | Synapse Agency",
+  title: "Contactez-nous | Neylio",
   description:
     "Parlons de votre projet d'application métier, d'intelligence artificielle ou d'automatisation. Premier échange gratuit et sans engagement, réponse sous 24h.",
   openGraph: {
-    title: "Contactez Synapse Agency",
+    title: "Contactez Neylio",
     description:
       "Parlons de votre projet d'application métier, d'intelligence artificielle ou d'automatisation.",
     type: "website",
@@ -15,13 +15,13 @@ export const metadata: Metadata = {
         url: "/images/Home-Synapse-agency.jpg",
         width: 1200,
         height: 630,
-        alt: "Contactez Synapse Agency",
+        alt: "Contactez Neylio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contactez Synapse Agency",
+    title: "Contactez Neylio",
     description:
       "Parlons de votre projet d'application métier, d'intelligence artificielle ou d'automatisation.",
     images: ["/images/Home-Synapse-agency.jpg"],

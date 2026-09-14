@@ -71,7 +71,7 @@ export default function SolutionsIA() {
         <div className="absolute inset-0">
           <Image
             src="/images/Solution-ia-Synapse-agency.jpg"
-            alt="Intelligence artificielle et automatisation Synapse Agency"
+            alt="Intelligence artificielle et automatisation Neylio"
             fill
             sizes="(max-width: 768px) 200vw, 100vw"
             className="object-cover object-right lg:object-center"
@@ -122,7 +122,7 @@ export default function SolutionsIA() {
               Pourquoi intégrer l&apos;<span className="gradient-text">IA</span> ?
             </h2>
             <p className="text-slate-300 max-w-2xl mx-auto">
-              Synapse ne vend pas de l&apos;IA pour vendre de l&apos;IA. Nous l&apos;intégrons lorsqu&apos;elle permet
+              Neylio ne vend pas de l&apos;IA pour vendre de l&apos;IA. Nous l&apos;intégrons lorsqu&apos;elle permet
               réellement de simplifier, accélérer ou automatiser le travail.
             </p>
           </motion.div>

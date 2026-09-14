@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Politique de Confidentialité | RGPD | Synapse Agency",
+  title: "Politique de Confidentialité | RGPD | Neylio",
   description:
-    "Politique de confidentialité et protection des données personnelles de Synapse Agency. Conformité RGPD, droits des utilisateurs et gestion des cookies.",
+    "Politique de confidentialité et protection des données personnelles de Neylio. Conformité RGPD, droits des utilisateurs et gestion des cookies.",
   openGraph: {
-    title: "Politique de Confidentialité | Synapse Agency",
+    title: "Politique de Confidentialité | Neylio",
     description:
-      "Protection des données personnelles et conformité RGPD chez Synapse Agency.",
+      "Protection des données personnelles et conformité RGPD chez Neylio.",
     type: "website",
     locale: "fr_FR",
   },

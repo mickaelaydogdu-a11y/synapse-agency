@@ -9,7 +9,7 @@ export async function GET() {
         style={{
           fontSize: 340,
           background:
-            "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #0ea5e9 100%)",
+            "linear-gradient(135deg, #0a55e6 0%, #11aed4 50%, #1fb78e 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -21,7 +21,7 @@ export async function GET() {
           fontFamily: "Inter, Arial, sans-serif",
         }}
       >
-        S
+        N
       </div>
     ),
     { width: 512, height: 512 }

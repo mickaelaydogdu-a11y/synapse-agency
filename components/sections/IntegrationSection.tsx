@@ -22,7 +22,7 @@ export function IntegrationSection() {
             Connectez vos outils existants.
           </h2>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-            Nous ne remplaçons pas nécessairement votre système existant. Synapse peut connecter vos logiciels
+            Nous ne remplaçons pas nécessairement votre système existant. Neylio peut connecter vos logiciels
             et créer une interface centrale pour vos collaborateurs.
           </p>
         </motion.div>

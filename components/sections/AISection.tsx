@@ -87,7 +87,7 @@ export function AISection() {
         <div className="text-center">
           <Link href="/solutions-ia">
             <Button size="lg">
-              Découvrir l&apos;IA Synapse
+              Découvrir l&apos;IA Neylio
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

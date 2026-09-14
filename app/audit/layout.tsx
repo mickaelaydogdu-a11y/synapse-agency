@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Audit flux de travail, cybersécurité & conformité | Synapse",
+  title: "Audit flux de travail, cybersécurité & conformité | Neylio",
   description:
-    "Synapse Agency réalise des audits de flux de travail, de cybersécurité (tests d'intrusion, PCA/PRA) et de conformité réglementaire (RGPD, RGS).",
+    "Neylio réalise des audits de flux de travail, de cybersécurité (tests d'intrusion, PCA/PRA) et de conformité réglementaire (RGPD, RGS).",
   openGraph: {
-    title: "Audit flux de travail, cybersécurité & conformité | Synapse",
+    title: "Audit flux de travail, cybersécurité & conformité | Neylio",
     description:
       "Audit de flux de travail, de cybersécurité (test d'intrusion, PCA/PRA) et de conformité réglementaire (RGPD, RGS).",
     type: "website",
@@ -15,13 +15,13 @@ export const metadata: Metadata = {
         url: "/images/Audit-Synapse-agency.jpg",
         width: 1200,
         height: 630,
-        alt: "Audit de flux de travail, cybersécurité et conformité - Synapse Agency",
+        alt: "Audit de flux de travail, cybersécurité et conformité - Neylio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Audit flux de travail, cybersécurité & conformité | Synapse",
+    title: "Audit flux de travail, cybersécurité & conformité | Neylio",
     description:
       "Audit de flux de travail, de cybersécurité (test d'intrusion, PCA/PRA) et de conformité réglementaire (RGPD, RGS).",
     images: ["/images/Audit-Synapse-agency.jpg"],
@@ -46,7 +46,7 @@ const jsonLd = {
   name: "Audit de flux de travail, cybersécurité et conformité",
   provider: {
     "@type": "ProfessionalService",
-    name: "Synapse Agency",
+    name: "Neylio",
     url: "https://synapse-agency.fr",
   },
   description:

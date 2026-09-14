@@ -42,7 +42,7 @@ export default function Applications() {
         <div className="absolute inset-0">
           <Image
             src="/images/Applications.jpg"
-            alt="Applications métier Synapse Agency"
+            alt="Applications métier Neylio"
             fill
             sizes="(max-width: 768px) 200vw, 100vw"
             className="object-cover object-right lg:object-center"

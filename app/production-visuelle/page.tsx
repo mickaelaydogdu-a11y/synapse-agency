@@ -120,7 +120,7 @@ export default function ProductionVisuelle() {
         <div className="absolute inset-0">
           <Image
             src="/images/Production-visuelle-Synapse-agency.jpg"
-            alt="Production Visuelle Synapse Agency"
+            alt="Production Visuelle Neylio"
             fill
             sizes="(max-width: 768px) 200vw, 100vw"
             className="object-cover object-right lg:object-center"
@@ -136,7 +136,7 @@ export default function ProductionVisuelle() {
               animate={{ opacity: 1, y: 0 }}
               className="text-center max-w-3xl"
             >
-              <Badge variant="accent" className="mb-6 inline-flex bg-violet-500/40 text-white border-violet-500/50 backdrop-blur-sm">
+              <Badge variant="accent" className="mb-6 inline-flex bg-primary/40 text-white border-primary/50 backdrop-blur-sm">
                 <Camera className="w-4 h-4 mr-2" />
                 Production Visuelle
               </Badge>
@@ -152,8 +152,8 @@ export default function ProductionVisuelle() {
               {/* Quick Stats */}
               <div className="flex flex-wrap gap-6 mb-8 justify-center">
                 <div className="flex items-center gap-2 backdrop-blur-sm bg-black/30 rounded-lg px-3 py-2">
-                  <div className="w-10 h-10 rounded-lg bg-violet-500/40 flex items-center justify-center">
-                    <Camera className="w-5 h-5 text-violet-400" />
+                  <div className="w-10 h-10 rounded-lg bg-primary/40 flex items-center justify-center">
+                    <Camera className="w-5 h-5 text-primary-light" />
                   </div>
                   <div>
                     <p className="text-white font-bold">Photo</p>
@@ -161,8 +161,8 @@ export default function ProductionVisuelle() {
                   </div>
                 </div>
                 <div className="flex items-center gap-2 backdrop-blur-sm bg-black/30 rounded-lg px-3 py-2">
-                  <div className="w-10 h-10 rounded-lg bg-cyan-500/40 flex items-center justify-center">
-                    <Video className="w-5 h-5 text-cyan-400" />
+                  <div className="w-10 h-10 rounded-lg bg-accent/40 flex items-center justify-center">
+                    <Video className="w-5 h-5 text-accent-light" />
                   </div>
                   <div>
                     <p className="text-white font-bold">Vidéo</p>
@@ -218,7 +218,7 @@ export default function ProductionVisuelle() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mb-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center mb-4">
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
@@ -227,7 +227,7 @@ export default function ProductionVisuelle() {
                   <ul className="space-y-2">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-2 text-sm text-slate-300">
-                        <Check className="w-4 h-4 text-violet-500 shrink-0" />
+                        <Check className="w-4 h-4 text-primary shrink-0" />
                         {feature}
                       </li>
                     ))}
@@ -265,7 +265,7 @@ export default function ProductionVisuelle() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center mb-4">
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
@@ -274,7 +274,7 @@ export default function ProductionVisuelle() {
                   <ul className="space-y-2">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-2 text-sm text-slate-300">
-                        <Check className="w-4 h-4 text-cyan-500 shrink-0" />
+                        <Check className="w-4 h-4 text-accent shrink-0" />
                         {feature}
                       </li>
                     ))}

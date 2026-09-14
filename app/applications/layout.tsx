@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Applications métier sur mesure | Synapse Agency",
+  title: "Applications métier sur mesure | Neylio",
   description:
-    "Synapse Agency développe des applications métier web et mobiles sur mesure pour centraliser vos données, automatiser vos processus et améliorer la productivité de vos équipes.",
+    "Neylio développe des applications métier web et mobiles sur mesure pour centraliser vos données, automatiser vos processus et améliorer la productivité de vos équipes.",
   openGraph: {
-    title: "Applications métier sur mesure | Synapse Agency",
+    title: "Applications métier sur mesure | Neylio",
     description:
       "Des applications web et mobiles sur mesure pour centraliser vos données et automatiser vos processus métier.",
     type: "website",
@@ -15,13 +15,13 @@ export const metadata: Metadata = {
         url: "/images/Applications.jpg",
         width: 1200,
         height: 630,
-        alt: "Applications métier sur mesure - Synapse Agency",
+        alt: "Applications métier sur mesure - Neylio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Applications métier sur mesure | Synapse Agency",
+    title: "Applications métier sur mesure | Neylio",
     description:
       "Des applications web et mobiles sur mesure pour centraliser vos données et automatiser vos processus métier.",
     images: ["/images/Applications.jpg"],
@@ -46,7 +46,7 @@ const jsonLd = {
   name: "Développement d'applications métier sur mesure",
   provider: {
     "@type": "ProfessionalService",
-    name: "Synapse Agency",
+    name: "Neylio",
     url: "https://synapse-agency.fr",
   },
   description:

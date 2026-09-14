@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Intelligence artificielle & automatisation | Synapse Agency",
+  title: "Intelligence artificielle & automatisation | Neylio",
   description:
-    "Synapse Agency intègre l'IA dans vos applications métier : assistant interne, RAG, analyse documentaire, extraction et agents IA.",
+    "Neylio intègre l'IA dans vos applications métier : assistant interne, RAG, analyse documentaire, extraction et agents IA.",
   openGraph: {
-    title: "Intelligence artificielle & automatisation | Synapse Agency",
+    title: "Intelligence artificielle & automatisation | Neylio",
     description:
       "L'IA intégrée à vos applications métier pour automatiser ce qui peut l'être, sans complexifier votre quotidien.",
     type: "website",
@@ -15,13 +15,13 @@ export const metadata: Metadata = {
         url: "/images/Solution-ia-Synapse-agency.jpg",
         width: 1200,
         height: 630,
-        alt: "Intelligence artificielle & automatisation - Synapse Agency",
+        alt: "Intelligence artificielle & automatisation - Neylio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Intelligence artificielle & automatisation | Synapse Agency",
+    title: "Intelligence artificielle & automatisation | Neylio",
     description:
       "L'IA intégrée à vos applications métier pour automatiser ce qui peut l'être, sans complexifier votre quotidien.",
     images: ["/images/Solution-ia-Synapse-agency.jpg"],
@@ -46,7 +46,7 @@ const jsonLd = {
   name: "Intelligence artificielle & automatisation",
   provider: {
     "@type": "ProfessionalService",
-    name: "Synapse Agency",
+    name: "Neylio",
     url: "https://synapse-agency.fr",
   },
   description:

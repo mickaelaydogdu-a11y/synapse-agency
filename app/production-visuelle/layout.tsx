@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Production Visuelle | Photo, Vidéo & Drone professionnels | Synapse Agency",
+  title: "Production Visuelle | Photo, Vidéo & Drone professionnels | Neylio",
   description:
     "Services de production visuelle professionnelle : photographie corporate, vidéo d'entreprise et prises de vue drone pour valoriser votre image de marque.",
   openGraph: {
-    title: "Production Visuelle professionnelle | Synapse Agency",
+    title: "Production Visuelle professionnelle | Neylio",
     description:
       "Photo, vidéo et drone professionnels pour sublimer votre communication d'entreprise.",
     type: "website",
@@ -15,13 +15,13 @@ export const metadata: Metadata = {
         url: "/images/Production-visuelle-Synapse-agency.jpg",
         width: 1200,
         height: 630,
-        alt: "Production Visuelle professionnelle - Synapse Agency",
+        alt: "Production Visuelle professionnelle - Neylio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Production Visuelle professionnelle | Synapse Agency",
+    title: "Production Visuelle professionnelle | Neylio",
     description:
       "Photo, vidéo et drone professionnels pour sublimer votre communication d'entreprise.",
     images: ["/images/Production-visuelle-Synapse-agency.jpg"],
@@ -46,7 +46,7 @@ const jsonLd = {
   name: "Production Visuelle Professionnelle",
   provider: {
     "@type": "ProfessionalService",
-    name: "Synapse Agency",
+    name: "Neylio",
     url: "https://synapse-agency.fr",
   },
   description:

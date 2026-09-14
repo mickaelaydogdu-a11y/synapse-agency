@@ -2,14 +2,14 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Synapse Agency - Applications métier & Intelligence Artificielle",
-    short_name: "Synapse Agency",
+    name: "Neylio - Applications métier & Intelligence Artificielle",
+    short_name: "Neylio",
     description:
       "Applications métier sur mesure intégrant intelligence artificielle et automatisation.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0a0a0d",
-    theme_color: "#6366f1",
+    background_color: "#0a0f1c",
+    theme_color: "#0a55e6",
     icons: [
       {
         src: "/icon-192.png",
