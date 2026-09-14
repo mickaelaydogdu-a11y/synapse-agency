@@ -152,7 +152,7 @@ export default function ProductionVisuelle() {
               {/* Quick Stats */}
               <div className="flex flex-wrap gap-6 mb-8 justify-center">
                 <div className="flex items-center gap-2 backdrop-blur-sm bg-black/30 rounded-lg px-3 py-2">
-                  <div className="w-10 h-10 rounded-lg bg-primary/40 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg bg-primary/40 flex items-center justify-center shadow-md">
                     <Camera className="w-5 h-5 text-primary-light" />
                   </div>
                   <div>
@@ -161,7 +161,7 @@ export default function ProductionVisuelle() {
                   </div>
                 </div>
                 <div className="flex items-center gap-2 backdrop-blur-sm bg-black/30 rounded-lg px-3 py-2">
-                  <div className="w-10 h-10 rounded-lg bg-accent/40 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg bg-accent/40 flex items-center justify-center shadow-md">
                     <Video className="w-5 h-5 text-accent-light" />
                   </div>
                   <div>
@@ -170,7 +170,7 @@ export default function ProductionVisuelle() {
                   </div>
                 </div>
                 <div className="flex items-center gap-2 backdrop-blur-sm bg-black/30 rounded-lg px-3 py-2">
-                  <div className="w-10 h-10 rounded-lg bg-orange-500/40 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg bg-orange-500/40 flex items-center justify-center shadow-md">
                     <Plane className="w-5 h-5 text-orange-400" />
                   </div>
                   <div>
@@ -218,7 +218,7 @@ export default function ProductionVisuelle() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full">
-                  <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-4">
+                  <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-4 shadow-md">
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
@@ -265,7 +265,7 @@ export default function ProductionVisuelle() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full">
-                  <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-4">
+                  <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-4 shadow-md">
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>

@@ -69,7 +69,7 @@ export function AISection() {
               transition={{ delay: index * 0.06 }}
             >
               <Card>
-                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4 shadow-md">
                   <capability.icon className="w-6 h-6 text-accent-light" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{capability.title}</h3>

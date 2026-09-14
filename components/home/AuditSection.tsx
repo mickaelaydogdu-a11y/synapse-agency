@@ -62,7 +62,7 @@ export function AuditSection() {
           >
             <div className="bg-primary/5 rounded-3xl p-8 border border-slate-200">
               <div className="text-center">
-                <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center mx-auto mb-6">
+                <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center mx-auto mb-6 shadow-md">
                   <Clock className="w-10 h-10 text-white" />
                 </div>
                 <div className="text-5xl font-bold text-slate-900 mb-2">30 min</div>

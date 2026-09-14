@@ -35,7 +35,7 @@ export default function Contact() {
               transition={{ delay: 0.2 }}
             >
               <Card className="h-full text-center">
-                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-4 shadow-md">
                   <Mail className="w-6 h-6 text-primary-light" />
                 </div>
                 <h2 className="text-slate-900 font-semibold mb-1">Email</h2>
@@ -51,7 +51,7 @@ export default function Contact() {
               transition={{ delay: 0.3 }}
             >
               <Card className="h-full text-center">
-                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mx-auto mb-4 shadow-md">
                   <Phone className="w-6 h-6 text-secondary-light" />
                 </div>
                 <h2 className="text-slate-900 font-semibold mb-1">Téléphone</h2>
@@ -65,7 +65,7 @@ export default function Contact() {
               transition={{ delay: 0.4 }}
             >
               <Card className="h-full text-center">
-                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-4 shadow-md">
                   <MapPin className="w-6 h-6 text-accent-light" />
                 </div>
                 <h2 className="text-slate-900 font-semibold mb-1">Localisation</h2>

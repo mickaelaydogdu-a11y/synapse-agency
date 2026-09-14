@@ -137,7 +137,7 @@ export default function SolutionsIA() {
                 transition={{ delay: index * 0.08 }}
                 className="p-6 rounded-xl bg-background border border-slate-200"
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4 shadow-md">
                   <point.icon className="w-6 h-6 text-secondary-light" />
                 </div>
                 <h3 className="text-slate-900 font-bold mb-2">{point.title}</h3>
@@ -172,7 +172,7 @@ export default function SolutionsIA() {
                 transition={{ delay: index * 0.06 }}
               >
                 <Card className="h-full">
-                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4 shadow-md">
                     <capability.icon className="w-6 h-6 text-accent-light" />
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">{capability.title}</h3>

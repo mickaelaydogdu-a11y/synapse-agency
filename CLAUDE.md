@@ -73,18 +73,20 @@ Pages "Réalisations" (`/realisations`) et "À propos" (`/qui-suis-je`, bio du f
 
 ### Système de design
 
-Thème **sombre** (fond bleu marine quasi-noir), défini dans `globals.css` avec `@theme` (Tailwind v4) — palette Neylio reprise du logo (bleu/vert émeraude) depuis le rebranding du 2026-09-14 :
+Thème **clair** (fond blanc/gris très clair) depuis le passage au thème clair et le retrait des dégradés du 2026-09-14, défini dans `globals.css` avec `@theme` (Tailwind v4) — palette Neylio reprise du logo (bleu/vert émeraude) :
 - `primary` (#0a55e6) - Bleu — usage bg/border/icônes
 - `secondary` (#1fb78e) - Vert émeraude — usage bg/border/icônes
 - `accent` (#11aed4) - Cyan/sarcelle (teinte de synthèse entre le bleu et le vert du logo, qui n'en a que 2) — usage bg/border/icônes
-- `primary-light` (#6fa1ff) / `secondary-light` (#39ddb1) / `accent-light` (#71daf4) — **variantes claires à utiliser pour tout texte lisible** (`text-primary-light`, etc.). Les couleurs de base ne passent pas le contraste WCAG AA (4.5:1) sur fond sombre, ne pas revenir à `text-primary`/`text-secondary`/`text-accent` pour du texte.
-- `background` (#0a0f1c), `surface` (#10182a), `surface-light` (#1a2338)
-- `text-primary` / `text-secondary` / `text-muted` — tokens de texte clair sur fond sombre (attention : distincts des couleurs de marque `primary`/`secondary` ci-dessus, ne pas confondre `text-text-primary` (token de texte) et `text-primary` (couleur de marque, à éviter pour du texte))
+- `primary-light` (#0a55e6) / `secondary-light` (#157a5f) / `accent-light` (#0b748e) — **variantes à utiliser pour tout texte lisible** (`text-primary-light`, etc.), recalibrées pour le contraste WCAG AA sur fond clair (ce ne sont plus des teintes "claires" à proprement parler, le nom du token reste inchangé pour ne pas casser les ~100 usages existants). Ne pas revenir à `text-primary`/`text-secondary`/`text-accent` pour du texte : `secondary` et `accent` en base échouent le contraste AA sur blanc.
+- `background` (#ffffff), `surface` (#f5f7fa), `surface-light` (#eef1f6)
+- `text-primary` / `text-secondary` / `text-muted` — tokens de texte sombre sur fond clair (attention : distincts des couleurs de marque `primary`/`secondary` ci-dessus, ne pas confondre `text-text-primary` (token de texte) et `text-primary` (couleur de marque, à éviter pour du texte))
 
 Classes utilitaires custom :
-- `.gradient-text` - Texte en dégradé primary→accent→secondary (via `var(--color-*)`, synchronisé avec `@theme`)
-- `.glass` - Dégradé bleu marine translucide utilisé par le header (`Header.tsx`), pas un glassmorphism blanc
+- `.gradient-text` - Texte en couleur pleine `primary` (dégradé retiré le 2026-09-14, le nom de la classe est resté)
+- `.glass` - Fond blanc translucide utilisé par le header (`Header.tsx`)
 - `.card-hover` - Animation hover pour les cartes
+
+Aucun dégradé (`bg-gradient-to-*`) nulle part sur le site (retirés le 2026-09-14, jugés "trop IA" par l'utilisateur) : toutes les couleurs de marque sont en aplat. Les 5 sections hero avec photo plein cadre (`HeroSection.tsx` + hero de `/audit`, `/applications`, `/solutions-ia`, `/production-visuelle`) et la visionneuse plein écran de `/production-visuelle` gardent volontairement un voile sombre (`bg-black/NN`) et du texte blanc, indépendamment du thème clair du reste du site — ne pas les convertir en texte sombre. Les cercles/carrés de pictogrammes (icône Lucide dans un fond `bg-{couleur}/NN` ou `bg-{couleur}` arrondi) portent tous `shadow-md` depuis le 2026-09-14.
 
 Autres conventions d'accessibilité à respecter :
 - `Input`/`Textarea` génèrent automatiquement un `id` (depuis `name` ou `useId()`) pour associer le `<label>` — toujours passer `name` à ces composants

@@ -134,7 +134,7 @@ export function ContactForm() {
         <div className="space-y-6">
           <Card>
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center shadow-md">
                 <Mail className="w-6 h-6 text-primary-light" />
               </div>
               <div>
@@ -148,7 +148,7 @@ export function ContactForm() {
 
           <Card>
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center shadow-md">
                 <Phone className="w-6 h-6 text-secondary-light" />
               </div>
               <div>
@@ -160,7 +160,7 @@ export function ContactForm() {
 
           <Card>
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center shadow-md">
                 <MapPin className="w-6 h-6 text-accent-light" />
               </div>
               <div>

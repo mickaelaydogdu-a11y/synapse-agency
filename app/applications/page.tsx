@@ -106,7 +106,7 @@ export default function Applications() {
                 transition={{ delay: index * 0.08 }}
                 className="p-6 rounded-xl bg-background border border-slate-200"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4 shadow-md">
                   <limit.icon className="w-6 h-6 text-accent-light" />
                 </div>
                 <h3 className="text-slate-900 font-bold mb-2">{limit.title}</h3>
@@ -139,7 +139,7 @@ export default function Applications() {
                 transition={{ delay: index * 0.05 }}
               >
                 <Card>
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 shadow-md">
                     <category.icon className="w-6 h-6 text-primary-light" />
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">{category.title}</h3>

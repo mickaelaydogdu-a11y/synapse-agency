@@ -106,7 +106,7 @@ export default function Audit() {
                 transition={{ delay: index * 0.08 }}
               >
                 <Card className="mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4 shadow-md">
                     <audit.icon className="w-6 h-6 text-secondary-light" />
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 mb-3">{audit.title}</h3>
