@@ -39,11 +39,13 @@ export default function MentionsLegales() {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-4">1. Éditeur du site</h2>
                 <div className="text-slate-300 space-y-2">
-                  <p><strong className="text-white">Raison sociale :</strong> Synapse Agency</p>
-                  <p><strong className="text-white">Forme juridique :</strong> Entreprise individuelle</p>
-                  <p><strong className="text-white">Siège social :</strong> 7 Cour du Haut Vanry, 77640 Jouarre, France</p>
-                  <p><strong className="text-white">SIREN :</strong> 502299142</p>
-                  <p><strong className="text-white">Immatriculation au RCS :</strong> R.C.S. Meaux</p>
+                  <p><strong className="text-white">Raison sociale :</strong> Neylio</p>
+                  <p><strong className="text-white">Forme juridique :</strong> EURL</p>
+                  <p><strong className="text-white">Capital social :</strong> 1 000 €</p>
+                  <p><strong className="text-white">Siège social :</strong> 7 rue Vivienne, 75002 Paris, France</p>
+                  <p><strong className="text-white">SIREN :</strong> En cours d&apos;attribution</p>
+                  <p><strong className="text-white">Immatriculation au RCS :</strong> En cours d&apos;immatriculation</p>
+                  <p><strong className="text-white">N° TVA intracommunautaire :</strong> En cours d&apos;attribution</p>
                   <p><strong className="text-white">Email :</strong> contact@synapse-agency.fr</p>
                   <p><strong className="text-white">Téléphone :</strong> 06 32 54 55 78</p>
                   <p><strong className="text-white">Directeur de la publication :</strong> Mickael Aydogdu</p>
@@ -64,13 +66,13 @@ export default function MentionsLegales() {
                 <h2 className="text-2xl font-bold text-white mb-4">3. Propriété intellectuelle</h2>
                 <p className="text-slate-300">
                   L&apos;ensemble du contenu de ce site (textes, images, vidéos, logos, icônes, sons, logiciels, etc.)
-                  est la propriété exclusive de Synapse Agency ou de ses partenaires et est protégé par les lois
+                  est la propriété exclusive de Neylio ou de ses partenaires et est protégé par les lois
                   françaises et internationales relatives à la propriété intellectuelle.
                 </p>
                 <p className="text-slate-300 mt-4">
                   Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des
                   éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation
-                  écrite préalable de Synapse Agency.
+                  écrite préalable de Neylio.
                 </p>
               </section>
 
@@ -78,14 +80,14 @@ export default function MentionsLegales() {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-4">4. Limitation de responsabilité</h2>
                 <p className="text-slate-300">
-                  Synapse Agency s&apos;efforce de fournir sur ce site des informations aussi précises que possible.
+                  Neylio s&apos;efforce de fournir sur ce site des informations aussi précises que possible.
                   Toutefois, elle ne pourra être tenue responsable des omissions, des inexactitudes et des carences
                   dans la mise à jour, qu&apos;elles soient de son fait ou du fait des tiers partenaires qui lui
                   fournissent ces informations.
                 </p>
                 <p className="text-slate-300 mt-4">
                   Les liens hypertextes mis en place dans le cadre du présent site internet en direction d&apos;autres
-                  ressources présentes sur le réseau Internet ne sauraient engager la responsabilité de Synapse Agency.
+                  ressources présentes sur le réseau Internet ne sauraient engager la responsabilité de Neylio.
                 </p>
               </section>
 

@@ -1,4 +1,4 @@
-import { Cpu, Smartphone, FolderKanban, User, ShieldCheck, type LucideIcon } from "lucide-react";
+import { Cpu, Smartphone, ShieldCheck, type LucideIcon } from "lucide-react";
 
 export interface NavItem {
   name: string;
@@ -10,8 +10,6 @@ export const mainNav: NavItem[] = [
   { name: "Applications métier", href: "/applications", icon: Smartphone },
   { name: "IA & Automatisation", href: "/solutions-ia", icon: Cpu },
   { name: "Audit", href: "/audit", icon: ShieldCheck },
-  { name: "Réalisations", href: "/realisations", icon: FolderKanban },
-  { name: "À propos", href: "/qui-suis-je", icon: User },
 ];
 
 export const ctaLabel = "Parler de mon besoin";

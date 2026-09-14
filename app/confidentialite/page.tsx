@@ -39,7 +39,7 @@ export default function Confidentialite() {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-4">1. Introduction</h2>
                 <p className="text-slate-300">
-                  Synapse Agency s&apos;engage à protéger la vie privée des utilisateurs de son site internet
+                  Neylio s&apos;engage à protéger la vie privée des utilisateurs de son site internet
                   www.synapse-agency.fr. La présente politique de confidentialité décrit les types d&apos;informations
                   que nous collectons, comment nous les utilisons, et les mesures que nous prenons pour les protéger.
                 </p>
@@ -190,7 +190,7 @@ export default function Confidentialite() {
                 <div className="mt-4 text-slate-300">
                   <p><strong className="text-white">Email :</strong> contact@synapse-agency.fr</p>
                   <p><strong className="text-white">Téléphone :</strong> 06 32 54 55 78</p>
-                  <p><strong className="text-white">Adresse :</strong> 7 Cour du Haut Vanry, 77640 Jouarre, France</p>
+                  <p><strong className="text-white">Adresse :</strong> 7 rue Vivienne, 75002 Paris, France</p>
                 </div>
                 <p className="text-slate-300 mt-4">
                   Vous pouvez également introduire une réclamation auprès de la CNIL (Commission Nationale de

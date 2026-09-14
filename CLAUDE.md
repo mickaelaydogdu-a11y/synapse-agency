@@ -21,7 +21,7 @@ npx tsc --noEmit
 
 ## Architecture
 
-Site vitrine Next.js 16 (App Router) pour Synapse Agency — agence positionnée sur les **applications métier sur mesure intégrant intelligence artificielle et automatisation**, complétées par une offre d'audit (flux de travail, cybersécurité incluant la continuité d'activité PCA/PRA, conformité réglementaire). La production visuelle (photo/vidéo/drone) est une activité secondaire, présente uniquement en page dédiée et dans le footer.
+Site vitrine Next.js 16 (App Router) pour Neylio — agence positionnée sur les **applications métier sur mesure intégrant intelligence artificielle et automatisation**, complétées par une offre d'audit (flux de travail, cybersécurité incluant la continuité d'activité PCA/PRA, conformité réglementaire). La production visuelle (photo/vidéo/drone) est une activité secondaire, présente uniquement en page dédiée et dans le footer.
 
 La refonte en cours est pilotée par `PLAN DE REFONTE.md` (racine du repo, cahier des charges détaillé — objectifs, contenu, ton, règles) et `docs/audit.md` (état technique de référence au démarrage de la refonte). Consulter ces deux fichiers avant toute modification de fond sur le positionnement, le contenu ou la structure du site.
 
@@ -33,9 +33,6 @@ app/                      # Pages (App Router)
 ├── applications/          # Applications métier
 ├── solutions-ia/          # IA & Automatisation (route conservée, contenu repositionné)
 ├── audit/                 # Audit (flux de travail, cybersécurité incl. PCA/PRA, conformité réglementaire)
-├── realisations/          # Liste des réalisations
-│   └── [slug]/            # Détail d'une réalisation (généré depuis data/realisations.ts)
-├── qui-suis-je/            # Page "À propos" (bio du fondateur, libellé nav "À propos")
 ├── contact/                # Actuellement 3 cartes coordonnées seulement (formulaire masqué,
                             # voir components/contact/ContactForm.tsx et section dédiée plus bas)
 ├── production-visuelle/    # Activité secondaire, liée uniquement depuis le footer
@@ -43,7 +40,7 @@ app/                      # Pages (App Router)
 ├── confidentialite/
 ├── api/contact/route.ts    # Turnstile + validation Zod + honeypot + email Resend
 ├── layout.tsx              # Root layout (Header + Footer + ScrollToTop + MotionProvider + CookieBanner)
-├── sitemap.ts               # Inclut les routes statiques + une entrée par réalisation
+├── sitemap.ts               # Inclut les routes statiques
 ├── globals.css              # Tailwind v4 avec @theme pour les couleurs custom (thème sombre)
 └── manifest.ts
 
@@ -51,47 +48,42 @@ components/
 ├── ui/              # Primitives UI réutilisables (Button, Card, Badge, Input, Textarea)
 ├── layout/          # Header, Footer, ScrollToTop, CookieBanner, MotionProvider
 ├── home/            # AuditSection uniquement — bloc CTA réutilisé en fin de plusieurs pages
-├── about/            # Sections de /qui-suis-je (AboutHero, Timeline, Differentiators)
 ├── contact/          # ContactForm : formulaire complet + Turnstile, préparé mais pas
                        # rendu par app/contact/page.tsx pour l'instant (voir section dédiée)
 └── sections/          # Sections de la homepage (Hero, Applications, AI, Integration,
-                        # Process, Security, FinalCTA) + Workflow (diagramme en chaîne réutilisable)
+                        # Process, Security, FinalCTA) + Workflow (diagramme en chaîne réutilisable,
+                        # aussi utilisé par /solutions-ia)
 
 lib/
 ├── utils.ts                # cn() - combine clsx + tailwind-merge
 ├── navigation.ts            # Source unique de la nav (mainNav, ctaLabel, ctaHref) - Header et Footer la consomment, ne pas dupliquer
 └── validations/contact.ts    # Schéma Zod du formulaire de contact + constantes PROJECT_TYPES/BUDGET_RANGES
-
-data/
-└── realisations.ts    # Contenu des réalisations : vraies études de cas client (isPlaceholder: false),
-                        # aucune métrique inventée, voir section 56 et 71 de PLAN DE REFONTE.md.
-                        # Le champ isPlaceholder (true) reste disponible pour d'éventuels exemples
-                        # génériques mais aucun n'est publié actuellement. Source unique consommée
-                        # par /realisations et /realisations/[slug].
 ```
+
+Pages "Réalisations" (`/realisations`) et "À propos" (`/qui-suis-je`, bio du fondateur) retirées du site le 2026-09-14 à la demande de l'utilisateur, avec leurs composants dédiés (`components/about/*`) et `data/realisations.ts` (trois vraies études de cas client, Média/Parc/Secure) supprimés du dépôt. Anciennes URLs redirigées vers `/` dans `next.config.ts`.
 
 ### Conventions
 
 - **Path alias**: `@/*` mappe vers la racine (ex: `@/components/ui`, `@/lib/utils`)
 - **Exports**: Chaque dossier de composants a un `index.ts` pour les exports groupés
-- **Client Components**: Ajouter `"use client"` pour les composants avec hooks/interactivité. Un composant Server (ex: `app/realisations/[slug]/page.tsx`) peut importer et rendre un composant Client (ex: `Workflow`, `AuditSection`) sans problème — c'est le sens inverse qui est interdit.
+- **Client Components**: Ajouter `"use client"` pour les composants avec hooks/interactivité. Un composant Server (ex: `app/audit/page.tsx`) peut importer et rendre un composant Client (ex: `Workflow`, `AuditSection`) sans problème — c'est le sens inverse qui est interdit.
 - **Styling**: Utiliser `cn()` pour combiner les classes Tailwind conditionnellement
 - **Navigation**: toujours passer par `lib/navigation.ts` (`mainNav`, `ctaLabel`, `ctaHref`) plutôt que de recréer une liste de liens dans un composant
 - **Pas de code mort**: avant d'ajouter un composant "juste au cas où" ou de garder un fichier non importé, vérifier son usage réel (`grep` sur le nom du composant) — plusieurs composants orphelins ont déjà été supprimés (`components/demos/*`, `Hero`/`WhyUs`/`Services`/`Stats` de `components/home/`)
 
 ### Système de design
 
-Thème **sombre** (fond quasi-noir), défini dans `globals.css` avec `@theme` (Tailwind v4) :
-- `primary` (#4f46e5) - Indigo — usage bg/border/icônes
-- `secondary` (#0284c7) - Cyan — usage bg/border/icônes
-- `accent` (#7c3aed) - Violet — usage bg/border/icônes
-- `primary-light` (#818cf8) / `secondary-light` (#0ea5e9) / `accent-light` (#a78bfa) — **variantes claires à utiliser pour tout texte lisible** (`text-primary-light`, etc.). Les couleurs de base ne passent pas le contraste WCAG AA (4.5:1) sur fond sombre — vérifié via un vrai rapport PageSpeed Insights, ne pas revenir à `text-primary`/`text-secondary`/`text-accent` pour du texte.
-- `background` (#0a0a0d), `surface` (#141119), `surface-light` (#1c1824)
+Thème **sombre** (fond bleu marine quasi-noir), défini dans `globals.css` avec `@theme` (Tailwind v4) — palette Neylio reprise du logo (bleu/vert émeraude) depuis le rebranding du 2026-09-14 :
+- `primary` (#0a55e6) - Bleu — usage bg/border/icônes
+- `secondary` (#1fb78e) - Vert émeraude — usage bg/border/icônes
+- `accent` (#11aed4) - Cyan/sarcelle (teinte de synthèse entre le bleu et le vert du logo, qui n'en a que 2) — usage bg/border/icônes
+- `primary-light` (#6fa1ff) / `secondary-light` (#39ddb1) / `accent-light` (#71daf4) — **variantes claires à utiliser pour tout texte lisible** (`text-primary-light`, etc.). Les couleurs de base ne passent pas le contraste WCAG AA (4.5:1) sur fond sombre, ne pas revenir à `text-primary`/`text-secondary`/`text-accent` pour du texte.
+- `background` (#0a0f1c), `surface` (#10182a), `surface-light` (#1a2338)
 - `text-primary` / `text-secondary` / `text-muted` — tokens de texte clair sur fond sombre (attention : distincts des couleurs de marque `primary`/`secondary` ci-dessus, ne pas confondre `text-text-primary` (token de texte) et `text-primary` (couleur de marque, à éviter pour du texte))
 
 Classes utilitaires custom :
-- `.gradient-text` - Texte en dégradé primary→secondary→accent
-- `.glass` - Dégradé violet translucide utilisé par le header (`Header.tsx`), pas un glassmorphism blanc
+- `.gradient-text` - Texte en dégradé primary→accent→secondary (via `var(--color-*)`, synchronisé avec `@theme`)
+- `.glass` - Dégradé bleu marine translucide utilisé par le header (`Header.tsx`), pas un glassmorphism blanc
 - `.card-hover` - Animation hover pour les cartes
 
 Autres conventions d'accessibilité à respecter :
@@ -133,13 +125,13 @@ Variables d'environnement nécessaires (voir `.env.local.example`) : `RESEND_API
 
 `next.config.ts` gère :
 - La canonicalisation `www.synapse-agency.fr` → `synapse-agency.fr`
-- Les redirections 301 des anciennes URLs supprimées (`/audit-gratuit`, `/audit-gratuit/questionnaire`, `/agents-ia`, les 3 exemples de réalisations retirés) vers leurs pages de remplacement
+- Les redirections 301 des anciennes URLs supprimées (`/audit-gratuit`, `/audit-gratuit/questionnaire`, `/agents-ia`, `/realisations` et ses sous-pages, `/qui-suis-je`) vers leurs pages de remplacement
 
 Avant de supprimer ou renommer une route déjà déployée, ajouter une redirection ici plutôt que de la laisser 404.
 
 ## Ce qui reste hors scope de la refonte actuelle
 
-Ces points sont identifiés dans `PLAN DE REFONTE.md` mais pas encore traités : refonte du contenu de `/production-visuelle` et des pages légales (mentions-légales/confidentialité), route `/ia` dédiée (actuellement `/solutions-ia` fait office de page IA, avec redirect à prévoir le jour où `/ia` sera créée). `data/realisations.ts` contient trois vraies études de cas, toutes anonymisées (client non nommé) : Média (médiathèque numérique pour un musée), Parc (gestion de matériel et de parc informatique, coordination avec les services techniques, maintenance, informatique et comptabilité) et Secure (rondes de sécurité et signalement d'incidents, priorisation et escalade par IA).
+Ces points sont identifiés dans `PLAN DE REFONTE.md` mais pas encore traités : refonte du contenu de `/production-visuelle` et des pages légales (mentions-légales/confidentialité), route `/ia` dédiée (actuellement `/solutions-ia` fait office de page IA, avec redirect à prévoir le jour où `/ia` sera créée). Les pages `/realisations` et `/qui-suis-je` (et leur contenu, trois études de cas Média/Parc/Secure) ont été retirées du site le 2026-09-14 ; `PLAN DE REFONTE.md` les mentionne encore mais reflète l'état au démarrage de la refonte, pas l'état courant.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

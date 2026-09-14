@@ -29,29 +29,20 @@ const nextConfig: NextConfig = {
         destination: "/solutions-ia",
         permanent: true,
       },
+      // Pages "Réalisations" et "À propos" retirées du site
       {
-        source: "/realisations/application-gestion-commerciale",
-        destination: "/realisations",
+        source: "/realisations",
+        destination: "/",
         permanent: true,
       },
       {
-        source: "/realisations/suivi-de-chantier",
-        destination: "/realisations",
+        source: "/realisations/:path*",
+        destination: "/",
         permanent: true,
       },
       {
-        source: "/realisations/portail-client-documentaire",
-        destination: "/realisations",
-        permanent: true,
-      },
-      {
-        source: "/realisations/mediatheque-musee-granet",
-        destination: "/realisations/mediatheque-numerique-musee",
-        permanent: true,
-      },
-      {
-        source: "/realisations/secure-interventions-techniques",
-        destination: "/realisations/secure-securite-maintenance",
+        source: "/qui-suis-je",
+        destination: "/",
         permanent: true,
       },
     ];

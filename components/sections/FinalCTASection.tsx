@@ -40,9 +40,9 @@ export function FinalCTASection() {
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>
-          <Link href="/realisations">
+          <Link href="/applications">
             <Button size="lg" variant="outline">
-              Découvrir nos réalisations
+              Découvrir nos applications métier
             </Button>
           </Link>
         </motion.div>
