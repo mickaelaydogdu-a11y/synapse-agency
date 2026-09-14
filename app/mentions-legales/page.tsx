@@ -55,9 +55,19 @@ export default function MentionsLegales() {
               {/* Hébergeur */}
               <section>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Hébergement</h2>
-                <div className="text-slate-600 space-y-2">
-                  <p><strong className="text-slate-900">Hébergeur :</strong> Leviia</p>
-                  <p><strong className="text-slate-900">Site web :</strong> www.leviia.com</p>
+                <div className="text-slate-600 space-y-4">
+                  <p>
+                    <strong className="text-slate-900">OVH</strong>, Roubaix, France<br />
+                    Site web : <a href="https://www.ovhcloud.com" target="_blank" rel="noopener noreferrer" className="text-primary-light underline underline-offset-2">www.ovhcloud.com</a>
+                  </p>
+                  <p>
+                    <strong className="text-slate-900">Leviia</strong>, Montévrain, France<br />
+                    Site web : <a href="https://www.leviia.com" target="_blank" rel="noopener noreferrer" className="text-primary-light underline underline-offset-2">www.leviia.com</a>
+                  </p>
+                  <p>
+                    <strong className="text-slate-900">Hostinger</strong>, Chypre<br />
+                    Site web : <a href="https://www.hostinger.fr" target="_blank" rel="noopener noreferrer" className="text-primary-light underline underline-offset-2">www.hostinger.fr</a>
+                  </p>
                 </div>
               </section>
 
